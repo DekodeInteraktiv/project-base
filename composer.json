@@ -1,6 +1,7 @@
 {
   "name": "teft-base",
   "description": "Core Teft Framework. Installs Core, Teft theme and Languages",
+  "type": "teft-base-component",
   "license": "GPL-3.0-or-later",
   "repositories": [
     {
