@@ -1,0 +1,44 @@
+{
+  "name": "teft-base",
+  "description": "Core Teft Framework. Installs Core, Teft theme and Languages",
+  "license": "GPL-3.0-or-later",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.dekodes.no/"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io"
+    },
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "johnpbloch/wordpress": "*",
+    "koodimonni-language/core-nb_no": "*",
+    "dekodeinteraktiv/teft-theme": "dev-master"
+  },
+  "extra": {
+    "wordpress-install-dir": "wp",
+    "installer-paths": {
+      "content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "dropin-paths": {
+      "content/languages/": ["vendor:koodimonni-language"],
+      "content/languages/plugins/": ["vendor:koodimonni-plugin-language"]
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "rm -rf wp/wp-content"
+    ],
+    "test": [
+      "@composer install",
+      "./vendor/bin/phpcs"
+    ]
+  }
+}
