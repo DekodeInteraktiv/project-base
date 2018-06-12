@@ -6,14 +6,14 @@
 web/app/languages/*
 !web/app/languages/.gitkeep
 web/app/languages/plugins/*
-!web/app/languages/plugins
 !web/app/languages/plugins/.gitkeep
+web/app/mu-plugins/*/
 web/app/plugins/*
 !web/app/plugins/.gitkeep
-web/app/mu-plugins/*/
-web/app/upgrade
+web/app/themes/teft-theme
 web/app/uploads/*
 !web/app/uploads/.gitkeep
+web/app/upgrade
 
 # WordPress
 web/wp
