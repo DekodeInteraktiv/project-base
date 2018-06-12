@@ -1,9 +1,16 @@
 {
-  "name": "teft-base",
-  "description": "Core Teft Framework. Installs Core, Teft theme and Languages",
-  "type": "teft-base-component",
-  "license": "GPL-3.0-or-later",
+  "name": "dekodeinteraktiv/teft-base",
+  "type": "project",
+  "license": "MIT",
+  "description": "Dekode WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "config": {
+    "preferred-install": "dist"
+  },
   "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
     {
       "type": "composer",
       "url": "https://packages.dekodes.no/"
@@ -11,40 +18,50 @@
     {
       "type": "composer",
       "url": "https://wp-languages.github.io"
-    },
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    },
-    {
-      "type": "vcs",
-      "no-api": true,
-      "url": "git@github.com:DekodeInteraktiv/teft-theme.git"
     }
   ],
+  "archive": {
+    "exclude": [
+      ".editorconfig",
+      ".gitignore",
+      "composer.json",
+      "composer.lock",
+      "LICENSE",
+      "phpcs.xml"
+    ]
+  },
   "require": {
     "php": ">=7.0",
+    "composer/installers": "^1.4",
+    "vlucas/phpdotenv": "^2.0.1",
     "johnpbloch/wordpress": "*",
     "koodimonni-language/core-nb_no": "*",
-    "dekodeinteraktiv/teft-theme": "dev-master"
+    "oscarotero/env": "^1.1.0"
+  },
+  "require-dev": {
+    "dekodeinteraktiv/coding-standards": "*"
   },
   "extra": {
-    "wordpress-install-dir": "wp",
     "installer-paths": {
-      "content/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
     "dropin-paths": {
-      "content/languages/": ["vendor:koodimonni-language"],
-      "content/languages/plugins/": ["vendor:koodimonni-plugin-language"]
-    }
+      "web/app/languages/": ["vendor:koodimonni-language"],
+      "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"]
+    },
+    "wordpress-install-dir": "web/wp"
   },
   "scripts": {
-    "post-install-cmd": [
-      "rm -rf wp/wp-content"
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "create-env-file": [
+      "php -r \"copy('.env.example', '.env');\""
     ],
     "test": [
-      "@composer install",
-      "./vendor/bin/phpcs"
+      "phpcs"
     ]
   }
 }

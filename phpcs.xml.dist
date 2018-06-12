@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<ruleset name="Dekode Coding Standards">
-	<description>Teft Base setup</description>
-	<file>.</file>
-	<arg name="extensions" value="php" />
-	<config name="text_domain" value="teft" />
-	<config name="testVersion" value="7.0-" />
-	<rule ref="Dekode" />
-</ruleset>

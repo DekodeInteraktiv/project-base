@@ -1,27 +1,29 @@
-*.log
-*.sassc
-.sass-cache
+# Idea
 .DS_Store
 .idea
-/vendor
 
-db-sync/
-tmp/
-node_modules/
+# Application
+web/app/languages/*
+!web/app/languages/.gitkeep
+web/app/languages/plugins/*
+!web/app/languages/plugins
+!web/app/languages/plugins/.gitkeep
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
 
-/shared
-/local-config.php
-/config.php
-/sql-dump-*.sql
-/content/sunrise.php
-/content/uploads/
-/content/upgrade/
-/content/db.php
-/content/themes/teft-theme
-/content/plugins/*
-/content/languages/*
-!/content/languages/plugins/
-/wp
-/plugins
-/.htaccess
-/local-phpinfo.php
+# WordPress
+web/wp
+web/.htaccess
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+vendor/*
+!vendor/.gitkeep
