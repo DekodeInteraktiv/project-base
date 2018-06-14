@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "58c33f60549c972323c7b1e81d58f43a",
+    "content-hash": "5d5c7d858edb44482011f681daf017f7",
     "packages": [
         {
             "name": "composer/installers",
@@ -132,7 +132,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/DekodeInteraktiv/teft-theme.git",
-                "reference": "3f5df27e59e8f631edf7f83195cb0cd869b2d28d"
+                "reference": "49ccbf8b431a27e2e19d3eefe9332dc346bd11b0"
             },
             "require": {
                 "composer/installers": "*",
@@ -150,7 +150,7 @@
             },
             "description": "A modern, underscores-based starter theme.",
             "homepage": "https://github.com/DekodeInteraktiv/teft-theme",
-            "time": "2018-06-12T07:45:10+00:00"
+            "time": "2018-06-14T11:42:13+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -197,12 +197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "94c4efddb4931a5d491a39976f8baa8e1870ab45"
+                "reference": "d3e6b31204c5220fad5cfa7d8be2755f18ec22cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/94c4efddb4931a5d491a39976f8baa8e1870ab45",
-                "reference": "94c4efddb4931a5d491a39976f8baa8e1870ab45",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/d3e6b31204c5220fad5cfa7d8be2755f18ec22cf",
+                "reference": "d3e6b31204c5220fad5cfa7d8be2755f18ec22cf",
                 "shasum": ""
             },
             "require": {
@@ -229,7 +229,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-06-12T09:46:24+00:00"
+            "time": "2018-06-14T11:45:57+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -435,21 +435,41 @@
                 "environment"
             ],
             "time": "2018-03-19T21:27:48+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/gutenberg",
+            "version": "3.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gutenberg/",
+                "reference": "tags/3.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.0.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gutenberg/"
         }
     ],
     "packages-dev": [
         {
             "name": "automattic/phpcs-neutron-standard",
-            "version": "v1.5.0",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/phpcs-neutron-standard.git",
-                "reference": "7491ee86f705082ebd318fc90d16f8b874440901"
+                "reference": "7f259cdef7a57d3152b868c96d51740cb1055c3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/phpcs-neutron-standard/zipball/7491ee86f705082ebd318fc90d16f8b874440901",
-                "reference": "7491ee86f705082ebd318fc90d16f8b874440901",
+                "url": "https://api.github.com/repos/Automattic/phpcs-neutron-standard/zipball/7f259cdef7a57d3152b868c96d51740cb1055c3f",
+                "reference": "7f259cdef7a57d3152b868c96d51740cb1055c3f",
                 "shasum": ""
             },
             "require-dev": {
@@ -457,7 +477,7 @@
                 "limedeck/phpunit-detailed-printer": "^3.1",
                 "phpunit/phpunit": "^6.4",
                 "sirbrillig/phpcs-variable-analysis": "^2.0.1",
-                "squizlabs/php_codesniffer": "^3.2.1"
+                "squizlabs/php_codesniffer": "3.3.0"
             },
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
@@ -471,7 +491,7 @@
                 }
             ],
             "description": "A set of phpcs sniffs for modern php development.",
-            "time": "2018-03-16T03:07:32+00:00"
+            "time": "2018-06-13T20:12:10+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",

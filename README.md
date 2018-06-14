@@ -1,6 +1,6 @@
 # Teft Base
 
-![Packagist](https://img.shields.io/packagist/v/dekodeinteraktiv/teft-base.svg)
+![Packagist](https://img.shields.io/packagist/v/dekodeinteraktiv/teft-base.svg) ![PHP from Packagist](https://img.shields.io/packagist/php-v/dekodeinteraktiv/teft-base.svg)
 
 Teft Base is based on Bedrock, a modern WordPress stack that helps you get started with the best development tools and project structure.
 
