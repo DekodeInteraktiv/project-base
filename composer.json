@@ -19,10 +19,6 @@
     {
       "type": "composer",
       "url": "https://wp-languages.github.io"
-    },
-    {
-      "type": "git",
-      "url": "https://github.com/DekodeInteraktiv/teft-theme.git"
     }
   ],
   "require": {
@@ -32,7 +28,7 @@
     "johnpbloch/wordpress": "*",
     "koodimonni-language/core-nb_no": "*",
     "oscarotero/env": "^1.1.0",
-    "dekodeinteraktiv/teft-theme": "*",
+    "dekode/teft-theme": "*",
     "wpackagist-plugin/gutenberg": "^3.0.1"
   },
   "require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d5c7d858edb44482011f681daf017f7",
+    "content-hash": "20b08c3a84da4ff3b6ffd4832d2be257",
     "packages": [
         {
             "name": "composer/installers",
@@ -127,30 +127,16 @@
             "time": "2017-12-29T09:13:20+00:00"
         },
         {
-            "name": "dekodeinteraktiv/teft-theme",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DekodeInteraktiv/teft-theme.git",
-                "reference": "49ccbf8b431a27e2e19d3eefe9332dc346bd11b0"
-            },
-            "require": {
-                "composer/installers": "*",
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "dekodeinteraktiv/coding-standards": "*"
+            "name": "dekode/teft-theme",
+            "version": "0.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.dekodes.no/packages/e4fhrvzsmiy2lxpq308ac56o1bjgwt7n.zip",
+                "reference": "e4fhrvzsmiy2lxpq308ac56o1bjgwt7n",
+                "shasum": ""
             },
             "type": "wordpress-theme",
-            "scripts": {
-                "lint": [
-                    "@composer install",
-                    "./vendor/bin/phpcs"
-                ]
-            },
-            "description": "A modern, underscores-based starter theme.",
-            "homepage": "https://github.com/DekodeInteraktiv/teft-theme",
-            "time": "2018-06-14T11:42:13+00:00"
+            "time": "2018-06-20T20:09:12+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -197,12 +183,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "d3e6b31204c5220fad5cfa7d8be2755f18ec22cf"
+                "reference": "dba37ea9fd74b6262647eed69a771717ad249573"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/d3e6b31204c5220fad5cfa7d8be2755f18ec22cf",
-                "reference": "d3e6b31204c5220fad5cfa7d8be2755f18ec22cf",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/dba37ea9fd74b6262647eed69a771717ad249573",
+                "reference": "dba37ea9fd74b6262647eed69a771717ad249573",
                 "shasum": ""
             },
             "require": {
@@ -229,7 +215,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-06-14T11:45:57+00:00"
+            "time": "2018-06-20T04:31:36+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -595,12 +581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "d639145b95669a752461a07324a1418ad8651153"
+                "reference": "76c13cb5546c60e187d51c63ccb5eee9725fc418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d639145b95669a752461a07324a1418ad8651153",
-                "reference": "d639145b95669a752461a07324a1418ad8651153",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/76c13cb5546c60e187d51c63ccb5eee9725fc418",
+                "reference": "76c13cb5546c60e187d51c63ccb5eee9725fc418",
                 "shasum": ""
             },
             "require": {
@@ -638,7 +624,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-06-08T04:26:25+00:00"
+            "time": "2018-06-20T01:13:26+00:00"
         },
         {
             "name": "wimg/php-compatibility",
