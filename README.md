@@ -52,6 +52,8 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
 
 `composer install` must be run as part of the deploy process.
 
+See the CodeShip project [DekodeInteraktiv/teft-base](https://app.codeship.com/projects/294819) for up-to-date details.
+
 ## Documentation
 
 Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
