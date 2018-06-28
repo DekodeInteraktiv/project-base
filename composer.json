@@ -58,7 +58,11 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
+      "php -r \"copy('.env.example', '.env');\"",
+      "composer local-fix"
+    ],
+    "local-fix": [
+      "bash post-install-scripts/local-webroot-fix.sh;"
     ],
     "test": [
       "phpcs"
