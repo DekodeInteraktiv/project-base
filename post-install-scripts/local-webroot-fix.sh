@@ -26,6 +26,9 @@ declare -a paths=(
 echo "Migrating Local by Flywheel web server config to be compliant with Dekode's Bedrock-based WP setup..."
 echo "==="
 
+# Changes flag default state
+changes_done=0
+
 for i in "${paths[@]}"
 do :
 
@@ -34,6 +37,7 @@ do :
         continue
     fi
 
+    # Read contents of file into variable
     content=$(cat $i)
 
     printf "Updating config file with new path: $i"
@@ -44,6 +48,9 @@ do :
         printf " - ${GREEN}File already migrated${NC}\n"
         continue
     fi
+
+    # Flag changes as done
+    changes_done=1
 
     # NGINX
     pattern="root /app/public/"
@@ -67,5 +74,9 @@ do :
 done
 
 echo "==="
-printf "${GREEN}All done!\n"
-printf "Please restart the container (site) to apply the changes!${NC}\n"
+printf "${GREEN}All done!${NC}\n"
+
+# Display restart message only if we have done changes
+if [ $changes_done == "1" ]; then
+    printf "${GREEN}Please restart the container (site) to apply the changes!${NC}\n"
+fi
