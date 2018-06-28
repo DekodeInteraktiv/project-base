@@ -67,4 +67,5 @@ do :
 done
 
 echo "==="
-printf "${GREEN}All done!${NC}\n"
+printf "${GREEN}All done!\n"
+printf "Please restart the container (site) to apply the changes!${NC}\n"
