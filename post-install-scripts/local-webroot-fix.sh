@@ -3,11 +3,16 @@
 # Color variables
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
 NC='\033[0m'
 
-# Check that we are running this script from the correct folder - only run if script is triggered manually
-if [ $1 == "--check-folder" ] && [ ! -d "../../conf" ]; then
-    printf "${RED}Could not find config-folder. Are you sure you are running this from the correct folder?${NC}\n"
+# Check that we are running this script from the correct folder
+if [ ! -d "../../conf" ]; then
+    if [ $1 == "--check-folder" ]; then
+        printf "${RED}Could not find config-folder. Are you sure you are running this from the correct folder?${NC}\n"
+    else
+        printf "${YELLOW}You are probably not using Local by Flywheel. If you are, then please check that you are running this script from the correct location which should be someething like this: \"app/public\"${NC}\n"
+    fi
     exit
 fi
 
