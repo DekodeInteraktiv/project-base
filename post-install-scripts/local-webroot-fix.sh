@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Local by Flywheel - Teft/Bedrock fix
+# This script will modify the NGINX/Apache config in Local by Flywheel so that it is compliant with the Bedrock-based folder structure.
+# Author: Robert Sæther
+# Version: 1.0
+
 # Color variables
 RED='\033[0;31m'
 GREEN='\033[0;32m'
