@@ -5,8 +5,8 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-# Check that we are running this script from the correct folder
-if [ ! -d "../../conf" ]; then
+# Check that we are running this script from the correct folder - only run if script is triggered manually
+if [ $1 == "--check-folder" ] && [ ! -d "../../conf" ]; then
     printf "${RED}Could not find config-folder. Are you sure you are running this from the correct folder?${NC}\n"
     exit
 fi

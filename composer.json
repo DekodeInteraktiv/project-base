@@ -59,10 +59,13 @@
   "scripts": {
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\"",
-      "composer local-fix"
+      "composer local-fix-no-folder-check"
+    ],
+    "local-fix-no-folder-check": [
+      "bash post-install-scripts/local-webroot-fix.sh;"
     ],
     "local-fix": [
-      "bash post-install-scripts/local-webroot-fix.sh;"
+      "bash post-install-scripts/local-webroot-fix.sh --check-folder;"
     ],
     "test": [
       "phpcs"
