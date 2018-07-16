@@ -13,7 +13,7 @@ NC='\033[0m'
 
 # Check that we are running this script from the correct folder
 if [ ! -d "../../conf" ]; then
-    if [ $1 == "--check-folder" ]; then
+    if [ "$1" == "--check-folder" ]; then
         printf "${RED}Could not find config-folder. Are you sure you are running this from the correct folder? Correct folder would be something like this: \"app/public\"${NC}\n"
     else
         printf "${YELLOW}You are probably not using Local by Flywheel. If you are, then please check that you are running this script from the correct location which should be someething like this: \"app/public\"${NC}\n"
