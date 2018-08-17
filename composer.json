@@ -34,7 +34,7 @@
     "oscarotero/env": "^1.1.0",
     "dekode/teft-theme": "*",
     "dekodeinteraktiv/youtube-embed-nocookie": "*",
-    "wpackagist-plugin/gutenberg": "^3.0.1"
+    "wpackagist-plugin/gutenberg": "^3.5.0"
   },
   "require-dev": {
     "dekodeinteraktiv/coding-standards": "*"
