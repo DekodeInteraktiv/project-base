@@ -18,6 +18,10 @@
     },
     {
       "type": "composer",
+      "url": "https://composer.dekodes.no/"
+    },
+    {
+      "type": "composer",
       "url": "https://wp-languages.github.io"
     }
   ],
@@ -29,6 +33,7 @@
     "koodimonni-language/core-nb_no": "*",
     "oscarotero/env": "^1.1.0",
     "dekode/teft-theme": "*",
+    "dekodeinteraktiv/youtube-embed-nocookie": "*",
     "wpackagist-plugin/gutenberg": "^3.0.1"
   },
   "require-dev": {
