@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7a3567452f00cab2185669d4cdb27ee",
+    "content-hash": "419f3d786bf86535b54c05d431b4601a",
     "packages": [
         {
             "name": "composer/installers",
@@ -460,15 +460,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "3.9.0",
+            "version": "4.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/3.9.0"
+                "reference": "tags/4.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.9.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.4.0.0.zip",
                 "reference": null,
                 "shasum": null
             },
