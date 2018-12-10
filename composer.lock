@@ -176,20 +176,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.9.8",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "de02cd79a41e06f36558040724414197cb7f6246"
+                "reference": "391c36c97f55384bbb3e38146752dc9ac6235d4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/de02cd79a41e06f36558040724414197cb7f6246",
-                "reference": "de02cd79a41e06f36558040724414197cb7f6246",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/391c36c97f55384bbb3e38146752dc9ac6235d4c",
+                "reference": "391c36c97f55384bbb3e38146752dc9ac6235d4c",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "4.9.8",
+                "johnpbloch/wordpress-core": "5.0.0",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
@@ -211,27 +211,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-08-02T21:48:39+00:00"
+            "time": "2018-12-09T20:56:03+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.9.8",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "50323f9b91d7689d615b4af02caf9d80584b1cfc"
+                "reference": "a11a6399a3681ffbbf7e27ac4e372d836529fdb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/50323f9b91d7689d615b4af02caf9d80584b1cfc",
-                "reference": "50323f9b91d7689d615b4af02caf9d80584b1cfc",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/a11a6399a3681ffbbf7e27ac4e372d836529fdb7",
+                "reference": "a11a6399a3681ffbbf7e27ac4e372d836529fdb7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "4.9.8"
+                "wordpress/core-implementation": "5.0.0"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -251,20 +251,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-08-02T21:48:32+00:00"
+            "time": "2018-12-09T20:55:56+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "1.0.0.2",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "7941acd71725710a789daabe0557429da63e7ac6"
+                "reference": "fd12f5cfe27223b92b0f4bbc097059eb23cc56c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/7941acd71725710a789daabe0557429da63e7ac6",
-                "reference": "7941acd71725710a789daabe0557429da63e7ac6",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/fd12f5cfe27223b92b0f4bbc097059eb23cc56c4",
+                "reference": "fd12f5cfe27223b92b0f4bbc097059eb23cc56c4",
                 "shasum": ""
             },
             "require": {
@@ -288,7 +288,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -300,7 +300,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-01-29T14:49:29+00:00"
+            "time": "2018-11-09T20:10:38+00:00"
         },
         {
             "name": "koodimonni-language/core-nb_no",
