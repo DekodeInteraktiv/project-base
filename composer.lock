@@ -304,10 +304,10 @@
         },
         {
             "name": "koodimonni-language/core-nb_no",
-            "version": "5.0.1",
+            "version": "5.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.0.1/nb_NO.zip",
+                "url": "https://downloads.wordpress.org/translation/core/5.0.2/nb_NO.zip",
                 "reference": null,
                 "shasum": null
             },
