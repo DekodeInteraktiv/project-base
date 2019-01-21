@@ -76,6 +76,11 @@ define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 define('DISALLOW_FILE_EDIT', true);
 
 /**
+ * To make WP load each script on the administration page individually; protects against CVE-2018-6389 DoS attacks
+ */
+define('CONCATENATE_SCRIPTS', false );
+
+/**
  * Bootstrap WordPress
  */
 if (!defined('ABSPATH')) {
