@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "419f3d786bf86535b54c05d431b4601a",
+    "content-hash": "667dee07f456b837ece863476c5da0c1",
     "packages": [
         {
             "name": "composer/installers",
@@ -307,9 +307,7 @@
             "version": "5.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.0.3/nb_NO.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/translation/core/5.0.3/nb_NO.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -460,17 +458,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "4.8.0",
+            "version": "5.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/4.8.0"
+                "reference": "tags/5.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.4.8.0.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.5.1.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
