@@ -304,10 +304,10 @@
         },
         {
             "name": "koodimonni-language/core-nb_no",
-            "version": "5.1",
+            "version": "5.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.1/nb_NO.zip"
+                "url": "https://downloads.wordpress.org/translation/core/5.1.1/nb_NO.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
