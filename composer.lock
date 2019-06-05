@@ -128,15 +128,15 @@
         },
         {
             "name": "dekode/teft-theme",
-            "version": "0.4.8",
+            "version": "1.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.dekodes.no/packages/7ygwui26s9avr5bt13zp0kmjcx4qhf8o.zip",
-                "reference": "7ygwui26s9avr5bt13zp0kmjcx4qhf8o",
+                "url": "https://packages.dekodes.no/packages/1bvml86tka0sjhxduyg2firc9z4e75po.zip",
+                "reference": "1bvml86tka0sjhxduyg2firc9z4e75po",
                 "shasum": ""
             },
             "type": "wordpress-theme",
-            "time": "2018-09-20T20:25:29+00:00"
+            "time": "2019-06-04T10:20:51+00:00"
         },
         {
             "name": "dekode/youtube-embed-nocookie",
