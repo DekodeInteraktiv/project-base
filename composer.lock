@@ -180,18 +180,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "aba269288c889b2a4424ed7a81c7fd4bb3017b3b"
+                "reference": "32750c64c9d1878a7c958094554644de63030323"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/aba269288c889b2a4424ed7a81c7fd4bb3017b3b",
-                "reference": "aba269288c889b2a4424ed7a81c7fd4bb3017b3b",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/32750c64c9d1878a7c958094554644de63030323",
+                "reference": "32750c64c9d1878a7c958094554644de63030323",
                 "shasum": ""
             },
             "require": {
                 "johnpbloch/wordpress-core": "5.2.1",
                 "johnpbloch/wordpress-core-installer": "^1.0",
-                "php": "5.3.2"
+                "php": ">=5.6.20"
             },
             "type": "package",
             "notification-url": "https://packagist.org/downloads/",
@@ -211,7 +211,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-05-21T18:27:37+00:00"
+            "time": "2019-05-22T17:56:53+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
@@ -458,15 +458,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "5.8.0",
+            "version": "5.9.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/5.8.0"
+                "reference": "tags/5.9.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.5.8.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.5.9.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
