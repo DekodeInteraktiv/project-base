@@ -128,15 +128,15 @@
         },
         {
             "name": "dekode/teft-theme",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.dekodes.no/packages/wclam8su3qxzy0g9bo7t5kdife2hpv1n.zip",
-                "reference": "wclam8su3qxzy0g9bo7t5kdife2hpv1n",
+                "url": "https://packages.dekodes.no/packages/t2pay5j0u7deif91xw4smrgn6qvbhklc.zip",
+                "reference": "t2pay5j0u7deif91xw4smrgn6qvbhklc",
                 "shasum": ""
             },
             "type": "wordpress-theme",
-            "time": "2019-06-12T15:22:44+00:00"
+            "time": "2019-06-13T13:39:38+00:00"
         },
         {
             "name": "dekode/youtube-embed-nocookie",
@@ -168,6 +168,10 @@
             "license": [
                 "GPL-3.0-or-later"
             ],
+            "support": {
+                "source": "https://github.com/DekodeInteraktiv/youtube-embed-nocookie/tree/1.2",
+                "issues": "https://github.com/DekodeInteraktiv/youtube-embed-nocookie/issues"
+            },
             "time": "2018-09-10T18:49:54+00:00"
         },
         {
