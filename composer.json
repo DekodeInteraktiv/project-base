@@ -33,7 +33,7 @@
     "oscarotero/env": "^1.1.0",
     "dekode/teft-theme": "*",
     "dekode/youtube-embed-nocookie": "*",
-    "wpackagist-plugin/gutenberg": "^5.2.0"
+    "wpackagist-plugin/gutenberg": "^6.0.0"
   },
   "require-dev": {
     "dekodeinteraktiv/coding-standards": "*"
