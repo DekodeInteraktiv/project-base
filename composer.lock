@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0cf5e1fbb834d25ef6893ec8622bd03b",
+    "content-hash": "2156eee30872bc8fd0020d11d6deff0b",
     "packages": [
         {
             "name": "composer/installers",
@@ -168,6 +168,10 @@
             "license": [
                 "GPL-3.0-or-later"
             ],
+            "support": {
+                "source": "https://github.com/DekodeInteraktiv/youtube-embed-nocookie/tree/1.2",
+                "issues": "https://github.com/DekodeInteraktiv/youtube-embed-nocookie/issues"
+            },
             "time": "2018-09-10T18:49:54+00:00"
         },
         {
@@ -454,15 +458,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "5.9.2",
+            "version": "6.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/5.9.2"
+                "reference": "tags/6.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.5.9.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.6.1.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -823,12 +827,12 @@
             "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
+                "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
                 "reference": "c9eaadaafefce36b3cb7e06eb15305b8c4cae9ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/c9eaadaafefce36b3cb7e06eb15305b8c4cae9ce",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/c9eaadaafefce36b3cb7e06eb15305b8c4cae9ce",
                 "reference": "c9eaadaafefce36b3cb7e06eb15305b8c4cae9ce",
                 "shasum": ""
             },
