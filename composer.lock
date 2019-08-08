@@ -128,15 +128,15 @@
         },
         {
             "name": "dekode/teft-theme",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.dekodes.no/packages/t2pay5j0u7deif91xw4smrgn6qvbhklc.zip",
-                "reference": "t2pay5j0u7deif91xw4smrgn6qvbhklc",
+                "url": "https://packages.dekodes.no/packages/tvspm8gyr2olhu5jqwck7409nbdfeaz3.zip",
+                "reference": "tvspm8gyr2olhu5jqwck7409nbdfeaz3",
                 "shasum": ""
             },
             "type": "wordpress-theme",
-            "time": "2019-06-13T13:39:38+00:00"
+            "time": "2019-08-07T13:09:24+00:00"
         },
         {
             "name": "dekode/youtube-embed-nocookie",
@@ -168,6 +168,10 @@
             "license": [
                 "GPL-3.0-or-later"
             ],
+            "support": {
+                "source": "https://github.com/DekodeInteraktiv/youtube-embed-nocookie/tree/1.2",
+                "issues": "https://github.com/DekodeInteraktiv/youtube-embed-nocookie/issues"
+            },
             "time": "2018-09-10T18:49:54+00:00"
         },
         {
@@ -353,8 +357,8 @@
             "authors": [
                 {
                     "name": "Onni Hakala",
-                    "email": "onni@koodimonni.fi",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "onni@koodimonni.fi"
                 }
             ],
             "description": "Install packages or a few files from packages into custom paths without overwriting existing stuff.",
@@ -390,9 +394,9 @@
             "authors": [
                 {
                     "name": "Oscar Otero",
+                    "role": "Developer",
                     "email": "oom@oscarotero.com",
-                    "homepage": "http://oscarotero.com",
-                    "role": "Developer"
+                    "homepage": "http://oscarotero.com"
                 }
             ],
             "description": "Simple library to consume environment variables",
@@ -555,9 +559,9 @@
             "authors": [
                 {
                     "name": "Franck Nijhof",
+                    "role": "Developer / IT Manager",
                     "email": "franck.nijhof@dealerdirect.com",
-                    "homepage": "http://www.frenck.nl",
-                    "role": "Developer / IT Manager"
+                    "homepage": "http://www.frenck.nl"
                 }
             ],
             "description": "PHP_CodeSniffer Standards Composer Installer Plugin",
@@ -649,13 +653,13 @@
                 },
                 {
                     "name": "Wim Godden",
-                    "homepage": "https://github.com/wimg",
-                    "role": "lead"
+                    "role": "lead",
+                    "homepage": "https://github.com/wimg"
                 },
                 {
                     "name": "Juliette Reinders Folmer",
-                    "homepage": "https://github.com/jrfnl",
-                    "role": "lead"
+                    "role": "lead",
+                    "homepage": "https://github.com/jrfnl"
                 }
             ],
             "description": "A set of sniffs for PHP_CodeSniffer that checks for PHP cross-version compatibility.",
@@ -823,12 +827,12 @@
             "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
+                "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
                 "reference": "c9eaadaafefce36b3cb7e06eb15305b8c4cae9ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/c9eaadaafefce36b3cb7e06eb15305b8c4cae9ce",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/c9eaadaafefce36b3cb7e06eb15305b8c4cae9ce",
                 "reference": "c9eaadaafefce36b3cb7e06eb15305b8c4cae9ce",
                 "shasum": ""
             },
