@@ -168,10 +168,6 @@
             "license": [
                 "GPL-3.0-or-later"
             ],
-            "support": {
-                "source": "https://github.com/DekodeInteraktiv/youtube-embed-nocookie/tree/1.2",
-                "issues": "https://github.com/DekodeInteraktiv/youtube-embed-nocookie/issues"
-            },
             "time": "2018-09-10T18:49:54+00:00"
         },
         {
@@ -458,15 +454,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "6.2.0",
+            "version": "6.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/6.2.0"
+                "reference": "tags/6.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.6.2.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.6.3.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
