@@ -28,7 +28,7 @@
     "php": ">=7.0",
     "composer/installers": "^1.4",
     "vlucas/phpdotenv": "^3.5.0",
-    "johnpbloch/wordpress": "5.2.2",
+    "johnpbloch/wordpress": "5.2.3",
     "koodimonni-language/core-nb_no": "5.2.2",
     "oscarotero/env": "^1.1.0",
     "dekode/teft-theme": "1.0.6",
