@@ -1,29 +1,31 @@
-# Idea
+*.log
+*.sassc
+.sass-cache
 .DS_Store
 .idea
+.cache-loader
 
-# Application
-web/app/languages/*
-!web/app/languages/.gitkeep
-web/app/languages/plugins/*
-!web/app/languages/plugins/.gitkeep
-web/app/mu-plugins/*/
-web/app/plugins/*
-!web/app/plugins/.gitkeep
+node_modules
+vendor
+wp
+
+# Remove this when starting project …
+/composer.lock
+
+# Language files
+web/app/languages
+
+# Plugins
+web/app/plugins
+
+# Themes
 web/app/themes/teft-theme
-web/app/uploads/*
-!web/app/uploads/.gitkeep
-web/app/upgrade
 
-# WordPress
-web/wp
-web/.htaccess
+# Upgrade and uploads
+web/app/upgrade
+web/app/uploads
 
 # Dotenv
 .env
 .env.*
 !.env.example
-
-# Composer
-vendor/*
-!vendor/.gitkeep
