@@ -4,6 +4,7 @@
 .DS_Store
 .idea
 .cache-loader
+phpcs.xml
 
 node_modules
 vendor
