@@ -41,13 +41,13 @@
   "extra": {
     "wordpress-install-dir": "web/wp",
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": [ "type:wordpress-muplugin" ],
-      "web/app/plugins/{$name}/": [ "type:wordpress-plugin" ],
-      "web/app/themes/{$name}/": [ "type:wordpress-theme" ]
+      "web/content/mu-plugins/{$name}/": [ "type:wordpress-muplugin" ],
+      "web/content/plugins/{$name}/": [ "type:wordpress-plugin" ],
+      "web/content/themes/{$name}/": [ "type:wordpress-theme" ]
     },
     "dropin-paths": {
-      "web/app/languages/": [ "vendor:koodimonni-language" ],
-      "web/app/languages/plugins/": [ "vendor:koodimonni-plugin-language" ]
+      "web/content/languages/": [ "vendor:koodimonni-language" ],
+      "web/content/languages/plugins/": [ "vendor:koodimonni-plugin-language" ]
     }
   },
   "scripts": {
