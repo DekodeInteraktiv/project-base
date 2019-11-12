@@ -3,17 +3,17 @@
 .idea
 
 # Application
-web/app/languages/*
-!web/app/languages/.gitkeep
-web/app/languages/plugins/*
-!web/app/languages/plugins/.gitkeep
-web/app/mu-plugins/*/
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-web/app/themes/teft-theme
-web/app/uploads/*
-!web/app/uploads/.gitkeep
-web/app/upgrade
+web/content/languages/*
+!web/content/languages/.gitkeep
+web/content/languages/plugins/*
+!web/content/languages/plugins/.gitkeep
+web/content/mu-plugins/*/
+web/content/plugins/*
+!web/content/plugins/.gitkeep
+web/content/themes/teft-theme
+web/content/uploads/*
+!web/content/uploads/.gitkeep
+web/content/upgrade
 
 # WordPress
 web/wp

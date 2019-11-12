@@ -5,8 +5,8 @@
     <arg name="extensions" value="php"/>
     <!-- Ignore WordPress and Composer dependencies -->
     <exclude-pattern>web/wp</exclude-pattern>
-    <exclude-pattern>web/app/themes/teft-theme</exclude-pattern>
-    <exclude-pattern>web/app/mu-plugins</exclude-pattern>
+    <exclude-pattern>web/content/themes/teft-theme</exclude-pattern>
+    <exclude-pattern>web/content/mu-plugins</exclude-pattern>
     <exclude-pattern>vendor/</exclude-pattern>
     <config name="testVersion" value="7.0-"/>
     <rule ref="Dekode"/>

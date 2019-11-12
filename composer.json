@@ -40,21 +40,21 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": [
+      "web/content/mu-plugins/{$name}/": [
         "type:wordpress-muplugin"
       ],
-      "web/app/plugins/{$name}/": [
+      "web/content/plugins/{$name}/": [
         "type:wordpress-plugin"
       ],
-      "web/app/themes/{$name}/": [
+      "web/content/themes/{$name}/": [
         "type:wordpress-theme"
       ]
     },
     "dropin-paths": {
-      "web/app/languages/": [
+      "web/content/languages/": [
         "vendor:koodimonni-language"
       ],
-      "web/app/languages/plugins/": [
+      "web/content/languages/plugins/": [
         "vendor:koodimonni-plugin-language"
       ]
     },
