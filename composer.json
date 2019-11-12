@@ -39,31 +39,24 @@
     "dekodeinteraktiv/coding-standards": "^3.0"
   },
   "extra": {
-    "wordpress-install-dir": "web/wp",
+    "wordpress-install-dir": "public/wp",
     "installer-paths": {
-      "web/content/mu-plugins/{$name}/": [ "type:wordpress-muplugin" ],
-      "web/content/plugins/{$name}/": [ "type:wordpress-plugin" ],
-      "web/content/themes/{$name}/": [ "type:wordpress-theme" ]
+      "public/content/mu-plugins/{$name}/": [ "type:wordpress-muplugin" ],
+      "public/content/plugins/{$name}/": [ "type:wordpress-plugin" ],
+      "public/content/themes/{$name}/": [ "type:wordpress-theme" ]
     },
     "dropin-paths": {
-      "web/content/languages/": [ "vendor:koodimonni-language" ],
-      "web/content/languages/plugins/": [ "vendor:koodimonni-plugin-language" ]
+      "public/content/languages/": [ "vendor:koodimonni-language" ],
+      "public/content/languages/plugins/": [ "vendor:koodimonni-plugin-language" ]
     }
   },
   "scripts": {
     "post-install-cmd": [
-      "rm -rf web/wp/wp-content",
-      "rm -rf web/wp/composer.json"
+      "rm -rf public/wp/wp-content",
+      "rm -rf public/wp/composer.json"
     ],
     "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\"",
-      "composer local-fix-no-folder-check"
-    ],
-    "local-fix-no-folder-check": [
-      "bash post-install-scripts/local-webroot-fix.sh;"
-    ],
-    "local-fix": [
-      "bash post-install-scripts/local-webroot-fix.sh --check-folder;"
+      "cp .env.example .env"
     ],
     "lint": [
       "@composer install",

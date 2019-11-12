@@ -14,17 +14,17 @@ wp
 /composer.lock
 
 # Language files
-web/content/languages
+public/content/languages
 
 # Plugins
-web/content/plugins
+public/content/plugins
 
 # Themes
-web/content/themes/teft-theme
+public/content/themes/teft-theme
 
 # Upgrade and uploads
-web/content/upgrade
-web/content/uploads
+public/content/upgrade
+public/content/uploads
 
 # Dotenv
 .env
