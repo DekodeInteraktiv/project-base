@@ -1,5 +1,11 @@
 <?php
+/**
+ * WordPress view bootstrapper.
+ *
+ * @package Teft
+ */
 
-/** WordPress view bootstrapper */
-define('WP_USE_THEMES', true);
-require(__DIR__ . '/wp/wp-blog-header.php');
+declare( strict_types = 1 );
+
+define( 'WP_USE_THEMES', true );
+require __DIR__ . '/wp/wp-blog-header.php';

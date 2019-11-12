@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <ruleset name="Dekode Coding Standards">
-    <description>Base setup</description>
-    <file>.</file>
-    <arg name="extensions" value="php"/>
-    <!-- Ignore WordPress and Composer dependencies -->
-    <exclude-pattern>web/wp</exclude-pattern>
-    <exclude-pattern>web/content/themes/teft-theme</exclude-pattern>
-    <exclude-pattern>web/content/mu-plugins</exclude-pattern>
-    <exclude-pattern>vendor/</exclude-pattern>
-    <config name="testVersion" value="7.0-"/>
-    <rule ref="Dekode"/>
+	<file>.</file>
+	<arg name="extensions" value="php" />
+	<config name="testVersion" value="7.0-" />
+	<rule ref="Dekode" />
+
+	<exclude-pattern>web/wp</exclude-pattern>
+	<exclude-pattern>web/content/languages</exclude-pattern>
+	<exclude-pattern>web/content/plugins</exclude-pattern>
+	<exclude-pattern>web/content/uploads</exclude-pattern>
+	<exclude-pattern>web/content/themes/teft-theme</exclude-pattern>
 </ruleset>

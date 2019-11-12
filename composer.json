@@ -36,7 +36,7 @@
     "wpackagist-plugin/gutenberg": "^6.2.0"
   },
   "require-dev": {
-    "dekodeinteraktiv/coding-standards": "3.0.0"
+    "dekodeinteraktiv/coding-standards": "^3.0"
   },
   "extra": {
     "installer-paths": {
@@ -71,8 +71,9 @@
     "local-fix": [
       "bash post-install-scripts/local-webroot-fix.sh --check-folder;"
     ],
-    "test": [
-      "phpcs"
+    "lint": [
+      "@composer install",
+      "./vendor/bin/phpcs"
     ]
   },
   "archive": {
