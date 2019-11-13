@@ -1,7 +1,5 @@
 # Dekode Project Base
 
-![Packagist](https://img.shields.io/packagist/v/dekodeinteraktiv/teft-base.svg) ![PHP from Packagist](https://img.shields.io/packagist/php-v/dekodeinteraktiv/teft-base.svg)
-
 Dekode Project Base is based on Bedrock, a modern WordPress stack that helps you get started with the best development tools and project structure.
 
 Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
