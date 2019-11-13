@@ -58,7 +58,9 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
 
 3. While in the `/app` folder, clone Teft Base using `git clone git@github.com:DekodeInteraktiv/teft-base.git .`.
 
-3. Follow the normal installation instructions.
+4. Restart the site in Local.
+
+5. Follow the normal installation instructions.
 
 ## Deploys
 
