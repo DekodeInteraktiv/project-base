@@ -2,7 +2,7 @@
 /**
  * WordPress view bootstrapper.
  *
- * @package Teft
+ * @package Dekode
  */
 
 declare( strict_types = 1 );

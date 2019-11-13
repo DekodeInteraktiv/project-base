@@ -2,7 +2,7 @@
 /**
  * Staging Environment
  *
- * @package Teft
+ * @package Dekode
  */
 
 declare( strict_types = 1 );

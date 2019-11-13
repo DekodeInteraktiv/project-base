@@ -1,5 +1,5 @@
 {
-  "name": "teft/base",
+  "name": "dekode/project-base",
   "type": "project",
   "license": "GPL-3.0-or-later",
   "description": "Dekode WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",

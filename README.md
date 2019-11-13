@@ -1,13 +1,13 @@
 # Project name
 
-If you are looking for instructions on how to use and install teft-base, please refer to the file [INSTALLATION.md](./INSTALLATION.md)
+If you are looking for instructions on how to use and install project-base, please refer to the file [INSTALLATION.md](./INSTALLATION.md)
 
 Short summary of the main functionality and purpose of the project.
- 
+
 ## Made by
- 
+
  List the people who have been extensively involved in creating this website
-  
+
 ## How to build
 
 List any steps necessary to get this project up and running on a local machine. This could consist of, but is not limited to, these points:
@@ -37,7 +37,7 @@ Any constants be it PHP or Javascript that need to be set, and whether these con
 Add a link to any relevant documentation, and specify which version of an API we use.
 
 **Authorization**
-Add some words about how the third-party server authenticates incoming requests and add any API-keys necessary. 
+Add some words about how the third-party server authenticates incoming requests and add any API-keys necessary.
 
 **Any terminal commands that could be useful**
 Any custom made wp-cli commands which communicate with the third party, should be documented here. Also a link to any commands included in plugins which comunicate with the third-party, should be included.

@@ -8,7 +8,7 @@
  * Author URI:   https://roots.io/
  * License:      MIT License
  *
- * @package Teft
+ * @package Dekode
  */
 
 declare( strict_types = 1 );
