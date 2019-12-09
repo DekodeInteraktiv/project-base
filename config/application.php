@@ -14,18 +14,20 @@ $root_dir = dirname( __DIR__ );
 $webroot_dir = $root_dir . '/public';
 
 /**
- * Expose global env() function from oscarotero/env
+ * Get env variable.
+ *
+ * @param string $key Variable key.
+ * @return string
  */
-Env::init();
+function env( string $key ) : string {
+	return $_ENV[ $key ] ?: '';
+}
 
 /**
- * Use Dotenv to set required environment variables and load .env file in root
+ * Load environment variables
  */
-$dotenv = Dotenv\Dotenv::create( $root_dir );
-if ( file_exists( $root_dir . '/.env' ) ) {
-	$dotenv->load();
-	$dotenv->required( [ 'DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL' ] );
-}
+$dotenv = new \Symfony\Component\Dotenv\Dotenv();
+$dotenv->load( $root_dir . '/.env' );
 
 /**
  * Set up our global environment constant and load its config first
