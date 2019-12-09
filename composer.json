@@ -27,7 +27,7 @@
   "require": {
     "php": ">=7.0",
     "composer/installers": "1.7.0",
-    "vlucas/phpdotenv": "3.6.0",
+    "vlucas/phpdotenv": "4.0.1",
     "johnpbloch/wordpress": "5.3.0",
     "koodimonni-language/core-nb_no": "5.3.0",
     "oscarotero/env": "1.2.0",
