@@ -60,6 +60,19 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
 
 5. Follow the normal installation instructions.
 
+## Alternative Local by Flywheel installation
+This method uses the local by flywheel wordpress installation and settings rather than overriding everything with the project base.
+
+1. Create a site in Local By Flywheel. Use any settings, can be changed later. But make sure multisite is selected if needed.
+
+2. `cd` to the site app folder, (don't remove the public folder). and run `composer create-project dekode/project-base your-project-folder-name`. The project folder name should be the same name as the projects git name.
+
+3. `cd` into public and `rm -rf wp-content` to remove the `wp-content` folder. Then run `ln -s ../your-project-folder-name/web/app wp-content` or `mklink /d wp-content ..\your-project-folder-name\web\app`. To create a symlink from wp-content to the projects content folder.
+
+4. `cd` back inte your project folder `cd ../your-project-folder-name` and run `composer install`
+
+5. All done. you don't need to touch .env files and no need to go into the public folder again, other than to add wp-constants if needed. Changing settings, environments, wp-versions and so on can be done from the Local By Flywheel GUI.
+
 ## Deploys
 `composer install` must be run as part of the deploy process.
 
