@@ -83,7 +83,7 @@ define( 'NONCE_SALT', env( 'NONCE_SALT' ) );
 if ( env( 'IS_MULTISITE' ) ) {
 	define( 'WP_ALLOW_MULTISITE', true );
 	define( 'MULTISITE', true );
-	define( 'SUBDOMAIN_INSTALL', false );
+	define( 'SUBDOMAIN_INSTALL', env( 'SUBDOMAIN_INSTALL' ) ?: false );
 	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE' ) ?: parse_url( WP_HOME, PHP_URL_HOST ) );
 	define( 'PATH_CURRENT_SITE', '/' );
 	define( 'SITE_ID_CURRENT_SITE', 1 );
