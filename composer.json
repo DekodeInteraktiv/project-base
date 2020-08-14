@@ -22,6 +22,10 @@
     {
       "type": "composer",
       "url": "https://wp-languages.github.io"
+    },
+    {
+      "type": "composer",
+      "url": "https://packages.teft.io"
     }
   ],
   "require": {
@@ -29,10 +33,11 @@
     "composer/installers": "1.9.0",
     "johnpbloch/wordpress": "5.5.0",
     "koodimonni-language/core-nb_no": "5.5",
-    "dekode/teft-theme": "1.0.6",
     "dekode/youtube-embed-nocookie": "1.3.0",
     "symfony/dotenv": "5.1.3",
-    "dekodeinteraktiv/resets": "1.0.0"
+    "dekodeinteraktiv/resets": "1.0.0",
+    "teft/teft-cards": "2.3.1",
+    "teft/teft-theme": "1.0.4"
   },
   "require-dev": {
     "dekodeinteraktiv/coding-standards": "3.3.0"
