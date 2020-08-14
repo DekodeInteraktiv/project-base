@@ -17,10 +17,6 @@
     },
     {
       "type": "composer",
-      "url": "https://wp-languages.github.io"
-    },
-    {
-      "type": "composer",
       "url": "https://packages.teft.io"
     }
   ],
@@ -28,8 +24,8 @@
     "php": ">=7.0",
     "composer/installers": "1.9.0",
     "johnpbloch/wordpress": "5.5.0",
-    "koodimonni-language/core-nb_no": "5.5",
     "symfony/dotenv": "5.1.3",
+    "inpsyde/wp-translation-downloader": "1.1.3",
     "dekodeinteraktiv/resets": "1.0.0",
     "teft/teft-cards": "2.3.1",
     "teft/teft-theme": "1.0.4"
@@ -44,9 +40,11 @@
       "public/content/plugins/{$name}/": [ "type:wordpress-plugin" ],
       "public/content/themes/{$name}/": [ "type:wordpress-theme" ]
     },
-    "dropin-paths": {
-      "public/content/languages/": [ "vendor:koodimonni-language" ],
-      "public/content/languages/plugins/": [ "vendor:koodimonni-plugin-language" ]
+    "wp-translation-downloader": {
+      "languages": [
+        "nb_NO"
+      ],
+      "directory": "public/content/languages"
     }
   },
   "scripts": {
