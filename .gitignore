@@ -18,7 +18,7 @@ public/content/languages
 
 # Plugins
 public/content/plugins
-public/content/mu-plugins/resets
+public/content/mu-plugins/wp-resets
 
 # Themes
 public/content/themes/teft-theme
