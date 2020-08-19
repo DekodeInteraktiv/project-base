@@ -31,7 +31,7 @@
     "teft/teft-theme": "1.0.4"
   },
   "require-dev": {
-    "dekodeinteraktiv/coding-standards": "3.3.0"
+    "dekode/coding-standards": "3.4.0"
   },
   "extra": {
     "wordpress-install-dir": "public/wp",
