@@ -20,9 +20,6 @@ public/content/languages
 public/content/plugins
 public/content/mu-plugins/wp-resets
 
-# Themes
-public/content/themes/teft-theme
-
 # Upgrade and uploads
 public/content/upgrade
 public/content/uploads
