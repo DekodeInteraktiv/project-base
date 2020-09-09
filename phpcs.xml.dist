@@ -9,5 +9,4 @@
 	<exclude-pattern>public/content/languages</exclude-pattern>
 	<exclude-pattern>public/content/plugins</exclude-pattern>
 	<exclude-pattern>public/content/uploads</exclude-pattern>
-	<exclude-pattern>public/content/themes/teft-theme</exclude-pattern>
 </ruleset>
