@@ -82,3 +82,47 @@ Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://r
 
 [roots-wp-salt]:https://roots.io/salts.html
 [wp-cli-dotenv]:https://github.com/aaemnnosttv/wp-cli-dotenv-command
+
+
+
+## Recent alterative with Local
+
+1. Create a site `sample1` with Local inside your regular projects folder (named as `$PATH` below in the commands)
+You will endup with a folder that contains 
+- app 
+- conf 
+- logs
+
+2. Open the terminal and run the commands
+$ `cd $PATH/sample1/app`
+$ `composer create-project dekode/project-base sample1`
+
+At this point you should have a structure like:
+- app 
+	- public
+	- sample1
+- conf 
+- logs
+
+If at this step you get any errors, check the constrains, 
+update the composer file and run the install command:
+
+`$ cd sample1/`
+`$ composer install`
+`$ cd ../public/`
+`$ rm -rf wp-content`
+
+Local is running WordPress from public folder, so we need to symlink the project folder content to the WordPress content
+
+`$ ln -s $PATH/sample1/app/sample1/public/content/ $PATH/sample1/app/public/wp-content`
+
+If that worked, check the site. 
+
+**IMPORTANT!** The theme is not activated, you will see the WSOD.
+Login to admin and activate the theme.
+
+**NOTE!**
+The theme that comes with the project setup is built, and cannot be used for development. 
+
+@TODO - make this easy, with commands.
+To get a functional / development-ready theme, setup locally the teft project, pull from master, find the theme, copy that in your project, test if the composer and packages can be installed, run the build commands
