@@ -20,7 +20,7 @@ $webroot_dir = $root_dir . '/public';
  * @return string
  */
 function env( string $key ) : string {
-	return $_ENV[ $key ] ?: '';
+	return $_ENV[ $key ] ?? '';
 }
 
 /**
@@ -84,7 +84,7 @@ if ( env( 'IS_MULTISITE' ) ) {
 	define( 'WP_ALLOW_MULTISITE', true );
 	define( 'MULTISITE', true );
 	define( 'SUBDOMAIN_INSTALL', env( 'SUBDOMAIN_INSTALL' ) ?: false );
-	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE' ) ?: parse_url( WP_HOME, PHP_URL_HOST ) );
+	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE' ) ?: parse_url( WP_HOME, PHP_URL_HOST ) ); // phpcs:ignore
 	define( 'PATH_CURRENT_SITE', '/' );
 	define( 'SITE_ID_CURRENT_SITE', 1 );
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
