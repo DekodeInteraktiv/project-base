@@ -1,0 +1,32 @@
+name: Lint JS and CSS
+
+on:
+  push:
+    branches: [ stage ]
+  pull_request:
+    branches: [ stage ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - uses: actions/cache@v2
+      id: npm-cache
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install Dependencies
+      run: npm ci
+    - name: Lint CSS
+      run: npm run lint:css
+    - name: Lint JS
+      run: npm run lint:js
+    - name: Lint package.json files
+      run: npm run lint:pkg-json
