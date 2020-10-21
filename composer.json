@@ -54,7 +54,7 @@
 	"require-dev": {
 		"dekode/coding-standards": "3.4.0",
 		"wp-cli/i18n-command": "2.2.5",
-		"dekode/logging": "~1"
+		"dekode/logging": "@dev"
 	},
 	"extra": {
 		"wordpress-install-dir": "public/wp",

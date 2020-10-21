@@ -41,3 +41,7 @@ sql/
 
 # Other
 debug.log
+
+# Remove this when starting project …
+/composer.lock
+/package-lock.json
