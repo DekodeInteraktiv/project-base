@@ -1,0 +1,16 @@
+{
+	"extends": "@teft/stylelint-config",
+	"plugins": [
+		"stylelint-order"
+	],
+	"rules": {
+		"order/properties-alphabetical-order": true,
+		"at-rule-empty-line-before": [ "always", {
+			"except": [ "blockless-after-blockless", "first-nested" ],
+			"ignore": [ "after-comment" ]
+		} ],
+		"at-rule-no-unknown": [ true, {
+			"ignoreAtRules": "extend"
+		} ]
+	}
+}

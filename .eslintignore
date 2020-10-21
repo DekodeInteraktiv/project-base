@@ -1,0 +1,10 @@
+public/content/languages
+public/content/plugins
+public/content/themes
+public/content/uploads
+
+node_modules
+dist
+build
+vendor
+wp

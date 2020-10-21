@@ -1,0 +1,48 @@
+{
+	"name": "@dekode/project-base",
+	"private": true,
+	"engines": {
+		"node": "12",
+		"npm": "6",
+		"yarn": "Please use npm"
+	},
+	"dependencies": {
+		"@teft/buttons": "1.0.0",
+		"@teft/form": "0.1.3",
+		"@teft/reset": "0.0.6",
+		"@teft/theme": "1.0.0",
+		"@teft/typography": "0.0.5",
+		"@teft/utilities": "0.0.5",
+		"@teft/viewport": "0.0.6",
+		"@teft/wordpress": "0.3.2",
+		"@wordpress/icons": "2.4.0",
+		"classnames": "2.2.6",
+		"consolidated-events": "2.0.2",
+		"file-loader": "^6.1.0"
+	},
+	"devDependencies": {
+		"@dekode/eslint-plugin": "0.0.1",
+		"@teft/editor-tools": "0.2.4",
+		"@teft/postcss-preset": "0.0.1",
+		"@teft/stylelint-config": "0.1.0",
+		"@wordpress/scripts": "12.1.1",
+		"concurrently": "5.3.0",
+		"fast-glob": "3.2.4",
+		"stylelint-order": "4.1.0"
+	},
+	"scripts": {
+		"build": "wp-scripts build",
+		"check-engines": "wp-scripts check-engines",
+		"format:js": "wp-scripts format-js",
+		"lint": "concurrently \"npm run lint:js\" \"npm run lint:pkg-json\" \"npm run lint:css\"",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:md:js": "wp-scripts lint-md-js",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start",
+		"test:e2e": "wp-scripts test-e2e",
+		"test:unit": "wp-scripts test-unit-js"
+	}
+}
