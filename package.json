@@ -22,10 +22,9 @@
 	},
 	"devDependencies": {
 		"@dekode/eslint-plugin": "0.0.1",
-		"@teft/editor-tools": "0.2.4",
+		"@dekode/stylelint-config": "1.0.1",
 		"@teft/postcss-preset": "0.0.1",
-		"@teft/stylelint-config": "0.1.0",
-		"@wordpress/scripts": "12.1.1",
+		"@wordpress/scripts": "12.4.0",
 		"concurrently": "5.3.0",
 		"fast-glob": "3.2.4",
 		"stylelint-order": "4.1.0"
