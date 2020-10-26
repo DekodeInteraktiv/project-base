@@ -52,7 +52,7 @@
 		"boxuk/wp-muplugin-loader": "~1.1.2"
 	},
 	"require-dev": {
-		"dekode/coding-standards": "3.4.0",
+		"dekode/coding-standards": "4.0.0",
 		"wp-cli/i18n-command": "2.2.5",
 		"dekode/logging": "@dev"
 	},
