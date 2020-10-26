@@ -31,7 +31,7 @@
     "wpackagist-plugin/spinupwp": "^1.2"
   },
   "require-dev": {
-    "dekode/coding-standards": "3.4.0"
+    "dekode/coding-standards": "4.0.0"
   },
   "extra": {
     "wordpress-install-dir": "public/wp",
