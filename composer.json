@@ -50,7 +50,8 @@
   "scripts": {
     "post-install-cmd": [
       "rm -rf public/wp/wp-content",
-      "rm -rf public/wp/composer.json"
+      "rm -rf public/wp/composer.json",
+      "cp public/content/plugins/spinupwp/drop-ins/object-cache.php public/content/object-cache.php"
     ],
     "post-root-package-install": [
       "cp .env.example .env"
