@@ -19,6 +19,7 @@ public/content/languages
 # Plugins
 public/content/plugins
 public/content/mu-plugins/wp-resets
+public/content/object-cache.php
 
 # Upgrade and uploads
 public/content/upgrade
