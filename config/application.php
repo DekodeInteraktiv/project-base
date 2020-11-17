@@ -109,7 +109,7 @@ define( 'DISALLOW_FILE_EDIT', true );
 if ( env( 'WP_ALLOW_MULTISITE' ) ) {
 	define( 'WP_ALLOW_MULTISITE', true );
 	define( 'MULTISITE', true );
-	define( 'SUBDOMAIN_INSTALL', env( 'SUBDOMAIN_INSTALL' ) ?: false );
+	define( 'SUBDOMAIN_INSTALL', filter_var( env( 'SUBDOMAIN_INSTALL' ), FILTER_VALIDATE_BOOLEAN ) ?: false );
 	// phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
 	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE' ) ?: parse_url( WP_HOME, PHP_URL_HOST ) );
 	define( 'PATH_CURRENT_SITE', '/' );
