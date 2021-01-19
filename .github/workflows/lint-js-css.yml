@@ -2,9 +2,9 @@ name: Lint JS and CSS
 
 on:
   push:
-    branches: [ stage ]
+    branches: [ master ]
   pull_request:
-    branches: [ stage ]
+    branches: [ master ]
 
 jobs:
   build:
