@@ -118,11 +118,6 @@ if ( env( 'WP_ALLOW_MULTISITE' ) ) {
 }
 
 /**
- * GTM code
- */
-define( 'KF_GTM_CODE', env( 'KF_GTM_CODE' ) );
-
-/**
  * To make WP load each script on the administration page individually; protects against CVE-2018-6389 DoS attacks
  */
 define( 'CONCATENATE_SCRIPTS', env( 'CONCATENATE_SCRIPTS' ) ?: false );
