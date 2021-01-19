@@ -37,10 +37,6 @@
 		"dekode-packages": {
 			"type": "composer",
 			"url": "https://packages.dekodes.no"
-		},
-		"dekode-composer": {
-			"type": "composer",
-			"url": "https://composer.dekodes.no/"
 		}
 	},
 	"require": {
@@ -65,6 +61,7 @@
 			"public/content/themes/{$name}/": ["type:wordpress-theme"]
 		},
 		"wp-translation-downloader": {
+			"auto-run": false,
 			"languages": [
 				"nb_NO"
 			],
@@ -81,8 +78,11 @@
 		"build": [
 			"@composer install"
 		],
+		"build-translations": [
+			"@composer wp-translation-downloader:download"
+		],
 		"build-for-deploy": [
-			"@composer install --no-dev"
+			"@composer install --no-dev && composer wp-translation-downloader:download"
 		],
 		"makepot": [
 			"wp i18n make-pot . --exclude=\".github,plugins,public/content/plugins,vendor,public/wp,node_modules,tests\" --slug=project-base"
