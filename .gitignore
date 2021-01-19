@@ -18,6 +18,7 @@ public/content/mu-plugins/*
 !public/content/mu-plugins/load.php
 public/content/uploads
 public/content/db.php
+public/content/object-cache.php
 
 # Composer
 vendor
