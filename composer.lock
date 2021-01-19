@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5db3e96ca9753c42462c0f3bd0aa61e7",
+    "content-hash": "588c3414baf6fb9ea2307fcd9986f75f",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -212,6 +212,38 @@
                 }
             ],
             "time": "2021-01-14T11:07:16+00:00"
+        },
+        {
+            "name": "dekode/wp-resets",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DekodeInteraktiv/wp-resets.git",
+                "reference": "db75f60aa2d2f115dbb63aced1bfaedd187c4c16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DekodeInteraktiv/wp-resets/zipball/db75f60aa2d2f115dbb63aced1bfaedd187c4c16",
+                "reference": "db75f60aa2d2f115dbb63aced1bfaedd187c4c16",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "dekode/coding-standards": "3.4.0"
+            },
+            "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "WordPress must-use plugin for Dekode",
+            "support": {
+                "issues": "https://github.com/DekodeInteraktiv/wp-resets/issues",
+                "source": "https://github.com/DekodeInteraktiv/wp-resets/tree/master"
+            },
+            "time": "2020-09-02T21:18:13+00:00"
         },
         {
             "name": "inpsyde/wp-translation-downloader",
