@@ -1,34 +1,46 @@
-name: PHP Composer
-
-on:
-  push:
-    branches: [ stage ]
-  pull_request:
-    branches: [ stage ]
+name: PHP CodeSniffer
 
 jobs:
-  build:
+  phpcs:
+    name: PHP coding standards
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Set up Composer caching
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-composer-dependencies
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
-    - name: Install dependencies
-      if: steps.composer-cache.outputs.cache-hit != 'true'
-      env:
-        COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-      run: composer install --prefer-dist --no-progress --no-suggest
-    - name: Run test suite
-      run: composer lint
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          coverage: none
+          tools: composer, cs2pr
+
+      - name: Log debug information
+        run: |
+          php --version
+          composer --version
+
+      - name: Install Composer dependencies
+        run: |
+          composer install --prefer-dist --no-suggest --no-progress --no-ansi --no-interaction
+          echo "vendor/bin" >> $GITHUB_PATH
+
+      - name: Log PHPCS debug information
+        run: vendor/bin/phpcs -i
+
+      - name: Run PHPCS on all files
+        run: vendor/bin/phpcs . -q -n --report=checkstyle | cs2pr
