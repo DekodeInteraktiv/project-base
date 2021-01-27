@@ -1,6 +1,6 @@
 <?php
 /**
- * Production Environment
+ * Application production config.
  *
  * @package Dekode
  */

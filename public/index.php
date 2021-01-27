@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress view bootstrapper.
+ * Bootstrapper
  *
  * @package Dekode
  */

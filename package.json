@@ -1,0 +1,26 @@
+{
+	"name": "@dekode/project-base",
+	"private": true,
+	"engines": {
+		"node": "12",
+		"npm": "6",
+		"yarn": "Please use npm"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@dekode/eslint-plugin": "0.0.1",
+		"@dekode/stylelint-config": "1.0.1",
+		"@teft/postcss-preset": "0.0.1",
+		"@wordpress/scripts": "12.6.1",
+		"fast-glob": "3.2.5"
+	},
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build",
+		"check-engines": "wp-scripts check-engines",
+		"lint": "npm run lint:js && npm run lint:pkg-json && npm run lint:css",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:pkg-json": "wp-scripts lint-pkg-json"
+	}
+}

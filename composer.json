@@ -1,64 +1,92 @@
 {
-  "name": "dekode/project-base",
-  "type": "project",
-  "license": "GPL-3.0-or-later",
-  "description": "Dekode WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
-  "config": {
-    "preferred-install": "dist"
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    },
-    {
-      "type": "composer",
-      "url": "https://packages.dekodes.no/"
-    },
-    {
-      "type": "composer",
-      "url": "https://packages.teft.io"
-    }
-  ],
-  "require": {
-    "php": ">=7.0",
-    "composer/installers": "1.9.0",
-    "johnpbloch/wordpress": "5.5.1",
-    "symfony/dotenv": "5.1.7",
-    "inpsyde/wp-translation-downloader": "1.2.1",
-    "dekode/wp-resets": "2.0.2",
-    "teft/teft-cards": "3.3.1",
-    "wpackagist-plugin/spinupwp": "^1.2"
-  },
-  "require-dev": {
-    "dekode/coding-standards": "3.4.0"
-  },
-  "extra": {
-    "wordpress-install-dir": "public/wp",
-    "installer-paths": {
-      "public/content/mu-plugins/{$name}/": [ "type:wordpress-muplugin" ],
-      "public/content/plugins/{$name}/": [ "type:wordpress-plugin" ],
-      "public/content/themes/{$name}/": [ "type:wordpress-theme" ]
-    },
-    "wp-translation-downloader": {
-      "languages": [
-        "nb_NO"
-      ],
-      "directory": "public/content/languages"
-    }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "rm -rf public/wp/wp-content",
-      "rm -rf public/wp/composer.json",
-      "cp public/content/plugins/spinupwp/drop-ins/object-cache.php public/content/object-cache.php"
-    ],
-    "post-root-package-install": [
-      "cp .env.example .env"
-    ],
-    "lint": [
-      "@composer install",
-      "./vendor/bin/phpcs"
-    ]
-  }
+	"name": "dekode/project-base",
+	"description": "Dekode WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+	"license": "GPL-3.0-or-later",
+	"prefer-stable": true,
+	"minimum-stability": "dev",
+	"repositories": {
+		"mu-plugins": {
+			"type": "path",
+			"url": "packages/mu-plugins/*",
+			"options": {
+				"symlink": true
+			}
+		},
+		"plugins": {
+			"type": "path",
+			"url": "packages/plugins/*",
+			"options": {
+				"symlink": true
+			}
+		},
+		"themes": {
+			"type": "path",
+			"url": "packages/themes/*",
+			"options": {
+				"symlink": true
+			}
+		},
+		"wpackagist": {
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		"teft-packages": {
+			"type": "composer",
+			"url": "https://packages.teft.io"
+		},
+		"dekode-packages": {
+			"type": "composer",
+			"url": "https://packages.dekodes.no"
+		}
+	},
+	"require": {
+		"php": ">=7.2",
+		"composer/installers": "1.10.0",
+		"johnpbloch/wordpress": "5.6.0",
+		"boxuk/wp-muplugin-loader": "1.3.0",
+		"dekode/wp-resets": "2.0.2",
+		"inpsyde/wp-translation-downloader": "2.0.2",
+		"symfony/dotenv": "5.2.1",
+		"wpackagist-plugin/spinupwp": "1.2"
+	},
+	"require-dev": {
+		"dekode/coding-standards": "4.0.0",
+		"wp-cli/i18n-command": "2.2.6",
+		"dekode/logging": "@dev"
+	},
+	"extra": {
+		"wordpress-install-dir": "public/wp",
+		"installer-paths": {
+			"public/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+			"public/content/plugins/{$name}/": ["type:wordpress-plugin"],
+			"public/content/themes/{$name}/": ["type:wordpress-theme"]
+		},
+		"wp-translation-downloader": {
+			"auto-run": false,
+			"languages": [
+				"nb_NO"
+			],
+			"directory": "public/content/languages"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"cp public/content/plugins/spinupwp/drop-ins/object-cache.php public/content/object-cache.php"
+		],
+		"lint": [
+			"./vendor/bin/phpcs ."
+		],
+		"build": [
+			"@composer install"
+		],
+		"build-translations": [
+			"@composer wp-translation-downloader:download"
+		],
+		"build-for-deploy": [
+			"@composer install --no-dev && composer wp-translation-downloader:download"
+		],
+		"makepot": [
+			"wp i18n make-pot . --exclude=\".github,plugins,public/content/plugins,vendor,public/wp,node_modules,tests\" --slug=project-base"
+		]
+	}
 }
