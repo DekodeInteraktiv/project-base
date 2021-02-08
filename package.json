@@ -11,7 +11,7 @@
 		"@dekode/eslint-plugin": "0.0.1",
 		"@dekode/stylelint-config": "1.0.1",
 		"@teft/postcss-preset": "0.0.1",
-		"@wordpress/scripts": "12.6.1",
+		"@wordpress/scripts": "13.0.3",
 		"fast-glob": "3.2.5"
 	},
 	"scripts": {
