@@ -1,0 +1,7 @@
+{
+	"name": "dekode/dekode-theme",
+	"description": "Dekode boiler plate theme",
+	"type": "wordpress-theme",
+	"license": "GPL-3.0-or-later",
+	"version": "1.0.5"
+}

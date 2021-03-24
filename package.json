@@ -6,7 +6,15 @@
 		"npm": "6",
 		"yarn": "Please use npm"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"@teft/buttons": "^1.0.0",
+		"@teft/form": "^0.1.6",
+		"@teft/reset": "0.0.6",
+		"@teft/typography": "0.0.5",
+		"@teft/utilities": "0.0.5",
+		"@teft/wordpress": "^0.4.0",
+		"consolidated-events": "^2.0.2"
+	},
 	"devDependencies": {
 		"@dekode/eslint-plugin": "0.0.1",
 		"@dekode/stylelint-config": "1.0.1",

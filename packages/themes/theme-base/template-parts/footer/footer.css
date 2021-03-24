@@ -1,0 +1,7 @@
+.site-footer {
+	padding: 0 var(--teft-theme-site-padding);
+}
+
+.footer-widgets {
+	display: flex;
+}
