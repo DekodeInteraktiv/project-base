@@ -28,7 +28,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 2. Create a new site in Local by Flywheel
 3. Follow one of the methods below (not both!)
 
-### Setup replicating server structure
+### Method 2 - Setup replicating server structure
 4. Update environment variables in `./config/development.php`  file:
   * `DB_NAME` - Database name
   * `DB_USER` - Database user
@@ -52,7 +52,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 7. Restart the site in Local.
 8. Run the scripts in `./tools/local/`
 
-### Setup using Local structure (symlink method)
+### Method 2 -Setup using Local structure (symlink method)
 
 4. `cd` to the site app folder and clone the existing project (or the one you setup on step 1) from github.
 5. `cd` into public and remove wp-content `rm -rf wp-content`
