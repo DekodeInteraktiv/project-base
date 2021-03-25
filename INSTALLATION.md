@@ -75,7 +75,7 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 *Note: if your plugin is a gutenberg block, you can use [block-base](https://github.com/DekodeInteraktiv/block-base)*
 
 3. If your package should be installed using npm (for frontend deps, like custom react components) Add a package.json, it needs a minimum of the following data:
-``
+```
 {
   "name": "package-name",
   "private": true,
@@ -87,12 +87,12 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
-``
+```
 
 4. If your package has front end assets such as scripts or css add a `entry-files.json` with the following structure naming the src files that should be build. (the src files should be located in a folder called `src`)
-``
+```
 [ "index.js", "style.css", "editor.css" ]
-``
+```
 
 5. Go back to the project root and update the composer.json or package.json depending on package type. For composer add a entry under "require" like such `"project/package-name": "@dev"`. For package.json add an entry under "devDependencies" like such `"package-name": "file:packages/folder/package-name"`.
 
