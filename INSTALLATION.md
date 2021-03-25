@@ -20,7 +20,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 - *Config* - Environment variable setup
 
 ## Local setup
-1. If setting up a new project, create a git repo using [Project base]https://github.com/DekodeInteraktiv/project-base as the template. Otherwise skip this step.
+1. If setting up a new project, create a git repo using [Project base](https://github.com/DekodeInteraktiv/project-base) as the template. Otherwise skip this step.
 2. Create a new site in Local by Flywheel, make sure that you enable multisite (subdir) if relevant for the project.
 3. Follow one of the methods below (not both!)
 
