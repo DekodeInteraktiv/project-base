@@ -14,8 +14,8 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 
 ## Structure
 
-- *Packages* - Contains all of the code developed for the project such as plugins, themes, mu-plugins and any custom libs etc. This gets built into and symlinked into public by composer.
-- *Public* - The files used by WordPress. Contents are generated automatically from packages using composer.
+- *Packages* - Contains all of the code developed for the project such as plugins, themes, mu-plugins and any custom libs etc. This gets built into public by composer using symlinks.
+- *Public* - The files used by WordPress. Contents are generated automatically from packages using composer. This folder shouldn't need to be touched at all.
 - *Tools* - Build and setup scripts used by Codeship and Local
 - *Config* - Environment variable setup
 
