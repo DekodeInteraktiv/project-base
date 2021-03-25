@@ -63,3 +63,9 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 
 ## Documentation
 Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
+
+PostCSS [https://github.com/postcss/postcss/tree/main/docs](https://github.com/postcss/postcss/tree/main/docs)
+
+WebPack [https://webpack.js.org/concepts/](https://webpack.js.org/concepts/)
+
+WPscripts [https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
