@@ -14,14 +14,10 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 
 ## Structure
 
-- Packages
- Contains all of the code developed for the project such as plugins, themes, mu-plugins and any custom libs etc. This gets built into and symlinked into public by composer.
-- Public
- The files used by WordPress. Contents are generated automatically from packages using composer.
-- Tools
- Build and setup scripts used by Codeship and Local
-- Config
- Environment variable setup
+- *Packages* - Contains all of the code developed for the project such as plugins, themes, mu-plugins and any custom libs etc. This gets built into and symlinked into public by composer.
+- *Public* - The files used by WordPress. Contents are generated automatically from packages using composer.
+- *Tools* - Build and setup scripts used by Codeship and Local
+- *Config* - Environment variable setup
 
 ## Local setup
 1. If setting up a new project, create a git repo using [Project base]https://github.com/DekodeInteraktiv/project-base as the template. Otherwise skip this step.
