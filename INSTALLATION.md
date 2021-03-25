@@ -55,11 +55,46 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 6. create a symlink in public from `wp-content` to `../{project folder}/public/content`
 7. Run the scripts in `./tools/local/`
 
-### Installation and build
+## Installation and build
 Run `composer install` and `npm install && npm run build` in root to build the project.
 
-#### Extending the builds
+### Extending the builds
 Project-base uses wp-scripts to build front end assets using the `npm run build` or `npm run start` commands. wp-scripts in turn uses webpack and postcss. You can extend those by editing the postcss.config.js and webpack.config.js files.
+
+## Adding a new package (ex. plugin/mu-plugin/theme)
+1. Add a folder to the relevant category in `./packages`. (create one if none exists). So for a plugin, create a folder in the `./packages/plugins` folder.
+
+2. If your package should be installed using composer (for themes, plugins, mu-plugins and php deps) Add a composer.json, it needs a minimum of the following data:
+``
+{
+	"name": "project/package-name",
+	"description": "Short description of the package.",
+	"type": "wordpress-plugin/wordpress-muplugin/wordpress-theme/other",
+}
+``
+*Note: if your plugin is a gutenberg block, you can use [block-base](https://github.com/DekodeInteraktiv/block-base)*
+
+3. If your package should be installed using npm (for frontend deps, like custom react components) Add a package.json, it needs a minimum of the following data:
+``
+{
+  "name": "package-name",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Package description",
+  "author": "Dekode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+``
+
+4. If your package has front end assets such as scripts or css add a `entry-files.json` with the following structure naming the src files that should be build. (the src files should be located in a folder called `src`)
+``
+[ "index.js", "style.css", "editor.css" ]
+``
+
+5. Install the package using `composer update` or `npm install` depending on type. you might need to re-run `npm run build` or `npm run start` if you have installed a new package containing files that need building.
 
 ## Documentation
 Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
