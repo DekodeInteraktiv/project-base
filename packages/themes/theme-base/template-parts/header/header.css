@@ -1,0 +1,19 @@
+@import "./branding/branding.css";
+@import "./menu/menu.css";
+@import "./search/search.css";
+
+.site-header {
+	padding: 0 var(--teft-theme-site-padding);
+}
+
+.site-header .site-container {
+	align-items: center;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+@media (--theme-desktop-menu) {
+	.site-header .site-container {
+		min-height: 70px;
+	}
+}

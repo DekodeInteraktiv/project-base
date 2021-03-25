@@ -47,7 +47,8 @@
 		"dekode/wp-resets": "2.0.2",
 		"inpsyde/wp-translation-downloader": "2.0.2",
 		"symfony/dotenv": "5.2.1",
-		"wpackagist-plugin/spinupwp": "1.2"
+		"wpackagist-plugin/spinupwp": "1.2",
+		"dekode/dekode-theme": "@dev"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "4.0.0",
