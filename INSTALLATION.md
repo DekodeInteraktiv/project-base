@@ -94,7 +94,9 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 [ "index.js", "style.css", "editor.css" ]
 ``
 
-5. Go back to the project root and install the package using `composer update` or `npm install` depending on type. you might need to re-run `npm run build` or `npm run start` if you have installed a new package containing files that need building.
+5. Go back to the project root and update the composer.json or package.json depending on package type. For composer add a entry under "require" like such `"project/package-name": "@dev"`. For package.json add an entry under "devDependencies" like such `"package-name": "file:packages/folder/package-name"`.
+
+6. Install the package using `composer update` or `npm install` depending on type. you might need to re-run `npm run build` or `npm run start` if you have installed a new package containing files that need building.
 
 ## Documentation
 Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
