@@ -28,7 +28,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 2. Create a new site in Local by Flywheel
 3. Follow one of the methods below (not both!)
 
-### Method 2 - Setup replicating server structure
+### Method 1 - Setup replicating server structure
 4. Update environment variables in `./config/development.php`  file:
   * `DB_NAME` - Database name
   * `DB_USER` - Database user
