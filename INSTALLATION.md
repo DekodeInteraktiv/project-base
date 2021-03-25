@@ -1,4 +1,4 @@
-# Dekode Project Base
+# Dekode Project Base - Installation
 
 Dekode Project Base is based on Bedrock, a modern WordPress stack that helps you get started with the best development tools and project structure.
 Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
@@ -21,11 +21,11 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 
 ## Local setup
 1. If setting up a new project, create a git repo using [Project base]https://github.com/DekodeInteraktiv/project-base as the template. Otherwise skip this step.
-2. Create a new site in Local by Flywheel
+2. Create a new site in Local by Flywheel, make sure that you enable multisite (subdir) if relevant for the project.
 3. Follow one of the methods below (not both!)
 
 ### Method 1 - Setup replicating server structure
-4. Update environment variables in `./config/development.php`  file:
+4. Rename .env.example to .env and update environment variables:
   * `DB_NAME` - Database name
   * `DB_USER` - Database user
   * `DB_PASSWORD` - Database password
@@ -57,6 +57,9 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 
 ### Installation and build
 Run `composer install` and `npm install && npm run build` in root to build the project.
+
+#### Extending the builds
+Project-base uses wp-scripts to build front end assets using the `npm run build` or `npm run start` commands. wp-scripts in turn uses webpack and postcss. You can extend those by editing the postcss.config.js and webpack.config.js files.
 
 ## Documentation
 Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
