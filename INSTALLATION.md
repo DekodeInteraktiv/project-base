@@ -65,13 +65,13 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 1. Add a folder to the relevant category in `./packages`. (create one if none exists). So for a plugin, create a folder in the `./packages/plugins` folder.
 
 2. If your package should be installed using composer (for themes, plugins, mu-plugins and php deps) Add a composer.json, it needs a minimum of the following data:
-``
+```
 {
 	"name": "project/package-name",
 	"description": "Short description of the package.",
 	"type": "wordpress-plugin/wordpress-muplugin/wordpress-theme/other",
 }
-``
+```
 *Note: if your plugin is a gutenberg block, you can use [block-base](https://github.com/DekodeInteraktiv/block-base)*
 
 3. If your package should be installed using npm (for frontend deps, like custom react components) Add a package.json, it needs a minimum of the following data:
