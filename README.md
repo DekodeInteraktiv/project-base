@@ -54,4 +54,4 @@ Project data is anonymized using a config file, `anonymize.config.json`, where t
 
 This anonymization is performed using the [anonymize-mysqldump project](https://github.com/humanmade/go-anonymize-mysqldump), where you can also see the [structure of the config file](https://github.com/humanmade/go-anonymize-mysqldump#config-file).
 
-The default configuration file provides support for a vanilla WordPress installation, with just data relating to comment sand usermeta accounted for.
+The default configuration file provides support for a vanilla WordPress installation, with just data relating to comments and usermeta accounted for.
