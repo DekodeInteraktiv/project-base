@@ -16,6 +16,13 @@ const FixStyleWebpackPlugin = require( './node_modules/@wordpress/scripts/config
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
 
+const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
+require( 'dotenv' ).config();
+
+const browserSyncProxy = process.env.BROWSER_SYNC_PROXY ? process.env.BROWSER_SYNC_PROXY : process.env.WP_HOME;
+const browserSyncPort = process.env.BROWSER_SYNC_PORT ? process.env.BROWSER_SYNC_PORT : 3002;
+const browserSyncIsHttps = process.env.BROWSER_SYNC_HTTPS === 'true';
+
 function getBuildPath( name, prefix = '' ) {
 	return `${ name.split( '|' )[ 0 ] }/build/${ prefix }${ name.split( '|' )[ 1 ] }`;
 }
@@ -65,6 +72,12 @@ const config = {
 		} ),
 		new FixStyleWebpackPlugin(),
 		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
+		new BrowserSyncPlugin( {
+			files: '**/*.php',
+			proxy: browserSyncProxy,
+			port: browserSyncPort,
+			https: browserSyncIsHttps,
+		} ),
 	],
 };
 
