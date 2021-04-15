@@ -5,6 +5,8 @@ const glob = require( 'fast-glob' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const fs = require( 'fs' );
 const path = require( 'path' );
+const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
+require( 'dotenv' ).config();
 
 /**
  * WordPress dependencies
@@ -15,9 +17,6 @@ const FixStyleWebpackPlugin = require( './node_modules/@wordpress/scripts/config
 
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
-
-const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
-require( 'dotenv' ).config();
 
 const browserSyncProxy = process.env.BROWSER_SYNC_PROXY ? process.env.BROWSER_SYNC_PROXY : process.env.WP_HOME;
 const browserSyncPort = process.env.BROWSER_SYNC_PORT ? process.env.BROWSER_SYNC_PORT : 3002;
