@@ -71,11 +71,11 @@ const config = {
 			moduleFilename: ( { name } ) => getBuildPath( name ).replace( '.js', '.css' ),
 		} ),
 		new FixStyleWebpackPlugin(),
-		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } )
+		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
 	],
 };
 
-if( browserSyncEnable ) {
+if ( browserSyncEnable ) {
 	config.plugins.push(
 		new BrowserSyncPlugin( {
 			files: '**/*.php',
