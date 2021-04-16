@@ -75,14 +75,14 @@ const config = {
 	],
 };
 
-if(browserSyncEnable) {
+if( browserSyncEnable ) {
 	config.plugins.push(
-		new BrowserSyncPlugin({
+		new BrowserSyncPlugin( {
 			files: '**/*.php',
 			proxy: browserSyncProxy,
 			port: browserSyncPort,
 			https: browserSyncIsHttps,
-		})
+		} ),
 	);
 }
 
