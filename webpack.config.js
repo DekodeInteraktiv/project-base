@@ -5,6 +5,8 @@ const glob = require( 'fast-glob' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const fs = require( 'fs' );
 const path = require( 'path' );
+const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
+require( 'dotenv' ).config();
 
 /**
  * WordPress dependencies
@@ -15,6 +17,11 @@ const FixStyleWebpackPlugin = require( './node_modules/@wordpress/scripts/config
 
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
+
+const browserSyncProxy = process.env.BROWSER_SYNC_PROXY ? process.env.BROWSER_SYNC_PROXY : process.env.WP_HOME;
+const browserSyncPort = process.env.BROWSER_SYNC_PORT ? process.env.BROWSER_SYNC_PORT : 3002;
+const browserSyncIsHttps = process.env.BROWSER_SYNC_HTTPS === 'true';
+const browserSyncEnable = process.env.BROWSER_SYNC_ENABLE === 'true';
 
 function getBuildPath( name, prefix = '' ) {
 	return `${ name.split( '|' )[ 0 ] }/build/${ prefix }${ name.split( '|' )[ 1 ] }`;
@@ -67,5 +74,16 @@ const config = {
 		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
 	],
 };
+
+if ( browserSyncEnable ) {
+	config.plugins.push(
+		new BrowserSyncPlugin( {
+			files: '**/*.php',
+			proxy: browserSyncProxy,
+			port: browserSyncPort,
+			https: browserSyncIsHttps,
+		} ),
+	);
+}
 
 module.exports = config;
