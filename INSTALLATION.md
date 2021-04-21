@@ -48,14 +48,13 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
   Or, you can cut and paste from the [Roots WordPress Salt Generator][roots-wp-salt].
 
 10. `composer install`
-
 11. `npm install`
-
 12. Run the app/tools/local scripts (please note that these might work only if you setup the `MYSQLI_DEFAULT_SOCKET` environment variable, and only after you actually have the plugins and theme installed at step 10).
-  `cd app/tools/local`
-  `./setup-main-site.sh`
-  `./activate-plugins.sh`
-  If you are installing a multisite then also run this `bash multisite.sh`
+
+  * `cd app/tools/local`
+  * `./setup-main-site.sh`
+  * `./activate-plugins.sh`
+  * `bash multisite.sh` (run this only if you are installing a multisite)
 
 13.* If you install a multisite, the URLs are not using https by default, and that can be fixed by running the command `wp search-replace --url=http://{PROJECT}.site 'http://{PROJECT}.site' 'https://{PROJECT}.site' --recurse-objects --network --skip-columns=guid`
 
