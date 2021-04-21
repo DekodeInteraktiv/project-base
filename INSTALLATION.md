@@ -43,13 +43,14 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 9. Automatically generate the security keys
 
   If you want to automatically generate the security keys (assuming you have wp-cli installed locally) you can use the very handy [wp-cli-dotenv-command][wp-cli-dotenv]:
-
       wp package install aaemnnosttv/wp-cli-dotenv-command
       wp dotenv salts regenerate
-
   Or, you can cut and paste from the [Roots WordPress Salt Generator][roots-wp-salt].
+
 10. `composer install`
+
 11. `npm install`
+
 12. Run the app/tools/local scripts (please note that these might work only if you setup the `MYSQLI_DEFAULT_SOCKET` environment variable, and only after you actually have the plugins and theme installed at step 10).
   `cd app/tools/local`
   `./setup-main-site.sh`
