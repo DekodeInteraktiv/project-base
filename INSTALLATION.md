@@ -27,7 +27,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 ### Method 1 - Setup replicating server structure
 4. `cd app` go inside the app folder
 5. `rm -rf public` remove the default public folder
-6. `git clone git@github.com:DekodeInteraktiv/industrienergi.git .` clone the project into the current folder (the . is important)
+6. `git clone git@github.com:DekodeInteraktiv/{YOUR_PROJECT} .` clone the project into the current folder (the . is important)
 7. `cp .env.example .env` copy the environment example file (no not rename it, as it will show as git differences)
 8. Update the environment variables in the .env file
 
