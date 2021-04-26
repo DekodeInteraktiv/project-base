@@ -48,8 +48,8 @@
 		"inpsyde/wp-translation-downloader": "~2.0.2",
 		"symfony/dotenv": "~5.2.1",
 		"wpackagist-plugin/spinupwp": "~1.2.0",
-		"dekode/dekode-theme": "@dev",
-		"wpackagist-plugin/imagify": "~1.9.14"
+		"wpackagist-plugin/imagify": "~1.9.14",
+		"dekode/dekode-theme": "@dev"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "4.0.0",
