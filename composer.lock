@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "313fd6814ce553ed86fb2fe0c5fb94f6",
+    "content-hash": "d1408ab44ab3da129c5fc427e1465564",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -60,6 +60,9 @@
                 "muplugin",
                 "wordpress"
             ],
+            "support": {
+                "source": "https://github.com/boxuk/wp-muplugin-loader/tree/1.3.0"
+            },
             "time": "2020-10-27T09:52:43+00:00"
         },
         {
@@ -190,6 +193,10 @@
                 "zend",
                 "zikula"
             ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v1.10.0"
+            },
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -211,8 +218,8 @@
             "version": "1.0.5",
             "dist": {
                 "type": "path",
-                "url": "packages/themes/dekode-theme",
-                "reference": "aba261265138f6986e8376c9e7bec6f6d7e2a6b3"
+                "url": "packages/themes/theme-base",
+                "reference": "07314a07976eaae3c57db554699146abc56edc5d"
             },
             "type": "wordpress-theme",
             "license": [
@@ -225,23 +232,23 @@
         },
         {
             "name": "dekode/wp-resets",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DekodeInteraktiv/wp-resets.git",
-                "reference": "db75f60aa2d2f115dbb63aced1bfaedd187c4c16"
+                "reference": "e6fa146c58744f489bfe84d91916bb784847cc88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DekodeInteraktiv/wp-resets/zipball/db75f60aa2d2f115dbb63aced1bfaedd187c4c16",
-                "reference": "db75f60aa2d2f115dbb63aced1bfaedd187c4c16",
+                "url": "https://api.github.com/repos/DekodeInteraktiv/wp-resets/zipball/e6fa146c58744f489bfe84d91916bb784847cc88",
+                "reference": "e6fa146c58744f489bfe84d91916bb784847cc88",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0"
             },
             "require-dev": {
-                "dekode/coding-standards": "3.4.0"
+                "dekode/coding-standards": "4.0.0"
             },
             "type": "wordpress-muplugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -249,20 +256,20 @@
                 "GPL-3.0-or-later"
             ],
             "description": "WordPress must-use plugin for Dekode",
-            "time": "2020-09-02T21:18:13+00:00"
+            "time": "2021-04-20T06:48:28+00:00"
         },
         {
             "name": "inpsyde/wp-translation-downloader",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inpsyde/wp-translation-downloader.git",
-                "reference": "e37ea671dd33689eb49e90b57290e45599de5e7e"
+                "reference": "e01829af6eccdb7e48868f7fb2d025a7bfdd58fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inpsyde/wp-translation-downloader/zipball/e37ea671dd33689eb49e90b57290e45599de5e7e",
-                "reference": "e37ea671dd33689eb49e90b57290e45599de5e7e",
+                "url": "https://api.github.com/repos/inpsyde/wp-translation-downloader/zipball/e01829af6eccdb7e48868f7fb2d025a7bfdd58fb",
+                "reference": "e01829af6eccdb7e48868f7fb2d025a7bfdd58fb",
                 "shasum": ""
             },
             "require": {
@@ -297,24 +304,24 @@
                 }
             ],
             "description": "Composer plugin to download translations from wordpress.org API.",
-            "time": "2020-11-23T10:42:54+00:00"
+            "time": "2021-03-25T09:30:06+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.6.0",
+            "version": "5.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "3055975734646c8d0b8caf7b5af168ced6ec4309"
+                "reference": "921c59df22d69339d1a8135b9463791b8431b007"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/3055975734646c8d0b8caf7b5af168ced6ec4309",
-                "reference": "3055975734646c8d0b8caf7b5af168ced6ec4309",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/921c59df22d69339d1a8135b9463791b8431b007",
+                "reference": "921c59df22d69339d1a8135b9463791b8431b007",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.6.0",
+                "johnpbloch/wordpress-core": "5.7.1",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -336,20 +343,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-12-08T22:34:35+00:00"
+            "time": "2021-04-15T02:15:53+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.6.0",
+            "version": "5.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "f074617dd69f466302836d1ae5de75c0bd7b6dfd"
+                "reference": "4d368c02f3e842b446c867589656382f95c6ac58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/f074617dd69f466302836d1ae5de75c0bd7b6dfd",
-                "reference": "f074617dd69f466302836d1ae5de75c0bd7b6dfd",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/4d368c02f3e842b446c867589656382f95c6ac58",
+                "reference": "4d368c02f3e842b446c867589656382f95c6ac58",
                 "shasum": ""
             },
             "require": {
@@ -357,7 +364,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.6.0"
+                "wordpress/core-implementation": "5.7.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -377,7 +384,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-12-08T22:34:23+00:00"
+            "time": "2021-04-15T02:15:49+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -427,6 +434,10 @@
             "keywords": [
                 "wordpress"
             ],
+            "support": {
+                "issues": "https://github.com/johnpbloch/wordpress-core-installer/issues",
+                "source": "https://github.com/johnpbloch/wordpress-core-installer/tree/master"
+            },
             "time": "2020-04-16T21:44:57+00:00"
         },
         {
@@ -495,16 +506,16 @@
         },
         {
             "name": "symfony/dotenv",
-            "version": "v5.2.1",
+            "version": "v5.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dotenv.git",
-                "reference": "204a9dc6f70a13d9d24ebbf2c5ce51be235f3d7b"
+                "reference": "783f12027c6b40ab0e93d6136d9f642d1d67cd6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dotenv/zipball/204a9dc6f70a13d9d24ebbf2c5ce51be235f3d7b",
-                "reference": "204a9dc6f70a13d9d24ebbf2c5ce51be235f3d7b",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/783f12027c6b40ab0e93d6136d9f642d1d67cd6b",
+                "reference": "783f12027c6b40ab0e93d6136d9f642d1d67cd6b",
                 "shasum": ""
             },
             "require": {
@@ -558,7 +569,25 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-08T17:02:38+00:00"
+            "time": "2021-01-27T10:01:46+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/imagify",
+            "version": "1.9.14",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/imagify/",
+                "reference": "tags/1.9.14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/imagify.1.9.14.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/imagify/"
         },
         {
             "name": "wpackagist-plugin/spinupwp",
