@@ -88,6 +88,13 @@ define( 'DB_COLLATE', '' );
 $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
 
 /**
+ * Disable Redis if the environment file decrees it so.
+ */
+if ( env( 'WP_REDIS_DISABLED' ) && 'true' === env( 'WP_REDIS_DISABLED' ) ) {
+	define( 'WP_REDIS_DISABLED', true );
+}
+
+/**
  * Authentication Unique Keys and Salts
  */
 define( 'AUTH_KEY', env( 'AUTH_KEY' ) );
