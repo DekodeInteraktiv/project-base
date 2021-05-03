@@ -59,20 +59,27 @@ if ( defined( 'WP_CLI' ) && WP_CLI && ! isset( $_SERVER['HTTP_HOST'] ) ) {
 }
 
 /**
+ * Conditionally use, or generate, `WP_HOME` and `WP_SITEURL`.
+ */
+if ( env( 'WP_HOME' ) ) {
+	define( 'WP_HOME', env( 'WP_HOME' ) );
+	define( 'WP_SITEURL', ( env( 'WP_SITEURL' ) ?: WP_HOME . '/wp' ) );
+} else {
+	$scheme = 'http';
+	if ( ( is_string( $https ) && 'on' === strtolower( $https ) ) || '443' === $server_port || 'https' === $http_x_fp ) {
+		$scheme           = 'https';
+		$_SERVER['HTTPS'] = 'on';
+	}
+
+	define( 'WP_HOME', $scheme . '://' . $http_host );
+	define( 'WP_SITEURL', WP_HOME . '/wp' );
+}
+/**
  * Set the dirs
  */
-$scheme = 'http';
-if ( ( is_string( $https ) && 'on' === strtolower( $https ) ) || '443' === $server_port || 'https' === $http_x_fp ) {
-	$scheme           = 'https';
-	$_SERVER['HTTPS'] = 'on';
-}
-
-define( 'WP_SITEURL', $scheme . '://' . $http_host . '/wp' );
-define( 'WP_HOME', $scheme . '://' . $http_host );
-
 define( 'CONTENT_DIR', '/content' );
 define( 'WP_CONTENT_DIR', $webroot_dir . CONTENT_DIR );
-define( 'WP_CONTENT_URL', $scheme . '://' . $http_host . '/content' );
+define( 'WP_CONTENT_URL', WP_HOME . CONTENT_DIR );
 
 /**
  * DB settings
