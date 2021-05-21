@@ -19,7 +19,7 @@
 		"@dekode/eslint-plugin": "0.0.1",
 		"@dekode/stylelint-config": "1.0.1",
 		"@teft/postcss-preset": "0.0.1",
-		"@wordpress/scripts": "14.1.1",
+		"@wordpress/scripts": "16.1.0",
 		"browser-sync": "^2.26.14",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"cssnano": "4.1.11",
