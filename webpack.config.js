@@ -68,7 +68,7 @@ const config = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin( {
-			moduleFilename: ( { name } ) => getBuildPath( name ).replace( '.js', '.css' ),
+			filename: ( { chunk } ) => getBuildPath( chunk.name ).replace( '.js', '.css' ),
 		} ),
 		new FixStyleWebpackPlugin(),
 		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
