@@ -41,20 +41,20 @@
 	},
 	"require": {
 		"php": ">=7.2",
-		"composer/installers": "~1.10.0",
-		"johnpbloch/wordpress": "~5.7.0",
-		"boxuk/wp-muplugin-loader": "~1.3.0",
+		"composer/installers": "~1.11.0",
+		"johnpbloch/wordpress": "~5.7.2",
+		"boxuk/wp-muplugin-loader": "~1.4.0",
+		"dekode/dekode-theme": "@dev",
 		"dekode/wp-resets": "~2.0.2",
 		"inpsyde/wp-translation-downloader": "~2.0.2",
 		"symfony/dotenv": "~5.2.1",
-		"wpackagist-plugin/spinupwp": "~1.2.0",
 		"wpackagist-plugin/imagify": "~1.9.14",
-		"dekode/dekode-theme": "@dev",
+		"wpackagist-plugin/spinupwp": "~1.3.0",
 		"wpackagist-plugin/two-factor": "~0.7.0"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "4.0.0",
-		"wp-cli/i18n-command": "2.2.6",
+		"wp-cli/i18n-command": "2.2.8",
 		"dekode/logging": "@dev"
 	},
 	"extra": {
