@@ -51,23 +51,23 @@ class Site_Health {
 		// If this is a development environment, debug mode is expected to be on, so return the default output.
 		if ( 'is_in_debug_mode' === $result['test'] && $this->is_development_environment() ) {
 			$result = [
-				'label'       => __( 'This site is providing debug information' ),
+				'label'       => __( 'This site is providing debug information', 'dekode-muplugin-site-health' ),
 				'status'      => 'good',
 				'badge'       => [
-					'label' => __( 'Security' ),
+					'label' => __( 'Security', 'dekode-muplugin-site-health' ),
 					'color' => 'blue',
 				],
 				'description' => sprintf(
 					'<p>%s</p>',
-					__( 'This website is currently running in a development environment, and is expected to be able to output information relating to errors, warnings, and other information plugins or themes may expose in such a situation.' )
+					__( 'This website is currently running in a development environment, and is expected to be able to output information relating to errors, warnings, and other information plugins or themes may expose in such a situation.', 'dekode-muplugin-site-health' )
 				),
 				'actions'     => sprintf(
 					'<p><a href="%s" target="_blank" rel="noopener noreferrer">%s <span class="screen-reader-text">%s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
 					/* translators: Documentation explaining debugging in WordPress. */
-					esc_url( __( 'https://wordpress.org/support/article/debugging-in-wordpress/' ) ),
-					__( 'Read about debugging in WordPress.' ),
+					esc_url( __( 'https://wordpress.org/support/article/debugging-in-wordpress/', 'dekode-muplugin-site-health' ) ),
+					__( 'Read about debugging in WordPress.', 'dekode-muplugin-site-health' ),
 					/* translators: accessibility text */
-					__( '(opens in a new tab)' )
+					__( '(opens in a new tab)', 'dekode-muplugin-site-health' )
 				),
 				'test'        => 'is_in_debug_mode',
 			];
