@@ -81,6 +81,14 @@ define( 'CONTENT_DIR', '/content' );
 define( 'WP_CONTENT_DIR', $webroot_dir . CONTENT_DIR );
 define( 'WP_CONTENT_URL', WP_HOME . CONTENT_DIR );
 
+if ( ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
+	// If the document root can be determined, use it as the base for the logfile location.
+	define( 'WP_DEBUG_LOG', rtrim( dirname( $_SERVER['DOCUMENT_ROOT'] ), '/' ) . '/logs/wp-debug.log' );
+} else {
+	// Fallback to enable debug logging to WordPress' default location.
+	define( 'WP_DEBUG_LOG', true );
+}
+
 /**
  * DB settings
  */
