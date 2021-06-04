@@ -42,3 +42,4 @@ sql/
 
 # Other
 debug.log
+wp-debug.log
