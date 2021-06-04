@@ -43,6 +43,14 @@ $dotenv->load( $root_dir . '/.env' );
  */
 define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
 
+/**
+ * Mirror the Bedrock-style environment type in WordPress' constant as well.
+ *
+ * By doing so, we ensure that plugins and themes relying on the environment data
+ * provided by WordPress core behave as expected depending on the applicable sitaution.
+ */
+define( 'WP_ENVIRONMENT_TYPE', WP_ENV );
+
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 
 if ( file_exists( $env_config ) ) {
