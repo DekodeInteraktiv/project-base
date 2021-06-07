@@ -35,7 +35,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
   * `DB_USER` - Database user
   * `DB_PASSWORD` - Database password
   * `DB_HOST` - Database host
-  * `WP_ENV` - Set to environment (`development`, `staging`, `production`)
+  * `WP_ENVIRONMENT_TYPE` - Set to environment (`local`, `development`, `staging`, `production`)
   * `WP_HOME` - Full URL to WordPress home (http://example.com)
   * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://example.com/wp)
   * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
