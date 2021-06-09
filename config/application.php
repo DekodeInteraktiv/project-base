@@ -38,20 +38,19 @@ $dotenv = new \Symfony\Component\Dotenv\Dotenv();
 $dotenv->load( $root_dir . '/.env' );
 
 /**
- * Set up our global environment constant and load its config first
- * Default: production
- */
-define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
-
-/**
- * Mirror the Bedrock-style environment type in WordPress' constant as well.
+ * Set up our global environment constant
  *
  * By doing so, we ensure that plugins and themes relying on the environment data
  * provided by WordPress core behave as expected depending on the applicable sitaution.
+ *
+ * Default: production
  */
-define( 'WP_ENVIRONMENT_TYPE', WP_ENV );
+define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE' ) ?: 'production' );
 
-$env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
+/**
+ * Load enviroment config
+ */
+$env_config = __DIR__ . '/environments/' . WP_ENVIRONMENT_TYPE . '.php';
 
 if ( file_exists( $env_config ) ) {
 	require_once $env_config;
