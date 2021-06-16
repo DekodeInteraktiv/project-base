@@ -22,6 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to main content', 'dekode' ); ?></a>
+
 <div class="site hfeed">
 
 	<?php do_action( 'dekode_before_header' ); ?>
