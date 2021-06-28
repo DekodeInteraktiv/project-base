@@ -23,7 +23,7 @@
 		"browser-sync": "^2.27.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"cssnano": "4.1.11",
-		"dotenv": "^9.0.2",
+		"dotenv": "^10.0.0",
 		"fast-glob": "3.2.6"
 	},
 	"scripts": {
