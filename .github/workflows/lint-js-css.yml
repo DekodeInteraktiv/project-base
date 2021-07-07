@@ -26,6 +26,3 @@ jobs:
 
       - name: Lint JS
         run: npm run lint:js
-
-      - name: Lint package.json files
-        run: npm run lint:pkg-json
