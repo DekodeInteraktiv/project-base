@@ -1,14 +1,13 @@
 #!/bin/bash
-cd /kunder/dekode_3423/stagen_8667/dekode-deploy/public
 
-plugins=(
+#plugins=(
 	# list plugins.
-)
+#)
 
-for i in "${plugins[@]}"
-do
-	wp plugin activate $i --quiet;
-done
+#for i in "${plugins[@]}"
+#do
+#	wp plugin activate $i --quiet;
+#done
 
 #wp option update blogname "Project Base" --quiet
 #wp option update blogdescription "" --quiet
@@ -16,6 +15,6 @@ done
 #wp option update timezone_string "Europe/Oslo" --quiet
 #wp language core activate nb_NO --quiet
 
-#wp theme activate teft-theme --quiet
+#wp theme activate dekode-theme --quiet
 
 #wp rewrite flush --quiet
