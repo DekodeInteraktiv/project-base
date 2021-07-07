@@ -2,7 +2,7 @@
 	"name": "@dekode/project-base",
 	"private": true,
 	"engines": {
-		"node": "12",
+		"node": "14",
 		"npm": "6",
 		"yarn": "Please use npm"
 	},
@@ -30,9 +30,8 @@
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
 		"check-engines": "wp-scripts check-engines",
-		"lint": "npm run lint:js && npm run lint:pkg-json && npm run lint:css",
+		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
-		"lint:pkg-json": "wp-scripts lint-pkg-json"
+		"lint:js": "wp-scripts lint-js"
 	}
 }
