@@ -12,7 +12,6 @@
 
 /* Component packages */
 @import "@teft/buttons"; /* Style package for teft buttons https://docs.teft.io/packages/buttons/ */
-@import "@teft/form"; /* Style package for teft forms https://docs.teft.io/packages/form/ */
 
 /**
  * Internal dependencies

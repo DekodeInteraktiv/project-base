@@ -8,7 +8,6 @@
 	},
 	"dependencies": {
 		"@teft/buttons": "^1.0.0",
-		"@teft/form": "^0.1.6",
 		"@teft/reset": "0.0.6",
 		"@teft/typography": "0.0.5",
 		"@teft/utilities": "0.0.5",
@@ -18,13 +17,19 @@
 	"devDependencies": {
 		"@dekode/eslint-plugin": "0.0.1",
 		"@dekode/stylelint-config": "1.0.1",
-		"@teft/postcss-preset": "0.0.1",
 		"@wordpress/scripts": "16.1.4",
+		"autoprefixer": "10.2.6",
 		"browser-sync": "^2.27.4",
 		"browser-sync-webpack-plugin": "^2.3.0",
-		"cssnano": "4.1.11",
+		"cssnano": "5.0.6",
 		"dotenv": "^10.0.0",
-		"fast-glob": "3.2.6"
+		"fast-glob": "3.2.6",
+		"postcss": "8.3.5",
+		"postcss-custom-media": "8.0.0",
+		"postcss-flexbugs-fixes": "5.0.2",
+		"postcss-import": "14.0.2",
+		"postcss-media-minmax": "5.0.0",
+		"postcss-nested": "5.0.5"
 	},
 	"scripts": {
 		"start": "wp-scripts start",
