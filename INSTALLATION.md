@@ -1,23 +1,19 @@
 # Dekode Project Base - Installation
 
-Dekode Project Base is based on Bedrock, a modern WordPress stack that helps you get started with the best development tools and project structure.
-Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
-
 ## Requirements
 
-* PHP >= 7.0
+* PHP >= 7.2
 * Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 * Node >= 14.0
 
-## TLDR - what's new in ver 2.0?
+## TLDR - what's new?
 Themes, plugins, mu-plugins etc. is now structured under packages and built into the wordpress structure by composer. All build scripts are run from root and automatically looks through `./packages`. Packages need an `entry-files.json` file to define what files should be build when running npm build/start and a `composer.json` that defines what it is and gives the package a name. Codeship testing/build commands are now located in the repository under `./tools`. Any time a new package is added it needs to be referenced in the project-base root composer.json using @dev.
 
 ## Structure
-
-- *Packages* - Contains all of the code developed for the project such as plugins, themes, mu-plugins and any custom libs etc. This gets built into public by composer using symlinks.
-- *Public* - The files used by WordPress. Contents are generated automatically from packages using composer. This folder shouldn't need to be touched at all.
-- *Tools* - Build and setup scripts used by Codeship and Local
-- *Config* - Environment variable setup
+* *Packages* - Contains all of the code developed for the project such as plugins, themes, mu-plugins and any custom libs etc. This gets built into public by composer using symlinks.
+* *Public* - The files used by WordPress. Contents are generated automatically from packages using composer. This folder shouldn't need to be touched at all.
+* *Tools* - Build and setup scripts used by Codeship and Local
+* *Config* - Environment variable setup
 
 ## Local setup
 1. If setting up a new project, create a git repo using [Project base](https://github.com/DekodeInteraktiv/project-base) as the template. Otherwise skip this step.
@@ -31,32 +27,34 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 7. `cp .env.example .env` copy the environment example file (do not rename it, as it will show as git differences)
 8. Update the environment variables in the .env file
 
-  * `DB_NAME` - Database name
-  * `DB_USER` - Database user
-  * `DB_PASSWORD` - Database password
-  * `DB_HOST` - Database host
-  * `WP_ENVIRONMENT_TYPE` - Set to environment (`local`, `development`, `staging`, `production`)
-  * `WP_HOME` - Full URL to WordPress home (http://example.com)
-  * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://example.com/wp)
-  * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
+    * `DB_NAME` - Database name
+    * `DB_USER` - Database user
+    * `DB_PASSWORD` - Database password
+    * `DB_HOST` - Database host
+    * `WP_ENVIRONMENT_TYPE` - Set to environment (`local`, `development`, `staging`, `production`)
+    * `WP_HOME` - Full URL to WordPress home (http://example.com)
+    * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://example.com/wp)
+    * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
 9. Automatically generate the security keys
 
-  If you want to automatically generate the security keys (assuming you have wp-cli installed locally) you can use the very handy [wp-cli-dotenv-command][wp-cli-dotenv]:
-      wp package install aaemnnosttv/wp-cli-dotenv-command
-      wp dotenv salts regenerate
-  Or, you can cut and paste from the [Roots WordPress Salt Generator][roots-wp-salt].
+    If you want to automatically generate the security keys (assuming you have wp-cli installed locally) you can use the very handy [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command):
+
+    - wp package install aaemnnosttv/wp-cli-dotenv-command
+    - wp dotenv salts regenerate
+
+    Or, you can cut and paste from the [Roots WordPress Salt Generator](https://roots.io/salts.html).
 
 10. `composer install`
 11. `npm install`
 12. Run the app/tools/local scripts (please note that these might work only if you setup the `MYSQLI_DEFAULT_SOCKET` environment variable, and only after you actually have the plugins and theme installed at step 10).
 
-  * `cd app/tools/local`
-  * `./setup-main-site.sh`
-  * `./activate-plugins.sh`
-  * `bash multisite.sh` (run this only if you are installing a multisite)
+	* `cd app/tools/local`
+    * `./setup-main-site.sh`
+    * `./activate-plugins.sh`
+    * `bash multisite.sh` (run this only if you are installing a multisite)
 
-13.* If you install a multisite, the URLs are not using https by default, and that can be fixed by running the command `wp search-replace --url=http://{PROJECT}.site 'http://{PROJECT}.site' 'https://{PROJECT}.site' --recurse-objects --network --skip-columns=guid`
+13. If you install a multisite, the URLs are not using https by default, and that can be fixed by running the command `wp search-replace --url=http://{PROJECT}.site 'http://{PROJECT}.site' 'https://{PROJECT}.site' --recurse-objects --network --skip-columns=guid`
 
 ### Method 2 -Setup using Local structure (symlink method)
 
@@ -75,7 +73,7 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 1. Add a folder to the relevant category in `./packages`. (create one if none exists). So for a plugin, create a folder in the `./packages/plugins` folder.
 
 2. If your package should be installed using composer (for themes, plugins, mu-plugins and php deps) Add a composer.json, it needs a minimum of the following data:
-```
+```json
 {
 	"name": "project/package-name",
 	"description": "Short description of the package.",
@@ -85,7 +83,8 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 *Note: if your plugin is a gutenberg block, you can use [block-base](https://github.com/DekodeInteraktiv/block-base)*
 
 3. If your package should be installed using npm (for frontend deps, like custom react components) Add a package.json, it needs a minimum of the following data:
-```
+
+```json
 {
   "name": "package-name",
   "private": true,
@@ -100,7 +99,7 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 ```
 
 4. If your package has front end assets such as scripts or css add a `entry-files.json` with the following structure naming the src files that should be build. (the src files should be located in a folder called `src`)
-```
+```json
 [ "index.js", "style.css", "editor.css" ]
 ```
 
@@ -109,10 +108,6 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 6. Install the package using `composer update` or `npm install` depending on type. you might need to re-run `npm run build` or `npm run start` if you have installed a new package containing files that need building.
 
 ## Documentation
-Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
-
-PostCSS [https://github.com/postcss/postcss/tree/main/docs](https://github.com/postcss/postcss/tree/main/docs)
-
-WebPack [https://webpack.js.org/concepts/](https://webpack.js.org/concepts/)
-
-WPscripts [https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
+* PostCSS [https://github.com/postcss/postcss/tree/main/docs](https://github.com/postcss/postcss/tree/main/docs)
+* WebPack [https://webpack.js.org/concepts/](https://webpack.js.org/concepts/)
+* WP Scripts [https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
