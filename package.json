@@ -23,7 +23,7 @@
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"cssnano": "5.0.6",
 		"dotenv": "^10.0.0",
-		"fast-glob": "3.2.6",
+		"fast-glob": "3.2.7",
 		"postcss": "8.3.5",
 		"postcss-custom-media": "8.0.0",
 		"postcss-flexbugs-fixes": "5.0.2",
