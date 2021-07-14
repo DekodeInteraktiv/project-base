@@ -11,8 +11,7 @@
 		"@teft/reset": "0.0.6",
 		"@teft/typography": "0.0.5",
 		"@teft/utilities": "0.0.5",
-		"@teft/wordpress": "^0.4.0",
-		"consolidated-events": "^2.0.2"
+		"@teft/wordpress": "^0.4.0"
 	},
 	"devDependencies": {
 		"@dekode/eslint-plugin": "0.0.1",

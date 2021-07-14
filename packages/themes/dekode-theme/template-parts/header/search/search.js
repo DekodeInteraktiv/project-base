@@ -1,16 +1,7 @@
-/**
- * External dependencies
- */
-import { addEventListener } from 'consolidated-events';
-
-/**
- * Elements
- */
-const toggleButton = document.querySelector( '.site-header--search--toggle' );
-const formContainer = document.getElementById( 'site-search' );
-const input = document.querySelector( '.site-search .search-field' );
-
-let removeMouseUp, removeKeyDown;
+/* eslint-disable no-use-before-define */
+const toggleButton = document.querySelector( '.nav-bar-search-toggle' );
+const formContainer = document.getElementById( 'nav-bar-search' );
+const input = document.querySelector( '.nav-bar-search .search-field' );
 
 function hide() {
 	toggleButton.setAttribute( 'aria-expanded', 'false' );
@@ -18,10 +9,11 @@ function hide() {
 
 	document.body.classList.remove( 'site-search__is-visible' );
 
-	removeMouseUp();
-	removeKeyDown();
-	removeMouseUp = null;
-	removeKeyDown = null;
+	document.removeEventListener( 'mouseup', onMouseUp, {
+		capture: true,
+	} );
+
+	document.removeEventListener( 'keydown', handleKeyDown );
 }
 
 function handleKeyDown( event ) {
@@ -46,21 +38,26 @@ function show() {
 	formContainer.setAttribute( 'aria-hidden', 'false' );
 
 	document.body.classList.add( 'site-search__is-visible' );
-	removeMouseUp = addEventListener( document, 'mouseup', onMouseUp, { capture: true } );
-	removeKeyDown = addEventListener( document, 'keydown', handleKeyDown );
+	document.body.classList.remove( 'megamenu__is-visible' );
+
+	document.addEventListener( 'mouseup', onMouseUp, {
+		capture: true,
+	} );
+
+	document.addEventListener( 'keydown', handleKeyDown );
 
 	input.focus();
 	input.select();
 }
 
-function toggle( event ) {
+function toggle() {
 	if ( ! document.body.classList.contains( 'site-search__is-visible' ) ) {
-		show( event );
+		show();
 	} else {
 		hide();
 	}
 }
 
 if ( toggleButton ) {
-	addEventListener( toggleButton, 'click', toggle );
+	toggleButton.addEventListener( 'click', toggle );
 }
