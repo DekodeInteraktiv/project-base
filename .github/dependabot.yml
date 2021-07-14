@@ -9,14 +9,14 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: daily
+      interval: weekly
       timezone: Europe/Oslo
     open-pull-requests-limit: 99
     rebase-strategy: disabled
   - package-ecosystem: composer
     directory: "/"
     schedule:
-      interval: daily
+      interval: weekly
       timezone: Europe/Oslo
     open-pull-requests-limit: 99
     rebase-strategy: disabled
