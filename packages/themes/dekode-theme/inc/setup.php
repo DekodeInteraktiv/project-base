@@ -60,7 +60,7 @@ function setup() {
 	// Add post thumnails.
 	add_theme_support( 'post-thumbnails' );
 
-	// Add suppor for custom logo.
+	// Add support for custom logo.
 	add_theme_support( 'custom-logo' );
 }
 
