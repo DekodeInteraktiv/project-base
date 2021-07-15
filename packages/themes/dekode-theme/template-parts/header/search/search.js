@@ -38,7 +38,6 @@ function show() {
 	formContainer.setAttribute( 'aria-hidden', 'false' );
 
 	document.body.classList.add( 'site-search__is-visible' );
-	document.body.classList.remove( 'megamenu__is-visible' );
 
 	document.addEventListener( 'mouseup', onMouseUp, {
 		capture: true,
