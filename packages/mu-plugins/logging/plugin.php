@@ -22,8 +22,14 @@ if ( ! function_exists( 'write_log' ) ) {
 	 */
 	function write_log( $log ) { // phpcs:ignore NeutronStandard.Functions.TypeHint.NoArgumentType
 		if ( true === WP_DEBUG ) {
-			if ( is_scalar( $log ) ) {
-				error_log( $log ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+			if ( is_null( $log ) ) {
+				error_log( 'NULL' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+			} elseif ( is_scalar( $log ) ) {
+				if ( is_bool( $log ) ) {
+					error_log( $log ? 'true' : 'false' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+				} else {
+					error_log( (string) $log ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+				}
 			} else {
 				error_log( print_r( $log, true ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log, WordPress.PHP.DevelopmentFunctions.error_log_print_r
 			}
