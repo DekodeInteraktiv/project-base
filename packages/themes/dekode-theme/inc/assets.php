@@ -13,7 +13,7 @@ namespace Dekode\Assets;
  *
  * @return void
  */
-function enqueue_scripts() : void {
+function scripts_and_styles() : void {
 	/**
 	 * Stylesheets
 	 */
@@ -31,7 +31,7 @@ function enqueue_scripts() : void {
 		\wp_enqueue_script( 'dekode-theme-script', \get_template_directory_uri() . '/build/index.js', $dependencies['dependencies'], $dependencies['version'], true );
 	}
 }
-\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_scripts' );
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\scripts_and_styles' );
 
 /**
  * Enqueue editor style for the WordPress editor.
