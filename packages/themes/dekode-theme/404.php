@@ -16,15 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<main id="main" class="site-main">
-	<header class="entry-header">
-		<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dekode' ); ?></h1>
-	</header>
-	<div class="entry-content">
-		<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'dekode' ); ?></p>
-		<?php get_search_form(); ?>
-	</div>
-</main>
+<header class="entry-header">
+	<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dekode' ); ?></h1>
+</header>
+<div class="entry-content">
+	<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'dekode' ); ?></p>
+	<?php get_search_form(); ?>
+</div>
 
 <?php
 get_footer();
