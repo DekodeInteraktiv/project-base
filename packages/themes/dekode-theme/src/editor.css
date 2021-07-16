@@ -1,9 +1,0 @@
-/**
- * Teft dependencies
- */
-@import "@teft/wordpress/src/editor.css"; /* Applies editor styling https://docs.teft.io/packages/editor/ */
-
-/**
- * Internal dependencies
- */
-@import "./custom-variables.css";
