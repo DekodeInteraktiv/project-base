@@ -1,7 +1,7 @@
 /* eslint-disable no-use-before-define */
-const toggleButton = document.querySelector( '.nav-bar-search-toggle' );
-const formContainer = document.getElementById( 'nav-bar-search' );
-const input = document.querySelector( '.nav-bar-search .search-field' );
+const toggleButton = document.querySelector( '.site-header--search--toggle' );
+const formContainer = document.getElementById( 'site-search' );
+const input = document.querySelector( '.site-search .search-field' );
 
 function hide() {
 	toggleButton.setAttribute( 'aria-expanded', 'false' );
