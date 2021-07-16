@@ -8,12 +8,11 @@
 declare( strict_types=1 );
 namespace Dekode\Setup;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	die( 'Silence is golden.' );
-}
-
+/**
+ * Hooks
+ */
 add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
-add_action( 'dekode_before_entry_content', __NAMESPACE__ . '\\add_entry_content_title', 10 );
+add_action( 'widgets_init', __NAMESPACE__ . '\\register_footer_widget_area', 10 );
 
 /**
  * Setup Theme Functionality
@@ -65,12 +64,15 @@ function setup() {
 }
 
 /**
- * Append Entry Content Title
+ * Register default footer widget area.
  */
-function add_entry_content_title() {
-	?>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header>
-	<?php
+function register_footer_widget_area() {
+	register_sidebar( [
+		'name'          => esc_html__( 'Footer area', 'dekode' ),
+		'id'            => 'footer',
+		'before_widget' => '<div class="footer-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="footer-widget-title">',
+		'after_title'   => '</h4>',
+	] );
 }

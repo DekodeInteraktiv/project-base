@@ -1,15 +1,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Teft\n"
-"POT-Creation-Date: 2020-01-07 12:49+0100\n"
-"PO-Revision-Date: 2020-01-07 12:50+0100\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dekode-theme-v2\n"
+"POT-Creation-Date: 2021-07-16T11:24:12+00:00\n"
+"PO-Revision-Date: 2021-07-16 13:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -23,22 +24,37 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: 404.php:21
+#. Theme Name of the theme
+msgid "Dekode Theme"
+msgstr "Dekode Tema"
+
+#. Author of the theme
+msgid "Dekode Interaktiv AS"
+msgstr "Dekode Interaktiv AS"
+
+#. Author URI of the theme
+msgid "https://dekode.no/"
+msgstr "https://dekode.no/"
+
+#: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oops! Siden finnes ikke."
 
-#: 404.php:24
+#: 404.php:21
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "Vi fant ikke noe her, kanskje prøve et søk?"
 
-#: inc/setup-footer.php:30
-#, php-format
-msgid "Footer area %s"
-msgstr "Bunnfelttområde %s"
+#: header.php:20
+msgid "Skip to main content"
+msgstr "Hop til innhold"
 
-#: inc/setup.php:36
+#: inc/setup.php:35
 msgid "Primary"
 msgstr "Hoved"
+
+#: inc/setup.php:71
+msgid "Footer area"
+msgstr "Bunnfelttområde"
 
 #: template-parts/header/menu/menu.php:26
 #: template-parts/header/menu/menu.php:34
@@ -53,14 +69,5 @@ msgstr "Toppmeny"
 msgid "Search"
 msgstr "Søk"
 
-#. Theme Name of the plugin/theme
-msgid "Teft"
-msgstr "Teft"
-
-#. Author of the plugin/theme
-msgid "Dekode Interaktiv AS"
-msgstr "Dekode Interaktiv AS"
-
-#. Author URI of the plugin/theme
-msgid "https://dekode.no/"
-msgstr "https://dekode.no/"
+#~ msgid "Teft"
+#~ msgstr "Teft"
