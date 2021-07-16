@@ -26,7 +26,6 @@ function enqueue_scripts() : void {
 	 * JavaScript
 	 */
 	$js_dependencies_file_path = \get_template_directory() . '/build/index.asset.php';
-
 	if ( file_exists( $js_dependencies_file_path ) ) {
 		$dependencies = require $js_dependencies_file_path;
 		\wp_enqueue_script( 'dekode-theme-script', \get_template_directory_uri() . '/build/index.js', $dependencies['dependencies'], $dependencies['version'], true );
