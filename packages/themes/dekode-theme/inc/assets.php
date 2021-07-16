@@ -23,7 +23,7 @@ function enqueue_scripts() : void {
 	}
 
 	/**
-	 * JavaScript
+	 * JavaScripts
 	 */
 	$js_dependencies_file_path = \get_template_directory() . '/build/index.asset.php';
 	if ( file_exists( $js_dependencies_file_path ) ) {
