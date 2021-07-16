@@ -9,7 +9,7 @@ declare( strict_types=1 );
 namespace Dekode\Assets;
 
 /**
- * Enqueue shared scripts and styles
+ * Enqueue scripts and styles
  *
  * @return void
  */
