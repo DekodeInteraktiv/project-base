@@ -32,11 +32,3 @@ function scripts_and_styles() : void {
 	}
 }
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\scripts_and_styles' );
-
-/**
- * Enqueue editor style for the WordPress editor.
- */
-function editor() {
-	wp_enqueue_style( 'dekode-theme-editor', get_template_directory_uri() . '/build/editor.css', [], wp_get_theme()->get( 'Version' ) );
-}
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\editor' );
