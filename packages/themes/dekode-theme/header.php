@@ -6,11 +6,6 @@
  */
 
 declare( strict_types=1 );
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( 'Silence is golden.' );
-}
-
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -24,22 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to main content', 'dekode' ); ?></a>
 
-<div class="site hfeed">
-
-	<?php do_action( 'dekode_before_header' ); ?>
-
+<div class="site">
 	<header id="masthead" class="site-header">
-		<?php
-		/**
-		 * Functions hooked into dekode_header action
-		 *
-		 * @hooked Dekode\Setup\Header\default_header - 10
-		 */
-		do_action( 'dekode_header' );
-		?>
+		<div class="site-container">
+			<?php
+			get_template_part( 'template-parts/header/branding/branding' );
+			get_template_part( 'template-parts/header/menu/menu' );
+			get_template_part( 'template-parts/header/search/search' );
+			?>
+		</div>
 	</header>
 
-	<?php do_action( 'dekode_after_header' ); ?>
-
 	<main id="content" class="site-content">
-		<?php do_action( 'dekode_before_content' ); ?>
