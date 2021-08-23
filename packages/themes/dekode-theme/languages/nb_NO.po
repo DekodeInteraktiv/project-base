@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Teft\n"
+"Project-Id-Version: Dekode Theme\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dekode-theme-v2\n"
 "POT-Creation-Date: 2021-07-16T11:24:12+00:00\n"
-"PO-Revision-Date: 2021-07-16 13:26+0200\n"
+"PO-Revision-Date: 2021-08-24 00:09+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -46,7 +46,7 @@ msgstr "Vi fant ikke noe her, kanskje prøve et søk?"
 
 #: header.php:20
 msgid "Skip to main content"
-msgstr "Hop til innhold"
+msgstr "Hopp til hovedinnhold"
 
 #: inc/setup.php:35
 msgid "Primary"
