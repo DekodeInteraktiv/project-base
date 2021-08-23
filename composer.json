@@ -85,7 +85,7 @@
 			"@composer install --no-dev && composer wp-translation-downloader:download"
 		],
 		"makepot": [
-			"wp i18n make-pot . --exclude=\".github,plugins,public/content/plugins,vendor,public/wp,node_modules,tests\" --slug=project-base"
+			"./vendor/bin/wp i18n make-pot . --exclude=\".github,plugins,public/content/plugins,vendor,public/wp,node_modules,tests\" --slug=project-base"
 		]
 	}
 }
