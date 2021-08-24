@@ -5,6 +5,11 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    paths:
+      - '**.php'
+      - 'composer.lock'
+      - '**.json'
+      - '**.yml'
 
 jobs:
   phpcs:
