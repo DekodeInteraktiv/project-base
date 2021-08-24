@@ -5,6 +5,11 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+    paths:
+      - '**.css'
+      - '**.js'
+      - '**.json'
+      - '**.yml'
 
 jobs:
   build:
