@@ -183,3 +183,13 @@ foreach ( $required_constants as $constant ) {
 		die( "Please define: $constant in your .env file" ); // phpcs:ignore
 	}
 }
+
+/**
+ * Allow serving images from remote location
+ * using dekode-remote-images.php mu-plugin
+ *
+ * Used in development environment
+ */
+define( 'DEKODE_PREPEND_IMAGE_URL', env( 'DEKODE_PREPEND_IMAGE_URL' ) );
+define( 'DRI_CONTENT_FOLDER_NAME', env( 'DRI_CONTENT_FOLDER_NAME' ) );
+
