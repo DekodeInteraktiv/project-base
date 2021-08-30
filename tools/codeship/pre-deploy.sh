@@ -1,8 +1,18 @@
 #!/bin/bash
 
 cd ~/clone
+
 composer build-for-deploy
+if [[ $? -ne 0 ]] ; then
+	echo "Composer build failure"
+	exit 1
+fi
+
 npm run build
+if [[ $? -ne 0 ]] ; then
+	echo "NPM build failure"
+	exit 1
+fi
 
 files=(
 	.git
