@@ -5,6 +5,7 @@ module.exports = {
 	],
 	plugins: [
 		'@dekode',
+		'@wordpress',
 	],
 	settings: {
 		react: {
@@ -12,6 +13,7 @@ module.exports = {
 		},
 	},
 	rules: {
+		'@wordpress/no-unsafe-wp-apis': 'error',
 		'react/react-in-jsx-scope': 'off',
 		'react/jsx-pascal-case': 'off',
 		'react/jsx-props-no-spreading': 'off',
