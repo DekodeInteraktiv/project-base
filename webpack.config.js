@@ -15,17 +15,13 @@ require( 'dotenv' ).config();
 const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
 const defaultConfig = require( './node_modules/@wordpress/scripts/config/webpack.config' );
 
-const browserSyncProxy = process.env.BROWSER_SYNC_PROXY ? process.env.BROWSER_SYNC_PROXY : process.env.WP_HOME;
-const browserSyncPort = process.env.BROWSER_SYNC_PORT ? process.env.BROWSER_SYNC_PORT : 3002;
-const browserSyncIsHttps = process.env.BROWSER_SYNC_HTTPS === 'true';
-const browserSyncEnable = process.env.BROWSER_SYNC_ENABLE === 'true';
-
 function getBuildPath( name ) {
 	return `${ name.split( '|' )[ 0 ] }/build/${ name.split( '|' )[ 1 ] }`;
 }
 
 async function getEntries() {
 	const entries = {};
+
 	let dirs = await glob( [
 		'./packages/mu-plugins/*',
 		'./packages/plugins/*',
@@ -86,13 +82,16 @@ const config = {
 	],
 };
 
-if ( browserSyncEnable ) {
+/**
+ * Browsersync
+ */
+if ( 'true' === process.env.BROWSER_SYNC_ENABLE ) {
 	config.plugins.push(
 		new BrowserSyncPlugin( {
 			files: '**/*.php',
-			proxy: browserSyncProxy,
-			port: browserSyncPort,
-			https: browserSyncIsHttps,
+			proxy: process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
+			port: process.env.BROWSER_SYNC_PORT ?? 3002,
+			https: 'true' === process.env.BROWSER_SYNC_HTTPS,
 		} ),
 	);
 }
