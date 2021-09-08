@@ -1,7 +1,4 @@
-public/content/languages
-public/content/plugins
-public/content/uploads
-
+public
 node_modules
 dist
 build
