@@ -22,16 +22,19 @@ function getBuildPath( name ) {
 async function getEntries() {
 	const entries = {};
 
-	let dirs = await glob( [
-		'./packages/mu-plugins/*',
-		'./packages/plugins/*',
-		'./packages/themes/*',
-	], { onlyDirectories: true } );
+	let dirs = await glob(
+		[
+			'./packages/mu-plugins/*',
+			'./packages/plugins/*',
+			'./packages/themes/*',
+		],
+		{ onlyDirectories: true }
+	);
 
 	// Only include directories that contains a entry-files.json file.
-	dirs = dirs.filter( ( dir ) => (
+	dirs = dirs.filter( ( dir ) =>
 		fs.existsSync( path.resolve( dir, 'entry-files.json' ) )
-	) );
+	);
 
 	dirs.forEach( ( dir ) => {
 		const entryFiles = require( `${ dir }/entry-files.json` ); // eslint-disable-line
@@ -41,7 +44,9 @@ async function getEntries() {
 			 * MiniCSSExtractPlugin handles css files. Rename them and ignore in
 			 * IgnoreEmitPlugin to allow as direct entry files.
 			 */
-			entries[ `${ dir }|${ entry.replace( '.css', '.css-entry-file' ) }` ] = `${ dir }/src/${ entry }`;
+			entries[
+				`${ dir }|${ entry.replace( '.css', '.css-entry-file' ) }`
+			] = `${ dir }/src/${ entry }`;
 		} );
 	} );
 
@@ -68,7 +73,12 @@ const config = {
 					chunks: 'all',
 					enforce: true,
 					name( _, chunks ) {
-						return getBuildPath( chunks[ 0 ].name.replace( '.css-entry-file', '.css' ) );
+						return getBuildPath(
+							chunks[ 0 ].name.replace(
+								'.css-entry-file',
+								'.css'
+							)
+						);
 					},
 				},
 				default: false,
@@ -92,7 +102,7 @@ if ( 'true' === process.env.BROWSER_SYNC_ENABLE ) {
 			proxy: process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
 			port: process.env.BROWSER_SYNC_PORT ?? 3002,
 			https: 'true' === process.env.BROWSER_SYNC_HTTPS,
-		} ),
+		} )
 	);
 }
 

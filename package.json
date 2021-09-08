@@ -36,6 +36,7 @@
 	"scripts": {
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
+		"format": "wp-scripts format .",
 		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",

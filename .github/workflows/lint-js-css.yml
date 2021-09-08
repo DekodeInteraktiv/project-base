@@ -1,40 +1,40 @@
 name: Lint JS and CSS
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    paths:
-      - '**.css'
-      - '**.js'
-      - '**.json'
-      - '**.yml'
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+        paths:
+            - '**.css'
+            - '**.js'
+            - '**.json'
+            - '**.yml'
 
 # Cancels all previous workflow runs for pull requests that have not completed.
 concurrency:
-  # The concurrency group contains the workflow name and the branch name for pull requests
-  # or the commit hash for any other events.
-  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
-  cancel-in-progress: true
+    # The concurrency group contains the workflow name and the branch name for pull requests
+    # or the commit hash for any other events.
+    group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+    cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@master
 
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-          cache: npm
+            - name: Use Node.js 14.x
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 14.x
+                  cache: npm
 
-      - name: Install Dependencies
-        run: npm ci
+            - name: Install Dependencies
+              run: npm ci
 
-      - name: Lint CSS
-        run: npm run lint:css
+            - name: Lint CSS
+              run: npm run lint:css
 
-      - name: Lint JS
-        run: npm run lint:js
+            - name: Lint JS
+              run: npm run lint:js
