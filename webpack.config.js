@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies, @wordpress/dependency-group */
+
 /**
  * External dependencies
  */
