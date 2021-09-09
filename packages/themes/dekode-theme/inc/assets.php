@@ -11,7 +11,7 @@ namespace Dekode\Assets;
 /**
  * Hooks
  */
-\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\do_enqueue_scripts' );
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\do_enqueue_assets' );
 \add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\do_enqueue_block_editor_assets' );
 
 /**
@@ -19,7 +19,7 @@ namespace Dekode\Assets;
  *
  * @return void
  */
-function do_enqueue_scripts() : void {
+function do_enqueue_assets() : void {
 
 	// Enqueue styles.
 	$style_file_path = \get_template_directory() . '/build/style.css';
