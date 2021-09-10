@@ -4,3 +4,4 @@ dist
 build
 vendor
 wp
+*.css

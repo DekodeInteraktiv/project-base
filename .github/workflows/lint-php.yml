@@ -1,66 +1,66 @@
 name: PHP CodeSniffer
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-    paths:
-      - '**.php'
-      - 'composer.lock'
-      - '**.json'
-      - '**.yml'
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+        paths:
+            - '**.php'
+            - 'composer.lock'
+            - '**.json'
+            - '**.yml'
 
 # Cancels all previous workflow runs for pull requests that have not completed.
 concurrency:
-  # The concurrency group contains the workflow name and the branch name for pull requests
-  # or the commit hash for any other events.
-  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
-  cancel-in-progress: true
+    # The concurrency group contains the workflow name and the branch name for pull requests
+    # or the commit hash for any other events.
+    group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+    cancel-in-progress: true
 
 jobs:
-  phpcs:
-    name: PHP coding standards
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    phpcs:
+        name: PHP coding standards
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
 
-      - name: Get Composer cache directory
-        id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+            - name: Get Composer cache directory
+              id: composer-cache
+              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-      - name: Set up Composer caching
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-composer-dependencies
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
+            - name: Set up Composer caching
+              uses: actions/cache@v2
+              env:
+                  cache-name: cache-composer-dependencies
+              with:
+                  path: ${{ steps.composer-cache.outputs.dir }}
+                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-composer-
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.4'
-          coverage: none
-          tools: composer, cs2pr
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '7.4'
+                  coverage: none
+                  tools: composer, cs2pr
 
-      - name: Log debug information
-        run: |
-          php --version
-          composer --version
+            - name: Log debug information
+              run: |
+                  php --version
+                  composer --version
 
-      - name: Install Composer dependencies
-        env:
-          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-        run: |
-          composer install --prefer-dist --no-suggest --no-progress --no-ansi --no-interaction
-          echo "vendor/bin" >> $GITHUB_PATH
+            - name: Install Composer dependencies
+              env:
+                  COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+              run: |
+                  composer install --prefer-dist --no-suggest --no-progress --no-ansi --no-interaction
+                  echo "vendor/bin" >> $GITHUB_PATH
 
-      - name: Log PHPCS debug information
-        run: vendor/bin/phpcs -i
+            - name: Log PHPCS debug information
+              run: vendor/bin/phpcs -i
 
-      - name: Run PHPCS on all files
-        run: vendor/bin/phpcs . -q -n --report=checkstyle | cs2pr
+            - name: Run PHPCS on all files
+              run: vendor/bin/phpcs . -q -n --report=checkstyle | cs2pr
