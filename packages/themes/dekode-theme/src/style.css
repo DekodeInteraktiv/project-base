@@ -1,24 +1,19 @@
 /**
- * Teft dependencies
- * https://docs.teft.io/
- */
-
-/* Global packages */
-@import "@teft/reset"; /* Applies browser css resets https://docs.teft.io/packages/reset/ */
-@import "@teft/typography"; /* Loads font variables and styles https://docs.teft.io/packages/typography/ */
-@import "@teft/wordpress"; /* Wordpress resets and styling of wordpress classes https://docs.teft.io/packages/wordpress/ */
-@import "@teft/theme"; /* Loads spacing variables and styles https://docs.teft.io/packages/theme/ */
-@import "@teft/utilities"; /* Adds utility classes https://docs.teft.io/packages/utilities/ */
-
-/* Component packages */
-@import "@teft/buttons"; /* Style package for teft buttons https://docs.teft.io/packages/buttons/ */
-
-/**
  * Internal dependencies
  */
 @import "./custom-variables.css";
 @import "../template-parts/header/header.css";
 @import "../template-parts/footer/footer.css";
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
 
 img {
 	height: auto;
@@ -32,18 +27,19 @@ img {
 	}
 }
 
+.site-container {
+	margin: 0 auto;
+	max-width: var(--t2-layout-wide);
+}
+
 .entry-header {
 	margin: 0 auto;
-	width: calc(100% - ( var(--teft-theme-site-padding) * 2 ));
+	width: calc(100% - var(--t2-spacing-horizontal));
 }
 
-.entry-title {
+.entry-title,
+.entry-excerpt {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: var(--teft-theme-content-width);
-}
-
-.entry-excerpt {
-	margin: calc(var(--teft-typography-base) * 2) auto;
-	max-width: var(--teft-theme-content-width);
+	max-width: var(--t2-layout-content);
 }

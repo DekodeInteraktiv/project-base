@@ -1,5 +1,5 @@
 .site-footer {
-	padding: 0 var(--teft-theme-site-padding);
+	padding: 0 calc(var(--t2-spacing-horizontal) / 2);
 }
 
 .site-footer-widgets {

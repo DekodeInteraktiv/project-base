@@ -5,5 +5,24 @@
 			"contentSize": "44rem",
 			"wideSize": "75rem"
 		}
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+			"fontSize": "clamp(1rem, 0.8438rem + 0.5vw, 1.125rem)",
+			"lineHeight": "1.4"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "#1897ec"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "clamp(1.5rem, 0.0938rem + 4.5vw, 2.625rem)"
+				}
+			}
+		}
 	}
 }
