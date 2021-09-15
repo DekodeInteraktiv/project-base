@@ -33,6 +33,16 @@
 		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js"
+		"lint:js": "wp-scripts lint-js",
+		"lint-staged": "lint-staged"
+	},
+	"lint-staged": {
+		"*.css": [
+			"wp-scripts lint-style"
+		],
+		"*.{js,ts,tsx}": [
+			"wp-scripts format",
+			"wp-scripts lint-js"
+		]
 	}
 }
