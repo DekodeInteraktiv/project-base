@@ -17,7 +17,9 @@
 		"cssnano": "5.0.8",
 		"dotenv": "^10.0.0",
 		"fast-glob": "3.2.7",
+		"husky": "7.0.2",
 		"ignore-emit-webpack-plugin": "2.0.6",
+		"lint-staged": "11.1.2",
 		"postcss": "8.3.6",
 		"postcss-custom-media": "8.0.0",
 		"postcss-flexbugs-fixes": "5.0.2",
@@ -33,6 +35,16 @@
 		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js"
+		"lint:js": "wp-scripts lint-js",
+		"lint-staged": "lint-staged"
+	},
+	"lint-staged": {
+		"*.css": [
+			"wp-scripts lint-style"
+		],
+		"*.{js,ts,tsx}": [
+			"wp-scripts format",
+			"wp-scripts lint-js"
+		]
 	}
 }
