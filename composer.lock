@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3abad3acff39dea222292239cab6cf2",
+    "content-hash": "89a516ef665243b2f0377ca13f7c3d3c",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -1156,7 +1156,7 @@
         },
         {
             "name": "dekode/logging",
-            "version": "dev-main",
+            "version": "dev-t2",
             "dist": {
                 "type": "path",
                 "url": "packages/mu-plugins/logging",
