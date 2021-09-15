@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions to register assets.
+ * Setup theme assets.
  *
  * @package dekode
  */
@@ -11,28 +11,57 @@ namespace Dekode\Assets;
 /**
  * Hooks
  */
-\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\scripts_and_styles' );
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\do_enqueue_assets' );
+\add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\do_enqueue_block_editor_assets' );
 
 /**
- * Enqueue scripts and styles
+ * Enqueue front end styles and scripts.
  *
  * @return void
  */
-function scripts_and_styles() : void {
-	/**
-	 * Stylesheets
-	 */
+function do_enqueue_assets() : void {
+
+	// Enqueue styles.
 	$style_file_path = \get_template_directory() . '/build/style.css';
+	$style_file_uri  = \get_template_directory_uri() . '/build/style.css';
+
 	if ( file_exists( $style_file_path ) ) {
-		\wp_enqueue_style( 'dekode-theme-style', \get_template_directory_uri() . '/build/style.css', [], \wp_get_theme()->get( 'Version' ) );
+		\wp_enqueue_style( 'dekode-theme', $style_file_uri, [], filemtime( $style_file_path ) );
 	}
 
-	/**
-	 * JavaScripts
-	 */
-	$js_dependencies_file_path = \get_template_directory() . '/build/index.asset.php';
-	if ( file_exists( $js_dependencies_file_path ) ) {
-		$dependencies = require $js_dependencies_file_path;
-		\wp_enqueue_script( 'dekode-theme-script', \get_template_directory_uri() . '/build/index.js', $dependencies['dependencies'], $dependencies['version'], true );
+	// Enqueue scripts.
+	$script_file_path      = \get_template_directory() . '/build/index.js';
+	$script_file_uri       = \get_template_directory_uri() . '/build/index.js';
+	$script_deps_file_path = \get_template_directory() . '/build/index.asset.php';
+
+	if ( file_exists( $script_file_path ) && file_exists( $script_deps_file_path ) ) {
+		$dependencies = require $script_deps_file_path;
+		\wp_enqueue_script( 'dekode-theme', $script_file_uri, $dependencies['dependencies'], $dependencies['version'], true );
+	}
+}
+
+/**
+ * Enqueue editor scripts and styles.
+ *
+ * @return void
+ */
+function do_enqueue_block_editor_assets() : void {
+
+	// Enqueue styles.
+	$style_file_path = \get_template_directory() . '/build/editor.css';
+	$style_file_uri  = \get_template_directory_uri() . '/build/editor.css';
+
+	if ( file_exists( $style_file_path ) ) {
+		\wp_enqueue_style( 'dekode-theme-editor', $style_file_uri, [], filemtime( $style_file_path ) );
+	}
+
+	// Enqueue scripts.
+	$script_file_path      = \get_template_directory() . '/build/editor.js';
+	$script_file_uri       = \get_template_directory_uri() . '/build/editor.js';
+	$script_deps_file_path = \get_template_directory() . '/build/editor.asset.php';
+
+	if ( file_exists( $script_file_path ) && file_exists( $script_deps_file_path ) ) {
+		$dependencies = require $script_deps_file_path;
+		\wp_enqueue_script( 'dekode-theme-editor', $script_file_uri, $dependencies['dependencies'], $dependencies['version'], true );
 	}
 }
