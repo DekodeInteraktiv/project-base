@@ -1,1 +1,14 @@
-@custom-media --theme-desktop-menu (width > 900px);
+@custom-media --theme-viewport-mobile (width > 480px);
+@custom-media --theme-viewport-mobile-only (width <= 480px);
+@custom-media --theme-viewport-mobile-down (width <= 480px);
+@custom-media --theme-viewport-small (width > 600px);
+@custom-media --theme-viewport-small-only (width <= 600px);
+@custom-media --theme-viewport-small-down (width <= 600px);
+@custom-media --theme-viewport-medium (width > 782px);
+@custom-media --theme-viewport-medium-down (width <= 782px);
+@custom-media --theme-viewport-large (width > 960px);
+@custom-media --theme-viewport-large-down (width <= 960px);
+@custom-media --theme-viewport-wide (width > 1280px);
+@custom-media --theme-viewport-wide-down (width <= 1280px);
+@custom-media --theme-viewport-huge (width > 1440px);
+@custom-media --theme-viewport-huge-down (width <= 1440px);
