@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"mu-blocks": [],
+	"mu-extensions": [
+		"t2/base-style",
+		"t2/custom-block-margin",
+		"t2/disable-block-directory",
+		"t2/disable-custom-css",
+		"t2/disable-floc",
+		"t2/disable-full-site-editing",
+		"t2/disable-xmlrpc",
+		"t2/remove-core-patterns",
+		"t2/reset-admin-dashboard",
+		"t2/site-health-qa"
+	]
+}
