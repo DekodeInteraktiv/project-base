@@ -1,5 +1,8 @@
 {
 	"version": 1,
+	"admin": true,
+	"blocks": true,
+	"extensions": true,
 	"mu-blocks": [],
 	"mu-extensions": [
 		"t2/base-style",
