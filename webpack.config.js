@@ -87,6 +87,13 @@ const config = {
 			},
 		},
 	},
+	resolve: {
+		...defaultConfig.resolve,
+		alias: {
+			...defaultConfig.resolve.alias,
+			components: path.resolve( __dirname, 'packages', 'components' ),
+		},
+	},
 	plugins: [
 		new MiniCSSExtractPlugin( { filename: '[name]' } ),
 		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
