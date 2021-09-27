@@ -11,7 +11,7 @@
 		"@dekode/stylelint-config": "1.0.1",
 		"@wordpress/eslint-plugin": "9.1.2",
 		"@wordpress/scripts": "18.0.1",
-		"autoprefixer": "10.3.4",
+		"autoprefixer": "10.3.6",
 		"browser-sync": "^2.27.5",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"cssnano": "5.0.8",
