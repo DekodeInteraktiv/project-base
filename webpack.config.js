@@ -47,7 +47,10 @@ async function getEntries() {
 			 * IgnoreEmitPlugin to allow as direct entry files.
 			 */
 			entries[
-				`${ dir }|${ entry.replace( /.(sc|sa|c)ss/, '.css-entry-file' ) }`
+				`${ dir }|${ entry.replace(
+					/.(sc|sa|c)ss/,
+					'.css-entry-file'
+				) }`
 			] = `${ dir }/src/${ entry }`;
 		} );
 	} );
