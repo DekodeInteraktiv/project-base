@@ -26,6 +26,7 @@
 		"postcss-media-minmax": "5.0.0",
 		"postcss-mixins": "8.1.0",
 		"postcss-nested": "5.0.6",
+		"prettier": "~2.4.1",
 		"node-sass": "~6.0.1",
 		"resolve-url-loader": "~4.0.0",
 		"console-table-printer": "~2.10.0",
