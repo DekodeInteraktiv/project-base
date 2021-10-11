@@ -34,7 +34,7 @@
 		"prepare": "husky install",
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
-		"format": "wp-scripts format .",
+		"format": "prettier --write .",
 		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",
@@ -46,7 +46,7 @@
 			"wp-scripts lint-style"
 		],
 		"*.{js,ts,tsx}": [
-			"wp-scripts format",
+			"prettier --write",
 			"wp-scripts lint-js"
 		]
 	}
