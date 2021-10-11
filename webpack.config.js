@@ -3,19 +3,19 @@
 /**
  * External dependencies
  */
-const { sync: globSync } = require('fast-glob');
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const webpack = require('webpack');
-require('dotenv').config();
+const { sync: globSync } = require( 'fast-glob' );
+const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
+const path = require( 'path' );
+const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
+const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
+const webpack = require( 'webpack' );
+require( 'dotenv' ).config();
 
 /**
  * WordPress dependencies
  */
-const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
-const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
+const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
+const defaultConfig = require( './node_modules/@wordpress/scripts/config/webpack.config' );
 
 /**
  * Patches config to use resolve-url-loader for relative paths in SCSS files
@@ -23,8 +23,8 @@ const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.
  *
  * All paths will be threated as relative to file, not project root.
  */
-for (const rule of defaultConfig.module.rules) {
-	if ('any-filename-to-test.scss'.match(rule.test)) {
+for ( const rule of defaultConfig.module.rules ) {
+	if ( 'any-filename-to-test.scss'.match( rule.test ) ) {
 		const sassLoaderConfig = rule.use.pop();
 
 		// We mutate default config to change behaviour.
@@ -32,7 +32,7 @@ for (const rule of defaultConfig.module.rules) {
 			...rule.use,
 			// resolve-url-loader should be executed right after sass-loader.
 			{
-				loader: require.resolve('resolve-url-loader'),
+				loader: require.resolve( 'resolve-url-loader' ),
 				options: {
 					sourceMap: sassLoaderConfig.options.sourceMap,
 					removeCR: true,
@@ -64,14 +64,14 @@ function getEntryFiles() {
 		{ onlyFiles: true }
 	);
 
-	files.forEach((file) => {
-		const entryFiles = require(file); // eslint-disable-line
+	files.forEach( ( file ) => {
+		const entryFiles = require( file ); // eslint-disable-line
 
-		entries.push({
-			dir: path.dirname(file),
-			files: entryFiles.map((entryFile) => `src/${entryFile}`),
-		});
-	});
+		entries.push( {
+			dir: path.dirname( file ),
+			files: entryFiles.map( ( entryFile ) => `src/${ entryFile }` ),
+		} );
+	} );
 
 	return entries;
 }
@@ -86,19 +86,19 @@ function getEntryFiles() {
  * @param {Array}  files Relative paths of enries.
  * @return {webpack.Configuration} Return single webpack configuration.
  */
-const prepareConfig = (dir, files) => {
+const prepareConfig = ( dir, files ) => {
 	const entries = {};
 
-	files.forEach((file) => {
-		const filePath = path.resolve(__dirname, dir, file);
-		const fileName = path.parse(file).name;
+	files.forEach( ( file ) => {
+		const filePath = path.resolve( __dirname, dir, file );
+		const fileName = path.parse( file ).name;
 
-		if (typeof entries[fileName] === 'undefined') {
-			entries[fileName] = [];
+		if ( typeof entries[ fileName ] === 'undefined' ) {
+			entries[ fileName ] = [];
 		}
 
-		entries[fileName].push(filePath);
-	});
+		entries[ fileName ].push( filePath );
+	} );
 
 	const config = {
 		...defaultConfig,
@@ -107,7 +107,7 @@ const prepareConfig = (dir, files) => {
 		entry: entries,
 
 		output: {
-			path: path.resolve(__dirname, dir, 'build'),
+			path: path.resolve( __dirname, dir, 'build' ),
 			filename: '[name].js',
 		},
 		optimization: {
@@ -131,7 +131,7 @@ const prepareConfig = (dir, files) => {
 			...defaultConfig.resolve,
 			alias: {
 				...defaultConfig.resolve.alias,
-				components: path.resolve(__dirname, 'packages', 'components'),
+				components: path.resolve( __dirname, 'packages', 'components' ),
 			},
 		},
 
@@ -149,7 +149,7 @@ const prepareConfig = (dir, files) => {
 		},
 
 		plugins: [
-			new MiniCSSExtractPlugin({ filename: '[name].css' }),
+			new MiniCSSExtractPlugin( { filename: '[name].css' } ),
 
 			/**
 			 * It removes empty JS files, when we use CSS/SCSS as main entrypoint of asset.
@@ -158,20 +158,20 @@ const prepareConfig = (dir, files) => {
 			 */
 			new RemoveEmptyScriptsPlugin(),
 
-			new DependencyExtractionWebpackPlugin({ injectPolyfill: true }),
+			new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
 
-			(process.argv || []).includes('--progress') &&
+			( process.argv || [] ).includes( '--progress' ) &&
 				new webpack.ProgressPlugin(),
 
 			'true' === process.env.BROWSER_SYNC_ENABLE &&
-				new BrowserSyncPlugin({
+				new BrowserSyncPlugin( {
 					files: '**/*.php',
 					proxy:
 						process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
 					port: process.env.BROWSER_SYNC_PORT ?? 3002,
 					https: 'true' === process.env.BROWSER_SYNC_HTTPS,
-				}),
-		].filter(Boolean),
+				} ),
+		].filter( Boolean ),
 	};
 
 	return config;
@@ -184,4 +184,4 @@ const files = getEntryFiles();
  *
  * https://webpack.js.org/configuration/configuration-types/#exporting-multiple-configurations
  */
-module.exports = files.map((item) => prepareConfig(item.dir, item.files));
+module.exports = files.map( ( item ) => prepareConfig( item.dir, item.files ) );

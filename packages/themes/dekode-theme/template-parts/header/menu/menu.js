@@ -1,12 +1,12 @@
 /**
  * Elements
  */
-const toggleButton = document.querySelector('.site-header--nav-toggle');
+const toggleButton = document.querySelector( '.site-header--nav-toggle' );
 
 function toggle() {
-	document.body.classList.toggle('main-navigation__is-visible');
+	document.body.classList.toggle( 'main-navigation__is-visible' );
 }
 
-if (toggleButton) {
-	toggleButton.addEventListener('click', toggle);
+if ( toggleButton ) {
+	toggleButton.addEventListener( 'click', toggle );
 }
