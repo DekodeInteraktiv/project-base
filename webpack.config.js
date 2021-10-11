@@ -9,7 +9,6 @@ const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const webpack = require('webpack');
-const { Table } = require('console-table-printer');
 require('dotenv').config();
 
 /**
@@ -78,58 +77,6 @@ function getEntryFiles() {
 }
 
 /**
- * Closure function to pretty print information about packages and
- * their entry files of assets.
- */
-const packagesTable = (() => {
-	const entriesForTable = {};
-
-	const p = new Table({
-		columns: [
-			{ name: 'dir', title: 'Package', alignment: 'left' },
-			{ name: 'files', title: 'Entry Files', alignment: 'left' },
-		],
-	});
-
-	return {
-		printTable: () => {
-			const dirs = Object.keys(entriesForTable);
-			dirs.forEach((dir, i) => {
-				const entryForTable = entriesForTable[dir];
-				Object.values(entryForTable).forEach((entryForTableItem, j) => {
-					p.addRow({
-						dir: j === 0 ? dir : '',
-						files: entryForTableItem.join(' + '),
-					});
-				});
-
-				if (dirs.length - 1 > i) {
-					p.addRow({
-						dir: '───────────────────────────────────────────────────',
-						files: '────────────────────────────────',
-					});
-				}
-			});
-
-			p.printTable();
-		},
-
-		logEntry: (dir, file) => {
-			const fileName = path.parse(file).name;
-
-			if (typeof entriesForTable[dir] === 'undefined') {
-				entriesForTable[dir] = [];
-			}
-
-			if (typeof entriesForTable[dir][fileName] === 'undefined') {
-				entriesForTable[dir][fileName] = [];
-			}
-			entriesForTable[dir][fileName].push(file);
-		},
-	};
-})();
-
-/**
  * Prepares Config for defined package and entry files,
  *
  * Future: We can differ configuration between packages or use their own configuration
@@ -151,7 +98,6 @@ const prepareConfig = (dir, files) => {
 		}
 
 		entries[fileName].push(filePath);
-		packagesTable.logEntry(dir, file);
 	});
 
 	const config = {
@@ -159,13 +105,6 @@ const prepareConfig = (dir, files) => {
 
 		name: dir,
 		entry: entries,
-
-		/**
-		 * It exclude including to bundle external copy of libraries.
-		 */
-		externals: {
-			jquery: 'jQuery',
-		},
 
 		output: {
 			path: path.resolve(__dirname, dir, 'build'),
@@ -220,9 +159,11 @@ const prepareConfig = (dir, files) => {
 			new RemoveEmptyScriptsPlugin(),
 
 			new DependencyExtractionWebpackPlugin({ injectPolyfill: true }),
-			new webpack.ProgressPlugin(),
 
-			true === process.env.BROWSER_SYNC_ENABLE &&
+			(process.argv || []).includes('--progress') &&
+				new webpack.ProgressPlugin(),
+
+			'true' === process.env.BROWSER_SYNC_ENABLE &&
 				new BrowserSyncPlugin({
 					files: '**/*.php',
 					proxy:
@@ -244,5 +185,3 @@ const files = getEntryFiles();
  * https://webpack.js.org/configuration/configuration-types/#exporting-multiple-configurations
  */
 module.exports = files.map((item) => prepareConfig(item.dir, item.files));
-
-packagesTable.printTable();
