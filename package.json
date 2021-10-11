@@ -18,7 +18,6 @@
 		"dotenv": "^10.0.0",
 		"fast-glob": "3.2.7",
 		"husky": "7.0.2",
-		"ignore-emit-webpack-plugin": "2.0.6",
 		"lint-staged": "11.2.3",
 		"postcss": "8.3.9",
 		"postcss-custom-media": "8.0.0",
@@ -27,13 +26,14 @@
 		"postcss-media-minmax": "5.0.0",
 		"postcss-mixins": "8.1.0",
 		"postcss-nested": "5.0.6",
-		"prettier": "2.4.1"
+		"resolve-url-loader": "~4.0.0",
+		"webpack-remove-empty-scripts": "~0.7.1"
 	},
 	"scripts": {
 		"prepare": "husky install",
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
-		"format": "prettier --write .",
+		"format": "wp-scripts format .",
 		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",
@@ -45,7 +45,7 @@
 			"wp-scripts lint-style"
 		],
 		"*.{js,ts,tsx}": [
-			"prettier --write",
+			"wp-scripts format",
 			"wp-scripts lint-js"
 		]
 	}
