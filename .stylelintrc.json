@@ -4,7 +4,7 @@
 		"at-rule-no-unknown": [
 			true,
 			{
-				"ignoreAtRules": [ "mixin", "define-mixin" ]
+				"ignoreAtRules": ["mixin", "define-mixin"]
 			}
 		]
 	}
