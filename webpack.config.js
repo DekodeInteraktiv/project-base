@@ -47,7 +47,10 @@ async function getEntries() {
 			 * IgnoreEmitPlugin to allow as direct entry files.
 			 */
 			entries[
-				`${ dir }|${ entry.replace( '.css', '.css-entry-file' ) }`
+				`${ dir }|${ entry.replace(
+					/.(sc|sa|c)ss/,
+					'.css-entry-file'
+				) }`
 			] = `${ dir }/src/${ entry }`;
 		} );
 	} );
@@ -71,7 +74,7 @@ const config = {
 			cacheGroups: {
 				style: {
 					type: 'css/mini-extract',
-					test: /[\\/]style(\.module)?\.(sc|sa|c)ss$/,
+					test: /[\\/].+?\.(sc|sa|c)ss$/,
 					chunks: 'all',
 					enforce: true,
 					name( _, chunks ) {
