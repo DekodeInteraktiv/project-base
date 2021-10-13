@@ -89,16 +89,30 @@ function getEntryFiles() {
 const prepareConfig = (dir, files) => {
 	const entries = {};
 
-	files.forEach((file) => {
-		const filePath = path.resolve(__dirname, dir, file);
-		const fileName = path.parse(file).name;
+	files.forEach( ( file ) => {
+		const filePath = path.resolve( __dirname, dir, file );
+		const pathParts = path.parse( file );
+		const fileName = pathParts.name;
+		let subDirectory = pathParts.dir;
 
-		if (typeof entries[fileName] === 'undefined') {
-			entries[fileName] = [];
+		/**
+		 * Remove src folder from path to add support nested directories in entry-files.json
+		 * Like: ["index.js", "hero/index.js", "style.css"]
+		 * All assets of hero/index.js should be places to build/hero/
+		 */
+		subDirectory = subDirectory
+			.split( '/' )
+			.filter( ( folder, i ) => ! ( folder === 'src' && i === 0 ) )
+			.join( '/' );
+
+		const entryKey = ( subDirectory ? subDirectory + '/' : '' ) + fileName;
+
+		if ( typeof entries[ entryKey ] === 'undefined' ) {
+			entries[ entryKey ] = [];
 		}
 
-		entries[fileName].push(filePath);
-	});
+		entries[ entryKey ].push( filePath );
+	} );
 
 	const config = {
 		...defaultConfig,
