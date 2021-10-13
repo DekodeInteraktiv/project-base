@@ -5,3 +5,6 @@ build
 vendor
 wp
 *.css
+*.lock
+*.md
+package-lock.json

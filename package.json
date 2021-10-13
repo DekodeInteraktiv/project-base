@@ -26,6 +26,7 @@
 		"postcss-media-minmax": "5.0.0",
 		"postcss-mixins": "8.1.0",
 		"postcss-nested": "5.0.6",
+		"prettier": "2.4.1",
 		"resolve-url-loader": "~4.0.0",
 		"webpack-remove-empty-scripts": "~0.7.1"
 	},
@@ -33,7 +34,7 @@
 		"prepare": "husky install",
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
-		"format": "wp-scripts format .",
+		"format": "prettier --write .",
 		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",
@@ -45,7 +46,7 @@
 			"wp-scripts lint-style"
 		],
 		"*.{js,ts,tsx}": [
-			"wp-scripts format",
+			"prettier --write",
 			"wp-scripts lint-js"
 		]
 	}
