@@ -135,6 +135,9 @@ const prepareConfig = ( dir, files ) => {
 			},
 		},
 
+		// Hides warnings about size, like: 'WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.'
+		performance: { hints: false },
+
 		// Hides rarely used information for more compact appearance of console.
 		stats: {
 			children: false,
