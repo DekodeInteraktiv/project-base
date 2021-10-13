@@ -3,6 +3,9 @@ module.exports = {
 	globals: {
 		wp: 'off',
 	},
+	env: {
+		browser: true,
+	},
 	rules: {
 		'jsdoc/require-param': 'off',
 		'@wordpress/no-global-event-listener': 'off',
