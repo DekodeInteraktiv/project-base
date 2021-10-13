@@ -2,11 +2,10 @@
 	"name": "@dekode/project-base",
 	"private": true,
 	"engines": {
-		"node": "14",
-		"npm": "6",
+		"node": "16",
+		"npm": "7",
 		"yarn": "Please use npm"
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"@dekode/stylelint-config": "1.0.1",
 		"@wordpress/eslint-plugin": "9.2.0",
@@ -16,6 +15,7 @@
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"cssnano": "5.0.8",
 		"dotenv": "^10.0.0",
+		"eslint-plugin-prettier": "4.0.0",
 		"fast-glob": "3.2.7",
 		"husky": "7.0.2",
 		"lint-staged": "11.2.3",
