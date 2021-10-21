@@ -31,6 +31,8 @@
 		"webpack-remove-empty-scripts": "~0.7.1"
 	},
 	"scripts": {
+		"create-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block",
+		"create-innerblock-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block --template innerblocks",
 		"prepare": "husky install",
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
