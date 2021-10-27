@@ -4,7 +4,7 @@
 
 * PHP >= 7.2
 * Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-* Node >= 14.0
+* Node >= 16.0
 
 ## TLDR - what's new?
 Themes, plugins, mu-plugins etc. is now structured under packages and built into the wordpress structure by composer. All build scripts are run from root and automatically looks through `./packages`. Packages need an `entry-files.json` file to define what files should be build when running npm build/start and a `composer.json` that defines what it is and gives the package a name. Codeship testing/build commands are now located in the repository under `./tools`. Any time a new package is added it needs to be referenced in the project-base root composer.json using @dev.
