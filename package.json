@@ -9,7 +9,7 @@
 	"devDependencies": {
 		"@dekode/stylelint-config": "1.0.1",
 		"@wordpress/eslint-plugin": "9.2.0",
-		"@wordpress/scripts": "18.1.0",
+		"@wordpress/scripts": "19.0.0",
 		"autoprefixer": "10.3.7",
 		"browser-sync": "^2.27.5",
 		"browser-sync-webpack-plugin": "^2.3.0",
@@ -17,9 +17,9 @@
 		"dotenv": "^10.0.0",
 		"eslint-plugin-prettier": "4.0.0",
 		"fast-glob": "3.2.7",
-		"husky": "7.0.2",
-		"lint-staged": "11.2.3",
-		"postcss": "8.3.9",
+		"husky": "7.0.4",
+		"lint-staged": "11.2.4",
+		"postcss": "8.3.11",
 		"postcss-custom-media": "8.0.0",
 		"postcss-flexbugs-fixes": "5.0.2",
 		"postcss-import": "14.0.2",
@@ -31,6 +31,8 @@
 		"webpack-remove-empty-scripts": "~0.7.1"
 	},
 	"scripts": {
+		"create-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block",
+		"create-innerblock-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block --template innerblocks",
 		"prepare": "husky install",
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
