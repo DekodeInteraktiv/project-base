@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "95ea18f60b0484e502c6f4a042b4586c",
+    "content-hash": "a4caa64dfeed11134bc3d88d94a0a03e",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -502,16 +502,16 @@
         },
         {
             "name": "symfony/dotenv",
-            "version": "v5.3.7",
+            "version": "v5.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dotenv.git",
-                "reference": "99a18c2e23f4d901c36cea2012f9f1a8e25e99e4"
+                "reference": "12888c9c46ac750ec5c1381db5bf3d534e7d70cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dotenv/zipball/99a18c2e23f4d901c36cea2012f9f1a8e25e99e4",
-                "reference": "99a18c2e23f4d901c36cea2012f9f1a8e25e99e4",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/12888c9c46ac750ec5c1381db5bf3d534e7d70cb",
+                "reference": "12888c9c46ac750ec5c1381db5bf3d534e7d70cb",
                 "shasum": ""
             },
             "require": {
@@ -552,7 +552,7 @@
                 "environment"
             ],
             "support": {
-                "source": "https://github.com/symfony/dotenv/tree/v5.3.7"
+                "source": "https://github.com/symfony/dotenv/tree/v5.3.8"
             },
             "funding": [
                 {
@@ -568,18 +568,18 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-02T16:35:09+00:00"
+            "time": "2021-07-29T06:18:06+00:00"
         },
         {
             "name": "t2/admin",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-admin-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-admin-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/icons": "0.10.0"
+                "t2/icons": "0.13.2"
             },
             "type": "package",
             "autoload": {
@@ -600,10 +600,10 @@
         },
         {
             "name": "t2/assets",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-assets-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-assets-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -627,17 +627,17 @@
         },
         {
             "name": "t2/block-library",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-block-library-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-block-library-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/blocks": "0.10.0",
-                "t2/config": "0.10.0",
-                "t2/icons": "0.10.0",
-                "t2/utils": "0.10.0"
+                "t2/blocks": "0.13.2",
+                "t2/config": "0.13.2",
+                "t2/icons": "0.13.2",
+                "t2/utils": "0.13.2"
             },
             "type": "package",
             "autoload": {
@@ -658,16 +658,16 @@
         },
         {
             "name": "t2/blocks",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-blocks-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-blocks-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "0.10.0",
-                "t2/registry": "0.10.0",
-                "t2/utils": "0.10.0"
+                "t2/config": "0.13.2",
+                "t2/registry": "0.13.2",
+                "t2/utils": "0.13.2"
             },
             "type": "package",
             "autoload": {
@@ -689,10 +689,10 @@
         },
         {
             "name": "t2/components",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-components-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-components-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -716,14 +716,14 @@
         },
         {
             "name": "t2/config",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-config-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-config-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/utils": "0.10.0"
+                "t2/utils": "0.13.2"
             },
             "type": "package",
             "autoload": {
@@ -744,10 +744,10 @@
         },
         {
             "name": "t2/editor",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-editor-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-editor-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -771,17 +771,17 @@
         },
         {
             "name": "t2/extension-library",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-extension-library-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-extension-library-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "0.10.0",
-                "t2/extensions": "0.10.0",
-                "t2/icons": "0.10.0",
-                "t2/utils": "0.10.0"
+                "t2/config": "0.13.2",
+                "t2/extensions": "0.13.2",
+                "t2/icons": "0.13.2",
+                "t2/utils": "0.13.2"
             },
             "type": "package",
             "autoload": {
@@ -802,16 +802,16 @@
         },
         {
             "name": "t2/extensions",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-extensions-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-extensions-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "0.10.0",
-                "t2/registry": "0.10.0",
-                "t2/utils": "0.10.0"
+                "t2/config": "0.13.2",
+                "t2/registry": "0.13.2",
+                "t2/utils": "0.13.2"
             },
             "type": "package",
             "autoload": {
@@ -832,14 +832,14 @@
         },
         {
             "name": "t2/icons",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-icons-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-icons-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/utils": "0.10.0"
+                "t2/utils": "0.13.2"
             },
             "type": "package",
             "autoload": {
@@ -860,10 +860,10 @@
         },
         {
             "name": "t2/registry",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-registry-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-registry-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -888,25 +888,25 @@
         },
         {
             "name": "t2/t2",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-t2-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-t2-0.13.2.zip"
             },
             "require": {
                 "johnpbloch/wordpress": ">= 5.8",
-                "t2/admin": "0.10.0",
-                "t2/assets": "0.10.0",
-                "t2/block-library": "0.10.0",
-                "t2/blocks": "0.10.0",
-                "t2/components": "0.10.0",
-                "t2/config": "0.10.0",
-                "t2/editor": "0.10.0",
-                "t2/extension-library": "0.10.0",
-                "t2/extensions": "0.10.0",
-                "t2/icons": "0.10.0",
-                "t2/registry": "0.10.0",
-                "t2/utils": "0.10.0"
+                "t2/admin": "0.13.2",
+                "t2/assets": "0.13.2",
+                "t2/block-library": "0.13.2",
+                "t2/blocks": "0.13.2",
+                "t2/components": "0.13.2",
+                "t2/config": "0.13.2",
+                "t2/editor": "0.13.2",
+                "t2/extension-library": "0.13.2",
+                "t2/extensions": "0.13.2",
+                "t2/icons": "0.13.2",
+                "t2/registry": "0.13.2",
+                "t2/utils": "0.13.2"
             },
             "type": "wordpress-plugin",
             "license": [
@@ -922,10 +922,10 @@
         },
         {
             "name": "t2/utils",
-            "version": "0.10.0",
+            "version": "0.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-utils-0.10.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-utils-0.13.2.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -1180,16 +1180,16 @@
         },
         {
             "name": "gettext/gettext",
-            "version": "v4.8.5",
+            "version": "v4.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-gettext/Gettext.git",
-                "reference": "ef2e312dff383fc0e4cd62dd39042e1157f137d4"
+                "reference": "bbeb8f4d3077663739aecb4551b22e720c0e9efe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-gettext/Gettext/zipball/ef2e312dff383fc0e4cd62dd39042e1157f137d4",
-                "reference": "ef2e312dff383fc0e4cd62dd39042e1157f137d4",
+                "url": "https://api.github.com/repos/php-gettext/Gettext/zipball/bbeb8f4d3077663739aecb4551b22e720c0e9efe",
+                "reference": "bbeb8f4d3077663739aecb4551b22e720c0e9efe",
                 "shasum": ""
             },
             "require": {
@@ -1241,7 +1241,7 @@
             "support": {
                 "email": "oom@oscarotero.com",
                 "issues": "https://github.com/oscarotero/Gettext/issues",
-                "source": "https://github.com/php-gettext/Gettext/tree/v4.8.5"
+                "source": "https://github.com/php-gettext/Gettext/tree/v4.8.6"
             },
             "funding": [
                 {
@@ -1257,7 +1257,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-07-13T16:45:53+00:00"
+            "time": "2021-10-19T10:44:53+00:00"
         },
         {
             "name": "gettext/languages",
@@ -1666,16 +1666,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625"
+                "reference": "f268ca40d54617c6e06757f83f699775c9b3ff2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
-                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f268ca40d54617c6e06757f83f699775c9b3ff2e",
+                "reference": "f268ca40d54617c6e06757f83f699775c9b3ff2e",
                 "shasum": ""
             },
             "require": {
@@ -1718,7 +1718,7 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2021-04-09T00:54:41+00:00"
+            "time": "2021-10-11T04:00:11+00:00"
         },
         {
             "name": "symfony/finder",
@@ -2166,7 +2166,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
