@@ -1,9 +1,5 @@
 # Project name
 
-[![Codeship Status for DekodeInteraktiv/project-base](https://app.codeship.com/projects/cfcc97d0-e821-0137-aead-6e1368c7cbd1/status?branch=master)](https://app.codeship.com/projects/373906)
-![Packagist](https://img.shields.io/packagist/v/dekode/project-base.svg)
-![PHP from Packagist](https://img.shields.io/packagist/php-v/dekode/project-base.svg)
-
 If you are looking for instructions on how to use and install project-base, please refer to the file [INSTALLATION.md](./INSTALLATION.md)
 
 Short summary of the main functionality and purpose of the project.
