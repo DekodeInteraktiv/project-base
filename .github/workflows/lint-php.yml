@@ -2,9 +2,9 @@ name: PHP CodeSniffer
 
 on:
     push:
-        branches: [main]
+        branches: [main, stage, develop]
     pull_request:
-        branches: [main]
+        branches: [main, stage, develop]
         paths:
             - '**.php'
             - 'composer.lock'

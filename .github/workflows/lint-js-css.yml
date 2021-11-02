@@ -2,9 +2,9 @@ name: Lint JS and CSS
 
 on:
     push:
-        branches: [main]
+        branches: [main, stage, develop]
     pull_request:
-        branches: [main]
+        branches: [main, stage, develop]
         paths:
             - '**.css'
             - '**.js'
