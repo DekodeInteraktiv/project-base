@@ -25,8 +25,8 @@ function do_enqueue_assets() : void {
 	$style_file_path = \get_template_directory() . '/build/style.css';
 	$style_file_uri  = \get_template_directory_uri() . '/build/style.css';
 
-	if ( file_exists( $style_file_path ) ) {
-		\wp_enqueue_style( 'dekode-theme', $style_file_uri, [], filemtime( $style_file_path ) );
+	if ( \file_exists( $style_file_path ) ) {
+		\wp_enqueue_style( 'dekode-theme', $style_file_uri, [], \filemtime( $style_file_path ) );
 	}
 
 	// Enqueue scripts.
@@ -34,7 +34,7 @@ function do_enqueue_assets() : void {
 	$script_file_uri       = \get_template_directory_uri() . '/build/index.js';
 	$script_deps_file_path = \get_template_directory() . '/build/index.asset.php';
 
-	if ( file_exists( $script_file_path ) && file_exists( $script_deps_file_path ) ) {
+	if ( \file_exists( $script_file_path ) && \file_exists( $script_deps_file_path ) ) {
 		$dependencies = require $script_deps_file_path;
 		\wp_enqueue_script( 'dekode-theme', $script_file_uri, $dependencies['dependencies'], $dependencies['version'], true );
 	}
@@ -51,8 +51,8 @@ function do_enqueue_block_editor_assets() : void {
 	$style_file_path = \get_template_directory() . '/build/editor.css';
 	$style_file_uri  = \get_template_directory_uri() . '/build/editor.css';
 
-	if ( file_exists( $style_file_path ) ) {
-		\wp_enqueue_style( 'dekode-theme-editor', $style_file_uri, [], filemtime( $style_file_path ) );
+	if ( \file_exists( $style_file_path ) ) {
+		\wp_enqueue_style( 'dekode-theme-editor', $style_file_uri, [], \filemtime( $style_file_path ) );
 	}
 
 	// Enqueue scripts.
@@ -60,7 +60,7 @@ function do_enqueue_block_editor_assets() : void {
 	$script_file_uri       = \get_template_directory_uri() . '/build/editor.js';
 	$script_deps_file_path = \get_template_directory() . '/build/editor.asset.php';
 
-	if ( file_exists( $script_file_path ) && file_exists( $script_deps_file_path ) ) {
+	if ( \file_exists( $script_file_path ) && \file_exists( $script_deps_file_path ) ) {
 		$dependencies = require $script_deps_file_path;
 		\wp_enqueue_script( 'dekode-theme-editor', $script_file_uri, $dependencies['dependencies'], $dependencies['version'], true );
 	}
