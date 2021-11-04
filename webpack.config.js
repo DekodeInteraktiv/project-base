@@ -21,7 +21,7 @@ const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.
  * Patches config to use resolve-url-loader for relative paths in SCSS files
  * It will be possible to use './images/png.png' inside the SCSS,
  *
- * All paths will be threated as relative to file, not project root.
+ * All paths will be treated as relative to file, not project root.
  */
 for (const rule of defaultConfig.module.rules) {
 	if ('any-filename-to-test.scss'.match(rule.test)) {
