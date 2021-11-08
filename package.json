@@ -13,7 +13,7 @@
 		"autoprefixer": "10.4.0",
 		"browser-sync": "^2.27.7",
 		"browser-sync-webpack-plugin": "^2.3.0",
-		"cssnano": "5.0.8",
+		"cssnano": "5.0.10",
 		"dotenv": "^10.0.0",
 		"eslint-plugin-prettier": "4.0.0",
 		"fast-glob": "3.2.7",
