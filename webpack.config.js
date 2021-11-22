@@ -89,9 +89,9 @@ function getEntryFiles() {
 const prepareConfig = (dir, files) => {
 	const entries = {};
 
-	files.forEach( ( file ) => {
-		const filePath = path.resolve( __dirname, dir, file );
-		const pathParts = path.parse( file );
+	files.forEach((file) => {
+		const filePath = path.resolve(__dirname, dir, file);
+		const pathParts = path.parse(file);
 		const fileName = pathParts.name;
 		let subDirectory = pathParts.dir;
 
@@ -101,18 +101,18 @@ const prepareConfig = (dir, files) => {
 		 * All assets of hero/index.js should be places to build/hero/
 		 */
 		subDirectory = subDirectory
-			.split( '/' )
-			.filter( ( folder, i ) => ! ( folder === 'src' && i === 0 ) )
-			.join( '/' );
+			.split('/')
+			.filter((folder, i) => !(folder === 'src' && i === 0))
+			.join('/');
 
-		const entryKey = ( subDirectory ? subDirectory + '/' : '' ) + fileName;
+		const entryKey = (subDirectory ? subDirectory + '/' : '') + fileName;
 
-		if ( typeof entries[ entryKey ] === 'undefined' ) {
-			entries[ entryKey ] = [];
+		if (typeof entries[entryKey] === 'undefined') {
+			entries[entryKey] = [];
 		}
 
-		entries[ entryKey ].push( filePath );
-	} );
+		entries[entryKey].push(filePath);
+	});
 
 	const config = {
 		...defaultConfig,
