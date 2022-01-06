@@ -3,7 +3,12 @@
 	"description": "Dekode WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
 	"license": "GPL-3.0-or-later",
 	"config": {
-		"sort-packages": true
+		"sort-packages": true,
+		"allow-plugins": {
+			"composer/installers": true,
+			"boxuk/wp-muplugin-loader": true,
+			"inpsyde/wp-translation-downloader": true
+		}
 	},
 	"prefer-stable": true,
 	"minimum-stability": "dev",
@@ -46,7 +51,7 @@
 		"php": ">=7.4",
 		"boxuk/wp-muplugin-loader": "~1.6.1",
 		"composer/installers": "~1.11.0",
-		"dekode/dekode-theme": "@dev",
+		"dekode/dekode-theme": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.0.2",
 		"johnpbloch/wordpress": "~5.8.1",
 		"symfony/dotenv": "~5.4.2",
