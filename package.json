@@ -8,7 +8,7 @@
 	},
 	"devDependencies": {
 		"@dekode/stylelint-config": "1.0.2",
-		"@wordpress/eslint-plugin": "9.3.0",
+		"@wordpress/eslint-plugin": "10.0.0",
 		"@wordpress/scripts": "20.0.2",
 		"autoprefixer": "10.4.2",
 		"browser-sync": "^2.27.7",
