@@ -40,6 +40,10 @@ public/content/languages
 # Local
 sql/
 
+# Bedrock env
+/index.php
+/public/.htaccess
+
 # Other
 debug.log
 wp-debug.log

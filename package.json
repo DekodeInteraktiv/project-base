@@ -7,6 +7,7 @@
 		"yarn": "Please use npm"
 	},
 	"devDependencies": {
+		"@clorith/bedrock-wp-env": "~4.6.0",
 		"@dekode/stylelint-config": "1.0.2",
 		"@wordpress/eslint-plugin": "^11.1.0",
 		"@wordpress/scripts": "^22.3.0",
@@ -41,7 +42,8 @@
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
-		"lint-staged": "lint-staged"
+		"lint-staged": "lint-staged",
+		"env": "bedrock-wp-env"
 	},
 	"lint-staged": {
 		"*.css": [
