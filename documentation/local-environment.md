@@ -87,3 +87,9 @@ Runs a specific scheduled event immediately.
 `npm run env run cli 'wp shell'`
 
 Starts an interactive shell against the WordPress instance, which will have access to the same filesystem and environment variables as the site.
+
+#### Start a server with xDebug enabled
+
+`npm run env start -- --xdebug`
+
+xDebug is a great tool for profiling, or debugging. It allows you to work with breakpoints to quickly capture, or modify, data in real-time while working on projects, without the need for writing to log files, or using `var_dump` and `die` functions.
