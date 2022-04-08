@@ -21,42 +21,8 @@ $root_dir = dirname( __DIR__ );
  */
 $webroot_dir = $root_dir . '/public';
 
-/**
- * Get env variable.
- *
- * @param string $key Variable key.
- * @return string
- */
-function env( string $key ) : string {
-	return $_ENV[ $key ] ?? '';
-}
 
-/**
- * Load environment variables
- */
-$dotenv = new \Symfony\Component\Dotenv\Dotenv();
-$dotenv->load( $root_dir . '/.env' );
 
-/**
- * Set up our global environment constant
- *
- * By doing so, we ensure that plugins and themes relying on the environment data
- * provided by WordPress core behave as expected depending on the applicable sitaution.
- *
- * Default: production
- */
-if ( ! defined( 'WP_ENVIRONMENT_TYPE' ) ) {
-	define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE' ) ?: 'production' );
-}
-
-/**
- * Load enviroment config
- */
-$env_config = __DIR__ . '/environments/' . WP_ENVIRONMENT_TYPE . '.php';
-
-if ( file_exists( $env_config ) ) {
-	require_once $env_config;
-}
 
 $http_host   = filter_input( INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING );
 $server_port = filter_input( INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_STRING );
@@ -102,18 +68,8 @@ if ( ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) { // phpcs:ignore WordPress.Security
 	define( 'WP_DEBUG_LOG', true );
 }
 
-/**
- * DB settings
- */
-define( 'DB_NAME', env( 'DB_NAME' ) );
-define( 'DB_USER', env( 'DB_USER' ) );
-define( 'DB_PASSWORD', env( 'DB_PASSWORD' ) );
-define( 'DB_HOST', env( 'DB_HOST' ) ?: 'localhost' );
-define( 'DB_CHARSET', 'utf8mb4' );
-define( 'DB_COLLATE', '' );
 
-// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-$table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
+
 
 /**
  * Disable Redis if the environment file decrees it so.
@@ -122,17 +78,6 @@ if ( env( 'WP_REDIS_DISABLED' ) && 'true' === env( 'WP_REDIS_DISABLED' ) ) {
 	define( 'WP_REDIS_DISABLED', true );
 }
 
-/**
- * Authentication Unique Keys and Salts
- */
-define( 'AUTH_KEY', env( 'AUTH_KEY' ) );
-define( 'SECURE_AUTH_KEY', env( 'SECURE_AUTH_KEY' ) );
-define( 'LOGGED_IN_KEY', env( 'LOGGED_IN_KEY' ) );
-define( 'NONCE_KEY', env( 'NONCE_KEY' ) );
-define( 'AUTH_SALT', env( 'AUTH_SALT' ) );
-define( 'SECURE_AUTH_SALT', env( 'SECURE_AUTH_SALT' ) );
-define( 'LOGGED_IN_SALT', env( 'LOGGED_IN_SALT' ) );
-define( 'NONCE_SALT', env( 'NONCE_SALT' ) );
 
 /**
  * Custom Settings
@@ -157,25 +102,5 @@ if ( env( 'WP_ALLOW_MULTISITE' ) ) {
  */
 define( 'CONCATENATE_SCRIPTS', env( 'CONCATENATE_SCRIPTS' ) ?: false );
 
-/**
- * Bootstrap WordPress
- */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', $webroot_dir );
-}
 
-/**
- * Check required constants.
- */
-$required_constants = [
-	'DB_HOST',
-	'DB_NAME',
-	'DB_USER',
-	'DB_PASSWORD',
-];
 
-foreach ( $required_constants as $constant ) {
-	if ( ! defined( $constant ) ) {
-		die( "Please define: $constant in your .env file" ); // phpcs:ignore
-	}
-}
