@@ -26,8 +26,10 @@ $webroot_dir = $root_dir . '/public';
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 /* Load environment variables */
-$dotenv = new \Symfony\Component\Dotenv\Dotenv();
-$dotenv->load( $root_dir . '/.env' );
+if ( file_exists( $root_dir . '/.env' ) ) {
+	$dotenv = new \Symfony\Component\Dotenv\Dotenv();
+	$dotenv->load( $root_dir . '/.env' );
+}
 
 /**
  * Get env variable with empty fallback.
