@@ -134,12 +134,12 @@ if ( defined( 'WP_CLI' ) && WP_CLI && env( 'MYSQLI_DEFAULT_SOCKET' ) ) {
 }
 
 /* Multisite */
-if ( env( 'WP_ALLOW_MULTISITE' ) ) {
-	define( 'WP_ALLOW_MULTISITE', true );
-	define( 'MULTISITE', true );
+define( 'WP_ALLOW_MULTISITE', env( 'WP_ALLOW_MULTISITE', false ) );
+define( 'MULTISITE', env( 'MULTISITE', false ) );
+
+if ( env( 'MULTISITE', false ) ) {
 	define( 'SUBDOMAIN_INSTALL', env( 'SUBDOMAIN_INSTALL', false ) );
-	// phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
-	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE', parse_url( WP_HOME, PHP_URL_HOST ) ) );
+	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE', parse_url( WP_HOME, PHP_URL_HOST ) ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
 	define( 'PATH_CURRENT_SITE', '/' );
 	define( 'SITE_ID_CURRENT_SITE', 1 );
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
