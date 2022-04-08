@@ -92,7 +92,9 @@
 		"post-install-cmd": [
 			"cp public/wp-content/plugins/spinupwp/drop-ins/object-cache.php public/wp-content/object-cache.php",
 			"cp -r packages/translations/* public/wp-content/languages/",
-			"cp config/wp-config-template.php public/wp-config.php"
+			"cp config/wp-config-template.php public/wp-config.php",
+			"rm -rf public/wp-content/themes/twentytwenty/",
+			"rm -rf public/wp-content/themes/twentytwentyone/"
 		],
 		"lint": [
 			"./vendor/bin/phpcs ."
