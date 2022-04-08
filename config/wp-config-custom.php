@@ -143,6 +143,19 @@ if ( env( 'WP_ALLOW_MULTISITE' ) ) {
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
 }
 
+if ( defined( 'WP_DEBUG' ) && WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
+	// If the document root can be determined, use it as the base for the logfile location.
+	$document_root = filter_input( INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_STRING );
+
+	/*
+	 * Validate that the document root path has no path traversal strings as part of it,
+	 * if not fallback to default logging locations.
+	 */
+	if ( ! empty( $document_root ) && true !== stristr( $document_root, '..' ) ) {
+		define( 'WP_DEBUG_LOG', rtrim( dirname( $document_root ), '/' ) . '/logs/wp-debug.log' );
+	}
+}
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
