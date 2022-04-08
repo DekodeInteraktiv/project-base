@@ -35,8 +35,15 @@ $dotenv->load( $root_dir . '/.env' );
  * @param mixed  $default Default value if key is not set.
  * @return mixed
  */
-function env( string $key, $default = '' ) {
-	return $_ENV[ $key ] ?? $default;
+function env( string $key, $default = '' ) { // phpcs:ignore NeutronStandard.Functions.TypeHint.NoArgumentType, NeutronStandard.Functions.TypeHint.NoReturnType
+	$value = $_ENV[ $key ] ?? $default;
+
+	// Return bool value for 'true' or 'false'.
+	if ( in_array( $value, [ 'true', 'false' ], true ) ) {
+		return boolval( $value );
+	}
+
+	return $value;
 }
 
 // ** Database settings - You can get this info from your web host ** //
@@ -127,9 +134,9 @@ if ( defined( 'WP_CLI' ) && WP_CLI && env( 'MYSQLI_DEFAULT_SOCKET' ) ) {
 if ( env( 'WP_ALLOW_MULTISITE' ) ) {
 	define( 'WP_ALLOW_MULTISITE', true );
 	define( 'MULTISITE', true );
-	define( 'SUBDOMAIN_INSTALL', filter_var( env( 'SUBDOMAIN_INSTALL' ), FILTER_VALIDATE_BOOLEAN ) ?: false );
+	define( 'SUBDOMAIN_INSTALL', env( 'SUBDOMAIN_INSTALL', false ) );
 	// phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
-	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE' ) ?: parse_url( WP_HOME, PHP_URL_HOST ) );
+	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE', parse_url( WP_HOME, PHP_URL_HOST ) ) );
 	define( 'PATH_CURRENT_SITE', '/' );
 	define( 'SITE_ID_CURRENT_SITE', 1 );
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
