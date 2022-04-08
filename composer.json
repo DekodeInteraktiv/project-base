@@ -68,15 +68,15 @@
 		"dekode/logging": "@dev"
 	},
 	"extra": {
-		"wordpress-install-dir": "public/wp",
+		"wordpress-install-dir": "public",
 		"installer-paths": {
-			"public/content/mu-plugins/{$name}/": [
+			"public/wp-content/mu-plugins/{$name}/": [
 				"type:wordpress-muplugin"
 			],
-			"public/content/plugins/{$name}/": [
+			"public/wp-content/plugins/{$name}/": [
 				"type:wordpress-plugin"
 			],
-			"public/content/themes/{$name}/": [
+			"public/wp-content/themes/{$name}/": [
 				"type:wordpress-theme"
 			]
 		},
@@ -85,13 +85,13 @@
 			"languages": [
 				"nb_NO"
 			],
-			"directory": "public/content/languages"
+			"directory": "public/wp-content/languages"
 		}
 	},
 	"scripts": {
 		"post-install-cmd": [
-			"cp public/content/plugins/spinupwp/drop-ins/object-cache.php public/content/object-cache.php",
-			"cp -r packages/translations/* public/content/languages/"
+			"cp public/wp-content/plugins/spinupwp/drop-ins/object-cache.php public/wp-content/object-cache.php",
+			"cp -r packages/translations/* public/wp-content/languages/"
 		],
 		"lint": [
 			"./vendor/bin/phpcs ."
@@ -106,7 +106,7 @@
 			"@composer install --no-dev && composer wp-translation-downloader:download"
 		],
 		"make-pot": [
-			"./vendor/bin/wp i18n make-pot . languages/project-base.pot --exclude=\".github,plugins,public/content/plugins,vendor,public/wp,node_modules,tests\" --slug=project-base"
+			"./vendor/bin/wp i18n make-pot . languages/project-base.pot --exclude=\".github,plugins,public/wp-content/plugins,vendor,public/wp,node_modules,tests\" --slug=project-base"
 		]
 	}
 }

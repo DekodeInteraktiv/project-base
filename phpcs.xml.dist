@@ -6,10 +6,7 @@
 
 	<exclude-pattern>build</exclude-pattern>
 	<exclude-pattern>uploads</exclude-pattern>
-	<exclude-pattern>/public/content/themes</exclude-pattern>
-	<exclude-pattern>/public/content/plugins</exclude-pattern>
-	<exclude-pattern>/public/content/mu-plugins</exclude-pattern>
-	<exclude-pattern>/public/content/object-cache.php</exclude-pattern>
+	<exclude-pattern>public</exclude-pattern>
 
 	<rule ref="Dekode">
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />

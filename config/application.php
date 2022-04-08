@@ -72,7 +72,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI && ! isset( $_SERVER['HTTP_HOST'] ) ) {
  */
 if ( env( 'WP_HOME' ) ) {
 	define( 'WP_HOME', env( 'WP_HOME' ) );
-	define( 'WP_SITEURL', ( env( 'WP_SITEURL' ) ?: WP_HOME . '/wp' ) );
+	define( 'WP_SITEURL', ( env( 'WP_SITEURL' ) ?: WP_HOME ) );
 } else {
 	$scheme = 'http';
 	if ( ( is_string( $https ) && 'on' === strtolower( $https ) ) || '443' === $server_port || 'https' === $http_x_fp ) {
@@ -81,14 +81,8 @@ if ( env( 'WP_HOME' ) ) {
 	}
 
 	define( 'WP_HOME', $scheme . '://' . $http_host );
-	define( 'WP_SITEURL', WP_HOME . '/wp' );
+	define( 'WP_SITEURL', WP_HOME );
 }
-/**
- * Set the dirs
- */
-define( 'CONTENT_DIR', '/content' );
-define( 'WP_CONTENT_DIR', $webroot_dir . CONTENT_DIR );
-define( 'WP_CONTENT_URL', WP_HOME . CONTENT_DIR );
 
 if ( ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Code runs before WordPress is initialized.
 	// If the document root can be determined, use it as the base for the logfile location.
@@ -167,7 +161,7 @@ define( 'CONCATENATE_SCRIPTS', env( 'CONCATENATE_SCRIPTS' ) ?: false );
  * Bootstrap WordPress
  */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', $webroot_dir . '/wp/' );
+	define( 'ABSPATH', $webroot_dir );
 }
 
 /**
