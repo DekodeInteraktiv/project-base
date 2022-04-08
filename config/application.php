@@ -53,37 +53,3 @@ if ( ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) { // phpcs:ignore WordPress.Security
 
 
 
-
-/**
- * Disable Redis if the environment file decrees it so.
- */
-if ( env( 'WP_REDIS_DISABLED' ) && 'true' === env( 'WP_REDIS_DISABLED' ) ) {
-	define( 'WP_REDIS_DISABLED', true );
-}
-
-
-/**
- * Custom Settings
- */
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
-define( 'DISABLE_WP_CRON', env( 'DISABLE_WP_CRON' ) ?: false );
-define( 'DISALLOW_FILE_EDIT', true );
-
-if ( env( 'WP_ALLOW_MULTISITE' ) ) {
-	define( 'WP_ALLOW_MULTISITE', true );
-	define( 'MULTISITE', true );
-	define( 'SUBDOMAIN_INSTALL', filter_var( env( 'SUBDOMAIN_INSTALL' ), FILTER_VALIDATE_BOOLEAN ) ?: false );
-	// phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
-	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE' ) ?: parse_url( WP_HOME, PHP_URL_HOST ) );
-	define( 'PATH_CURRENT_SITE', '/' );
-	define( 'SITE_ID_CURRENT_SITE', 1 );
-	define( 'BLOG_ID_CURRENT_SITE', 1 );
-}
-
-/**
- * To make WP load each script on the administration page individually; protects against CVE-2018-6389 DoS attacks
- */
-define( 'CONCATENATE_SCRIPTS', env( 'CONCATENATE_SCRIPTS' ) ?: false );
-
-
-

@@ -7,6 +7,20 @@
 
 declare( strict_types = 1 );
 
+/**
+ * Directory containing all of the site's files.
+ *
+ * @var string
+ */
+$root_dir = dirname( __DIR__ );
+
+/**
+ * Document Root
+ *
+ * @var string
+ */
+$webroot_dir = $root_dir . '/public';
+
 /* Autoload Composer packages. */
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
@@ -18,10 +32,10 @@ $dotenv->load( $root_dir . '/.env' );
  * Get env variable with empty fallback.
  *
  * @param string $key Variable key.
- * @param string $default Default value if key is not set.
- * @return string
+ * @param mixed  $default Default value if key is not set.
+ * @return mixed
  */
-function env( string $key, string $default = '' ) : string {
+function env( string $key, $default = '' ) {
 	return $_ENV[ $key ] ?? $default;
 }
 
@@ -43,22 +57,6 @@ define( 'DB_CHARSET', env( 'DB_CHARSET', 'utf8mb4' ) );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', env( 'DB_COLLATE', '' ) );
-
-/**
- * Check required constants.
- */
-$required_constants = [
-	'DB_NAME',
-	'DB_USER',
-	'DB_PASSWORD',
-	'DB_HOST',
-];
-
-foreach ( $required_constants as $constant ) {
-	if ( ! defined( $constant ) ) {
-		die( sprintf( 'Please define: %s in your .env file', esc_html( $constant ) ) );
-	}
-}
 
 /**#@+
  * Authentication unique keys and salts.
@@ -110,22 +108,42 @@ define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE', 'production' ) );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-// Disable all file modifications including updates and update notifications.
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
+define( 'DISABLE_WP_CRON', env( 'DISABLE_WP_CRON', false ) );
+define( 'DISALLOW_FILE_EDIT', env( 'DISALLOW_FILE_EDIT', true ) );
 define( 'DISALLOW_FILE_MODS', env( 'DISALLOW_FILE_MODS', true ) );
+
+// To make WP load each script on the administration page individually; protects against CVE-2018-6389 DoS attacks
+define( 'CONCATENATE_SCRIPTS', env( 'CONCATENATE_SCRIPTS', false ) );
+
+/* Disable Redis if the environment file decrees it so. */
+define( 'WP_REDIS_DISABLED', env( 'WP_REDIS_DISABLED', false ) );
 
 if ( defined( 'WP_CLI' ) && WP_CLI && env( 'MYSQLI_DEFAULT_SOCKET' ) ) {
 	ini_set( 'mysqli.default_socket', env( 'MYSQLI_DEFAULT_SOCKET' ) ); // phpcs:ignore
+}
+
+/* Multisite */
+if ( env( 'WP_ALLOW_MULTISITE' ) ) {
+	define( 'WP_ALLOW_MULTISITE', true );
+	define( 'MULTISITE', true );
+	define( 'SUBDOMAIN_INSTALL', filter_var( env( 'SUBDOMAIN_INSTALL' ), FILTER_VALIDATE_BOOLEAN ) ?: false );
+	// phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
+	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE' ) ?: parse_url( WP_HOME, PHP_URL_HOST ) );
+	define( 'PATH_CURRENT_SITE', '/' );
+	define( 'SITE_ID_CURRENT_SITE', 1 );
+	define( 'BLOG_ID_CURRENT_SITE', 1 );
 }
 
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/public' );
+	define( 'ABSPATH', $webroot_dir );
 }
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . '/wp-settings.php';
 
 // TODO: Remove when application.php is ready to be deleted.
-require_once 'application.php';
+require_once $root_dir . '/config/application.php';
