@@ -7,9 +7,10 @@
 
 declare( strict_types = 1 );
 
-/**
- * Load environment variables
- */
+/* Autoload Composer packages. */
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
+
+/* Load environment variables */
 $dotenv = new \Symfony\Component\Dotenv\Dotenv();
 $dotenv->load( $root_dir . '/.env' );
 
@@ -124,5 +125,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /** Sets up WordPress vars and included files. */
-require_once dirname( __DIR__ ) . '/vendor/autoload.php';
-require_once ABSPATH . 'wp-settings.php';
+require_once ABSPATH . '/wp-settings.php';
+
+// TODO: Remove when application.php is ready to be deleted.
+require_once 'application.php';

@@ -7,23 +7,6 @@
 
 declare( strict_types = 1 );
 
-/**
- * Directory containing all of the site's files.
- *
- * @var string
- */
-$root_dir = dirname( __DIR__ );
-
-/**
- * Document Root
- *
- * @var string
- */
-$webroot_dir = $root_dir . '/public';
-
-
-
-
 $http_host   = filter_input( INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING );
 $server_port = filter_input( INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_STRING );
 $http_x_fp   = filter_input( INPUT_SERVER, 'HTTP_X_FORWARDED_PROTO', FILTER_SANITIZE_STRING );
