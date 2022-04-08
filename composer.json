@@ -91,7 +91,8 @@
 	"scripts": {
 		"post-install-cmd": [
 			"cp public/wp-content/plugins/spinupwp/drop-ins/object-cache.php public/wp-content/object-cache.php",
-			"cp -r packages/translations/* public/wp-content/languages/"
+			"cp -r packages/translations/* public/wp-content/languages/",
+			"cp config/wp-config-sample.php public/wp-config.php"
 		],
 		"lint": [
 			"./vendor/bin/phpcs ."
