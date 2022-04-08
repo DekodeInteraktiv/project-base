@@ -8,27 +8,16 @@
 
 declare( strict_types = 1 );
 
-/**
- * Directory containing all of the site's files.
- *
- * @var string
- */
-$root_dir = dirname( __DIR__ );
-
-/**
- * Document Root
- *
- * @var string
- */
-$webroot_dir = $root_dir . '/public';
+/* Application root directory. */
+$app_root = dirname( __DIR__ );
 
 /* Autoload Composer packages. */
-require_once dirname( __DIR__ ) . '/vendor/autoload.php';
+require_once $app_root . '/vendor/autoload.php';
 
 /* Load environment variables */
-if ( file_exists( $root_dir . '/.env' ) ) {
+if ( file_exists( $app_root . '/.env' ) ) {
 	$dotenv = new \Symfony\Component\Dotenv\Dotenv();
-	$dotenv->load( $root_dir . '/.env' );
+	$dotenv->load( $app_root . '/.env' );
 }
 
 /**
@@ -162,11 +151,11 @@ if ( defined( 'WP_DEBUG' ) && WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) )
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', $webroot_dir );
+	define( 'ABSPATH', __DIR__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . '/wp-settings.php';
 
 // TODO: Remove when application.php is ready to be deleted.
-require_once $root_dir . '/config/application.php';
+require_once $app_root . '/config/application.php';
