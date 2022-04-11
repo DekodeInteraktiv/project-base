@@ -38,6 +38,28 @@ function env( string $key, $default = '' ) { // phpcs:ignore NeutronStandard.Fun
 	return $value;
 }
 
+/**
+ * Conditionally use, or generate, `WP_HOME` and `WP_SITEURL`.
+ */
+if ( env( 'WP_HOME' ) ) {
+	define( 'WP_HOME', env( 'WP_HOME' ) );
+	define( 'WP_SITEURL', env( 'WP_SITEURL', WP_HOME ) );
+} else {
+	$http_host   = filter_input( INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+	$server_port = filter_input( INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_NUMBER_INT );
+	$http_x_fp   = filter_input( INPUT_SERVER, 'HTTP_X_FORWARDED_PROTO', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+	$https       = filter_input( INPUT_SERVER, 'HTTPS', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+	$scheme      = 'http';
+
+	if ( ( is_string( $https ) && 'on' === strtolower( $https ) ) || '443' === $server_port || 'https' === $http_x_fp ) {
+		$scheme           = 'https';
+		$_SERVER['HTTPS'] = 'on';
+	}
+
+	define( 'WP_HOME', $scheme . '://' . $http_host );
+	define( 'WP_SITEURL', WP_HOME );
+}
+
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', env( 'DB_NAME', 'local' ) );
@@ -143,28 +165,6 @@ if ( defined( 'WP_DEBUG' ) && WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) )
 	if ( ! empty( $document_root ) && true !== stristr( $document_root, '..' ) ) {
 		define( 'WP_DEBUG_LOG', rtrim( dirname( $document_root ), '/' ) . '/logs/wp-debug.log' );
 	}
-}
-
-/**
- * Conditionally use, or generate, `WP_HOME` and `WP_SITEURL`.
- */
-if ( env( 'WP_HOME' ) ) {
-	define( 'WP_HOME', env( 'WP_HOME' ) );
-	define( 'WP_SITEURL', env( 'WP_SITEURL', WP_HOME ) );
-} else {
-	$http_host   = filter_input( INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
-	$server_port = filter_input( INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_NUMBER_INT );
-	$http_x_fp   = filter_input( INPUT_SERVER, 'HTTP_X_FORWARDED_PROTO', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
-	$https       = filter_input( INPUT_SERVER, 'HTTPS', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
-	$scheme      = 'http';
-
-	if ( ( is_string( $https ) && 'on' === strtolower( $https ) ) || '443' === $server_port || 'https' === $http_x_fp ) {
-		$scheme           = 'https';
-		$_SERVER['HTTPS'] = 'on';
-	}
-
-	define( 'WP_HOME', $scheme . '://' . $http_host );
-	define( 'WP_SITEURL', WP_HOME );
 }
 
 /** Absolute path to the WordPress directory. */
