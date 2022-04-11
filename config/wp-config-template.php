@@ -167,8 +167,6 @@ if ( env( 'WP_HOME' ) ) {
 	define( 'WP_SITEURL', WP_HOME );
 }
 
-/* That's all, stop editing! Happy publishing. */
-
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
