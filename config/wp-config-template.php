@@ -150,7 +150,7 @@ if ( defined( 'WP_DEBUG' ) && WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) )
  */
 if ( env( 'WP_HOME' ) ) {
 	define( 'WP_HOME', env( 'WP_HOME' ) );
-	define( 'WP_SITEURL', ( env( 'WP_SITEURL' ) ?: WP_HOME ) );
+	define( 'WP_SITEURL', env( 'WP_SITEURL', WP_HOME ) );
 } else {
 	$http_host   = filter_input( INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 	$server_port = filter_input( INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_NUMBER_INT );
