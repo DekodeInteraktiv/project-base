@@ -105,8 +105,6 @@ define( 'SCRIPT_DEBUG', env( 'SCRIPT_DEBUG', false ) );
 define( 'SAVEQUERIES', env( 'SAVEQUERIES', false ) );
 define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE', 'production' ) );
 
-/* Add any custom values between this line and the "stop editing" line. */
-
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
 define( 'DISABLE_WP_CRON', env( 'DISABLE_WP_CRON', false ) );
 define( 'DISALLOW_FILE_EDIT', env( 'DISALLOW_FILE_EDIT', true ) );
@@ -147,6 +145,28 @@ if ( defined( 'WP_DEBUG' ) && WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) )
 	}
 }
 
+/**
+ * Conditionally use, or generate, `WP_HOME` and `WP_SITEURL`.
+ */
+if ( env( 'WP_HOME' ) ) {
+	define( 'WP_HOME', env( 'WP_HOME' ) );
+	define( 'WP_SITEURL', ( env( 'WP_SITEURL' ) ?: WP_HOME ) );
+} else {
+	$http_host   = filter_input( INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+	$server_port = filter_input( INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_NUMBER_INT );
+	$http_x_fp   = filter_input( INPUT_SERVER, 'HTTP_X_FORWARDED_PROTO', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+	$https       = filter_input( INPUT_SERVER, 'HTTPS', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+	$scheme      = 'http';
+
+	if ( ( is_string( $https ) && 'on' === strtolower( $https ) ) || '443' === $server_port || 'https' === $http_x_fp ) {
+		$scheme           = 'https';
+		$_SERVER['HTTPS'] = 'on';
+	}
+
+	define( 'WP_HOME', $scheme . '://' . $http_host );
+	define( 'WP_SITEURL', WP_HOME );
+}
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
@@ -156,6 +176,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . '/wp-settings.php';
-
-// TODO: Remove when application.php is ready to be deleted.
-require_once $app_root . '/config/application.php';
