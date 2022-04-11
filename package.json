@@ -8,12 +8,12 @@
 	},
 	"devDependencies": {
 		"@dekode/stylelint-config": "1.0.2",
-		"@wordpress/eslint-plugin": "^11.1.0",
-		"@wordpress/scripts": "^22.3.0",
+		"@wordpress/eslint-plugin": "^12.0.0",
+		"@wordpress/scripts": "^22.4.0",
 		"autoprefixer": "^10.4.4",
 		"browser-sync": "^2.27.9",
 		"browser-sync-webpack-plugin": "^2.3.0",
-		"cssnano": "^5.1.5",
+		"cssnano": "^5.1.7",
 		"dotenv": "^16.0.0",
 		"eslint-plugin-prettier": "4.0.0",
 		"fast-glob": "3.2.11",
@@ -26,9 +26,9 @@
 		"postcss-media-minmax": "5.0.0",
 		"postcss-mixins": "9.0.2",
 		"postcss-nested": "5.0.6",
-		"prettier": "^2.6.1",
+		"prettier": "^2.6.2",
 		"resolve-url-loader": "~5.0.0",
-		"webpack-remove-empty-scripts": "~0.7.3"
+		"webpack-remove-empty-scripts": "^0.8.0"
 	},
 	"scripts": {
 		"create-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block",
