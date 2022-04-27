@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-@import "./config/_index.css"; /* Variables, helper classes and tokens. */
-@import "./elements/_index.css"; /* Styles for general HTML elements */
-@import "./blocks/_index.css"; /* Styles for blocks */
-@import "../template-parts/_index.css"; /* Styles for templates */
+@import "./config/_index.css"; /* Variables, helper classes and base styles. */
+@import "./elements/_index.css"; /* General HTML element styles */
+@import "./blocks/_index.css"; /* Blocks styles */
+@import "../template-parts/_index.css"; /* Template styles  */
