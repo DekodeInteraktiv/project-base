@@ -19,7 +19,11 @@
 			"dropCap": false,
 			"customFontSize": false,
 			"letterSpacing": false,
-			"lineHeight": false
+			"lineHeight": false,
+			"fontSizes": [],
+			"fontWeight": false,
+			"fontStyle": false,
+			"textTransform": false
 		}
 	},
 	"styles": {
