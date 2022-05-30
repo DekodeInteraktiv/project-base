@@ -7,7 +7,7 @@ const cssnano = require('cssnano');
 const customMedia = require('postcss-custom-media');
 const minmax = require('postcss-media-minmax');
 const mixins = require('postcss-mixins');
-const nested = require('postcss-nested');
+const postcssNesting = require('postcss-nesting');
 const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 
 module.exports = (ctx) => {
@@ -16,7 +16,7 @@ module.exports = (ctx) => {
 			atImport(),
 			mixins,
 			postcssFlexbugsFixes,
-			nested,
+			postcssNesting,
 			customMedia(),
 			minmax(),
 			autoprefixer,
