@@ -78,7 +78,7 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 	"name": "project/package-name",
 	"description": "Short description of the package.",
 	"type": "wordpress-plugin/wordpress-muplugin/wordpress-theme/other",
-  "version": "1.0.0"
+	"version": "1.0.0"
 }
 ```
 *Note: if your plugin is a gutenberg block, you can use [block-base](https://github.com/DekodeInteraktiv/block-base)*
