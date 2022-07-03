@@ -78,9 +78,12 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 	"name": "project/package-name",
 	"description": "Short description of the package.",
 	"type": "wordpress-plugin/wordpress-muplugin/wordpress-theme/other",
+  "version": "1.0.0"
 }
 ```
 *Note: if your plugin is a gutenberg block, you can use [block-base](https://github.com/DekodeInteraktiv/block-base)*
+
+*Note: A version should _always_ be supplied. This ensures that package versions do not change between branches, leading to unneccesary merge conflicts.*
 
 3. If your package should be installed using npm (for frontend deps, like custom react components) Add a package.json, it needs a minimum of the following data:
 
