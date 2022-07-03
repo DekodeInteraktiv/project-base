@@ -1,6 +1,7 @@
 {
 	"name": "dekode/logging",
 	"description": "Utility function for logging arbitrary variables to the error log.",
+	"version": "1.0.0",
 	"type": "wordpress-muplugin",
 	"license": "GPL-3.0-or-later",
 	"authors": [
