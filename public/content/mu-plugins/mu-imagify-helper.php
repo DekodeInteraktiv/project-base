@@ -21,7 +21,11 @@ namespace Dekode\MUPlugins;
  * @param string $root_path
  * @return string;
  */
-function imagify_site_root_override( $root_path ) {
+function imagify_site_root_override( string $root_path ) : string {
+	if ( ! function_exists( 'imagify_get_filesystem' ) ) {
+		return $root_path;
+	}
+
 	$upload_basedir = imagify_get_filesystem()->get_upload_basedir( true );
 
 	// If the detected upload path is not one with our custom upload directory, make no changes to the already determined root path.
