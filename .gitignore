@@ -1,6 +1,7 @@
 # Idea
 .DS_Store
 .idea
+.vscode
 
 # Javascript
 node_modules
