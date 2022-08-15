@@ -152,7 +152,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI && env( 'MYSQLI_DEFAULT_SOCKET' ) ) {
 define( 'WP_ALLOW_MULTISITE', env( 'WP_ALLOW_MULTISITE', false ) );
 define( 'MULTISITE', env( 'MULTISITE', false ) );
 
-if ( env( 'MULTISITE', false ) ) {
+if ( MULTISITE ) {
 	define( 'SUBDOMAIN_INSTALL', env( 'SUBDOMAIN_INSTALL', false ) );
 	define( 'DOMAIN_CURRENT_SITE', env( 'DOMAIN_CURRENT_SITE', parse_url( WP_HOME, PHP_URL_HOST ) ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
 	define( 'PATH_CURRENT_SITE', '/' );
@@ -160,7 +160,7 @@ if ( env( 'MULTISITE', false ) ) {
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
 }
 
-if ( defined( 'WP_DEBUG' ) && WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
+if ( WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
 	// If the document root can be determined, use it as the base for the logfile location.
 	$document_root = filter_input( INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_STRING );
 
