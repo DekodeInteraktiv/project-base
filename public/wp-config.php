@@ -1,7 +1,6 @@
 <?php
 /**
  * The base configuration for WordPress.
- * This file will be copied into /public by Composer after WordPress is installed.
  *
  * @package Dekode
  */
