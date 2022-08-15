@@ -2,8 +2,10 @@
 /**
  * Plugin Name: Imagify upload path controller.
  * Description: Provide the correct upload root paths in a multisite environment using Dekodes custom path definitions.
- * Version:     0.1.0
+ * Version:     1.0.0
  * Author:      Dekode
+ *
+ * @package Dekode/MU
  *
  * Inspired by the `Imagify Custom Site Root` plugin.
  */
@@ -18,7 +20,7 @@ namespace Dekode\MUPlugins;
  * Our custom setup has the upload directory outside the WordPress root, and also names it differently from `wp-content`.
  * This confuses the Imagify plugin when in a multisite environment, working on a primary site, so some magic is needed here.
  *
- * @param string $root_path
+ * @param string $root_path Root path.
  * @return string;
  */
 function imagify_site_root_override( string $root_path ) : string {
