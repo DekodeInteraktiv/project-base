@@ -1,0 +1,13 @@
+{
+	"name": "dekode/imagify-helper",
+	"description": "Provide the correct upload root paths in a multisite environment using Dekodes custom path definitions.",
+	"version": "1.0.0",
+	"type": "wordpress-muplugin",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Dekode Interaktiv",
+			"homepage": "https://dekode.no"
+		}
+	]
+}
