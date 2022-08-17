@@ -88,8 +88,9 @@ define( 'WP_DEBUG', env( 'WP_DEBUG', false ) );
 define( 'WP_DEBUG_DISPLAY', env( 'WP_DEBUG_DISPLAY', false ) );
 define( 'SCRIPT_DEBUG', env( 'SCRIPT_DEBUG', false ) );
 define( 'SAVEQUERIES', env( 'SAVEQUERIES', false ) );
+$wp_debug_log = env( 'WP_DEBUG_LOG', false );
 
-if ( WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
+if ( WP_DEBUG && ! $wp_debug_log && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
 	// If the document root can be determined, use it as the base for the logfile location.
 	$document_root = filter_input( INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_STRING );
 
@@ -98,10 +99,13 @@ if ( WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
 	 * if not fallback to default logging locations.
 	 */
 	if ( ! empty( $document_root ) && true !== stristr( $document_root, '..' ) ) {
-		define( 'WP_DEBUG_LOG', rtrim( dirname( $document_root ), '/' ) . '/logs/wp-debug.log' );
+		$wp_debug_log = rtrim( dirname( $document_root ), '/' ) . '/logs/wp-debug.log';
 	}
 }
 
+define( 'WP_DEBUG_LOG', $wp_debug_log );
+
+// Misc.
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
 define( 'DISABLE_WP_CRON', env( 'DISABLE_WP_CRON', false ) );
 define( 'DISALLOW_FILE_EDIT', env( 'DISALLOW_FILE_EDIT', true ) );
