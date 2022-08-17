@@ -38,24 +38,19 @@ function env( string $key, $default = '' ) { // phpcs:ignore NeutronStandard.Fun
 }
 
 // Conditionally use, or generate WP_HOME and WP_SITEURL.
-if ( env( 'WP_HOME' ) ) {
-	define( 'WP_HOME', env( 'WP_HOME' ) );
-	define( 'WP_SITEURL', env( 'WP_SITEURL', WP_HOME ) );
-} else {
-	$http_host   = filter_input( INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
-	$server_port = filter_input( INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_NUMBER_INT );
-	$http_x_fp   = filter_input( INPUT_SERVER, 'HTTP_X_FORWARDED_PROTO', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
-	$https       = filter_input( INPUT_SERVER, 'HTTPS', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
-	$scheme      = 'http';
+$http_host   = filter_input( INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+$server_port = filter_input( INPUT_SERVER, 'SERVER_PORT', FILTER_SANITIZE_NUMBER_INT );
+$http_x_fp   = filter_input( INPUT_SERVER, 'HTTP_X_FORWARDED_PROTO', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+$https       = filter_input( INPUT_SERVER, 'HTTPS', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+$scheme      = 'http';
 
-	if ( ( is_string( $https ) && 'on' === strtolower( $https ) ) || '443' === $server_port || 'https' === $http_x_fp ) {
-		$scheme           = 'https';
-		$_SERVER['HTTPS'] = 'on';
-	}
-
-	define( 'WP_HOME', $scheme . '://' . $http_host );
-	define( 'WP_SITEURL', WP_HOME );
+if ( ( is_string( $https ) && 'on' === strtolower( $https ) ) || '443' === $server_port || 'https' === $http_x_fp ) {
+	$scheme           = 'https';
+	$_SERVER['HTTPS'] = 'on';
 }
+
+define( 'WP_HOME', env( 'WP_HOME', "{$scheme}://{$http_host}" ) );
+define( 'WP_SITEURL', WP_HOME . '/wp' );
 
 // Set custom content directory.
 define( 'WP_CONTENT_DIR', $app_root . '/public/content' );
@@ -83,7 +78,9 @@ define( 'LOGGED_IN_SALT', env( 'LOGGED_IN_SALT' ) );
 define( 'NONCE_SALT', env( 'NONCE_SALT' ) );
 
 // Environment type and debugging.
-define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE', 'production' ) );
+if ( ! defined( 'WP_ENVIRONMENT_TYPE' ) ) {
+	define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE', 'production' ) );
+}
 define( 'WP_DEBUG', env( 'WP_DEBUG', false ) );
 define( 'WP_DEBUG_DISPLAY', env( 'WP_DEBUG_DISPLAY', false ) );
 define( 'SCRIPT_DEBUG', env( 'SCRIPT_DEBUG', false ) );
@@ -92,7 +89,7 @@ $wp_debug_log = env( 'WP_DEBUG_LOG', false );
 
 if ( WP_DEBUG && ! $wp_debug_log && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
 	// If the document root can be determined, use it as the base for the logfile location.
-	$document_root = filter_input( INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_STRING );
+	$document_root = filter_input( INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 
 	/*
 	 * Validate that the document root path has no path traversal strings as part of it,
