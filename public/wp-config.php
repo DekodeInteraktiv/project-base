@@ -85,7 +85,6 @@ define( 'NONCE_SALT', env( 'NONCE_SALT' ) );
 // Environment type and debugging.
 define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE', 'production' ) );
 define( 'WP_DEBUG', env( 'WP_DEBUG', false ) );
-define( 'WP_DEBUG_LOG', env( 'WP_DEBUG_LOG', false ) );
 define( 'WP_DEBUG_DISPLAY', env( 'WP_DEBUG_DISPLAY', false ) );
 define( 'SCRIPT_DEBUG', env( 'SCRIPT_DEBUG', false ) );
 define( 'SAVEQUERIES', env( 'SAVEQUERIES', false ) );
