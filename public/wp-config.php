@@ -173,6 +173,20 @@ if ( WP_DEBUG && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
 	}
 }
 
+
+/* Optional proxy settings. */
+if ( env( 'WP_PROXY_HOST' ) ) {
+	define( 'WP_PROXY_HOST', env( 'WP_PROXY_HOST' ) );
+}
+
+if ( env( 'WP_PROXY_PORT' ) ) {
+	define( 'WP_PROXY_PORT', env( 'WP_PROXY_PORT' ) );
+}
+
+if ( env( 'WP_PROXY_BYPASS_HOSTS' ) ) {
+	define( 'WP_PROXY_BYPASS_HOSTS', env( 'WP_PROXY_BYPASS_HOSTS' ) );
+}
+
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', $app_root . 'public/wp/' );
