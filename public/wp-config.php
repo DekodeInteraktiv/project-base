@@ -107,6 +107,7 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
 define( 'DISABLE_WP_CRON', env( 'DISABLE_WP_CRON', false ) );
 define( 'DISALLOW_FILE_EDIT', env( 'DISALLOW_FILE_EDIT', true ) );
 define( 'DISALLOW_FILE_MODS', env( 'DISALLOW_FILE_MODS', true ) );
+define( 'WP_POST_REVISIONS', env( 'WP_POST_REVISIONS', 5 ) );
 
 // To make WP load each script on the administration page individually; protects against CVE-2018-6389 DoS attacks.
 define( 'CONCATENATE_SCRIPTS', env( 'CONCATENATE_SCRIPTS', false ) );
