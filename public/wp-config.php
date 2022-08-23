@@ -30,8 +30,11 @@ function env( string $key, $default = '' ) { // phpcs:ignore NeutronStandard.Fun
 	$value = $_ENV[ $key ] ?? $default;
 
 	// Return bool value for 'true' or 'false'.
-	if ( in_array( $value, [ 'true', 'false' ], true ) ) {
-		return boolval( $value );
+	switch ( $value ) {
+		case 'true':
+			return true;
+		case 'false':
+			return false;
 	}
 
 	return $value;
