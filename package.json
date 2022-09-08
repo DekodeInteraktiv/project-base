@@ -26,6 +26,7 @@
 		"postcss-media-minmax": "^5.0.0",
 		"postcss-mixins": "^9.0.3",
 		"postcss-nesting": "^10.1.8",
+		"postcss-mixins": "^9.0.3",
 		"prettier": "^2.7.1",
 		"resolve-url-loader": "^5.0.0",
 		"webpack-remove-empty-scripts": "^0.8.1"
