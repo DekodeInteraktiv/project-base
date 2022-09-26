@@ -16,6 +16,7 @@ require('dotenv').config();
  */
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
+const { config } = require('process');
 
 /**
  * Patches config to use resolve-url-loader for relative paths in SCSS files
@@ -162,15 +163,6 @@ const prepareConfig = (dir, files) => {
 
 			(process.argv || []).includes('--progress') &&
 				new webpack.ProgressPlugin(),
-
-			'true' === process.env.BROWSER_SYNC_ENABLE &&
-				new BrowserSyncPlugin({
-					files: '**/*.php',
-					proxy:
-						process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
-					port: process.env.BROWSER_SYNC_PORT ?? 3002,
-					https: 'true' === process.env.BROWSER_SYNC_HTTPS,
-				}),
 		].filter(Boolean),
 	};
 
@@ -179,9 +171,35 @@ const prepareConfig = (dir, files) => {
 
 const files = getEntryFiles();
 
+const configs = files.map((item) => prepareConfig(item.dir, item.files));
+
+const browserSyncConfig = {
+	...defaultConfig,
+
+	name: 'BrowserSync',
+
+	plugins: [
+		'true' === process.env.BROWSER_SYNC_ENABLE &&
+			new BrowserSyncPlugin(
+				{
+					files: ['packages/**/*.php', 'packages/**/*.css', 'packages/**/*.js'],
+					proxy:
+						process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
+					port: process.env.BROWSER_SYNC_PORT ?? 3002,
+					https: 'true' === process.env.BROWSER_SYNC_HTTPS,
+				},
+				{
+					reload: false,
+				},
+			),
+	].filter(Boolean),
+}
+
+configs.push(browserSyncConfig);
+
 /**
  * We can use Multi-Config mode to build packages in 'sandboxed' mode and parallel.
  *
  * https://webpack.js.org/configuration/configuration-types/#exporting-multiple-configurations
  */
-module.exports = files.map((item) => prepareConfig(item.dir, item.files));
+module.exports = configs;
