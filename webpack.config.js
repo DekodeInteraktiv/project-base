@@ -16,7 +16,6 @@ require('dotenv').config();
  */
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
-const { config } = require('process');
 
 /**
  * Patches config to use resolve-url-loader for relative paths in SCSS files
@@ -182,7 +181,11 @@ const browserSyncConfig = {
 		'true' === process.env.BROWSER_SYNC_ENABLE &&
 			new BrowserSyncPlugin(
 				{
-					files: ['packages/**/*.php', 'packages/**/*.css', 'packages/**/*.js'],
+					files: [
+						'packages/**/*.php',
+						'packages/**/*.css',
+						'packages/**/*.js',
+					],
 					proxy:
 						process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
 					port: process.env.BROWSER_SYNC_PORT ?? 3002,
@@ -193,7 +196,7 @@ const browserSyncConfig = {
 				},
 			),
 	].filter(Boolean),
-}
+};
 
 configs.push(browserSyncConfig);
 
