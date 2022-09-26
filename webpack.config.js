@@ -172,13 +172,13 @@ const files = getEntryFiles();
 
 const configs = files.map((item) => prepareConfig(item.dir, item.files));
 
-const browserSyncConfig = {
-	...defaultConfig,
-
-	name: 'BrowserSync',
-
-	plugins: [
-		'true' === process.env.BROWSER_SYNC_ENABLE &&
+if ( 'true' === process.env.BROWSER_SYNC_ENABLE ) {
+	const browserSyncConfig = {
+		...defaultConfig,
+	
+		name: 'BrowserSync',
+	
+		plugins: [
 			new BrowserSyncPlugin(
 				{
 					files: [
@@ -194,10 +194,11 @@ const browserSyncConfig = {
 					reload: false,
 				},
 			),
-	].filter(Boolean),
-};
-
-configs.push(browserSyncConfig);
+		].filter(Boolean),
+	};
+	
+	configs.push(browserSyncConfig);
+}
 
 /**
  * We can use Multi-Config mode to build packages in 'sandboxed' mode and parallel.
