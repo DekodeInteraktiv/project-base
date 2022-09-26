@@ -172,19 +172,16 @@ const files = getEntryFiles();
 
 const configs = files.map((item) => prepareConfig(item.dir, item.files));
 
-if ( 'true' === process.env.BROWSER_SYNC_ENABLE ) {
+if ('true' === process.env.BROWSER_SYNC_ENABLE) {
 	const browserSyncConfig = {
 		...defaultConfig,
-	
+
 		name: 'BrowserSync',
-	
+
 		plugins: [
 			new BrowserSyncPlugin(
 				{
-					files: [
-						'packages/**/*.css',
-						'packages/**/*.js',
-					],
+					files: ['packages/**/*.css', 'packages/**/*.js'],
 					proxy:
 						process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
 					port: process.env.BROWSER_SYNC_PORT ?? 3002,
@@ -196,7 +193,7 @@ if ( 'true' === process.env.BROWSER_SYNC_ENABLE ) {
 			),
 		].filter(Boolean),
 	};
-	
+
 	configs.push(browserSyncConfig);
 }
 
