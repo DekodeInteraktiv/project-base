@@ -182,7 +182,6 @@ const browserSyncConfig = {
 			new BrowserSyncPlugin(
 				{
 					files: [
-						'packages/**/*.php',
 						'packages/**/*.css',
 						'packages/**/*.js',
 					],
