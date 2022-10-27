@@ -68,7 +68,7 @@ function setup() {
  */
 function register_footer_widget_area() {
 	\register_sidebar( [
-		'name'          => \esc_html__( 'Footer area', 'dekode' ),
+		'name'          => esc_html__( 'Footer area', 'dekode' ),
 		'id'            => 'footer',
 		'before_widget' => '<div class="footer-widget">',
 		'after_widget'  => '</div>',
