@@ -45,6 +45,8 @@ function setup() {
 		'comment-list',
 		'gallery',
 		'caption',
+		'style',
+		'script',
 	] );
 
 	// Adding support for core block visual styles.
