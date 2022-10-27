@@ -31,10 +31,10 @@ if ( ! has_nav_menu( 'main-menu' ) ) {
 		<rect x="0.5" y="10.5" width="23" height="3" rx="1" ry="1" />
 		<rect x="0.5" y="18.5" width="23" height="3" rx="1" ry="1" />
 	</svg>
-	<span class="label"><?php echo esc_html__( 'Menu', 'dekode' ); ?></span>
+	<span class="label"><?php esc_html_e( 'Menu', 'dekode' ); ?></span>
 </button>
 
-<nav id="site-header--nav" class="site-header--nav" aria-label="<?php echo esc_attr__( 'Top Menu', 'dekode' ); ?>">
+<nav id="site-header--nav" class="site-header--nav" aria-label="<?php esc_attr_e( 'Top Menu', 'dekode' ); ?>">
 	<?php
 	wp_nav_menu( [
 		'theme_location' => 'main-menu',
