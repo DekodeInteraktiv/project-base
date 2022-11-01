@@ -19,8 +19,7 @@
 	"require-dev": {
 		"dekode/coding-standards": "4.0.0",
 		"dekode/logging": "1.0.0",
-		"ergebnis/composer-normalize": "^2.28",
-		"wp-cli/i18n-command": "2.4.0"
+		"ergebnis/composer-normalize": "^2.28"
 	},
 	"repositories": {
 		"mu-plugins": {
@@ -113,9 +112,6 @@
 		],
 		"lint": [
 			"./vendor/bin/phpcs ."
-		],
-		"make-pot": [
-			"./vendor/bin/wp i18n make-pot . languages/project-base.pot --exclude=\".github,plugins,public/content/plugins,vendor,public/wp,node_modules,tests\" --slug=project-base"
 		]
 	}
 }
