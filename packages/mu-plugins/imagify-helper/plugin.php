@@ -15,15 +15,20 @@ declare( strict_types = 1 );
 namespace Dekode\MUPlugins;
 
 /**
+ * Hooks
+ */
+\add_filter( 'imagify_site_root', __NAMESPACE__ . '\\imagify_site_root_override', 20 );
+
+/**
  * Conditionally override the Imagify plugin root path.
  *
  * Our custom setup has the upload directory outside the WordPress root, and also names it differently from `wp-content`.
  * This confuses the Imagify plugin when in a multisite environment, working on a primary site, so some magic is needed here.
  *
- * @param string $root_path Root path.
- * @return string;
+ * @param string|null $root_path Root path.
+ * @return string|null;
  */
-function imagify_site_root_override( string $root_path ) : string {
+function imagify_site_root_override( ?string $root_path ) : ?string {
 	if ( ! function_exists( 'imagify_get_filesystem' ) ) {
 		return $root_path;
 	}
@@ -40,5 +45,3 @@ function imagify_site_root_override( string $root_path ) : string {
 
 	return trailingslashit( $upload_basedir );
 }
-
-add_filter( 'imagify_site_root', __NAMESPACE__ . '\\imagify_site_root_override', 20 );
