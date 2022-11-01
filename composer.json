@@ -9,12 +9,12 @@
 		"dekode/dekode-theme": "~1.0.0",
 		"dekode/imagify-helper": "1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.3.0",
-		"johnpbloch/wordpress": "~6.0.1",
+		"johnpbloch/wordpress": "~6.0.3",
 		"symfony/dotenv": "~5.4.2",
-		"t2/t2": "~1.3.4",
+		"t2/t2": "~1.5.0",
 		"wpackagist-plugin/imagify": "~2.0.0",
-		"wpackagist-plugin/spinupwp": "~1.4.2",
-		"wpackagist-plugin/two-factor": "~0.7.1"
+		"wpackagist-plugin/spinupwp": "~1.5.0",
+		"wpackagist-plugin/two-factor": "~0.7.3"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "4.0.0",
@@ -94,7 +94,7 @@
 	"scripts": {
 		"post-install-cmd": [
 			"cp public/content/plugins/spinupwp/drop-ins/object-cache.php public/content/object-cache.php",
-			"mkdir -p public/content/languages/ & cp -r packages/translations/* public/content/languages/",
+			"mkdir -p public/content/languages & cp -r packages/translations/* public/content/languages/",
 			"rm -rf public/wp/wp-content/themes/twentytwenty",
 			"rm -rf public/wp/wp-content/themes/twentytwentyone",
 			"rm -rf public/wp/wp-content/themes/twentytwentytwo"
