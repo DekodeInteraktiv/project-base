@@ -24,39 +24,6 @@ Specify how this project is deployed. For most projects, this should be simply "
 ## Custom wp-cli commands
 List and document any custom-made wp-cli commands on this site.
 
-### wp-cli and Local by Flywheel
-
-There can be issues trying to use wp-cli commands when using a [Local by Flywheel](https://localwp.com/) development environment. You can usually fix this with the following steps:
-
-1. Add a file named `wp-cli.local.yml` to the root (`app`) directory, with the following content:
-
-```
-path: public/wp
-require:
-  - wp-cli.local.php
-```
-
-2. Add a file named `wp-cli.local.php` to the root (`app`) directory, with the following content:
-
-```
-<?php
-define('DB_HOST', 'localhost:<SOCKET PATH>');
-define('DB_USER', 'root');
-define('DB_PASSWORD', 'root');
-
-// Only display fatal run-time errors.
-// See http://php.net/manual/en/errorfunc.constants.php.
-error_reporting(E_ERROR);
-
-// Disable WordPress debug mode.
-// See https://codex.wordpress.org/WP_DEBUG.
-define('WP_DEBUG', false);
-```
-
-In the above file, replace `<SOCKET PATH>` with the socket path from the corresponding project in Local, which can be found in the **Database** tab and usually looks something like the following (on Mac OS):
-
-`/Users/<username>/Library/Application Support/Local/run/<unique string>/mysql/mysqld.sock`
-
 ## Third party integrations
 List any third-party integrations which are included in the project. Each entry should include:
 
