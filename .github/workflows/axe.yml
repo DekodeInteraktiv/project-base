@@ -1,0 +1,27 @@
+on:
+    issue_comment:
+        types: [created]
+
+name: AXE
+
+jobs:
+    axe:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: khan/pull-request-comment-trigger@v1.1.0
+              id: check
+              with:
+                  trigger: 'AXE:'
+              env:
+                  GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+            - uses: DekodeInteraktiv/actions/axe@master
+              if: steps.check.outputs.triggered == 'true'
+              with:
+                  pr: ${{github.event.issue.number}}
+                  comment: ${{ steps.check.outputs.comment_body }}
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  actor: ${{ github.actor }}
+                  aws_secret_access_key: ${{ secrets.AXE_ACTION_ACCESS_SECRET }}
+                  aws_access_key_id: ${{ secrets.AXE_ACTION_ACCESS_KEY }}
