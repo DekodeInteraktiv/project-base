@@ -10,7 +10,7 @@
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.3.0",
-		"johnpbloch/wordpress": "~6.0.3",
+		"johnpbloch/wordpress": "~6.1.0",
 		"symfony/dotenv": "~5.4.2",
 		"t2/t2": "~1.5.0",
 		"wpackagist-plugin/imagify": "~2.0.0",
