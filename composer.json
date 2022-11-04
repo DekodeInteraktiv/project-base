@@ -8,6 +8,7 @@
 		"composer/installers": "~1.12.0",
 		"dekode/dekode-theme": "~1.0.0",
 		"dekode/imagify-helper": "1.0.0",
+		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.3.0",
 		"johnpbloch/wordpress": "~6.0.3",
 		"symfony/dotenv": "~5.4.2",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32d0f92969b7491ca3fc179849cfcee7",
+    "content-hash": "08803fc75cd90fc1826b7f8e51281faf",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -265,6 +265,35 @@
                 "symlink": true,
                 "relative": true
             }
+        },
+        {
+            "name": "dekodeinteraktiv/dekode-label-environment",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DekodeInteraktiv/dekode-label-environment.git",
+                "reference": "bc7ac69cf7a73d44c6350173487438761de7b8ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DekodeInteraktiv/dekode-label-environment/zipball/bc7ac69cf7a73d44c6350173487438761de7b8ed",
+                "reference": "bc7ac69cf7a73d44c6350173487438761de7b8ed",
+                "shasum": ""
+            },
+            "require-dev": {
+                "dekode/coding-standards": "4.0.0"
+            },
+            "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Adds a banner to the frontend and an item to the admin bar informing about the server environment",
+            "support": {
+                "issues": "https://github.com/DekodeInteraktiv/dekode-label-environment/issues",
+                "source": "https://github.com/DekodeInteraktiv/dekode-label-environment/tree/1.0.0"
+            },
+            "time": "2022-11-03T13:10:39+00:00"
         },
         {
             "name": "inpsyde/wp-translation-downloader",
