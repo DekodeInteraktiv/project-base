@@ -7,9 +7,9 @@
 		"yarn": "Please use npm"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^13.4.0",
-		"@wordpress/scripts": "^24.4.0",
-		"@wordpress/stylelint-config": "^21.3.0",
+		"@wordpress/eslint-plugin": "^13.5.0",
+		"@wordpress/scripts": "^24.5.0",
+		"@wordpress/stylelint-config": "^21.4.0",
 		"autoprefixer": "^10.4.13",
 		"browser-sync": "^2.27.10",
 		"browser-sync-webpack-plugin": "^2.3.0",
