@@ -95,9 +95,7 @@
 		"post-install-cmd": [
 			"cp public/content/plugins/spinupwp/drop-ins/object-cache.php public/content/object-cache.php",
 			"mkdir -p public/content/languages && cp -r packages/translations/* public/content/languages/",
-			"rm -rf public/wp/wp-content/themes/twentytwenty",
-			"rm -rf public/wp/wp-content/themes/twentytwentyone",
-			"rm -rf public/wp/wp-content/themes/twentytwentytwo"
+			"rm -rf public/wp/wp-content"
 		],
 		"post-update-cmd": [
 			"@composer normalize"
