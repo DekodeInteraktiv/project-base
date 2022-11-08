@@ -1,0 +1,13 @@
+{
+	"name": "dekode/remote-images",
+	"description": "Edits media URLs to point to a remote WP install.",
+	"version": "1.0.0",
+	"type": "wordpress-muplugin",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Dekode Interaktiv",
+			"homepage": "https://dekode.no"
+		}
+	]
+}
