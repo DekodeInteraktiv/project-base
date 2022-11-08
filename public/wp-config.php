@@ -147,6 +147,20 @@ if ( env( 'WP_PROXY_BYPASS_HOSTS' ) ) {
 	define( 'WP_PROXY_BYPASS_HOSTS', env( 'WP_PROXY_BYPASS_HOSTS' ) );
 }
 
+// Remote images.
+if ( env( 'DEKODE_PREPEND_IMAGE_URL' ) ) {
+	define( 'DEKODE_PREPEND_IMAGE_URL', env( 'DEKODE_PREPEND_IMAGE_URL' ) );
+}
+if ( env( 'DEKODE_PREPEND_CONTENT_FOLDER' ) ) {
+	define( 'DEKODE_PREPEND_CONTENT_FOLDER', env( 'DEKODE_PREPEND_CONTENT_FOLDER' ) );
+}
+if ( env( 'DEKODE_LOCAL_FILE_LOOKUP' ) ) {
+	define( 'DEKODE_LOCAL_FILE_LOOKUP', env( 'DEKODE_LOCAL_FILE_LOOKUP' ) );
+}
+if ( env( 'DEKODE_SUBDOMAIN_SUPPORT' ) ) {
+	define( 'DEKODE_SUBDOMAIN_SUPPORT', env( 'DEKODE_SUBDOMAIN_SUPPORT' ) );
+}
+
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', $app_root . 'public/wp/' );
