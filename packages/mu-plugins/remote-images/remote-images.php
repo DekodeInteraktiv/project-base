@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Remote Images
  * Description: Use remote images in local development environment (simply define a constant DEKODE_PREPEND_IMAGE_URL with the URL you want to prepend to all attachments). Note that if the attachment exists locally the attachment URL will not be rewritten.
- * Version: 1.0.0
- * Author: Dekode
+ * Version:     1.0.0
+ * Author:      Dekode
  *
  * @package Dekode/MU
  */
