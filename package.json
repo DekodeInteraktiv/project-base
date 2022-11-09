@@ -48,7 +48,7 @@
 			"wp-scripts lint-style"
 		],
 		"*.{js,ts,tsx}": [
-			"prettier --write",
+			"prettier --write .",
 			"wp-scripts lint-js"
 		]
 	}
