@@ -2,7 +2,7 @@
 <ruleset>
 	<file>.</file>
 	<arg name="extensions" value="php" />
-	<config name="testVersion" value="8.0-" />
+	<config name="testVersion" value="8.1-" />
 
 	<exclude-pattern>build</exclude-pattern>
 	<exclude-pattern>uploads</exclude-pattern>
