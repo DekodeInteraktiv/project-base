@@ -46,7 +46,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
     Or, you can cut and paste from the [Roots WordPress Salt Generator](https://roots.io/salts.html).
 
 10. `composer install`
-11. `npm install`
+11. `npm ci`
 12. Run the app/tools/local scripts (please note that these might work only if you setup the `MYSQLI_DEFAULT_SOCKET` environment variable, and only after you actually have the plugins and theme installed at step 10).
 
 	* `cd app/tools/local`
@@ -97,7 +97,7 @@ In the above file, replace `<SOCKET PATH>` with the socket path from the corresp
 `/Users/<username>/Library/Application Support/Local/run/<unique string>/mysql/mysqld.sock`
 
 ## Installation and build
-Run `composer install` and `npm install && npm run build` in root to build the project.
+Run `composer install` and `npm ci && npm run build` in root to build the project.
 
 ### Extending the builds
 Project-base uses wp-scripts to build front end assets using the `npm run build` or `npm run start` commands. wp-scripts in turn uses webpack and postcss. You can extend those by editing the postcss.config.js and webpack.config.js files.
