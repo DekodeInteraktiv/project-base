@@ -20,7 +20,7 @@
 		"husky": "^8.0.1",
 		"lint-staged": "^13.0.3",
 		"postcss": "^8.4.18",
-		"postcss-custom-media": "^8.0.2",
+		"postcss-custom-media": "^9.0.1",
 		"postcss-flexbugs-fixes": "^5.0.2",
 		"postcss-import": "^15.0.0",
 		"postcss-media-minmax": "^5.0.0",
