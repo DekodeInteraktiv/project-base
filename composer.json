@@ -16,7 +16,10 @@
 		"wpackagist-plugin/two-factor": "~0.12.0"
 	},
 	"require-dev": {
-		"dekode/coding-standards": "~6.2.0"
+		"dekode/coding-standards": "~6.2.0",
+		"phpstan/extension-installer": "^1.2",
+		"phpstan/phpstan": "^1.9",
+		"szepeviktor/phpstan-wordpress": "^1.1"
 	},
 	"repositories": {
 		"mu-plugins": {
@@ -68,6 +71,7 @@
 			"composer/installers": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"inpsyde/wp-translation-downloader": true,
+			"phpstan/extension-installer": true,
 			"roots/wordpress-core-installer": true
 		},
 		"platform": {
@@ -116,6 +120,9 @@
 		],
 		"lint": [
 			"./vendor/bin/phpcs ."
+		],
+		"phpstan": [
+			"./vendor/bin/phpstan analyse packages --level=8"
 		]
 	}
 }
