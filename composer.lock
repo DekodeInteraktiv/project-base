@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc909d13bb56a0cfcb5c8e851793332c",
+    "content-hash": "63eb7e94bc9a19976d4ebe8f5500d7a2",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -1151,16 +1151,16 @@
         },
         {
             "name": "dekode/coding-standards",
-            "version": "dev-use-wpcs-dev-develope",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DekodeInteraktiv/coding-standards.git",
-                "reference": "6848afe942fa6c2d1717eee16e74ede03acdfa10"
+                "reference": "37ff30974760d5e61509f95d590a090ef2a3630d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DekodeInteraktiv/coding-standards/zipball/6848afe942fa6c2d1717eee16e74ede03acdfa10",
-                "reference": "6848afe942fa6c2d1717eee16e74ede03acdfa10",
+                "url": "https://api.github.com/repos/DekodeInteraktiv/coding-standards/zipball/37ff30974760d5e61509f95d590a090ef2a3630d",
+                "reference": "37ff30974760d5e61509f95d590a090ef2a3630d",
                 "shasum": ""
             },
             "require": {
@@ -1192,9 +1192,9 @@
             ],
             "support": {
                 "issues": "https://github.com/DekodeInteraktiv/coding-standards/issues",
-                "source": "https://github.com/DekodeInteraktiv/coding-standards/tree/use-wpcs-dev-develope"
+                "source": "https://github.com/DekodeInteraktiv/coding-standards/tree/5.0.0"
             },
-            "time": "2022-12-06T08:58:21+00:00"
+            "time": "2022-12-06T09:50:48+00:00"
         },
         {
             "name": "dekode/logging",
@@ -2028,9 +2028,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "dekode/coding-standards": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
