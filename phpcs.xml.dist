@@ -3,11 +3,5 @@
 	<file>.</file>
 	<arg name="extensions" value="php" />
 	<config name="testVersion" value="8.1-" />
-
-	<exclude-pattern>/public/content/themes</exclude-pattern>
-	<exclude-pattern>/public/content/plugins</exclude-pattern>
-	<exclude-pattern>/public/content/mu-plugins</exclude-pattern>
-	<exclude-pattern>/public/content/object-cache.php</exclude-pattern>
-
 	<rule ref="Dekode" />
 </ruleset>
