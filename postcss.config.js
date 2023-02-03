@@ -10,13 +10,15 @@ const mixins = require('postcss-mixins');
 const postcssNesting = require('postcss-nesting');
 const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 
-module.exports = (ctx) => {
+module.exports = ctx => {
 	const config = {
 		plugins: [
 			atImport(),
 			mixins,
 			postcssFlexbugsFixes,
-			postcssNesting,
+			postcssNesting({
+				noIsPseudoSelector: true,
+			}),
 			customMedia(),
 			minmax(),
 			autoprefixer,
