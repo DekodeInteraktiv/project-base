@@ -65,34 +65,21 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 
 ### wp-cli and Local by Flywheel
 
-There can be issues trying to use wp-cli commands when using a [Local by Flywheel](https://localwp.com/) development environment. You can usually fix this with the following steps:
+To be able to use wp-cli, you can use [Local by Flywheel](https://localwp.com/) build-in in site shell.  
+
+If you would like to access the wp-cli in the defauly system console there can be issues trying to use wp-cli commands when using a [Local by Flywheel](https://localwp.com/) development environment. You can usually fix this with the following steps:
 
 1. Add a file named `wp-cli.local.yml` to the root (`app`) directory, with the following content:
 
-```
+```yml
 path: public/wp
 require:
   - wp-cli.local.php
 ```
 
-2. Add a file named `wp-cli.local.php` to the root (`app`) directory, with the following content:
+2. Set the `MYSQLI_DEFAULT_SOCKET` in the `.env` file.
 
-```
-<?php
-define('DB_HOST', 'localhost:<SOCKET PATH>');
-define('DB_USER', 'root');
-define('DB_PASSWORD', 'root');
-
-// Only display fatal run-time errors.
-// See http://php.net/manual/en/errorfunc.constants.php.
-error_reporting(E_ERROR);
-
-// Disable WordPress debug mode.
-// See https://codex.wordpress.org/WP_DEBUG.
-define('WP_DEBUG', false);
-```
-
-In the above file, replace `<SOCKET PATH>` with the socket path from the corresponding project in Local, which can be found in the **Database** tab and usually looks something like the following (on Mac OS):
+To obtain `MYSQLI_DEFAULT_SOCKET` with the socket path from the corresponding project in Local, which can be found in the **Database** tab (local app) and usually looks something like the following (on Mac OS):
 
 `/Users/<username>/Library/Application Support/Local/run/<unique string>/mysql/mysqld.sock`
 
