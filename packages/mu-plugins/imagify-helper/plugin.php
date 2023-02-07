@@ -28,7 +28,7 @@ namespace Dekode\MUPlugins;
  * @param string|null $root_path Root path.
  * @return string|null;
  */
-function imagify_site_root_override( ?string $root_path ) : ?string {
+function imagify_site_root_override( ?string $root_path ): ?string {
 	if ( ! function_exists( 'imagify_get_filesystem' ) ) {
 		return $root_path;
 	}

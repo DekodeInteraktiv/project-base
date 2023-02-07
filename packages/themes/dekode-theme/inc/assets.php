@@ -19,7 +19,7 @@ namespace Dekode\Assets;
  *
  * @return void
  */
-function do_enqueue_assets() : void {
+function do_enqueue_assets(): void {
 
 	// Enqueue styles.
 	$style_file_path = \get_template_directory() . '/build/style.css';
@@ -45,7 +45,7 @@ function do_enqueue_assets() : void {
  *
  * @return void
  */
-function do_enqueue_block_editor_assets() : void {
+function do_enqueue_block_editor_assets(): void {
 
 	// Enqueue styles.
 	$style_file_path = \get_template_directory() . '/build/editor.css';
