@@ -16,7 +16,9 @@ module.exports = (ctx) => {
 			atImport(),
 			mixins,
 			postcssFlexbugsFixes,
-			postcssNesting,
+			postcssNesting({
+				noIsPseudoSelector: true,
+			}),
 			customMedia(),
 			minmax(),
 			autoprefixer,
