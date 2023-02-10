@@ -52,6 +52,10 @@
 			"type": "composer",
 			"url": "https://packages.dekodes.no"
 		},
+		"dekode-composer": {
+			"type": "composer",
+			"url": "https://composer.dekodes.no"
+		},
 		"t2-packages": {
 			"type": "composer",
 			"url": "https://t2-packages.teft.io"
