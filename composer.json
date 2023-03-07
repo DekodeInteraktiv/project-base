@@ -5,15 +5,15 @@
 	"require": {
 		"php": ">=8.1",
 		"boxuk/wp-muplugin-loader": "~2.0.0",
-		"composer/installers": "~1.12.0",
+		"composer/installers": "~2.2.0",
 		"dekode/dekode-theme": "~1.0.0",
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
-		"inpsyde/wp-translation-downloader": "~2.3.0",
+		"inpsyde/wp-translation-downloader": "~2.4.0",
 		"johnpbloch/wordpress": "~6.1.1",
-		"symfony/dotenv": "~5.4.2",
-		"t2/t2": "~1.6.0",
-		"wpackagist-plugin/imagify": "~2.0.0",
+		"symfony/dotenv": "~6.2.0",
+		"t2/t2": "~2.4.0",
+		"wpackagist-plugin/imagify": "~2.1.0",
 		"wpackagist-plugin/spinupwp": "~1.5.1",
 		"wpackagist-plugin/two-factor": "~0.7.3"
 	},
@@ -24,25 +24,25 @@
 	},
 	"repositories": {
 		"mu-plugins": {
-			"type": "path",
-			"url": "packages/mu-plugins/*",
 			"options": {
 				"symlink": true
-			}
+			},
+			"type": "path",
+			"url": "packages/mu-plugins/*"
 		},
 		"plugins": {
-			"type": "path",
-			"url": "packages/plugins/*",
 			"options": {
 				"symlink": true
-			}
+			},
+			"type": "path",
+			"url": "packages/plugins/*"
 		},
 		"themes": {
-			"type": "path",
-			"url": "packages/themes/*",
 			"options": {
 				"symlink": true
-			}
+			},
+			"type": "path",
+			"url": "packages/themes/*"
 		},
 		"wpackagist": {
 			"type": "composer",
