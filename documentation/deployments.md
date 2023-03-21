@@ -18,11 +18,12 @@ It is also possible to run the workflow named `Manually deploy to production` to
 
 The production deployment relies on the following secrets existing:
 
-| Name                                    | Description                                                             |
-|-----------------------------------------|-------------------------------------------------------------------------|
-| `PROD_DEPLOYMENT_USERNAME`              | The username to deploy to the server as.                                |
-| `PROD_DEPLOYMENT_HOSTNAME`              | The hostname or IP of the server you are deploying to.                  |
-| `PROD_DEPLOYMENT_PATH`                  | The path on the remote server to push files into.                       |
+| Name                                    | Description                                                                         |
+|-----------------------------------------|-------------------------------------------------------------------------------------|
+| `PROD_DEPLOYMENT_USERNAME`              | The username to deploy to the server as.                                            |
+| `PROD_DEPLOYMENT_HOSTNAME`              | The hostname or IP of the server you are deploying to.                              |
+| `PROD_DEPLOYMENT_PATH`                  | The path on the remote server to push files into.                                   |
+| `PROD_DEPLOYMENT_HOSTKEY`			   | The host key of the remote server, generated using `ssh-keyscan`, in base64 format. |
 
 ## Stage
 
@@ -34,11 +35,12 @@ It is also possible to run the workflow named `Manually deploy to stage` to push
 
 The stage deployment relies on the following secrets existing:
 
-| Name                                    | Description                                                             |
-|-----------------------------------------|-------------------------------------------------------------------------|
-| `STAGE_DEPLOYMENT_USERNAME`             | The username to deploy to the server as.                                |
-| `STAGE_DEPLOYMENT_HOSTNAME`             | The hostname or IP of the server you are deploying to.                  |
-| `STAGE_DEPLOYMENT_PATH`                 | The path on the remote server to push files into.                       |
+| Name                          | Description                                                                          |
+|-------------------------------|--------------------------------------------------------------------------------------|
+| `STAGE_DEPLOYMENT_USERNAME`   | The username to deploy to the server as.                                             |
+| `STAGE_DEPLOYMENT_HOSTNAME`   | The hostname or IP of the server you are deploying to.                               |
+| `STAGE_DEPLOYMENT_PATH`       | The path on the remote server to push files into.                                    |
+| `STAGE_DEPLOYMENT_HOSTKEY`	 | The host key of the remote server, generated using `ssh-keyscan`, in base64 format.  |
 
 ## Sharing and re-usability
 
