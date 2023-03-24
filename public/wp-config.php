@@ -26,7 +26,7 @@ if ( file_exists( $app_root . '/.env' ) ) {
  * @param mixed  $default Default value if key is not set.
  * @return mixed
  */
-function env( string $key, $default = '' ) { // phpcs:ignore NeutronStandard.Functions.TypeHint.NoArgumentType, NeutronStandard.Functions.TypeHint.NoReturnType
+function env( string $key, $default = '' ) { // phpcs:ignore NeutronStandard.Functions.TypeHint.NoArgumentType, NeutronStandard.Functions.TypeHint.NoReturnType, Universal.NamingConventions.NoReservedKeywordParameterNames.defaultFound
 	$value = $_ENV[ $key ] ?? $default;
 
 	// Return bool value for 'true' or 'false'.
