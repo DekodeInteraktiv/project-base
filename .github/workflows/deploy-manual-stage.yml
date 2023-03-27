@@ -1,0 +1,43 @@
+name: Manually deploy to stage
+
+on:
+    workflow_dispatch:
+        inputs:
+            TAG:
+                description: 'Version to deploy, can be a tag, branch, commit or empty for latest'
+                required: true
+                type: string
+                default: ''
+            PHP_VERSION:
+                description: 'The PHP version to use'
+                required: false
+                type: string
+                default: '8.1'
+            BUILD_FOR_DEPLOY:
+                description: 'Whether to build for deployment immediately or to keep developer tools'
+                required: false
+                type: boolean
+                default: false
+
+jobs:
+    code-checkout:
+        uses: ./.github/workflows/checkout-and-build.yml
+        with:
+            tag: ${{ inputs.TAG }}
+            PHP_VERSION: ${{ inputs.PHP_VERSION }}
+            BUILD_FOR_DEPLOY: ${{ inputs.BUILD_FOR_DEPLOY }}
+            ARTIFACT_NAME: 'compressed-code-artifact'
+        secrets: inherit
+
+    deploy:
+        uses: 'dekodeinteraktiv/github-actions/.github/workflows/deploy-to-server.yml@main'
+        needs: [ code-checkout ]
+        with:
+            ARTIFACT_NAME: 'compressed-code-artifact'
+            RSYNC_FILTER_FILE: './tools/github/rsync-file-filter.rules'
+        secrets:
+            SERVER_USERNAME: ${{ secrets.STAGE_DEPLOYMENT_USERNAME }}
+            SERVER_HOSTNAME: ${{ secrets.STAGE_DEPLOYMENT_HOSTNAME }}
+            DEPLOYMENT_PATH: ${{ secrets.STAGE_DEPLOYMENT_PATH }}
+            SERVER_PRIVATE_KEY: ${{ secrets.ACTIONS_DEPLOYMENT_KEY_ED25519_BASE64 }}
+            SERVER_HOSTKEY: ${{ secrets.STAGE_DEPLOYMENT_HOSTKEY }}

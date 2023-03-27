@@ -1,0 +1,28 @@
+name: Deploy code to stage
+
+on:
+    push:
+        branches:
+            - 'stage'
+
+jobs:
+    code-checkout:
+        uses: ./.github/workflows/checkout-and-build.yml
+        with:
+            PHP_VERSION: '8.1'
+            BUILD_FOR_DEPLOY: false
+            ARTIFACT_NAME: 'compressed-code-artifact'
+        secrets: inherit
+
+    deploy:
+        uses: 'dekodeinteraktiv/github-actions/.github/workflows/deploy-to-server.yml@main'
+        needs: [ code-checkout ]
+        with:
+            ARTIFACT_NAME: 'compressed-code-artifact'
+            RSYNC_FILTER_FILE: './tools/github/rsync-file-filter.rules'
+        secrets:
+            SERVER_USERNAME: ${{ secrets.STAGE_DEPLOYMENT_USERNAME }}
+            SERVER_HOSTNAME: ${{ secrets.STAGE_DEPLOYMENT_HOSTNAME }}
+            DEPLOYMENT_PATH: ${{ secrets.STAGE_DEPLOYMENT_PATH }}
+            SERVER_PRIVATE_KEY: ${{ secrets.ACTIONS_DEPLOYMENT_KEY_ED25519_BASE64 }}
+            SERVER_HOSTKEY: ${{ secrets.STAGE_DEPLOYMENT_HOSTKEY }}

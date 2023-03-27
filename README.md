@@ -18,9 +18,6 @@ List any steps necessary to get this project up and running on a local machine. 
 - Composer quirks
 - Symlinking
 
-## Deployment
-Specify how this project is deployed. For most projects, this should be simply "Through codeship".
-
 ## Custom wp-cli commands
 List and document any custom-made wp-cli commands on this site.
 

@@ -1,0 +1,74 @@
+name: Re-build for deployment
+
+on:
+    workflow_call:
+        inputs:
+            ARTIFACT_NAME:
+                description: 'The artifact to deploy'
+                required: true
+                type: string
+            PHP_VERSION:
+                description: 'The PHP version to use'
+                required: true
+                type: string
+                default: '8.1'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Fetch shared source
+              uses: actions/download-artifact@v3
+              with:
+                  name: ${{ inputs.ARTIFACT_NAME }}
+
+            - name: Extract shared source artifact
+              working-directory: ./
+              run: tar -zxf ${{ inputs.ARTIFACT_NAME }}.tar.gz
+
+            - name: Get Composer cache directory
+              id: composer-cache
+              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+            - name: Set up Composer caching
+              uses: actions/cache@v2
+              env:
+                  cache-name: cache-composer-dependencies
+              with:
+                  path: ${{ steps.composer-cache.outputs.dir }}
+                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+              restore-keys: |
+                  ${{ runner.os }}-composer-
+
+            - name: Setup PHP environment
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ inputs.PHP_VERSION }}
+                  coverage: none
+                  tools: composer, cs2pr
+
+            - name: Install Composer dependencies
+              env:
+                  COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+              run: |
+                  composer install --prefer-dist --no-suggest --no-progress --no-ansi --no-interaction --no-dev
+                  echo "vendor/bin" >> $GITHUB_PATH
+
+            - name: Build for deployment
+              run: |
+                  composer run build-for-deploy
+
+            - name: Create updated code artifact archive
+              working-directory: ./
+              run: |
+                  rm ${{ inputs.ARTIFACT_NAME }}.tar.gz
+                  touch ${{ inputs.ARTIFACT_NAME }}.tar.gz
+                  tar -czf ${{ inputs.ARTIFACT_NAME }}.tar.gz --exclude=${{ inputs.ARTIFACT_NAME }}.tar.gz --exclude=.git .
+
+            - name: Upload updated artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: ${{ inputs.ARTIFACT_NAME }}
+                  path: ${{ inputs.ARTIFACT_NAME }}.tar.gz
+                  retention-days: 1

@@ -1,0 +1,27 @@
+name: Deploy new release
+
+on:
+    release:
+        types: [published]
+
+jobs:
+    code-checkout:
+        uses: ./.github/workflows/checkout-and-build.yml
+        with:
+            PHP_VERSION: '8.1'
+            BUILD_FOR_DEPLOY: true
+            ARTIFACT_NAME: 'compressed-code-artifact'
+        secrets: inherit
+
+    deploy:
+        uses: 'dekodeinteraktiv/github-actions/.github/workflows/deploy-to-server.yml@main'
+        needs: [ code-checkout ]
+        with:
+            ARTIFACT_NAME: 'compressed-code-artifact'
+            RSYNC_FILTER_FILE: './tools/github/rsync-file-filter.rules'
+        secrets:
+            SERVER_USERNAME: ${{ secrets.PROD_DEPLOYMENT_USERNAME }}
+            SERVER_HOSTNAME: ${{ secrets.PROD_DEPLOYMENT_HOSTNAME }}
+            DEPLOYMENT_PATH: ${{ secrets.PROD_DEPLOYMENT_PATH }}
+            SERVER_PRIVATE_KEY: ${{ secrets.ACTIONS_DEPLOYMENT_KEY_ED25519_BASE64 }}
+            SERVER_HOSTKEY: ${{ secrets.PROD_DEPLOYMENT_HOSTKEY }}
