@@ -23,6 +23,7 @@
 - webpack.confiug.js
 - documentation/***
 - tools/***
+- node_modules/***
 - *.md
 - public/content/uploads
 - public/wp/wp-content
