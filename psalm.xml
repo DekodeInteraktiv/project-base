@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<psalm
+	findUnusedBaselineEntry="true"
+	findUnusedCode="true"
+>
+	<projectFiles>
+		<directory name="." />
+
+		<ignoreFiles>
+			<!-- WordPress core has its own security routines we lean on and trust, so we do not need to scan them. -->
+			<directory name="public/wp" />
+		</ignoreFiles>
+	</projectFiles>
+</psalm>
