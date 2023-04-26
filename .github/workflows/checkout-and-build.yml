@@ -61,6 +61,7 @@ jobs:
                   COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
               run: |
                   composer install --prefer-dist --no-suggest --no-progress --no-ansi --no-interaction
+                  composer run build-translations
                   echo "vendor/bin" >> $GITHUB_PATH
 
             - name: Install Composer dependencies for deployment
@@ -69,6 +70,7 @@ jobs:
                   COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
               run: |
                   composer install --prefer-dist --no-suggest --no-progress --no-ansi --no-interaction --no-dev
+                  composer run build-translations
                   echo "vendor/bin" >> $GITHUB_PATH
 
             - name: Setup Node.js environment
