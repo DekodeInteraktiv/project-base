@@ -111,7 +111,7 @@
 			"@composer install"
 		],
 		"build-for-deploy": [
-			"@composer install --no-dev && composer build-translations",
+			"@composer install --no-dev && composer build-translations"
 		],
 		"build-translations": [
 			"rm -f wp-translation-downloader.lock",
