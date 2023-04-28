@@ -5,7 +5,7 @@ on:
         inputs:
             TAG:
                 description: 'Version to deploy, can be a tag, branch, commit or empty for latest'
-                required: true
+                required: false
                 type: string
                 default: ''
             PHP_VERSION:
