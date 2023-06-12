@@ -2,9 +2,9 @@ name: Psalm Static analysis
 
 on:
     workflow_dispatch:
-    schedule:
+    #schedule:
         # Run every Monday at 1am.
-        - cron: '0 1 * * 1'
+        #- cron: '0 1 * * 1'
 
 jobs:
     psalm:
