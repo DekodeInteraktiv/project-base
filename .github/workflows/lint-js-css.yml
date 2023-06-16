@@ -28,7 +28,7 @@ jobs:
             - name: Setup node.js
               uses: actions/setup-node@v3
               with:
-                  node-version-file: '.nvmrc'
+                  node-version-file: 'package.json'
                   cache: npm
 
             - name: Install Dependencies
