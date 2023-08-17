@@ -1,4 +1,5 @@
 {
+	"$schema": "https://t2.teft.io/schemas/t2.json",
 	"version": 1,
 	"admin": true,
 	"blocks": true,
