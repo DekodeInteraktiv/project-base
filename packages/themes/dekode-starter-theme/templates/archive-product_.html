@@ -1,0 +1,18 @@
+<!---
+
+	WooCommerce shop page using T2 Query block is not 100% functional yet because of a core issue:
+	- https://github.com/DekodeInteraktiv/T2/issues/2879
+	- https://core.trac.wordpress.org/ticket/57300
+
+-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main-content","layout":{"type":"constrained","wideSize":"var(--wp--style--global--wide-size)"}} -->
+<main class="wp-block-group site-main-content">
+	<!-- wp:theme/hook {"hook":"page-title"} /-->
+	<!-- wp:t2/query {"inheritQuery":true,"id":"shop","taxonomies":["product_cat"],"allowMultipleValuesSelection":true} /-->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

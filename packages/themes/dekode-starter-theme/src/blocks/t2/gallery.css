@@ -1,0 +1,7 @@
+.t2-gallery img {
+	border-radius: var(--theme--border-radius);
+}
+
+.t2-gallery__caption {
+	font-size: var(--theme--font-size--xxs);
+}

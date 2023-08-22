@@ -1,0 +1,290 @@
+@define-mixin select-dropdown-arrow {
+	content: "";
+	display: block;
+	width: calc(var(--theme--form-choice--input-size) / 2.5);
+	height: calc(var(--theme--form-choice--input-size) / 2.5);
+	border-left: 2px solid var(--theme--color--primary);
+	border-bottom: 2px solid var(--theme--color--primary);
+	position: absolute;
+	top: 50%;
+	margin-top: calc(var(--theme--form-choice--input-size) * -0.3);
+	right: var(--theme--form-choice--input-size);
+	transform: rotate(-45deg);
+}
+
+div.wp-site-blocks,
+form,
+div.wp-site-blocks div.gform_wrapper form {
+	& textarea,
+	& select,
+	& input[type="text"],
+	& input[type="tel"],
+	& input[type="url"],
+	& input[type="password"],
+	& input[type="number"],
+	& input[type="month"],
+	& input[type="week"],
+	& input[type="email"],
+	& input[type="search"],
+	& input[type="select-one"] {
+		@mixin input;
+	}
+
+	& .gform_fields {
+		grid-column-gap: var(--theme--spacing--md);
+		grid-row-gap: var(--theme--spacing--md);
+	}
+
+	/* First/last name fields. */
+	@media (max-width: 640px) {
+		& .ginput_complex span {
+			margin-bottom: var(--theme--spacing--md);
+		}
+	}
+
+	@media (min-width: 641px) {
+		& .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full) {
+			padding-right: calc(var(--theme--spacing--md) / 2);
+		}
+
+		&
+			.gform_wrapper.gravity-theme
+			.ginput_complex:not(.ginput_container_address)
+			span:not([style*="display:none"]):not(.ginput_full)
+			~ span:not(.ginput_full) {
+			padding-left: calc(var(--theme--spacing--md) / 2);
+		}
+	}
+
+	& fieldset.gfield {
+		margin-top: 0.325rem;
+	}
+
+	& label,
+	& .gfield_label {
+		cursor: pointer;
+		display: block;
+		font-weight: normal;
+		font-size: var(--theme--font-size--xxs);
+		margin-bottom: 0.25em;
+		color: var(--theme--text-color--faded);
+	}
+
+	& .gfield--type-choice {
+		& div.gchoice,
+		& div.ginput_container_consent {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			position: relative;
+
+			& label {
+				margin-bottom: 0.325em;
+			}
+		}
+	}
+
+	& .gform_wrapper.gravity-theme .gform_validation_errors,
+	& .gform_validation_errors {
+		background: transparent;
+		border-radius: var(--theme--border-radius);
+		padding: var(--theme--spacing--sm);
+		margin: 0 0 var(--theme--spacing--sm) 0;
+		box-shadow: none;
+	}
+
+	& .gfield_validation_message,
+	& .validation_message,
+	& .gform_wrapper.gravity-theme .gfield_validation_message,
+	& .gform_wrapper.gravity-theme .validation_message {
+		background: none;
+		color: var(--theme--text-color--faded);
+		font-size: var(--theme--font-size--xxs);
+		font-weight: var(--theme--font-weight--semibold);
+		border: none;
+		padding: 0;
+		margin: 0.5em 0 0 0;
+	}
+
+	& div.gform_footer {
+		display: flex;
+		justify-content: center;
+	}
+
+	&.search-form {
+		gap: var(--theme--spacing--sm);
+
+		& label {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+div.fake-input-container {
+	&.type-select {
+		position: relative;
+
+		&::after {
+			@mixin select-dropdown-arrow;
+			z-index: 10;
+			cursor: pointer;
+		}
+
+		& select {
+			width: 100%;
+			appearance: none;
+			background: #fff;
+			border: 1px solid var(--theme--border-color--primary);
+			border-radius: var(--theme--border-radius--sm);
+			cursor: pointer;
+			padding-right: 2.5em !important;
+
+			&.tomselected {
+				padding: 0 !important;
+			}
+		}
+
+		&:has(select.tomselected)::after {
+			display: none;
+		}
+	}
+}
+
+/* Fake inputs */
+input.faked {
+	position: absolute;
+	left: -9999px;
+	opacity: 0;
+
+	& + span.fake-input {
+		display: inline-block;
+		position: relative;
+		width: var(--theme--form-choice--input-size);
+		height: var(--theme--form-choice--input-size);
+		border: 2px solid var(--theme--color--primary);
+		border-radius: 50%;
+		margin-right: 0.375rem;
+		background: #fff;
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: var(--theme--color--primary);
+			border: none;
+			border-radius: 50%;
+			transform: scale(0.5);
+			opacity: 0;
+		}
+
+		&.type-checkbox {
+			border-radius: var(--theme--border-radius--sm);
+
+			&::after {
+				--check-w: calc(var(--theme--form-choice--input-size) / 1.75);
+				--check-h: calc(var(--theme--form-choice--input-size) / 3);
+				background: transparent;
+				border-radius: 0;
+				transform: scale(1) rotate(-45deg);
+				border-left: 2px solid var(--theme--color--primary);
+				border-bottom: 2px solid var(--theme--color--primary);
+				top: 50%;
+				left: 50%;
+				width: var(--check-w);
+				height: var(--check-h);
+				margin-top: calc(var(--check-h) * -0.75);
+				margin-left: calc(var(--check-w) * -0.5);
+			}
+		}
+	}
+
+	&:checked + span.fake-input {
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+
+/* TomSelect library (fancy select dropdowns) used by T2 Query block (for filters) */
+div.ts-wrapper,
+.ts-wrapper.single.has-items,
+.ts-wrapper.multi.has-items {
+	& .ts-control {
+		@mixin input;
+		font-size: var(--theme--font-size--sm);
+
+		& input,
+		& div.item,
+		& div.option {
+			caret-color: transparent;
+			color: var(--theme--color--primary);
+			font-size: var(--theme--font-size--sm);
+			line-height: var(--theme--line-height--sm);
+
+			&::placeholder {
+				color: var(--theme--color--primary);
+			}
+		}
+
+		&::after {
+			@mixin select-dropdown-arrow;
+		}
+	}
+
+	& div.ts-dropdown {
+		background: var(--theme--color-background-light-alt);
+		border: none;
+		box-shadow: none;
+		border-radius: 0 0 var(--theme--border-radius) var(--theme--border-radius);
+		margin: calc(var(--theme--border-width) * -1) 0 0 0;
+
+		& div.option {
+			caret-color: transparent;
+			color: var(--theme--text-color);
+			font-size: var(--theme--font-size--sm);
+			padding: 0.75em 1em;
+
+			&.active {
+				background: var(--theme--color-background-light-alt-hover);
+				color: var(--theme--color--primary);
+			}
+
+			&:last-of-type {
+				border-radius: 0 0 var(--theme--border-radius) var(--theme--border-radius);
+			}
+		}
+	}
+
+	&.dropdown-active {
+		& div.ts-control {
+			background: var(--theme--color-background-light-alt) !important;
+			border-color: var(--theme--color-background-light-alt);
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	&.multi {
+		& .ts-control {
+			& div.item {
+				background: none;
+				padding: 0;
+				margin: 0;
+
+				& + div.item {
+					margin-left: 0.5em;
+				}
+			}
+		}
+	}
+}
+
+.ts-wrapper.has-items {
+	& .ts-control input {
+		@mixin visually-hidden;
+	}
+}

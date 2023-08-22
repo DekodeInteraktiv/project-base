@@ -1,0 +1,54 @@
+@import "../../config/media.css";
+
+.wp-block-dekode-events-event-info {
+	border: var(--theme--border-width) solid var(--theme--border-color--secondary);
+	padding: var(--theme--spacing--lg);
+	border-radius: var(--theme--border-radius);
+	margin-top: var(--theme--spacing--md) !important;
+
+	& ul.event-info-items {
+		grid-gap: var(--theme--spacing--md);
+
+		@media (--theme--small-and-down) {
+			grid-template-columns: 1fr;
+		}
+
+		& li {
+			--item-icon-size: var(--theme--font-size--xxl);
+			padding-left: calc(var(--item-icon-size) * 1.3);
+
+			@media (--theme--small-and-down) {
+				--item-icon-size: calc(var(--theme--font-size--xxl) * 1.3);
+			}
+
+			& div.icon {
+				width: var(--item-icon-size);
+				height: var(--item-icon-size);
+
+				& .t2-icon {
+					fill: var(--theme--color--primary);
+				}
+			}
+
+			& p.label {
+				font-size: var(--theme--font-size--xxs);
+				color: var(--theme--text-color--faded);
+			}
+
+			& p.value {
+				font-weight: var(--theme--font-weight--medium);
+				font-size: var(--theme--font-size--sm);
+			}
+		}
+	}
+
+	& div.wp-block-buttons {
+		margin-top: var(--theme--spacing--lg);
+
+		& div.wp-block-button {
+			@media (--theme--small-and-down) {
+				width: 100%;
+			}
+		}
+	}
+}

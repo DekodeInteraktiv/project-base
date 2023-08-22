@@ -1,0 +1,155 @@
+@import "../config/mixins.css";
+
+.wiki-page-title {
+	margin: var(--theme--spacing--xl) auto !important;
+	max-width: var(--wp--style--global--content-size) !important;
+
+	& .description {
+		display: block;
+		font-size: var(--theme--font-size--md);
+		font-weight: var(--theme--font-weight);
+		margin-top: var(--theme--spacing--sm);
+	}
+}
+
+.t2-query#wiki {
+	margin-bottom: var(--theme--spacing--xl);
+
+	& .query-results {
+		margin: var(--theme--spacing--xl) 0 0;
+	}
+}
+
+/* Styles for wiki query results and featured wiki posts template */
+.t2-query#wiki,
+.wiki-featured-posts {
+	& a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	& .t2-post-title {
+		color: var(--theme--color--primary) !important;
+		display: flex;
+		font-family: var(--theme--font-family--body);
+		font-size: var(--theme--font-size);
+		font-weight: var(--theme--font-weight--medium);
+		justify-content: space-between;
+		position: relative;
+
+		&::after {
+			@mixin arrow-forward-icon;
+			flex-shrink: 0;
+		}
+	}
+
+	& .wp-block-post-terms {
+		margin: var(--theme--spacing--sm) 0 var(--theme--spacing--xs) !important;
+
+		& a {
+			background: none;
+			color: var(--theme--color--primary) !important;
+			font-size: var(--theme--font-size--xxs);
+			padding: 0;
+		}
+	}
+}
+
+.wiki-featured-posts {
+	margin-top: var(--theme--spacing--xl) !important;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+
+	& .t2-featured-content-layout {
+		column-gap: var(--theme--spacing--md);
+	}
+
+	& .t2-featured-query-post {
+		align-items: flex-start;
+		grid-template-columns: 1fr;
+	}
+
+	@media (--theme--medium-and-down) {
+		padding: 0;
+	}
+
+	@media (--theme--large-and-up) {
+		margin-left: calc(-1 * (var(--t2-wiki-topic-tree-width) + var(--theme--spacing--md)));
+	}
+}
+
+/* Single Wiki template */
+body.with-topic-tree {
+	margin: 0;
+}
+
+.wiki-single-wrapper {
+	--t2-wiki-nav-item-left-offset: 0;
+	--t2-wiki-nav-items-font-size: var(--theme--font-size);
+	margin: var(--theme--spacing--xl) auto !important;
+	max-width: var(--wp--style--global--wide-size);
+	position: relative;
+
+	@media (--theme--large-and-up) {
+		padding-left: calc(var(--t2-wiki-topic-tree-width) + var(--theme--spacing--md));
+	}
+
+	& .t2-wiki-topic-tree {
+		display: none;
+	}
+
+	& nav.t2-wiki-topic-tree,
+	& div.t2-wiki-table-of-contents {
+		margin: 0 !important;
+		position: sticky;
+		top: var(--theme--spacing--xl);
+
+		& h2 {
+			font-size: var(--theme--font-size--xl);
+		}
+	}
+
+	& div.t2-wiki-table-of-contents > nav li {
+		margin-top: var(--theme--spacing--md);
+
+		& a {
+			align-items: center;
+			border: 0;
+			color: var(--theme--color--primary);
+			padding: 0;
+			text-decoration: underline;
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+
+			&.active {
+				color: var(--theme--color--primary);
+				font-weight: var(--theme--font-weight--bold);
+				text-decoration: none;
+			}
+
+			&::before {
+				display: none !important;
+			}
+		}
+	}
+}
+
+aside.t2-wiki-sidebar {
+	margin: 3rem 0;
+	padding: 0;
+	position: relative;
+
+	@media (--theme--large-and-up) {
+		height: calc(100% - 27rem);
+		margin: var(--theme--spacing--xs) 0 0 !important;
+		overflow: visible;
+		position: absolute;
+	}
+}

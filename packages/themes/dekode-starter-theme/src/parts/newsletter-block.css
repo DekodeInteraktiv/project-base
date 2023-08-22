@@ -1,0 +1,55 @@
+:where(body) {
+	--t2-newsletter-signup--input--border-color: #6463b8;
+	--t2-newsletter-signup--input--background-color: transparent;
+}
+
+form.t2-newsletter-signup.wp-block-t2-newsletter-signup {
+	& > fieldset {
+		display: grid;
+		gap: var(--theme--spacing--sm);
+		grid-template-columns: 1fr;
+		align-items: end;
+
+		@media (--theme--large-and-up) {
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		}
+
+		& span {
+			display: none;
+		}
+
+		& label {
+			margin: 0;
+
+			& > input {
+				background: var(--t2-newsletter-signup--input--background-color);
+				color: var(--theme--color--white);
+				border: 2px solid var(--t2-newsletter-signup--input--border-color);
+				width: 100%;
+
+				&::placeholder {
+					color: var(--theme--color--white);
+				}
+			}
+		}
+
+		& div.t2-newsletter-signup__submit {
+			order: 4;
+
+			& > button[type="submit"] {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.t2-newsletter-signup__email {
+	order: 3;
+	@media (--theme--large-and-up) {
+		grid-column: span 2;
+	}
+}
+
+.t2-newsletter-signup__phone {
+	order: 2;
+}

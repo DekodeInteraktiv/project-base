@@ -1,0 +1,104 @@
+@define-mixin text-base {
+	font-family: var(--theme--font-family--body);
+	font-size: var(--theme--font-size);
+	font-weight: var(--theme--font-weight);
+	line-height: var(--theme--line-height);
+}
+
+/* Medium based font bundle */
+@define-mixin text-base--md {
+	font-size: var(--theme--font-size--md);
+	font-weight: var(--theme--font-weight--medium);
+	line-height: var(--theme--line-height--sm);
+}
+
+/* Heading, and heading-like styles (any level or HTML tag can be styled) */
+@define-mixin display--base {
+	font-weight: var(--theme--font-weight--bold);
+	line-height: var(--theme--line-height--sm);
+}
+
+@define-mixin display--1 {
+	@mixin display--base;
+	font-family: var(--theme--font-family--title);
+	font-size: var(--theme--font-size--xxl);
+}
+
+@define-mixin display--2 {
+	@mixin display--base;
+	font-family: var(--theme--font-family--title);
+	font-size: var(--theme--font-size--lg);
+}
+
+@define-mixin display--3 {
+	@mixin display--base;
+	font-family: var(--theme--font-family--title);
+	font-size: var(--theme--font-size--md);
+}
+
+@define-mixin display--4 {
+	@mixin display--base;
+	font-family: var(--theme--font-family--body);
+	font-size: var(--theme--font-size);
+}
+
+@define-mixin display--5 {
+	@mixin display--base;
+	font-family: var(--theme--font-family--body);
+	font-size: var(--theme--font-size--xs);
+	text-transform: uppercase;
+}
+
+@define-mixin display--6 {
+	@mixin display--base;
+	font-family: var(--theme--font-family--body);
+	font-size: var(--theme--font-size--xxs);
+	text-transform: uppercase;
+}
+
+@define-mixin visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@define-mixin input {
+	border-radius: var(--theme--border-radius);
+	background: var(--theme--color--white);
+	border: var(--theme--border-width) solid var(--theme--border-color--secondary);
+	color: var(--theme--color--primary);
+	padding: 0.75em 0.875em;
+	font-size: var(--theme--font-size--sm);
+	font-family: var(--theme--font-family--body);
+	font-weight: var(--theme--font-weight);
+	width: 100%;
+
+	&::placeholder {
+		color: var(--theme--text-color--faded);
+	}
+
+	&:focus {
+		outline-color: var(--theme--border-color--primary);
+	}
+}
+
+@define-mixin list-inline {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@define-mixin arrow-forward-icon {
+	content: "";
+	background-color: var(--theme--color--svg);
+	mask: var(--theme-svg-arrow-forward);
+	display: block;
+	height: 1.5rem;
+	width: 1.5rem;
+}

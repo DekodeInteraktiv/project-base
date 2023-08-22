@@ -1,0 +1,14 @@
+.wp-block-dekode-events-event-meta {
+	font-size: var(--theme--font-size--xs);
+	color: var(--theme--color-text-secondary);
+
+	& div.icon {
+		& svg {
+			fill: var(--theme--color--primary);
+		}
+	}
+
+	& + div.t2-event-meta {
+		margin-top: var(--theme--spacing--xs);
+	}
+}

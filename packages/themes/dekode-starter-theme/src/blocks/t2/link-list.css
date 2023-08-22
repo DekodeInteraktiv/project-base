@@ -1,0 +1,31 @@
+.t2-link-list {
+	--t2-link-list-typography-text-font-size: var(--theme--font-size);
+	--t2-link-list-typography-text-font-weight: var(--theme--font-weight--medium);
+	--t2-link-list-typography-description-font-size: var(--theme--font-size--xs);
+	--t2-link-list-spacing-item-gap: var(--theme--spacing--md);
+
+	& .t2-link-list-item__text,
+	& .t2-link-list-item__icon {
+		color: var(--theme--color--primary);
+		line-height: var(--theme--line-height--sm);
+	}
+
+	& .t2-link-list-item {
+		& .t2-link-list-item__description {
+			color: var(--theme--color--neutral-400);
+		}
+
+		&:hover,
+		&:focus,
+		&:focus-within {
+			& .t2-link-list-item__text,
+			& .t2-link-list-item__icon {
+				color: var(--theme--color--primary-800);
+			}
+
+			& .t2-link-list-item__description {
+				color: var(--theme--text-color);
+			}
+		}
+	}
+}

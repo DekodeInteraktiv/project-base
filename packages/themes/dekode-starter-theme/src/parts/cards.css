@@ -1,0 +1,303 @@
+div.wp-block-t2-query ul.query-results > li,
+div.t2-featured-template-post,
+div.t2-featured-single-post,
+div.t2-featured-query-post {
+	background: none;
+	color: var(--theme--text-color);
+	word-break: break-word;
+
+	& a {
+		height: auto;
+	}
+
+	& .t2-post-title {
+		color: var(--theme--text-color);
+	}
+
+	/* Featured image. */
+	& figure.t2-post-featured-image {
+		margin: 0;
+		border-radius: var(--theme--border-radius);
+		overflow: hidden;
+
+		& img {
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+
+	/* Taxonomy terms list. */
+	& div.wp-block-post-terms,
+	& div.wp-block-post-date {
+		display: flex;
+		flex-direction: row;
+		font-size: var(--theme--font-size--xxs);
+		text-transform: uppercase;
+		margin-bottom: var(--theme--spacing--xs);
+
+		&,
+		& a {
+			color: var(--theme--text-color--faded);
+		}
+	}
+
+	/* Post title. */
+	& a.post-title-link {
+		color: var(--theme--text-color);
+	}
+
+	& .t2-post-title {
+		font-size: var(--theme--font-size--lg);
+	}
+
+	/* Post details container. */
+	& div.post-details,
+	& div.event-details {
+		margin-top: var(--theme--spacing--sm);
+
+		@media (--theme--small-and-down) {
+			margin-top: 0;
+		}
+	}
+
+	/* Event meta, post excerpt. */
+	& div.t2-post-excerpt,
+	& div.t2-event-meta {
+		margin-top: var(--theme--spacing--xs);
+		color: var(--theme--color-text-secondary);
+
+		&,
+		& p {
+			font-size: var(--theme--font-size--xs);
+		}
+
+		& div.icon {
+			display: none;
+		}
+	}
+
+	/**
+	* On hover.
+	*/
+	&:hover {
+		& a.post-title-link {
+			color: var(--theme--color--primary);
+		}
+	}
+
+	/**
+	* Post type: Event
+	*/
+	&.type-event,
+	&.is-post-type-event {
+		& * + * {
+			margin-top: 0;
+		}
+
+		& a.event-image {
+			display: block;
+			height: auto;
+			position: relative;
+			overflow: hidden;
+			border-radius: 8px;
+			text-decoration: none;
+			isolation: isolate;
+
+			& .dekode-events-meta.type-date {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: var(--theme--color--primary);
+				color: #fff;
+				border-radius: 8px;
+				width: 4rem;
+				height: 4rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				@media (--theme--small-and-down) {
+					width: 3rem;
+					height: 3rem;
+				}
+
+				& div.icon {
+					display: none;
+				}
+
+				& p.value {
+					margin: 0;
+				}
+
+				& span.date span {
+					display: block;
+					text-align: center;
+					line-height: 1.25;
+
+					&:first-of-type {
+						font-weight: bold;
+						font-size: 1.4rem;
+						letter-spacing: 0.075em;
+
+						@media (--theme--small-and-down) {
+							font-size: var(--theme--spacing--md);
+						}
+					}
+
+					&:last-of-type {
+						text-transform: uppercase;
+						font-size: 0.8rem;
+
+						@media (--theme--small-and-down) {
+							font-size: var(--theme--spacing--sm);
+						}
+					}
+				}
+			}
+		}
+
+		& div.event-details {
+			margin-top: 1em;
+
+			& div.icon {
+				display: none;
+			}
+
+			& div.wp-block-post-terms.taxonomy-event-category {
+				display: flex;
+				flex-direction: row;
+				font-size: 0.9rem;
+
+				/* Cancel pill-like style. */
+				& a {
+					border-radius: 0;
+					background: transparent;
+					text-transform: uppercase;
+					padding: 0;
+					text-align: left;
+					color: var(--theme--color--primary);
+					font-size: var(--theme--font-size--xxs);
+					font-family: var(--theme--font-family--body);
+					font-weight: var(--theme--font-weight);
+				}
+			}
+
+			& h2.t2-post-title {
+				font-size: 1.25rem;
+				margin: var(--theme--spacing--xs) 0 var(--theme--spacing--xs);
+			}
+
+			/* FYI: this is styled in /block-library/event-meta/style.css */
+			& .dekode-events-meta {
+				display: inherit;
+				margin-top: 0.25em;
+
+				&,
+				& a {
+					color: var(--theme--text-color--faded);
+				}
+
+				& a:hover {
+					color: var(--theme--color--primary);
+				}
+			}
+		}
+
+		& div.t2-event-meta + div.t2-event-meta {
+			margin-top: var(--wp--preset--spacing--xxs);
+		}
+	}
+}
+
+/**
+ * Mobile variation for T2 Query results cards (archive pages) only.
+ */
+div.wp-block-t2-query:not(#wiki) ul.query-results > li {
+	@media (--theme--small-and-down) {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: var(--theme--spacing--sm);
+
+		& a.event-image {
+			aspect-ratio: 1/1;
+
+			& figure.t2-post-featured-image {
+				aspect-ratio: 1/1;
+			}
+
+			& .dekode-events-meta.type-date {
+				width: 3rem;
+				height: 3rem;
+			}
+		}
+
+		& div.event-details {
+			margin-top: 0 !important;
+
+			& div.wp-block-post-terms {
+				flex-wrap: wrap;
+			}
+		}
+	}
+}
+
+/**
+ * Search page card variation.
+ */
+body.search-results div.wp-block-t2-query ul.query-results,
+div.wp-block-t2-query#search ul.query-results {
+	max-width: var(--wp--style--global--content-size);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: var(--theme--spacing--xl);
+
+	& > li {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		column-gap: var(--theme--spacing--md);
+
+		/* Metadata horizontal row. */
+		& ul.meta {
+			@mixin list-inline;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin-top: var(--theme--spacing--md);
+			column-gap: 1rem;
+			text-transform: uppercase;
+			font-size: var(--theme--font-size--xxs);
+			color: var(--theme--text-color--faded);
+		}
+
+		&.type-event {
+			& ul.meta {
+				& li {
+					display: block;
+
+					& > span {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+
+						& div.icon {
+							margin-right: 0.5em;
+
+							& svg {
+								fill: var(--theme--color--primary);
+							}
+						}
+					}
+
+					& p.value {
+						margin: 0;
+						font-size: var(--theme--font-size--xxs);
+
+						& .location + .location {
+							margin-left: 0.5em;
+						}
+					}
+				}
+			}
+		}
+	}
+}

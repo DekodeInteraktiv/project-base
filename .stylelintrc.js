@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ['@wordpress/stylelint-config/scss'],
+	extends: ['@wordpress/stylelint-config'],
 	rules: {
 		'at-rule-empty-line-before': null,
 		'at-rule-no-unknown': null,
@@ -10,16 +10,7 @@ module.exports = {
 		'rule-empty-line-before': null,
 		'selector-class-pattern': null,
 		'value-keyword-case': null,
-		'scss/operator-no-unspaced': null,
-		'scss/selector-no-redundant-nesting-selector': null,
-		'scss/at-import-partial-extension': null,
-		'scss/no-global-function-names': null,
-		'scss/comment-no-empty': null,
-		'scss/at-extend-no-missing-placeholder': null,
-		'scss/operator-no-newline-after': null,
-		'scss/at-if-closing-brace-newline-after': null,
-		'scss/at-else-empty-line-before': null,
-		'scss/at-if-closing-brace-space-after': null,
 		'no-invalid-position-at-import-rule': null,
+		'function-url-quotes': null,
 	},
 };
