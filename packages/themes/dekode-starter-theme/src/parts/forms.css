@@ -48,10 +48,9 @@ div.wp-site-blocks div.gform_wrapper form {
 		}
 
 		&
-			.gform_wrapper.gravity-theme
-			.ginput_complex:not(.ginput_container_address)
-			span:not([style*="display:none"]):not(.ginput_full)
-			~ span:not(.ginput_full) {
+		.gform_wrapper.gravity-theme
+		.ginput_complex:not(.ginput_container_address)
+		span:not([style*="display:none"]):not(.ginput_full) ~ span:not(.ginput_full) {
 			padding-left: calc(var(--theme--spacing--md) / 2);
 		}
 	}

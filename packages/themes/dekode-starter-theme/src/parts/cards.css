@@ -12,6 +12,7 @@ div.t2-featured-query-post {
 
 	& .t2-post-title {
 		color: var(--theme--text-color);
+		font-size: var(--theme--font-size--lg);
 	}
 
 	/* Featured image. */
@@ -44,10 +45,6 @@ div.t2-featured-query-post {
 	/* Post title. */
 	& a.post-title-link {
 		color: var(--theme--text-color);
-	}
-
-	& .t2-post-title {
-		font-size: var(--theme--font-size--lg);
 	}
 
 	/* Post details container. */
