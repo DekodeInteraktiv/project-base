@@ -88,6 +88,7 @@ define( 'WP_DEBUG', env( 'WP_DEBUG', false ) );
 define( 'WP_DEBUG_DISPLAY', env( 'WP_DEBUG_DISPLAY', false ) );
 define( 'SCRIPT_DEBUG', env( 'SCRIPT_DEBUG', false ) );
 define( 'SAVEQUERIES', env( 'SAVEQUERIES', false ) );
+define( 'WP_DEVELOPMENT_MODE', env( 'WP_DEVELOPMENT_MODE', '' ) );
 $wp_debug_log = env( 'WP_DEBUG_LOG', false );
 
 if ( WP_DEBUG && ! $wp_debug_log && ! empty( $_SERVER['DOCUMENT_ROOT'] ) ) {
