@@ -1,0 +1,57 @@
+@import "../../config/mixins.css";
+@import "../../config/media.css";
+
+#knowledge-base-topics {
+	margin-bottom: var(--theme--spacing--lg);
+}
+
+div.t2-wiki-topics {
+	--t2-wiki-list-grid-gap: var(--theme--spacing--lg);
+
+	& .topics-list {
+		grid-template-columns: 1fr;
+
+		@media (--theme--small-and-up) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (--theme--medium-and-up) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	& .wiki-topic {
+		border: 0;
+		padding: 0;
+
+		& a {
+			color: var(--theme--color--primary);
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		& h3 {
+			font-family: var(--theme--font-family--body);
+			font-size: var(--theme--font-size);
+			font-weight: var(--theme--font-weight--medium);
+			margin: 0;
+
+			& a {
+				display: flex;
+				justify-content: space-between;
+
+				&::after {
+					@mixin arrow-forward-icon;
+				}
+			}
+		}
+
+		& .description,
+		& .articles-count {
+			display: none; /* can be removed later, when hidding options will be added to the 't2/wiki-topics' block */
+		}
+	}
+}

@@ -19,4 +19,7 @@ module.exports = {
 		},
 		requireConfigFile: false,
 	},
+	settings: {
+		'import/core-modules': ['@t2/editor'],
+	},
 };

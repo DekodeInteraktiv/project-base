@@ -1,7 +1,7 @@
 {
 	"patterns": [
 		{
-			"tableName": ".*_users",
+			"tableName": "wp_users",
 			"fields": [
 				{
 					"field": "user_login",
@@ -42,7 +42,7 @@
 			]
 		},
 		{
-			"tableName": ".*_usermeta",
+			"tableName": "wp_usermeta",
 			"fields": [
 				{
 					"field": "meta_value",
@@ -95,7 +95,8 @@
 			]
 		},
 		{
-			"tableName": ".*_comments",
+			"tableName": "wp_comments",
+			"tableNameRegex": ".*_comments",
 			"fields": [
 				{
 					"field": "comment_author",

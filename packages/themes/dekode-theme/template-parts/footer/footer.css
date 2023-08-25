@@ -1,7 +1,0 @@
-.site-footer {
-	padding: 0 calc(var(--t2-spacing-horizontal) / 2);
-}
-
-.site-footer-widgets {
-	display: flex;
-}

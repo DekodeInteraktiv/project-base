@@ -1,0 +1,47 @@
+@import "../../config/media.css";
+
+:where(body) {
+	--t2-featured-content-layout-spacing-column-gap: var(--theme--spacing--md);
+	--t2-featured-content-layout-spacing-row-gap: var(--theme--spacing--lg);
+}
+
+.t2-featured-content-layout {
+	& .t2-featured-query-post,
+	& .t2-featured-single-post {
+		display: grid;
+		gap: var(--theme--spacing--sm);
+		grid-template-rows: auto 1fr;
+
+		& .post-details,
+		& .event-details {
+			margin-top: 0 !important;
+		}
+	}
+
+	& .t2-post-link {
+		margin-top: 0;
+	}
+
+	& .t2-featured-content.is-post-type-person {
+		& .post-details {
+			@media (--theme--medium-and-up) {
+				margin-top: var(--theme--spacing--sm);
+			}
+
+			& .taxonomy-role {
+				margin: var(--theme--spacing--xs) 0 0;
+			}
+
+			& .card-info {
+				display: flex;
+				flex-direction: column;
+				gap: var(--theme--spacing--xs);
+				margin-top: var(--theme--spacing--md);
+
+				& a {
+					color: var(--wp--preset--color--primary);
+				}
+			}
+		}
+	}
+}

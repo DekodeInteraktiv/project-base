@@ -3,5 +3,27 @@
 	<file>.</file>
 	<arg name="extensions" value="php" />
 	<config name="testVersion" value="8.1-" />
-	<rule ref="Dekode" />
+
+	<rule ref="Dekode">
+		<exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+
+		<!-- Exclude short description sniff so short `@var` notation can be used -->
+		<exclude name="Generic.Commenting.DocComment.MissingShort" />
+
+		<!-- Exclude missing package tag -->
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+
+		<!-- Exclude "parameter $x is never used" as some function args can get useful in the future -->
+		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found" />
+		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed" />
+	</rule>
+
+	<!-- Disallow Yoda conditions in your codebase. -->
+	<rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
+
+	<exclude-pattern>mu-plugins/imagify-helper/</exclude-pattern>
+	<exclude-pattern>mu-plugins/logging/</exclude-pattern>
+	<exclude-pattern>wp-cli.local.php</exclude-pattern>
+	<exclude-pattern>public/wp-config.php</exclude-pattern>
+
 </ruleset>

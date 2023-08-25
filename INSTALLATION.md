@@ -65,7 +65,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 
 ### wp-cli and Local by Flywheel
 
-To be able to use wp-cli, you can use [Local by Flywheel](https://localwp.com/) build-in in site shell.  
+To be able to use wp-cli, you can use [Local by Flywheel](https://localwp.com/) build-in in site shell.
 
 If you would like to access the wp-cli in the defauly system console there can be issues trying to use wp-cli commands when using a [Local by Flywheel](https://localwp.com/) development environment. You can usually fix this with the following steps:
 
@@ -129,6 +129,16 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 5. Go back to the project root and update the composer.json or package.json depending on package type. For composer add a entry under "require" like such `"project/package-name": "@dev"`. For package.json add an entry under "devDependencies" like such `"package-name": "file:packages/folder/package-name"`.
 
 6. Install the package using `composer update` or `npm install` depending on type. you might need to re-run `npm run build` or `npm run start` if you have installed a new package containing files that need building.
+
+### Renaming
+
+There are several places where literal strings need to be renamed to match the project:
+
+- app/postcss.config.js:19
+- app/package.json:80 (Set these values according to design)
+- app/composer.json:9 (Update dependency name)
+- app/tools/webpack/blocks.js:24 (path to block library)
+- Any other namespace / text domain / theme - plugin headers
 
 ## Documentation
 * PostCSS [https://github.com/postcss/postcss/tree/main/docs](https://github.com/postcss/postcss/tree/main/docs)

@@ -7,26 +7,29 @@
 		"yarn": "Please use npm"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^14.8.0",
-		"@wordpress/scripts": "^26.6.0",
-		"@wordpress/stylelint-config": "^21.18.0",
+		"@theme-json/validate": "^0.0.4",
+		"@wordpress/eslint-plugin": "^14.11.0",
+		"@wordpress/prettier-config": "^2.21.0",
+		"@wordpress/scripts": "^26.9.0",
+		"@wordpress/stylelint-config": "^21.21.0",
 		"autoprefixer": "^10.4.14",
 		"browser-sync": "^2.29.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
+		"css-clamp": "^1.1.0",
 		"cssnano": "^6.0.1",
 		"dotenv": "^16.3.1",
-		"eslint-plugin-prettier": "^4.2.1",
-		"fast-glob": "^3.2.12",
+		"eslint-plugin-prettier": "^5.0.0",
+		"fast-glob": "^3.3.1",
 		"husky": "^8.0.3",
-		"lint-staged": "^13.2.2",
-		"postcss": "^8.4.24",
-		"postcss-custom-media": "^9.1.5",
+		"lint-staged": "^13.2.3",
+		"postcss": "^8.4.27",
+		"postcss-custom-media": "^10.0.0",
 		"postcss-flexbugs-fixes": "^5.0.2",
 		"postcss-import": "^15.1.0",
 		"postcss-media-minmax": "^5.0.0",
 		"postcss-mixins": "^9.0.4",
-		"postcss-nesting": "^11.3.0",
-		"prettier": "^2.8.8",
+		"postcss-nesting": "^12.0.1",
+		"prettier": "^3.0.1",
 		"resolve-url-loader": "^5.0.0",
 		"webpack-remove-empty-scripts": "^1.0.3"
 	},
@@ -34,14 +37,28 @@
 		"create-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block",
 		"create-innerblock-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block --template innerblocks",
 		"prepare": "husky install",
-		"start": "wp-scripts start",
-		"build": "wp-scripts build",
+		"build": "concurrently npm:build:*",
+		"build:theme-json": "theme-json build",
+		"build:wp-scripts": "wp-scripts build",
+		"start": "concurrently npm:start:*",
+		"dev": "npm run start",
+		"start:theme-json": "theme-json watch",
+		"start:wp-scripts": "wp-scripts start",
 		"format": "prettier --write .",
 		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"lint-staged": "lint-staged"
+	},
+	"theme-json": {
+		"src": "./packages/themes/dekode-starter-theme/theme-json",
+		"dest": "./packages/themes/dekode-starter-theme/theme.json",
+		"pretty": false,
+		"version": 2,
+		"plugins": [
+			"@theme-json/validate"
+		]
 	},
 	"lint-staged": {
 		"*.css": [
@@ -51,5 +68,17 @@
 			"prettier --write .",
 			"wp-scripts lint-js"
 		]
+	},
+	"dependencies": {
+		"@csstools/postcss-global-data": "^2.0.1",
+		"@theme-json/create": "^0.0.4",
+		"@wordpress/icons": "^9.29.0",
+		"classnames": "^2.3.2",
+		"concurrently": "^8.2.0",
+		"copy-webpack-plugin": "^11.0.0"
+	},
+	"css-clamp": {
+		"minWidth": 512,
+		"maxWidth": 2112
 	}
 }

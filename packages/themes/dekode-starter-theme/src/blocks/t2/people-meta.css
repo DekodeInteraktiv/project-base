@@ -1,0 +1,14 @@
+.wp-block-t2-people-meta {
+	font-size: var(--theme--font-size--xs);
+
+	& a[href] {
+		display: inline-block;
+		color: var(--theme--link-color);
+	}
+}
+
+[class*="type-person"] {
+	& .wp-block-post-terms {
+		margin-top: var(--theme--spacing--xs);
+	}
+}

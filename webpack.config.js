@@ -18,6 +18,11 @@ const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extract
 const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
 
 /**
+ * Internal dependencies
+ */
+const blocks = require('./tools/webpack/blocks');
+
+/**
  * Patches config to use resolve-url-loader for relative paths in SCSS files
  * It will be possible to use './images/png.png' inside the SCSS,
  *
@@ -61,7 +66,7 @@ function getEntryFiles() {
 	// Only include directories that contains a entry-files.json file.
 	const files = globSync(
 		'./packages/(mu-plugins|plugins|themes)/**/entry-files.json',
-		{ onlyFiles: true },
+		{ onlyFiles: true }
 	);
 
 	files.forEach((file) => {
@@ -70,6 +75,23 @@ function getEntryFiles() {
 		entries.push({
 			dir: path.dirname(file),
 			files: entryFiles.map((entryFile) => `src/${entryFile}`),
+		});
+	});
+
+	// Add blocks styles from theme.
+	const blockStyles = globSync('./packages/themes/**/src/blocks/*/*.css', {
+		onlyFiles: true,
+	});
+
+	blockStyles.forEach((file) => {
+		const fileName = path.parse(file).name;
+		const parentDir = path.parse(file).dir.split(path.sep).pop();
+
+		entries.push({
+			dir: path.dirname(path.dirname(path.dirname(path.dirname(file)))),
+			subdir: `blocks/${parentDir}`,
+			files: [`src/blocks/${parentDir}/${fileName}.css`],
+			name: fileName,
 		});
 	});
 
@@ -82,16 +104,21 @@ function getEntryFiles() {
  * Future: We can differ configuration between packages or use their own configuration
  * or implement importing webpack.config.js from their folders.
  *
- * @param {string} dir   Package full path.
- * @param {Array}  files Relative paths of enries.
+ * @param {string} dir    Package full path.
+ * @param {Array}  files  Relative paths of enries.
+ * @param {string} subdir Potential sub-folder to place built files into.
  * @return {webpack.Configuration} Return single webpack configuration.
  */
-const prepareConfig = (dir, files) => {
+const prepareConfig = (dir, files, subdir = null) => {
 	const entries = {};
 
 	files.forEach((file) => {
 		const filePath = path.resolve(__dirname, dir, file);
-		const fileName = path.parse(file).name;
+		let fileName = path.parse(file).name;
+
+		if (subdir) {
+			fileName = `${subdir}/${fileName}`;
+		}
 
 		if (typeof entries[fileName] === 'undefined') {
 			entries[fileName] = [];
@@ -124,14 +151,6 @@ const prepareConfig = (dir, files) => {
 					},
 					default: false,
 				},
-			},
-		},
-
-		resolve: {
-			...defaultConfig.resolve,
-			alias: {
-				...defaultConfig.resolve.alias,
-				components: path.resolve(__dirname, 'packages', 'components'),
 			},
 		},
 
@@ -170,7 +189,9 @@ const prepareConfig = (dir, files) => {
 
 const files = getEntryFiles();
 
-const configs = files.map((item) => prepareConfig(item.dir, item.files));
+const configs = files.map((item) =>
+	prepareConfig(item.dir, item.files, item.subdir || null)
+);
 
 if ('true' === process.env.BROWSER_SYNC_ENABLE) {
 	const browserSyncConfig = {
@@ -186,10 +207,11 @@ if ('true' === process.env.BROWSER_SYNC_ENABLE) {
 						process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
 					port: process.env.BROWSER_SYNC_PORT ?? 3002,
 					https: 'true' === process.env.BROWSER_SYNC_HTTPS,
+					open: false,
 				},
 				{
 					reload: false,
-				},
+				}
 			),
 		].filter(Boolean),
 	};
@@ -202,4 +224,4 @@ if ('true' === process.env.BROWSER_SYNC_ENABLE) {
  *
  * https://webpack.js.org/configuration/configuration-types/#exporting-multiple-configurations
  */
-module.exports = configs;
+module.exports = [...configs, blocks];
