@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "131397ae61dcedcf48c343a7544faae9",
+    "content-hash": "9e8bd23b1ee5069371a3addce4d6c8ea",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -605,15 +605,15 @@
         },
         {
             "name": "t2/admin",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-admin-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-admin-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "5.0.2",
-                "t2/icons": "5.0.2"
+                "t2/config": "6.3.1",
+                "t2/icons": "6.3.1"
             },
             "type": "package",
             "autoload": {
@@ -634,10 +634,10 @@
         },
         {
             "name": "t2/assets",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-assets-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-assets-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -661,17 +661,17 @@
         },
         {
             "name": "t2/block-library",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-block-library-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-block-library-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/blocks": "5.0.2",
-                "t2/config": "5.0.2",
-                "t2/icons": "5.0.2",
-                "t2/utils": "5.0.2"
+                "t2/blocks": "6.3.1",
+                "t2/config": "6.3.1",
+                "t2/icons": "6.3.1",
+                "t2/utils": "6.3.1"
             },
             "type": "package",
             "autoload": {
@@ -692,16 +692,16 @@
         },
         {
             "name": "t2/blocks",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-blocks-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-blocks-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "5.0.2",
-                "t2/registry": "5.0.2",
-                "t2/utils": "5.0.2"
+                "t2/config": "6.3.1",
+                "t2/registry": "6.3.1",
+                "t2/utils": "6.3.1"
             },
             "type": "package",
             "autoload": {
@@ -723,10 +723,10 @@
         },
         {
             "name": "t2/components",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-components-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-components-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -750,10 +750,10 @@
         },
         {
             "name": "t2/config",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-config-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-config-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -777,15 +777,15 @@
         },
         {
             "name": "t2/editor",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-editor-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-editor-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "5.0.2",
-                "t2/icons": "5.0.2"
+                "t2/config": "6.3.1",
+                "t2/icons": "6.3.1"
             },
             "type": "package",
             "autoload": {
@@ -806,17 +806,17 @@
         },
         {
             "name": "t2/extension-library",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-extension-library-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-extension-library-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "5.0.2",
-                "t2/extensions": "5.0.2",
-                "t2/icons": "5.0.2",
-                "t2/utils": "5.0.2"
+                "t2/config": "6.3.1",
+                "t2/extensions": "6.3.1",
+                "t2/icons": "6.3.1",
+                "t2/utils": "6.3.1"
             },
             "type": "package",
             "autoload": {
@@ -837,16 +837,16 @@
         },
         {
             "name": "t2/extensions",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-extensions-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-extensions-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "5.0.2",
-                "t2/registry": "5.0.2",
-                "t2/utils": "5.0.2"
+                "t2/config": "6.3.1",
+                "t2/registry": "6.3.1",
+                "t2/utils": "6.3.1"
             },
             "type": "package",
             "autoload": {
@@ -867,14 +867,14 @@
         },
         {
             "name": "t2/icons",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-icons-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-icons-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/utils": "5.0.2"
+                "t2/utils": "6.3.1"
             },
             "type": "package",
             "autoload": {
@@ -895,10 +895,10 @@
         },
         {
             "name": "t2/registry",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-registry-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-registry-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -923,24 +923,24 @@
         },
         {
             "name": "t2/t2",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-t2-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-t2-6.3.1.zip"
             },
             "require": {
-                "t2/admin": "5.0.2",
-                "t2/assets": "5.0.2",
-                "t2/block-library": "5.0.2",
-                "t2/blocks": "5.0.2",
-                "t2/components": "5.0.2",
-                "t2/config": "5.0.2",
-                "t2/editor": "5.0.2",
-                "t2/extension-library": "5.0.2",
-                "t2/extensions": "5.0.2",
-                "t2/icons": "5.0.2",
-                "t2/registry": "5.0.2",
-                "t2/utils": "5.0.2"
+                "t2/admin": "6.3.1",
+                "t2/assets": "6.3.1",
+                "t2/block-library": "6.3.1",
+                "t2/blocks": "6.3.1",
+                "t2/components": "6.3.1",
+                "t2/config": "6.3.1",
+                "t2/editor": "6.3.1",
+                "t2/extension-library": "6.3.1",
+                "t2/extensions": "6.3.1",
+                "t2/icons": "6.3.1",
+                "t2/registry": "6.3.1",
+                "t2/utils": "6.3.1"
             },
             "type": "wordpress-plugin",
             "license": [
@@ -956,14 +956,14 @@
         },
         {
             "name": "t2/utils",
-            "version": "5.0.2",
+            "version": "6.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-utils-5.0.2.zip"
+                "url": "https://t2-packages.teft.io/build/t2-utils-6.3.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/registry": "5.0.2"
+                "t2/registry": "6.3.1"
             },
             "type": "package",
             "autoload": {
