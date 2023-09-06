@@ -18,7 +18,7 @@
 		"wpackagist-plugin/two-factor": "~0.8.2"
 	},
 	"require-dev": {
-		"dekode/coding-standards": "5.0.0",
+		"dekode/coding-standards": "6.0.0",
 		"dekode/logging": "1.0.0",
 		"ergebnis/composer-normalize": "^2.29"
 	},
