@@ -15,7 +15,7 @@
 		"t2/t2": "~6.3.1",
 		"wpackagist-plugin/imagify": "~2.1.0",
 		"wpackagist-plugin/spinupwp": "~1.5.1",
-		"wpackagist-plugin/two-factor": "~0.7.3"
+		"wpackagist-plugin/two-factor": "~0.8.2"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "5.0.0",
