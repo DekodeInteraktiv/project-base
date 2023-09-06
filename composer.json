@@ -9,7 +9,7 @@
 		"dekode/dekode-theme": "~1.0.0",
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
-		"inpsyde/wp-translation-downloader": "~2.4.0",
+		"inpsyde/wp-translation-downloader": "~2.5.0",
 		"roots/wordpress": "~6.3.1",
 		"symfony/dotenv": "~6.3.0",
 		"t2/t2": "~6.3.1",
