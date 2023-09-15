@@ -4,21 +4,21 @@
 	"license": "GPL-3.0-or-later",
 	"require": {
 		"php": ">=8.1",
-		"boxuk/wp-muplugin-loader": "~2.0.0",
+		"boxuk/wp-muplugin-loader": "~2.2.0",
 		"composer/installers": "~2.2.0",
 		"dekode/dekode-theme": "~1.0.0",
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
-		"inpsyde/wp-translation-downloader": "~2.4.0",
-		"roots/wordpress": "~6.3.0",
-		"symfony/dotenv": "~6.2.0",
-		"t2/t2": "~5.0.1",
+		"inpsyde/wp-translation-downloader": "~2.5.0",
+		"roots/wordpress": "~6.3.1",
+		"symfony/dotenv": "~6.3.0",
+		"t2/t2": "~6.3.1",
 		"wpackagist-plugin/imagify": "~2.1.0",
 		"wpackagist-plugin/spinupwp": "~1.5.1",
-		"wpackagist-plugin/two-factor": "~0.7.3"
+		"wpackagist-plugin/two-factor": "~0.8.2"
 	},
 	"require-dev": {
-		"dekode/coding-standards": "5.0.0",
+		"dekode/coding-standards": "6.0.0",
 		"dekode/logging": "1.0.0",
 		"ergebnis/composer-normalize": "^2.29"
 	},

@@ -27,7 +27,7 @@ if ( file_exists( $app_root . '/.env' ) ) {
  * @return mixed
  */
 function env( string $key, $default = '' ) { // phpcs:ignore NeutronStandard.Functions.TypeHint.NoArgumentType, NeutronStandard.Functions.TypeHint.NoReturnType, Universal.NamingConventions.NoReservedKeywordParameterNames.defaultFound
-	$value = $_ENV[ $key ] ?? $default;
+	$value = $_ENV[ $key ] ?? $default; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 	// Return bool value for 'true' or 'false'.
 	switch ( $value ) {

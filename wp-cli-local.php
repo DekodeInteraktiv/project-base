@@ -19,8 +19,8 @@ if ( file_exists( $app_root . '/.env' ) ) {
 	$dotenv->load( $app_root . '/.env' );
 }
 
-define( 'DB_USER', $_ENV['DB_USER'] ?? 'root' );
-define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] ?? 'root' );
+define( 'DB_USER', $_ENV['DB_USER'] ?? 'root' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] ?? 'root' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 // Only display fatal run-time errors.
 // See http://php.net/manual/en/errorfunc.constants.php.

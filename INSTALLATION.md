@@ -65,7 +65,7 @@ Themes, plugins, mu-plugins etc. is now structured under packages and built into
 
 ### wp-cli and Local by Flywheel
 
-To be able to use wp-cli, you can use [Local by Flywheel](https://localwp.com/) build-in in site shell.  
+To be able to use wp-cli, you can use [Local by Flywheel](https://localwp.com/) build-in in site shell.
 
 If you would like to access the wp-cli in the defauly system console there can be issues trying to use wp-cli commands when using a [Local by Flywheel](https://localwp.com/) development environment. You can usually fix this with the following steps:
 
@@ -74,7 +74,7 @@ If you would like to access the wp-cli in the defauly system console there can b
 ```yml
 path: public/wp
 require:
-  - wp-cli.local.php
+  - wp-cli-local.php
 ```
 
 2. Set the `MYSQLI_DEFAULT_SOCKET` in the `.env` file.
