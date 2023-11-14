@@ -1,6 +1,39 @@
 {
 	"patterns": [
 		{
+			"tableName": ".*_registration_log",
+			"fields": [
+				{
+					"field": "email",
+					"position": 2,
+					"type": "email",
+					"constraints": null
+				}
+			]
+		},
+		{
+			"tableName": ".*_sitemeta",
+			"fields": [
+				{
+					"field": "admin_email",
+					"position": 4,
+					"type": "email",
+					"constraints": null
+				}
+			]
+		},
+		{
+			"tableName": ".*_options",
+			"fields": [
+				{
+					"field": "admin_email",
+					"position": 3,
+					"type": "email",
+					"constraints": null
+				}
+			]
+		},
+		{
 			"tableName": ".*_users",
 			"fields": [
 				{
