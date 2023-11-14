@@ -10,9 +10,9 @@
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
-		"roots/wordpress": "~6.3.1",
+		"roots/wordpress": "~6.4.1",
 		"symfony/dotenv": "~6.3.0",
-		"t2/t2": "~6.3.1",
+		"t2/t2": "~7.1.1",
 		"wpackagist-plugin/imagify": "~2.1.0",
 		"wpackagist-plugin/spinupwp": "~1.5.1",
 		"wpackagist-plugin/two-factor": "~0.8.2"
@@ -65,11 +65,11 @@
 	"prefer-stable": true,
 	"config": {
 		"allow-plugins": {
-			"composer/installers": true,
 			"boxuk/wp-muplugin-loader": true,
-			"inpsyde/wp-translation-downloader": true,
+			"composer/installers": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"ergebnis/composer-normalize": true,
+			"inpsyde/wp-translation-downloader": true,
 			"roots/wordpress-core-installer": true
 		},
 		"platform": {
