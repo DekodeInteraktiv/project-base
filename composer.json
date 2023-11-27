@@ -12,7 +12,7 @@
 		"inpsyde/wp-translation-downloader": "~2.5.0",
 		"roots/wordpress": "~6.4.1",
 		"symfony/dotenv": "~6.3.0",
-		"t2/t2": "~7.1.1",
+		"t2/t2": "~7.2.0",
 		"wpackagist-plugin/imagify": "~2.1.0",
 		"wpackagist-plugin/spinupwp": "~1.5.1",
 		"wpackagist-plugin/two-factor": "~0.8.2"
