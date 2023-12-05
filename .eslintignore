@@ -4,4 +4,3 @@ dist
 build
 vendor
 wp
-packages/themes/dekode-starter-theme/src/register-block-extension
