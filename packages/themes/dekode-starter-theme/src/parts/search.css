@@ -1,9 +1,0 @@
-@import "../config/mixins.css";
-
-.search-page-title {
-	max-width: var(--wp--style--global--wide-size) !important;
-
-	@media (--theme--small-and-up) {
-		text-align: center;
-	}
-}

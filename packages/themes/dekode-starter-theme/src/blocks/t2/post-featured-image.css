@@ -1,5 +1,0 @@
-.t2-post-featured-image {
-	& img {
-		border-radius: var(--theme--border-radius);
-	}
-}

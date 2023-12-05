@@ -1,6 +1,0 @@
-.wp-block-dekode-events-location-map {
-	& div.location-address-gmaps-container {
-		aspect-ratio: 16/9;
-		height: auto;
-	}
-}
