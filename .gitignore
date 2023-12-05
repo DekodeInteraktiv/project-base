@@ -38,13 +38,3 @@ sql/
 # Other
 debug.log
 wp-debug.log
-public/apple-touch-icon.png
-public/android-chrome-192x192.png
-public/android-chrome-512x512.png
-public/browserconfig.xml
-public/favicon-16x16.png
-public/favicon-32x32.png
-public/favicon.ico
-public/mstile-150x150.png
-public/safari-pinned-tab.svg
-public/site.webmanifest
