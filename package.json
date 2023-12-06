@@ -7,9 +7,9 @@
 		"yarn": "Please use npm"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^17.2.0",
-		"@wordpress/scripts": "^26.16.0",
-		"@wordpress/stylelint-config": "^21.18.0",
+		"@wordpress/eslint-plugin": "^17.4.0",
+		"@wordpress/scripts": "^26.18.0",
+		"@wordpress/stylelint-config": "^21.30.0",
 		"autoprefixer": "^10.4.16",
 		"browser-sync": "^2.29.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
@@ -18,8 +18,8 @@
 		"eslint-plugin-prettier": "^5.0.1",
 		"fast-glob": "^3.2.12",
 		"husky": "^8.0.3",
-		"lint-staged": "^15.1.0",
-		"postcss": "^8.4.31",
+		"lint-staged": "^15.2.0",
+		"postcss": "^8.4.32",
 		"postcss-custom-media": "^10.0.2",
 		"postcss-flexbugs-fixes": "^5.0.2",
 		"postcss-import": "^15.1.0",
