@@ -1,0 +1,17 @@
+.yoast-breadcrumbs {
+	font-size: var(--wp--preset--font-size--xs);
+	padding: 0.75rem var(--wp--style--root--padding-right) 0.75rem var(--wp--style--root--padding-left);
+
+	& > span {
+		margin: 0 auto;
+		max-width: var(--wp--style--global--wide-size);
+		align-items: center;
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	& .breadcrumb-separator {
+		align-items: center;
+		display: flex;
+	}
+}

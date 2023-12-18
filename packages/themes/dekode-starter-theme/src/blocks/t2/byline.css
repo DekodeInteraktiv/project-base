@@ -1,0 +1,33 @@
+:where(body) {
+	--t2-byline-avatar-radius: var(--wp--custom--border-radius--small);
+	--t2-byline-color-small-text: var(--theme--text-color--faded);
+	--t2-byline-spacing: 0.75rem;
+}
+
+.t2-byline {
+	align-items: flex-start;
+	flex-direction: column;
+	gap: var(--t2-byline-spacing);
+}
+
+.t2-byline__author-role {
+	font-size: var(--wp--preset--font-size--xs);
+}
+
+.t2-byline__author-link {
+	color: var(--theme--text-color);
+	font-size: var(--wp--preset--font-size--md);
+	font-weight: var(--theme--font-weight--bold);
+}
+
+.t2-byline__time {
+	line-height: var(--wp--custom--line-height--small);
+
+	& small {
+		font-size: var(--wp--preset--font-size--xxs);
+
+		& + small {
+			border-color: var(--wp--preset--color--neutral-200);
+		}
+	}
+}

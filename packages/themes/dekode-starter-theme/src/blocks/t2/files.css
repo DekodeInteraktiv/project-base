@@ -1,0 +1,56 @@
+@import "../../config/media.css";
+
+.t2-files {
+	& ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--wp--preset--spacing--lg);
+
+		& > .t2-file-item {
+			width: 100%;
+
+			@media (--theme--medium) {
+				width: calc((100% - var(--wp--preset--spacing--lg) * 2) / 2);
+			}
+
+			@media (--theme--large-and-up) {
+				width: calc((100% - var(--wp--preset--spacing--lg) * 2) / 3);
+			}
+		}
+
+		& .t2-file-item__link {
+			border: 0;
+			color: var(--wp--preset--color--primary);
+			padding: 0;
+
+			&:hover,
+			&:focus,
+			&:hover .t2-file-item__icon,
+			&:focus .t2-file-item__icon {
+				color: var(--wp--preset--color--primary-800);
+				text-decoration: none;
+			}
+
+			& .t2-file-item__meta {
+				color: var(--wp--preset--color--neutral-400);
+				font-size: var(--wp--preset--font-size--xs);
+			}
+		}
+
+		& .t2-file-item__icon {
+			color: var(--wp--preset--color--primary);
+			margin-right: 0.75rem;
+
+			& svg path {
+				fill: currentColor;
+			}
+		}
+
+		& .t2-file-item__filename {
+			margin-bottom: 0.5rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}

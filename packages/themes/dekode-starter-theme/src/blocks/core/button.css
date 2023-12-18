@@ -1,0 +1,9 @@
+/**
+ * Button outline hover styles.
+ *
+ * Theme.json does not support hover styles on variations.
+ */
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary-100);
+	color: var(--wp--preset--color--primary-800);
+}

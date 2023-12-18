@@ -1,0 +1,49 @@
+{
+	"name": "dekode/dekode-starter-theme",
+	"description": "A starter theme for Dekode projects.",
+	"type": "wordpress-theme",
+	"authors": [
+		{
+			"name": "Dekode",
+			"email": "hello@dekode.no"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"repositories": {
+		"t2-packages": {
+			"type": "composer",
+			"url": "https://t2-packages.teft.io"
+		},
+		"dekode-composer": {
+			"type": "composer",
+			"url": "https://composer.dekodes.no"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"johnpbloch/wordpress-core-installer": true,
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"extra": {
+		"installer-paths": {
+			"plugins/{$name}/": [
+				"type:wordpress-plugin"
+			]
+		},
+		"wordpress-install-dir": "vendor/wordpress"
+	},
+	"require-dev": {
+		"t2/t2": "7.3.0",
+		"composer/installers": "^2.0",
+		"dekode/events": "^0.1.0",
+		"dekode/coding-standards": "^5.0.0"
+	},
+	"scripts": {
+		"lint": [
+			"./vendor/bin/phpcs ."
+		]
+	}
+}

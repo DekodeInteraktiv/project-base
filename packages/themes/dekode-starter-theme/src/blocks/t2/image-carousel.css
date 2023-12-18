@@ -1,0 +1,47 @@
+@import "../../config/media.css";
+
+.t2-image-carousel {
+	--t2-image-carousel-color-icon: var(--wp--preset--color--primary);
+	--t2-image-carousel-color-background: var(--wp--preset--color--primary-100);
+
+	overflow: visible;
+
+	& .t2-image-carousel-swiper {
+		overflow: hidden;
+		padding-bottom: calc(3rem + var(--wp--preset--spacing--lg));
+	}
+
+	& .t2-image-carousel-image {
+		border-radius: var(--wp--custom--border-radius--normal);
+	}
+
+	& .t2-images-carousel__icon {
+		background: var(--wp--preset--color--primary-100);
+		border-radius: 3rem;
+		color: var(--wp--preset--color--primary);
+		left: auto;
+		right: auto;
+		top: 100%;
+		transform: translateY(-100%);
+		transition: background 0.1s ease;
+
+		&:hover,
+		&:focus {
+			background: var(--wp--preset--color--primary-200);
+		}
+	}
+
+	& .t2-images-carousel__icon--prev {
+		left: calc(50% - 3rem - var(--wp--preset--spacing--sm));
+	}
+
+	& .t2-images-carousel__icon--next {
+		right: calc(50% - 3rem - var(--wp--preset--spacing--sm));
+	}
+
+	&.is-fit-cover .t2-image-carousel-image-wrapper {
+		@media (--theme--small-and-down) {
+			padding-bottom: 75%;
+		}
+	}
+}

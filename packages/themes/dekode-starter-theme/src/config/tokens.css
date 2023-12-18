@@ -1,0 +1,22 @@
+:where(body) {
+	/* Colors - semantic tokens */
+	--theme--text-color: var(--wp--preset--color--neutral-500);
+	--theme--text-color--faded: var(--wp--preset--color--neutral-400);
+
+	--theme--border-color--primary: var(--wp--preset--color--primary);
+	--theme--border-color--secondary: var(--wp--preset--color--primary-100);
+
+	/* Border size */
+	--theme--border-width: 0.125rem; /* 2px */
+
+	/* Font weight */
+	--theme--font-weight--bold: 700;
+	--theme--font-weight--semibold: 600;
+	--theme--font-weight--medium: 500;
+	--theme--font-weight: 400; /* Default/General */
+	--theme--font-weight--regular: var(--theme--font-weight);
+	--theme--font-weight--light: 300;
+
+	/* Form elements */
+	--theme--form-choice--input-size: 1.25rem;
+}

@@ -1,0 +1,55 @@
+{
+	"$schema": "https://t2.teft.io/schemas/t2.json",
+	"version": 1,
+	"admin": true,
+	"blocks": true,
+	"extensions": true,
+	"mu-blocks": ["t2/link-list", "t2/header-horizontal", "t2/footer", "t2/ingress"],
+	"mu-extensions": [
+		"t2/custom-block-margin",
+		"t2/disable-comments",
+		"t2/disable-emoji",
+		"t2/disable-xmlrpc",
+		"t2/enqueue-theme-block-styles",
+		"t2/gravity-forms-optimizations",
+		"t2/list-block-classname",
+		"t2/remove-core-block-styles"
+	],
+	"t2/link-list": {
+		"layout": {
+			"iconPosition": "inline-right"
+		}
+	},
+	"t2/people": {
+		"postTypeKey": "person",
+		"features": {
+			"hasArchive": true,
+			"hasRole": true,
+			"showRole": true,
+			"hasSinglePost": true,
+			"showIcons": false
+		}
+	},
+	"t2/custom-block-margin": {
+		"version": 2
+	},
+	"t2/remove-core-block-styles": {
+		"keep": ["core/button"]
+	},
+	"t2/factbox": {
+		"iconPosition": "inline"
+	},
+	"t2/newsletter-signup": {
+		"features": {
+			"hasSubmitIcon": true,
+			"hasContentFields": true
+		}
+	},
+	"t2/query": {
+		"style": "unstable",
+		"features": {
+			"showSearchInputIcon": true,
+			"showActiveFilterRemoveIcon": true
+		}
+	}
+}
