@@ -7,13 +7,13 @@
 		"yarn": "Please use npm"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^17.4.0",
-		"@wordpress/scripts": "^26.18.0",
-		"@wordpress/stylelint-config": "^21.30.0",
+		"@wordpress/eslint-plugin": "^17.5.0",
+		"@wordpress/scripts": "^26.19.0",
+		"@wordpress/stylelint-config": "^21.31.0",
 		"autoprefixer": "^10.4.16",
 		"browser-sync": "^2.29.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
-		"cssnano": "^6.0.1",
+		"cssnano": "^6.0.2",
 		"dotenv": "^16.3.1",
 		"eslint-plugin-prettier": "^5.0.1",
 		"fast-glob": "^3.2.12",
@@ -25,8 +25,8 @@
 		"postcss-import": "^15.1.0",
 		"postcss-media-minmax": "^5.0.0",
 		"postcss-mixins": "^9.0.4",
-		"postcss-nesting": "^12.0.1",
-		"prettier": "^3.1.0",
+		"postcss-nesting": "^12.0.2",
+		"prettier": "^3.1.1",
 		"resolve-url-loader": "^5.0.0",
 		"webpack-remove-empty-scripts": "^1.0.4"
 	},
