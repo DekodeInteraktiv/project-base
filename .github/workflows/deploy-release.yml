@@ -15,7 +15,7 @@ jobs:
 
     deploy:
         uses: 'dekodeinteraktiv/github-actions/.github/workflows/deploy-to-server.yml@main'
-        needs: [ code-checkout ]
+        needs: [code-checkout]
         with:
             ARTIFACT_NAME: 'compressed-code-artifact'
             RSYNC_FILTER_FILE: './tools/github/rsync-file-filter.rules'
@@ -28,7 +28,7 @@ jobs:
 
     cleanup:
         runs-on: ubuntu-latest
-        needs: [ deploy ]
+        needs: [deploy]
 
         steps:
             # Delete artifacts after use.
