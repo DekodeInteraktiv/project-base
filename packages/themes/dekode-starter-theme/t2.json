@@ -4,7 +4,12 @@
 	"admin": true,
 	"blocks": true,
 	"extensions": true,
-	"mu-blocks": ["t2/link-list", "t2/header-horizontal", "t2/footer", "t2/ingress"],
+	"mu-blocks": [
+		"t2/link-list",
+		"t2/header-horizontal",
+		"t2/footer",
+		"t2/ingress"
+	],
 	"mu-extensions": [
 		"t2/custom-block-margin",
 		"t2/disable-comments",

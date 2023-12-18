@@ -4,7 +4,9 @@
 	 */
 	const addFakeInputs = () => {
 		// Find all checkboxes and radio buttons.
-		const $checkboxesRadios = document.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+		const $checkboxesRadios = document.querySelectorAll(
+			'input[type="checkbox"], input[type="radio"]',
+		);
 
 		// Loop through each checkbox and radio button and add a fake element next to it, then add a class to the input.
 		$checkboxesRadios.forEach(($checkboxRadio) => {
@@ -16,7 +18,10 @@
 			const $fakeElement = document.createElement('span');
 			$fakeElement.classList.add('fake-input');
 			$fakeElement.classList.add(`type-${$checkboxRadio.type}`);
-			$checkboxRadio.parentNode.insertBefore($fakeElement, $checkboxRadio.nextSibling);
+			$checkboxRadio.parentNode.insertBefore(
+				$fakeElement,
+				$checkboxRadio.nextSibling,
+			);
 			$checkboxRadio.classList.add('faked');
 		});
 
