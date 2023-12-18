@@ -4,6 +4,11 @@
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * Get root directory.
+ *
+ * @return {string} Root directory.
+ */
 function getRoot() {
 	return path.resolve(process.cwd());
 }
