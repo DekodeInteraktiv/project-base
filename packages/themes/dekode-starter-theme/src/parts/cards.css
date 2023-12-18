@@ -10,10 +10,6 @@ div.t2-featured-query-post {
 		height: auto;
 	}
 
-	& .t2-post-title {
-		color: var(--theme--text-color);
-	}
-
 	/* Featured image. */
 	& figure.t2-post-featured-image {
 		margin: 0;
@@ -47,6 +43,7 @@ div.t2-featured-query-post {
 	}
 
 	& .t2-post-title {
+		color: var(--wp--preset--color--neutral-500);
 		font-size: var(--wp--preset--font-size--lg);
 	}
 

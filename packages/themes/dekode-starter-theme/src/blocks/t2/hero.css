@@ -38,7 +38,7 @@
 		}
 	}
 
-	&:before {
+	&::before {
 		display: none;
 	}
 
