@@ -7,12 +7,15 @@
 		"yarn": "Please use npm"
 	},
 	"devDependencies": {
+		"@theme-json/create": "^0.0.4",
 		"@wordpress/eslint-plugin": "^17.5.0",
 		"@wordpress/scripts": "^26.19.0",
 		"@wordpress/stylelint-config": "^21.31.0",
 		"autoprefixer": "^10.4.16",
 		"browser-sync": "^2.29.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
+		"concurrently": "^8.2.2",
+		"css-clamp": "^1.1.0",
 		"cssnano": "^6.0.2",
 		"dotenv": "^16.3.1",
 		"eslint-plugin-prettier": "^5.0.1",
@@ -34,8 +37,12 @@
 		"create-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block",
 		"create-innerblock-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block --template innerblocks",
 		"prepare": "husky install",
-		"start": "wp-scripts start",
-		"build": "wp-scripts build",
+		"start": "concurrently npm:start:*",
+		"start:theme-json": "theme-json watch",
+		"start:wp-scripts": "wp-scripts start",
+		"build": "concurrently npm:build:*",
+		"build:theme-json": "theme-json build",
+		"build:wp-scripts": "wp-scripts build",
 		"format": "prettier --write .",
 		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css",
@@ -51,5 +58,9 @@
 			"prettier --write .",
 			"wp-scripts lint-js"
 		]
+	},
+	"css-clamp": {
+		"minWidth": 512,
+		"maxWidth": 2112
 	}
 }
