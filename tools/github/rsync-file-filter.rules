@@ -20,7 +20,7 @@
 - package-lock.json
 - phpcs.xml.dist
 - postcss.config.js
-- webpack.confiug.js
+- webpack.config.js
 - documentation/***
 - tools/***
 - node_modules/***
