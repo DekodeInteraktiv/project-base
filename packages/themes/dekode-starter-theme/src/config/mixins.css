@@ -1,0 +1,14 @@
+@define-mixin list-inline {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@define-mixin arrow-forward-icon {
+	content: "";
+	background-color: currentColor;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='m20.78125 12.53125-6.75 6.75c-.292969.292969-.769531.292969-1.0625 0-.292969-.292969-.292969-.769531 0-1.0625L18.441406 12.75H3.75c-.414062 0-.75-.335938-.75-.75s.335938-.75.75-.75h14.691406L12.96875 5.78125c-.292969-.292969-.292969-.769531 0-1.0625.292969-.292969.769531-.292969 1.0625 0l6.75 6.75C20.921875 11.609375 21 11.800781 21 12c0 .199219-.078125.390625-.21875.53125Zm0 0'/%3E%3C/svg%3E");
+	display: block;
+	height: 1.5rem;
+	width: 1.5rem;
+}
