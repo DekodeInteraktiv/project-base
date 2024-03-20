@@ -6,7 +6,7 @@
 const { sync: globSync } = require('fast-glob');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-v3-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const webpack = require('webpack');
 require('dotenv').config();

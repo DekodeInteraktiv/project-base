@@ -10,11 +10,11 @@
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
-		"roots/wordpress": "~6.4.2",
-		"symfony/dotenv": "~6.4.2",
-		"t2/t2": "~7.3.0",
-		"wpackagist-plugin/imagify": "~2.1.3",
-		"wpackagist-plugin/spinupwp": "~1.5.1",
+		"roots/wordpress": "~6.4.3",
+		"symfony/dotenv": "~6.4.3",
+		"t2/t2": "~7.7.0",
+		"wpackagist-plugin/imagify": "~2.2.0",
+		"wpackagist-plugin/spinupwp": "~1.6.0",
 		"wpackagist-plugin/two-factor": "~0.8.2"
 	},
 	"require-dev": {
