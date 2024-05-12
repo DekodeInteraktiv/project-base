@@ -9,7 +9,7 @@ jobs:
     code-checkout:
         uses: ./.github/workflows/checkout-and-build.yml
         with:
-            PHP_VERSION: '8.1'
+            PHP_VERSION: '8.2'
             BUILD_FOR_DEPLOY: false
             ARTIFACT_NAME: 'compressed-code-artifact'
         secrets: inherit

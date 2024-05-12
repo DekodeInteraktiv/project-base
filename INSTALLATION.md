@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* PHP >= 8.1
+* PHP >= 8.2
 * Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 * Node = 18.0
 

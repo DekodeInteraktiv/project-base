@@ -12,7 +12,7 @@ on:
                 description: 'The PHP version to use'
                 required: false
                 type: string
-                default: '8.1'
+                default: '8.2'
             BUILD_FOR_DEPLOY:
                 description: 'Whether to build for deployment immediately or to keep developer tools'
                 required: false

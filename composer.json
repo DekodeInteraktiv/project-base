@@ -3,7 +3,7 @@
 	"description": "Dekode WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
 	"license": "GPL-3.0-or-later",
 	"require": {
-		"php": ">=8.1",
+		"php": ">=8.2",
 		"boxuk/wp-muplugin-loader": "~2.2.0",
 		"composer/installers": "~2.2.0",
 		"dekode/dekode-theme": "~1.0.0",
@@ -71,7 +71,7 @@
 			"roots/wordpress-core-installer": true
 		},
 		"platform": {
-			"php": "8.1"
+			"php": "8.2"
 		},
 		"sort-packages": true
 	},
