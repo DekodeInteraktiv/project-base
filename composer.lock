@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30b817992ee7ff53e457cffc875b5f8e",
+    "content-hash": "a039aafb7c6bc2a53b740b16030143a8",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -348,7 +348,7 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.4.3",
+            "version": "6.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -379,7 +379,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.4.3"
+                "source": "https://github.com/roots/wordpress/tree/6.5.3"
             },
             "funding": [
                 {
@@ -462,22 +462,22 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.4.3",
+            "version": "6.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.4.3"
+                "reference": "6.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.4.3-no-content.zip",
-                "shasum": "4138c6337bf524159b406d5b27916deebb0f78df"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.5.3-no-content.zip",
+                "shasum": "adeffdc339d34eab4209e88b17966d8917e36e91"
             },
             "require": {
                 "php": ">= 7.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "6.4.3"
+                "wordpress/core-implementation": "6.5.3"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -528,20 +528,20 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-01-30T19:32:01+00:00"
+            "time": "2024-05-07T16:02:20+00:00"
         },
         {
             "name": "symfony/dotenv",
-            "version": "v6.4.4",
+            "version": "v6.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dotenv.git",
-                "reference": "f6f0a3dd102915b4c5bfdf4f4e3139a8cbf477a0"
+                "reference": "982a8d58c73a7d91d229bc20493b8ae13208741c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dotenv/zipball/f6f0a3dd102915b4c5bfdf4f4e3139a8cbf477a0",
-                "reference": "f6f0a3dd102915b4c5bfdf4f4e3139a8cbf477a0",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/982a8d58c73a7d91d229bc20493b8ae13208741c",
+                "reference": "982a8d58c73a7d91d229bc20493b8ae13208741c",
                 "shasum": ""
             },
             "require": {
@@ -586,7 +586,7 @@
                 "environment"
             ],
             "support": {
-                "source": "https://github.com/symfony/dotenv/tree/v6.4.4"
+                "source": "https://github.com/symfony/dotenv/tree/v6.4.7"
             },
             "funding": [
                 {
@@ -602,19 +602,19 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-08T17:53:17+00:00"
+            "time": "2024-04-18T09:22:46+00:00"
         },
         {
             "name": "t2/admin",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-admin-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-admin-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "7.7.0",
-                "t2/icons": "7.7.0"
+                "t2/config": "7.8.1",
+                "t2/icons": "7.8.1"
             },
             "type": "package",
             "autoload": {
@@ -635,10 +635,10 @@
         },
         {
             "name": "t2/assets",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-assets-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-assets-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -662,17 +662,17 @@
         },
         {
             "name": "t2/block-library",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-block-library-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-block-library-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/blocks": "7.7.0",
-                "t2/config": "7.7.0",
-                "t2/icons": "7.7.0",
-                "t2/utils": "7.7.0"
+                "t2/blocks": "7.8.1",
+                "t2/config": "7.8.1",
+                "t2/icons": "7.8.1",
+                "t2/utils": "7.8.1"
             },
             "type": "package",
             "autoload": {
@@ -693,16 +693,16 @@
         },
         {
             "name": "t2/blocks",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-blocks-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-blocks-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "7.7.0",
-                "t2/registry": "7.7.0",
-                "t2/utils": "7.7.0"
+                "t2/config": "7.8.1",
+                "t2/registry": "7.8.1",
+                "t2/utils": "7.8.1"
             },
             "type": "package",
             "autoload": {
@@ -724,10 +724,10 @@
         },
         {
             "name": "t2/components",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-components-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-components-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -751,10 +751,10 @@
         },
         {
             "name": "t2/config",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-config-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-config-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -778,16 +778,16 @@
         },
         {
             "name": "t2/editor",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-editor-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-editor-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "7.7.0",
-                "t2/icons": "7.7.0",
-                "t2/utils": "7.7.0"
+                "t2/config": "7.8.1",
+                "t2/icons": "7.8.1",
+                "t2/utils": "7.8.1"
             },
             "type": "package",
             "autoload": {
@@ -808,17 +808,17 @@
         },
         {
             "name": "t2/extension-library",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-extension-library-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-extension-library-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "7.7.0",
-                "t2/extensions": "7.7.0",
-                "t2/icons": "7.7.0",
-                "t2/utils": "7.7.0"
+                "t2/config": "7.8.1",
+                "t2/extensions": "7.8.1",
+                "t2/icons": "7.8.1",
+                "t2/utils": "7.8.1"
             },
             "type": "package",
             "autoload": {
@@ -839,16 +839,16 @@
         },
         {
             "name": "t2/extensions",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-extensions-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-extensions-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "7.7.0",
-                "t2/registry": "7.7.0",
-                "t2/utils": "7.7.0"
+                "t2/config": "7.8.1",
+                "t2/registry": "7.8.1",
+                "t2/utils": "7.8.1"
             },
             "type": "package",
             "autoload": {
@@ -869,14 +869,14 @@
         },
         {
             "name": "t2/icons",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-icons-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-icons-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/utils": "7.7.0"
+                "t2/utils": "7.8.1"
             },
             "type": "package",
             "autoload": {
@@ -897,10 +897,10 @@
         },
         {
             "name": "t2/registry",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-registry-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-registry-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -925,24 +925,24 @@
         },
         {
             "name": "t2/t2",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-t2-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-t2-7.8.1.zip"
             },
             "require": {
-                "t2/admin": "7.7.0",
-                "t2/assets": "7.7.0",
-                "t2/block-library": "7.7.0",
-                "t2/blocks": "7.7.0",
-                "t2/components": "7.7.0",
-                "t2/config": "7.7.0",
-                "t2/editor": "7.7.0",
-                "t2/extension-library": "7.7.0",
-                "t2/extensions": "7.7.0",
-                "t2/icons": "7.7.0",
-                "t2/registry": "7.7.0",
-                "t2/utils": "7.7.0"
+                "t2/admin": "7.8.1",
+                "t2/assets": "7.8.1",
+                "t2/block-library": "7.8.1",
+                "t2/blocks": "7.8.1",
+                "t2/components": "7.8.1",
+                "t2/config": "7.8.1",
+                "t2/editor": "7.8.1",
+                "t2/extension-library": "7.8.1",
+                "t2/extensions": "7.8.1",
+                "t2/icons": "7.8.1",
+                "t2/registry": "7.8.1",
+                "t2/utils": "7.8.1"
             },
             "type": "wordpress-plugin",
             "license": [
@@ -958,14 +958,14 @@
         },
         {
             "name": "t2/utils",
-            "version": "7.7.0",
+            "version": "7.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-utils-7.7.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-utils-7.8.1.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/registry": "7.7.0"
+                "t2/registry": "7.8.1"
             },
             "type": "package",
             "autoload": {
@@ -992,15 +992,15 @@
         },
         {
             "name": "wpackagist-plugin/imagify",
-            "version": "2.2.0.1",
+            "version": "2.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/imagify/",
-                "reference": "tags/2.2.0.1"
+                "reference": "tags/2.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/imagify.2.2.0.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/imagify.2.2.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1259,28 +1259,28 @@
         },
         {
             "name": "phpcompatibility/phpcompatibility-paragonie",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie.git",
-                "reference": "bba5a9dfec7fcfbd679cfaf611d86b4d3759da26"
+                "reference": "293975b465e0e709b571cbf0c957c6c0a7b9a2ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityParagonie/zipball/bba5a9dfec7fcfbd679cfaf611d86b4d3759da26",
-                "reference": "bba5a9dfec7fcfbd679cfaf611d86b4d3759da26",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityParagonie/zipball/293975b465e0e709b571cbf0c957c6c0a7b9a2ac",
+                "reference": "293975b465e0e709b571cbf0c957c6c0a7b9a2ac",
                 "shasum": ""
             },
             "require": {
                 "phpcompatibility/php-compatibility": "^9.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "paragonie/random_compat": "dev-master",
                 "paragonie/sodium_compat": "dev-master"
             },
             "suggest": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7 || This Composer plugin will sort out the PHP_CodeSniffer 'installed_paths' automatically.",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0 || This Composer plugin will sort out the PHP_CodeSniffer 'installed_paths' automatically.",
                 "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
             },
             "type": "phpcodesniffer-standard",
@@ -1310,22 +1310,37 @@
             ],
             "support": {
                 "issues": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie/issues",
+                "security": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie/security/policy",
                 "source": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie"
             },
-            "time": "2022-10-25T01:46:02+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/PHPCompatibility",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/jrfnl",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/php_codesniffer",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-04-24T21:30:46+00:00"
         },
         {
             "name": "phpcompatibility/phpcompatibility-wp",
-            "version": "2.1.4",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibilityWP.git",
-                "reference": "b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5"
+                "reference": "01c1ff2704a58e46f0cb1ca9d06aee07b3589082"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5",
-                "reference": "b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/01c1ff2704a58e46f0cb1ca9d06aee07b3589082",
+                "reference": "01c1ff2704a58e46f0cb1ca9d06aee07b3589082",
                 "shasum": ""
             },
             "require": {
@@ -1333,10 +1348,10 @@
                 "phpcompatibility/phpcompatibility-paragonie": "^1.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7"
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
             },
             "suggest": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7 || This Composer plugin will sort out the PHP_CodeSniffer 'installed_paths' automatically.",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0 || This Composer plugin will sort out the PHP_CodeSniffer 'installed_paths' automatically.",
                 "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
             },
             "type": "phpcodesniffer-standard",
@@ -1365,9 +1380,24 @@
             ],
             "support": {
                 "issues": "https://github.com/PHPCompatibility/PHPCompatibilityWP/issues",
+                "security": "https://github.com/PHPCompatibility/PHPCompatibilityWP/security/policy",
                 "source": "https://github.com/PHPCompatibility/PHPCompatibilityWP"
             },
-            "time": "2022-10-24T09:00:36+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/PHPCompatibility",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/jrfnl",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/php_codesniffer",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-04-24T21:37:59+00:00"
         },
         {
             "name": "phpcsstandards/phpcsextra",
@@ -1449,16 +1479,16 @@
         },
         {
             "name": "phpcsstandards/phpcsutils",
-            "version": "1.0.10",
+            "version": "1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHPCSUtils.git",
-                "reference": "51609a5b89f928e0c463d6df80eb38eff1eaf544"
+                "reference": "c457da9dabb60eb7106dd5e3c05132b1a6539c6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/51609a5b89f928e0c463d6df80eb38eff1eaf544",
-                "reference": "51609a5b89f928e0c463d6df80eb38eff1eaf544",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/c457da9dabb60eb7106dd5e3c05132b1a6539c6a",
+                "reference": "c457da9dabb60eb7106dd5e3c05132b1a6539c6a",
                 "shasum": ""
             },
             "require": {
@@ -1533,20 +1563,20 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-03-17T23:44:50+00:00"
+            "time": "2024-04-24T11:47:18+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.9.0",
+            "version": "3.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "d63cee4890a8afaf86a22e51ad4d97c91dd4579b"
+                "reference": "aac1f6f347a5c5ac6bc98ad395007df00990f480"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/d63cee4890a8afaf86a22e51ad4d97c91dd4579b",
-                "reference": "d63cee4890a8afaf86a22e51ad4d97c91dd4579b",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/aac1f6f347a5c5ac6bc98ad395007df00990f480",
+                "reference": "aac1f6f347a5c5ac6bc98ad395007df00990f480",
                 "shasum": ""
             },
             "require": {
@@ -1613,20 +1643,20 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-02-16T15:06:51+00:00"
+            "time": "2024-04-23T20:25:34+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "3.0.1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "b4caf9689f1a0e4a4c632679a44e638c1c67aff1"
+                "reference": "9333efcbff231f10dfd9c56bb7b65818b4733ca7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/b4caf9689f1a0e4a4c632679a44e638c1c67aff1",
-                "reference": "b4caf9689f1a0e4a4c632679a44e638c1c67aff1",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/9333efcbff231f10dfd9c56bb7b65818b4733ca7",
+                "reference": "9333efcbff231f10dfd9c56bb7b65818b4733ca7",
                 "shasum": ""
             },
             "require": {
@@ -1635,16 +1665,16 @@
                 "ext-tokenizer": "*",
                 "ext-xmlreader": "*",
                 "php": ">=5.4",
-                "phpcsstandards/phpcsextra": "^1.1.0",
-                "phpcsstandards/phpcsutils": "^1.0.8",
-                "squizlabs/php_codesniffer": "^3.7.2"
+                "phpcsstandards/phpcsextra": "^1.2.1",
+                "phpcsstandards/phpcsutils": "^1.0.10",
+                "squizlabs/php_codesniffer": "^3.9.0"
             },
             "require-dev": {
                 "php-parallel-lint/php-console-highlighter": "^1.0.0",
                 "php-parallel-lint/php-parallel-lint": "^1.3.2",
                 "phpcompatibility/php-compatibility": "^9.0",
                 "phpcsstandards/phpcsdevtools": "^1.2.0",
-                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
             },
             "suggest": {
                 "ext-iconv": "For improved results",
@@ -1675,11 +1705,11 @@
             },
             "funding": [
                 {
-                    "url": "https://opencollective.com/thewpcc/contribute/wp-php-63406",
+                    "url": "https://opencollective.com/php_codesniffer",
                     "type": "custom"
                 }
             ],
-            "time": "2023-09-14T07:06:09+00:00"
+            "time": "2024-03-25T16:39:00+00:00"
         }
     ],
     "aliases": [],
