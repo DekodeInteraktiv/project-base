@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9075aced114995c4e70811cb7d6996be",
+    "content-hash": "30b817992ee7ff53e457cffc875b5f8e",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -1688,11 +1688,11 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.1"
+        "php": ">=8.2"
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.1"
+        "php": "8.2"
     },
     "plugin-api-version": "2.6.0"
 }
