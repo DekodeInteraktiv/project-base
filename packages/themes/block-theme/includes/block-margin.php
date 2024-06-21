@@ -14,8 +14,8 @@ defined( 'ABSPATH' ) || exit;
 \add_filter( 't2/custom_block_margin/root_selector', __NAMESPACE__ . '\\do_override_root_selector', 10, 2 );
 \add_filter( 't2/custom_block_margin/last/selectors', __NAMESPACE__ . '\\do_override_last_selectors' );
 \add_filter( 't2/custom_block_margin/config', __NAMESPACE__ . '\\do_override_custom_block_margin_config', 10, 2 );
-\add_filter( 't2/custom_block_margin/default/size_key', fn() => 'xxxl' );
-\add_filter( 't2/custom_block_margin/last/size_key', fn() => 'xxxl' );
+\add_filter( 't2/custom_block_margin/default/size_key', fn() => '80' );
+\add_filter( 't2/custom_block_margin/last/size_key', fn() => '80' );
 
 /**
  * Change the root selector to all contrained containers.
@@ -59,7 +59,6 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 		{$root_selector} .wp-block-media-text__content,
 		{$root_selector} .wp-block-query,
 		{$root_selector} [class*=\"__inner-container\"],
-		{$root_selector} .gform_heading,
 	)";
 
 	$config['gaps'] = [
@@ -78,59 +77,47 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 				'.wp-block-t2-spacer + *',
 			],
 		],
-		'xxxs' => [
+		'20' => [
 			'size' => [
-				'min' => 6,
-				'max' => 8,
+				'min' => 4,
+				'max' => 4,
 			],
-			'selectors' => [], // None for now.
+			'selectors' => [],
 		],
-		'xxs' => [
+		'30' => [
 			'size' => [
 				'min' => 8,
-				'max' => 12,
+				'max' => 8,
 			],
-			'selectors' => [
-				'.is-style-kicker + h1',
-			],
+			'selectors' => [],
 		],
-		'xs' => [
+		'40' => [
 			'size' => [
 				'min' => 12,
+				'max' => 12,
+			],
+			'selectors' => [],
+		],
+		'50' => [
+			'size' => [
+				'min' => 16,
 				'max' => 16,
 			],
-			'selectors' => [
-				':is(h1, h2, h3, h4, h5, h6).has-xxxl-font-size + p',
-			],
+			'selectors' => [],
 		],
-		'sm' => [
-			'size' => [
-				'min' => 16,
-				'max' => 24,
-			],
-			'selectors' => [], // None for now.
-		],
-		'md' => [
-			'size' => [
-				'min' => 16,
-				'max' => 32,
-			],
-			'selectors' => [
-				'.facetwp-type-search + .facetwp-selections', // Chips below search in archive template.
-			],
-		],
-		'lg' => [
+		'60' => [
 			'size' => [
 				'min' => 24,
-				'max' => 48,
+				'max' => 24,
 			],
 			'selectors' => [
 				// Default small gap for related blocks, e.g. paragraph + paragraph.
 				':is(
+					h1,
+					h2, h3, h4, h5, h6
 					p,
 					.wp-block-columns,
 					.wp-block-buttons,
-					.wp-block-fundraising-donation-form,
 					.wp-block-image,
 					.wp-block-list,
 					.wp-block-post-excerpt,
@@ -142,7 +129,6 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 					p,
 					.t2-featured-content-layout,
 					.wp-block-buttons,
-					.wp-block-fundraising-donation-form,
 					.wp-block-image,
 					.wp-block-list,
 					.wp-block-post-excerpt,
@@ -159,42 +145,20 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 				':is(h3) + :is(h4, h5, h6)',
 				':is(h4) + :is(h5, h6)',
 				':is(h5) + :is(h6)',
-				'.wp-block-group.is-content-justification-space-between + :is(.t2-featured-content-layout, .wc-block-grid)',
-				// Event template.
-				':is(h2, .wp-block-post-excerpt) + :is(.wp-block-post-excerpt, .wp-block-dekode-events-event-info, .wp-block-dekode-events-event-registration, .wp-block-dekode-events-location-map)',
-				// Horizontal Query and Featured Content Layout pagination.
-				':is(.wp-block-query > .wp-block-post-template, .t2-featured-content-layout) + .wp-block-msf-horizontal-layout-pagination',
-				// Single product template.
-				'.wp-block-post-excerpt + .wp-block-woocommerce-product-price',
-				'.wc-block-breadcrumbs + .wc-block-store-notices',
-				'.wc-block-store-notices + .single-product-header',
-				'.wp-block-woocommerce-product-price + .wp-block-add-to-cart-form',
 			],
 		],
-		'xl' => [
+		'70' => [
 			'size' => [
-				'min' => 48,
-				'max' => 64,
+				'min' => 32,
+				'max' => 32,
 			],
-			'selectors' => [
-				// Headings following paragraph or lists. (Start of new text section).
-				':is(p, .wp-block-list) + :is(h2, h3, h4, h5, h6, p)',
-			],
-		],
-		'xxl' => [
-			'size' => [
-				'min' => 48,
-				'max' => 80,
-			],
-			'selectors' => [
-				'.wp-block-query > * + *', // All internal spacing in Query block.
-			],
+			'selectors' => [],
 		],
 		// Default.
-		'xxxl' => [
+		'80' => [
 			'size' => [
 				'min' => 48,
-				'max' => 120,
+				'max' => 48,
 			],
 		],
 	];
