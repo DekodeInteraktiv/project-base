@@ -1,0 +1,17 @@
+.wp-block-site-logo .custom-logo {
+	height: 3.75rem; /* 205x60px mobil and medium */
+	width: auto;
+
+	@media (--teft-viewport-large) {
+		height: 4.5rem; /* 246x72px large up */
+	}
+
+	@media (--teft-viewport-wide) {
+		height: 6.75rem; /* 369x108px wide up */
+	}
+}
+
+/* Hide the logo for open mobile. Setting display none will cause to many changes */
+body.has-state-header-menu-open .site-header-group .wp-block-site-logo {
+	visibility: hidden;
+}

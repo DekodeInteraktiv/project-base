@@ -1,0 +1,19 @@
+.wp-block-separator {
+	border: unset;
+	opacity: unset;
+}
+
+.wp-block-separator,
+.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+	height: 1px;
+}
+
+/* Reset default styling */
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	width: unset;
+}
+
+/* Default background color */
+.wp-block-separator:not(.has-background) {
+	background-color: currentcolor;
+}

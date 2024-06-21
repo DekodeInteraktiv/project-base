@@ -1,0 +1,35 @@
+<!-- wp:group {"align":"full","layout":{"type":"constrained"},"className":"site-header-group"} -->
+<div class="wp-block-group alignfull site-header-group">
+	<!-- wp:t2/spacer {"gap":"sm"} /-->
+
+	<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"},"className":"site-header-group-content"} -->
+	<div class="wp-block-group alignwide site-header-group-content">
+		<!-- wp:site-logo {"shouldSyncIcon":false} /-->
+		<!-- wp:t2/nav-menu {"container":"","theme_location":"header-main-menu","depth":1,"className":"header-menu show-for-large hide-for-state-header-search-open"} /-->
+
+		<!-- wp:search {"label":"Søk","showLabel":false,"placeholder":"Søk etter innhold …","buttonText":"Søk","buttonPosition":"button-inside","buttonUseIcon":true,"className":"show-for-large show-for-state-header-search-open"} /-->
+		<!-- wp:t2/state-toggle {"key":"header-search-open","text":"Søk","icon":"search","activeText":"","ariaLabel":"Åpne søk","className":"is-style-text show-for-large"} /-->
+		<!-- wp:t2/state-toggle {"key":"header-menu-open","text":"Meny","icon":"menu","activeIcon":"close","activeText":"Lukk","ariaLabel":"Åpne meny","className":"is-style-text hide-for-large"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:t2/spacer {"gap":"sm"} /-->
+
+	<!-- wp:group {"align":"wide","layout":{"type":"constrained"},"className":"hide-for-large show-for-state-header-menu-open"} -->
+	<div
+		class="wp-block-group alignwide hide-for-large show-for-state-header-menu-open"
+	>
+		<!-- wp:search {"label":"Søk","showLabel":false,"placeholder":"Søk etter innhold …","buttonText":"Søk","buttonPosition":"button-inside","buttonUseIcon":true} /-->
+		<!-- wp:t2/spacer {"gap":"xl"} /-->
+		<!-- wp:t2/nav-menu {"container":"","theme_location":"header-main-menu","className":"header-menu header-menu-vertical"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:t2/spacer {"gap":"md","className":"hide-for-large show-for-state-header-menu-open"} /-->
+
+	<!-- wp:t2/wrapper {"align":"full", "className":"alignfull site-header-breadcrumbs-wrapper"} -->
+	<!-- wp:woocommerce/breadcrumbs {"align":"wide","className":"alignwide show-for-large"} /-->
+	<!-- wp:yoast-seo/breadcrumbs {"align":"wide","className":"alignwide show-for-large"} /-->
+	<!-- /wp:t2/wrapper -->
+</div>
+<!-- /wp:group -->

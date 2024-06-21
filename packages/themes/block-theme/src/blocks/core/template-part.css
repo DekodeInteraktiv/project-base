@@ -1,0 +1,23 @@
+header.wp-block-template-part {
+	position: sticky;
+	z-index: 1000;
+}
+
+/* Header sticks to top of window */
+body.has-sticky-header header.wp-block-template-part {
+	backdrop-filter: blur(5px);
+	background-color: rgba(255, 255, 255, 0.9);
+	top: 0;
+}
+
+@media (--teft-viewport-medium) {
+
+	/* Show sticky header below fixed admin-bar on desktop if logged in */
+	body.has-sticky-header.admin-bar header.wp-block-template-part {
+		top: 32px;
+	}
+}
+
+.site-header-breadcrumbs-wrapper {
+	position: relative;
+}

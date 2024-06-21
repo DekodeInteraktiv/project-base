@@ -1,0 +1,32 @@
+.wp-block-media-text,
+.wp-block-media-text.has-media-on-the-right {
+	gap: var(--wp--preset--spacing--lg);
+	grid-template-columns: 1fr 1fr;
+}
+
+.wp-block-media-text .wp-block-media-text__media {
+	max-width: 100%;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+	align-self: end;
+	padding: unset;
+}
+
+/* Bottom aligned content by default */
+.wp-block-media-text:not(.is-vertically-aligned-top, .is-vertically-aligned-center, .is-vertically-aligned-bottom) .wp-block-media-text__media {
+	align-self: flex-end;
+}
+
+@media (--teft-viewport-small-down) {
+
+	/* Show image below text on mobile */
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+		grid-row: 2;
+	}
+
+	/* Show text above image on mobile */
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+		grid-row: 1;
+	}
+}

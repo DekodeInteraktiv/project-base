@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf46ccc51b9d6b5db0cbda1325fdf8b1",
+    "content-hash": "80e57ba0ccc5d7bcf70c003ba22e6630",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -218,6 +218,37 @@
                 }
             ],
             "time": "2022-08-20T06:45:11+00:00"
+        },
+        {
+            "name": "dekode/block-theme",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/themes/block-theme",
+                "reference": "d4cb7c1c7f0fd1dd2ca089c77179fc4b1e70be18"
+            },
+            "require-dev": {
+                "wp-cli/i18n-command": "~2.4.3"
+            },
+            "type": "wordpress-theme",
+            "scripts": {
+                "make-pot": [
+                    "npm run build",
+                    "wp i18n make-pot . languages/base-theme.pot --domain=base-theme --exclude=node_modules,src,vendor,theme.json,t2.json"
+                ],
+                "make-json": [
+                    "npm run build",
+                    "wp i18n make-json languages/base-theme-nb_NO.po --no-purge"
+                ]
+            },
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Dekode Block Theme",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "dekode/dekode-theme",

@@ -1,0 +1,40 @@
+{
+	"$schema": "https://t2.teft.io/schemas/t2.json",
+	"version": 1,
+	"admin": true,
+	"blocks": true,
+	"extensions": true,
+	"mu-blocks": [
+		"t2/accordion",
+		"t2/featured-content-layout",
+		"t2/featured-query-post",
+		"t2/featured-single-post",
+		"t2/featured-template-post",
+		"t2/ingress",
+		"t2/link-list",
+		"t2/nav-menu",
+		"t2/state-toggle"
+	],
+	"mu-extensions": [
+		"t2/allow-svg-uploads",
+		"t2/button-icon",
+		"t2/custom-block-margin",
+		"t2/disable-block-directory",
+		"t2/disable-comments",
+		"t2/disable-custom-css",
+		"t2/disable-emoji",
+		"t2/disable-feeds",
+		"t2/disable-xmlrpc",
+		"t2/enqueue-theme-block-styles",
+		"t2/image-credit",
+		"t2/list-block-classname",
+		"t2/remove-core-block-styles",
+		"t2/remove-core-patterns",
+		"t2/reset-admin-dashboard",
+		"t2/site-health-qa",
+		"t2/post-content-tag-name"
+	],
+	"t2/custom-block-margin": {
+		"version": 2
+	}
+}

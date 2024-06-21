@@ -1,0 +1,34 @@
+.wp-block-search {
+	border-bottom: solid 2px currentcolor;
+	padding: var(--wp--preset--spacing--xxs) var(--wp--preset--spacing--xs);
+}
+
+.wp-block-search__inside-wrapper {
+	align-items: center;
+	border: unset;
+	display: grid;
+	gap: var(--wp--preset--spacing--sm);
+	grid-template-columns: 1fr auto;
+	padding: unset;
+}
+
+.wp-block-search__input,
+.wp-block-search__button.wp-element-button {
+	background: none !important;
+	color: currentcolor !important;
+	font: inherit;
+	font-weight: inherit;
+	margin: unset;
+	padding: unset;
+}
+
+.wp-block-search__input {
+	border: unset;
+}
+
+/* Stretched right aligned search block in header */
+.site-header-group-content .wp-block-search {
+	flex-grow: 1;
+	margin-left: auto;
+	max-width: var(--wp--style--global--content-size);
+}

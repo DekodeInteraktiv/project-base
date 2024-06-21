@@ -1,0 +1,119 @@
+.wp-block-group.is-layout-flex {
+	gap: var(--wp--preset--spacing--lg);
+}
+
+.wp-block-group.is-layout-flex.is-style-xl-gap {
+	gap: var(--wp--preset--spacing--xl);
+}
+
+.wp-block-group.is-layout-flex.is-style-md-gap {
+	gap: var(--wp--preset--spacing--md);
+}
+
+.wp-block-group.is-layout-flex.is-style-sm-gap {
+	gap: var(--wp--preset--spacing--sm);
+}
+
+.wp-block-group.has-background {
+	padding: var(--wp--preset--spacing--md);
+	padding-left: var(--wp--style--root--padding-left);
+	padding-right: var(--wp--style--root--padding-right);
+}
+
+.wp-block-group.has-background.alignwide {
+	padding: var(--wp--preset--spacing--lg);
+	padding-left: var(--wp--style--root--padding-left);
+	padding-right: var(--wp--style--root--padding-right);
+}
+
+@media (--teft-viewport-small-down) {
+
+	/* Stretch wide Group to fill small screens */
+	body .is-layout-constrained .wp-block-group.has-background.alignwide {
+		margin-left: calc(-1 * var(--wp--style--root--padding-left)) !important;
+		margin-right: calc(-1 * var(--wp--style--root--padding-right)) !important;
+		max-width: calc(100% + var(--wp--style--root--padding-left) + var(--wp--style--root--padding-right));
+	}
+}
+
+.wp-block-group.has-background.alignfull {
+	padding: var(--wp--preset--spacing--xxxl);
+	padding-left: var(--wp--style--root--padding-left);
+	padding-right: var(--wp--style--root--padding-right);
+}
+
+/* Header content group */
+.wp-block-group.site-header-group-content {
+	position: relative;
+}
+
+/* Bottom aligned content in header */
+.wp-block-group.site-header-group-content.is-layout-flex {
+	align-items: flex-end;
+	gap: unset;
+}
+
+/* Header without logo, set height to match logo and align menu toggle to the right */
+.wp-block-group.site-header-group-content:not(:has(.wp-block-site-logo)) {
+	height: 3.75rem;
+	justify-content: flex-end;
+
+	@media (--teft-viewport-large) {
+		height: 4.5rem; /* 246x72px large up */
+	}
+
+	@media (--teft-viewport-wide) {
+		height: 6.75rem; /* 369x108px wide up */
+	}
+
+}
+
+/* Archive toolbar (search and filters) */
+.is-style-archive-toolbar {
+
+	&.is-layout-flex {
+		align-items: baseline;
+		justify-content: space-between;
+	}
+
+	/* Stretch first (search) */
+	& > :first-child {
+		flex-grow: 1;
+		max-width: var(--wp--style--global--content-size);
+	}
+
+	/* Shrink last (filters) */
+	& :last-child {
+		flex-grow: unset;
+	}
+
+	/* No block spacing between search and selections if empty */
+	& .facetwp-selections:empty {
+		margin-block-start: unset !important;
+	}
+
+	/* Full width archive tools on small screens */
+	& > *,
+	& .wp-block-t2-facetwp-display {
+		width: 100%;
+
+		@media (--teft-viewport-medium) {
+			width: unset;
+		}
+	}
+}
+
+/* Inline header group for petitions and campagins */
+.single-campaign .entry-content > header.wp-block-group:first-child,
+.single-petition .entry-content > header.wp-block-group:first-child {
+
+	/* margin-block-start: unset !important; */
+	padding-bottom: var(--wp--preset--spacing--sm);
+	padding-top: var(--wp--preset--spacing--sm);
+}
+
+/* Less bottom padding for footer */
+
+.wp-block-group.site-footer-group.alignfull {
+	padding-bottom: var(--wp--preset--spacing--lg);
+}

@@ -1,0 +1,7 @@
+p.has-background {
+	padding: var(--wp--preset--spacing--md);
+}
+
+p strong {
+	font-weight: var(--wp--custom--font-weight--semibold);
+}
