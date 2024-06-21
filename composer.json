@@ -11,8 +11,8 @@
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
 		"roots/wordpress": "~6.5.3",
-		"symfony/dotenv": "~7.0.7",
-		"t2/t2": "~7.9.0",
+		"symfony/dotenv": "~7.1.0",
+		"t2/t2": "~7.12.0",
 		"wpackagist-plugin/imagify": "~2.2.0",
 		"wpackagist-plugin/spinupwp": "~1.6.0",
 		"wpackagist-plugin/two-factor": "~0.9.1"
