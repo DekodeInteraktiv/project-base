@@ -1,4 +1,4 @@
 body {
-	--t2-ingress-typography-font-size: var(--wp--preset--font-size--lg);
-	--t2-ingress-typography-font-weight: var(--wp--custom--font-weight--semibold);
+	--t2-ingress-typography-font-size: var(--wp--preset--font-size--medium);
+	--t2-ingress-typography-font-weight: var(--wp--custom--font-weight--bold);
 }

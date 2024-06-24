@@ -1,28 +1,29 @@
 body {
+	/*
 	--t2-accordion-item-border: none;
 	--t2-accordion-item-content-padding: var(--t2-accordion-item-padding);
-	--t2-accordion-item-padding: var(--wp--preset--spacing--sm) var(--wp--preset--spacing--md);
+	--t2-accordion-item-padding: var(--wp--preset--spacing--40) 0;
+	*/
 
-	/* Accordion title (H2) will look like a H3 */
 	--t2-accordion-typography-heading-font-family: var(--wp--preset--font-family--heading);
-	--t2-accordion-typography-heading-font-size: var(--wp--preset--font-size--yl);
-	--t2-accordion-typography-heading-font-weight: var(--wp--custom--font-weight--semibold);
+	--t2-accordion-typography-heading-font-size: var(--wp--preset--font-size--large);
+	--t2-accordion-typography-heading-font-weight: var(--wp--custom--font-weight--bold);
 	--t2-accordion-typography-heading-line-height: var(--wp--custom--line-height--12);
 }
 
 .t2-accordion {
 	display: flex;
 	flex-direction: column;
-	gap: var(--wp--preset--spacing--xs);
+	gap: var(--wp--preset--spacing--40);
 }
 
 .t2-accordion-item {
-	background-color: var(--wp--preset--color--secondary-20);
+	/* background-color: var(--wp--preset--color--secondary-20); */
 	margin: unset;
 
 	&:hover,
 	&:active {
-		background-color: var(--wp--preset--color--secondary-40);
+		/* background-color: var(--wp--preset--color--secondary-40); */
 	}
 }
 
@@ -46,17 +47,12 @@ body {
 }
 
 .t2-accordion-item__inner-container {
-	font-size: var(--wp--preset--font-size--sm);
+	/* font-size: var(--wp--preset--font-size--medium); */
 	padding-top: 0;
 }
 
 .t2-accordion-icon {
 	align-self: center;
 	height: unset;
-	margin-left: var(--wp--preset--spacing--sm);
-}
-
-.t2-accordion-icon svg {
-	height: var(--wp--preset--font-size--lg);
-	width: var(--wp--preset--font-size--lg);
+	margin-left: var(--wp--preset--spacing--small);
 }
