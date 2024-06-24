@@ -134,9 +134,9 @@
 		"spacing": {
 			"customSpacingSize": false,
 			"margin": false,
-			"padding": false
-		},
-		"blocks": {}
+			"padding": false,
+			"blockGap": true
+		}
 	},
 	"styles": {
 		"color": {
@@ -149,8 +149,8 @@
 		},
 		"spacing": {
 			"padding": {
-				"left": "clamp(1rem, 0.5379rem + 1.444vw, 2rem)",
-				"right": "clamp(1rem, 0.5379rem + 1.444vw, 2rem)"
+				"left": "1rem",
+				"right": "1rem"
 			}
 		},
 		"elements": {
@@ -206,6 +206,16 @@
 			}
 		},
 		"blocks": {
+			"core/columns": {
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--60)"
+				}
+			},
+			"core/group": {
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--60)"
+				}
+			},
 			"core/button": {
 				"border": {
 					"radius": "unset"
