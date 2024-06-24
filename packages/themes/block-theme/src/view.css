@@ -5,10 +5,6 @@
 	box-sizing: border-box;
 }
 
-a {
-	text-underline-offset: 0.1em;
-}
-
 /* fix the feature of 'hidden' attribute. */
 :where([hidden]) {
 	display: none !important;

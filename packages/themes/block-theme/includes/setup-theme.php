@@ -13,7 +13,6 @@ defined( 'ABSPATH' ) || exit;
 
 // Table of content.
 \add_action( 'after_setup_theme', __NAMESPACE__ . '\\do_after_setup_theme' );
-\add_action( 'admin_bar_init', __NAMESPACE__ . '\\do_remove_adminbar_inline_styling' );
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\do_enqueue_assets' );
 \add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\do_enqueue_block_editor_assets' );
 \add_filter( 't2/extension/enqueue_theme_block_styles/deps', __NAMESPACE__ . '\\do_override_t2_enqueue_theme_block_styles_deps', 65 );
@@ -33,15 +32,6 @@ function do_after_setup_theme(): void {
 	\add_theme_support( 'responsive-embeds' );
 	\add_theme_support( 'post-thumbnails' );
 	\add_theme_support( 'custom-logo' );
-}
-
-/**
- * Remove _admin_bar_bump_cb action for header to avoid inline html styling for wpadminbar.
- *
- * @return void
- */
-function do_remove_adminbar_inline_styling(): void {
-	remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
 
 /**

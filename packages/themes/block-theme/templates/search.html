@@ -1,32 +1,12 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:query {"tagName":"main","align":"full","layout":{"type":"constrained"},"className":"entry-content hide-for-state-header-menu-open"} -->
+<!-- wp:query {"tagName":"main","align":"full","layout":{"type":"constrained"},"className":"entry-content"} -->
 <main class="wp-block-query alignfull">
 	<!-- wp:query-title {"type":"search","align":"wide"} /-->
 
-	<!-- wp:group {"align":"wide","layout":{"type":"flex"},"className":"is-style-archive-toolbar"} -->
-	<div class="wp-block-group alignwide is-style-archive-toolbar">
-		<!-- wp:group {"className":"is-style-md-gap"} -->
-		<div class="wp-block-group is-style-md-gap">
-			<!-- wp:search {"label":"Søk","showLabel":false,"placeholder":"Søk etter innhold …","buttonText":"Søk","buttonPosition":"button-inside","buttonUseIcon":true} /-->
-		</div>
-		<!-- /wp:group -->
+	<!-- wp:search {"showLabel":true,"buttonPosition":"button-inside","buttonUseIcon":true} /-->
 
-		<!-- wp:group {"layout":{"type":"flex"},"className":"is-style-md-gap"} -->
-		<div class="wp-block-group is-style-md-gap">
-			<!-- wp:t2/facetwp-display {"name":"search_post_type"} /-->
-		</div>
-		<!-- /wp:group -->
-	</div>
-	<!-- /wp:group -->
-
-	<!-- wp:query-no-results -->
-	<!-- wp:paragraph -->
-	<p>Beklager, vi fant ingenting med det søkeord …</p>
-	<!-- /wp:paragraph -->
-	<!-- /wp:query-no-results -->
-
-	<!-- wp:post-template {"align":"wide"} -->
+	<!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":3}} -->
 	<!-- wp:t2/featured-template-post /-->
 	<!-- /wp:post-template -->
 
@@ -35,6 +15,12 @@
 	<!-- wp:query-pagination-numbers /-->
 	<!-- wp:query-pagination-next /-->
 	<!-- /wp:query-pagination -->
+
+	<!-- wp:query-no-results -->
+	<!-- wp:paragraph -->
+	<p>No posts were found.</p>
+	<!-- /wp:paragraph -->
+	<!-- /wp:query-no-results -->
 </main>
 <!-- /wp:query -->
 
