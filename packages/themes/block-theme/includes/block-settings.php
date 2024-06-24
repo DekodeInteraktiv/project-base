@@ -23,10 +23,10 @@ defined( 'ABSPATH' ) || exit;
  * @return array
  */
 function do_override_block_type_args( array $args, string $name ): array {
-	// Override block type args here. See example below where the Query block is changed to wide by default.
+	// Override block type args here. See example below where the Media+Text block is changed to wide by default.
 
-	// Set Query as wide by default.
-	if ( 'core/query' === $name ) {
+	// Set Media+Text as wide by default.
+	if ( 'core/media-text' === $name ) {
 		$args['attributes']['align'] = [
 			'type'    => 'string',
 			'default' => 'wide',

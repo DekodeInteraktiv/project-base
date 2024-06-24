@@ -1,4 +1,3 @@
-.wp-block-post-excerpt {
-	font-size: var(--wp--preset--font-size--lg);
-	font-weight: var(--wp--custom--font-weight--semibold);
+.wp-block-post-excerpt.has-background {
+	padding: var(--wp--preset--spacing--40);
 }

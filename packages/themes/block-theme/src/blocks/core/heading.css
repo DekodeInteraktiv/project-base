@@ -2,83 +2,17 @@
 .wp-block-heading.has-background,
 .wp-block-post-title.has-background,
 .wp-block-query-title.has-background {
-	padding: var(--wp--preset--spacing--md);
-	padding-left: var(--wp--style--root--padding-left);
-	padding-right: var(--wp--style--root--padding-right);
+	padding: var(--wp--preset--spacing--40);
 }
 
 .wp-block-heading.has-background.alignwide,
 .wp-block-post-title.has-background.alignwide,
 .wp-block-query-title.has-background.alignwide {
-	padding: var(--wp--preset--spacing--lg);
-	padding-left: var(--wp--style--root--padding-left);
-	padding-right: var(--wp--style--root--padding-right);
+	padding: var(--wp--preset--spacing--40);
 }
 
 .wp-block-heading.has-background.alignfull,
 .wp-block-post-title.has-background.alignfull,
 .wp-block-query-title.has-background .alignfull {
-	padding: var(--wp--preset--spacing--xxxl);
-	padding-left: var(--wp--style--root--padding-left);
-	padding-right: var(--wp--style--root--padding-right);
-}
-
-/* H2 Condensed X heading style */
-.is-style-h2-condensed-x,
-.editor-styles-wrapper .is-style-h2-condensed-x,
-.fundraising-form-wrapper__title,
-.gform_title {
-	font-family: var(--wp--preset--font-family--heading-x-condensed);
-	font-size: var(--wp--preset--font-size--xxl);
-	font-weight: var(--wp--custom--font-weight--bold);
-	line-height: var(--wp--custom--line-height--10);
-	text-transform: uppercase;
-}
-
-/* Post kicker style (locked size) */
-.is-style-kicker:not(.wp-block) {
-	align-items: center;
-	display: flex;
-	font-family: var(--wp--preset--font-family--heading);
-	font-size: var(--wp--preset--font-size--yyl);
-	font-weight: var(--wp--custom--font-weight--semibold);
-	gap: var(--wp--preset--spacing--xs);
-	line-height: var(--wp--custom--line-height--12);
-	text-transform: unset;
-}
-
-/* Kicker dot */
-.is-style-kicker::before {
-	animation: kicker-pulse 2s infinite;
-	background-color: var(--wp--preset--color--primary-100);
-	border-radius: 50%;
-	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-	content: "";
-	display: inline-block;
-	height: 1.2rem;
-	min-width: 1.2rem;
-	width: 1.2rem;
-}
-
-.is-style-kicker.wp-block::before {
-	margin-bottom: 0.25rem;
-	margin-right: var(--wp--preset--spacing--xs);
-}
-
-@keyframes kicker-pulse {
-
-	0% {
-		box-shadow: 0 0 0 0 rgba(238, 0, 0, 0.7);
-		transform: scale(0.95);
-	}
-
-	70% {
-		box-shadow: 0 0 0 10px rgba(238, 0, 0, 0);
-		transform: scale(1);
-	}
-
-	100% {
-		box-shadow: 0 0 0 0 rgba(238, 0, 0, 0);
-		transform: scale(0.95);
-	}
+	padding: var(--wp--preset--spacing--80);
 }

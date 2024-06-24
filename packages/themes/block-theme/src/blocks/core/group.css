@@ -1,13 +1,9 @@
 .wp-block-group.has-background {
 	padding: var(--wp--preset--spacing--40);
-	padding-left: var(--wp--style--root--padding-left);
-	padding-right: var(--wp--style--root--padding-right);
 }
 
 .wp-block-group.has-background.alignwide {
 	padding: var(--wp--preset--spacing--40);
-	padding-left: var(--wp--style--root--padding-left);
-	padding-right: var(--wp--style--root--padding-right);
 }
 
 .wp-block-group.has-background.alignfull {
