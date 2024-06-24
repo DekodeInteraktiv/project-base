@@ -30,11 +30,12 @@
 		"t2/enqueue-theme-block-styles",
 		"t2/image-credit",
 		"t2/list-block-classname",
+		"t2/post-content-tag-name",
 		"t2/remove-core-block-styles",
 		"t2/remove-core-patterns",
 		"t2/reset-admin-dashboard",
 		"t2/site-health-qa",
-		"t2/post-content-tag-name"
+		"t2/wrap-custom-html-block"
 	],
 	"t2/custom-block-margin": {
 		"version": 2
