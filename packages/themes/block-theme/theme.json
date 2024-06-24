@@ -152,7 +152,8 @@
 			"padding": {
 				"left": "1rem",
 				"right": "1rem"
-			}
+			},
+			"blockGap": "var(--wp--preset--spacing--80)"
 		},
 		"elements": {
 			"link": {
