@@ -11,7 +11,7 @@ namespace BlockTheme\SetupTheme;
 
 defined( 'ABSPATH' ) || exit;
 
-// Table of content.
+// Hooks.
 \add_action( 'after_setup_theme', __NAMESPACE__ . '\\do_after_setup_theme' );
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\do_enqueue_assets' );
 \add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\do_enqueue_block_editor_assets' );

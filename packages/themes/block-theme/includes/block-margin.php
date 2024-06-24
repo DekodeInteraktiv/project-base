@@ -10,7 +10,7 @@ namespace BlockTheme\BlockMargin;
 
 defined( 'ABSPATH' ) || exit;
 
-// Table of content.
+// Hooks.
 \add_filter( 't2/custom_block_margin/root_selector', __NAMESPACE__ . '\\do_override_root_selector', 10, 2 );
 \add_filter( 't2/custom_block_margin/last/selectors', __NAMESPACE__ . '\\do_override_last_selectors' );
 \add_filter( 't2/custom_block_margin/config', __NAMESPACE__ . '\\do_override_custom_block_margin_config', 10, 2 );

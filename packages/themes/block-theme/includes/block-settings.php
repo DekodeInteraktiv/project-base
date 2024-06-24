@@ -10,7 +10,7 @@ namespace BlockTheme\BlockSettings;
 
 defined( 'ABSPATH' ) || exit;
 
-// Table of content.
+// Hooks.
 \add_filter( 'register_block_type_args', __NAMESPACE__ . '\\do_override_block_type_args', 10, 2 );
 \add_action( 'init', __NAMESPACE__ . '\\do_register_block_styles' );
 \add_filter( 'allowed_block_types_all', __NAMESPACE__ . '\\do_override_allowed_block_types_all', 40 );

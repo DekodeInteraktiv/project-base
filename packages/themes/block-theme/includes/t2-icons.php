@@ -10,7 +10,7 @@ namespace BlockTheme\T2Icons;
 
 defined( 'ABSPATH' ) || exit;
 
-// Table of content.
+// Hooks.
 \add_filter( 't2_icons', __NAMESPACE__ . '\\register_icons' );
 
 /**
