@@ -33,12 +33,6 @@ function do_after_setup_theme(): void {
 	\add_theme_support( 'responsive-embeds' );
 	\add_theme_support( 'post-thumbnails' );
 	\add_theme_support( 'custom-logo' );
-
-	// Register menus.
-	register_nav_menus( [
-		'header-main-menu' => \__( 'Header Main Menu', 'block-theme' ),
-		'footer-menu' => \__( 'Footer Menu', 'block-theme' ),
-	] );
 }
 
 /**
@@ -61,9 +55,10 @@ function do_enqueue_assets(): void {
 	if ( \file_exists( \get_template_directory() . '/build/view.css' ) ) {
 		$assets_version = \filemtime( \get_template_directory() . '/build/view.css' );
 
-		// Set global styles and optionally all WooCommece styling as dependency to ensure correct loading order.
+		// Set global styles as dependency to ensure correct loading order.
 		$deps = [ 'global-styles' ];
 
+		// Optionally set all WooCommerce styling as dependency.
 		/* if ( \class_exists( 'WooCommerce' ) ) {
 			// Optionally incluce Woo styling if plugin is active.
 			$deps[] = 'woocommerce-blocktheme';

@@ -23,6 +23,7 @@ defined( 'ABSPATH' ) || exit;
  * @return array
  */
 function do_override_block_type_args( array $args, string $name ): array {
+	// Override block type args here. See example below where the Query block is changed to wide by default.
 
 	// Set Query as wide by default.
 	if ( 'core/query' === $name ) {
@@ -41,16 +42,18 @@ function do_override_block_type_args( array $args, string $name ): array {
  * @return void
  */
 function do_register_block_styles(): void {
+	// Register custom block styles here.
 }
 
 /**
- * Automatically whitelist all block library block types.
+ * Limit allowed block types for theme.
  *
  * @return array|bool List of allowed blocks or true for all blocks.
  */
 function do_override_allowed_block_types_all(): array|bool {
 	return true;
 
+	// phpcs:disable
 	/* return [
 		'core/block',
 		'core/button',
@@ -108,4 +111,5 @@ function do_override_allowed_block_types_all(): array|bool {
 		'woocommerce/product-tag',
 		'woocommerce/products-by-attribute',
 	]; */
+	// phpcs:disable
 }
