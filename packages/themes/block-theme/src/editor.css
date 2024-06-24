@@ -1,4 +1,7 @@
-/* Less prominent editor post title */
+/*
+Less prominent editor post title for clean singular template.
+Remove this if you're using a singular.html template with hard coded title block.
+*/
 .post-type-page .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper,
 .post-type-post .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
 	background-color: transparent;
