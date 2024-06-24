@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80e57ba0ccc5d7bcf70c003ba22e6630",
+    "content-hash": "ad29ed4fdcaa2b54fe051d908f78ddde",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -225,7 +225,10 @@
             "dist": {
                 "type": "path",
                 "url": "packages/themes/block-theme",
-                "reference": "d4cb7c1c7f0fd1dd2ca089c77179fc4b1e70be18"
+                "reference": "fcaa5125e372dcaa8222fd23a413f8982aa6fab8"
+            },
+            "require": {
+                "johnpbloch/wordpress": "^6.5"
             },
             "require-dev": {
                 "wp-cli/i18n-command": "~2.4.3"
@@ -234,7 +237,7 @@
             "scripts": {
                 "make-pot": [
                     "npm run build",
-                    "wp i18n make-pot . languages/base-theme.pot --domain=base-theme --exclude=node_modules,src,vendor,theme.json,t2.json"
+                    "wp i18n make-pot . languages/block-theme.pot --domain=block-theme --exclude=node_modules,src,vendor,theme.json,t2.json"
                 ],
                 "make-json": [
                     "npm run build",
@@ -244,7 +247,7 @@
             "license": [
                 "GPL-3.0-or-later"
             ],
-            "description": "Dekode Block Theme",
+            "description": "Block Theme",
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -378,8 +381,102 @@
             "time": "2023-04-14T08:49:43+00:00"
         },
         {
-            "name": "roots/wordpress",
+            "name": "johnpbloch/wordpress",
             "version": "6.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress.git",
+                "reference": "435a5320201357f7232fb5745024a123cbfb69c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/435a5320201357f7232fb5745024a123cbfb69c0",
+                "reference": "435a5320201357f7232fb5745024a123cbfb69c0",
+                "shasum": ""
+            },
+            "require": {
+                "johnpbloch/wordpress-core": "6.5.4",
+                "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
+                "php": ">=7.0.0"
+            },
+            "type": "package",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "https://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
+            "homepage": "https://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "support": {
+                "docs": "https://developer.wordpress.org/",
+                "forum": "https://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "https://core.trac.wordpress.org/",
+                "source": "https://core.trac.wordpress.org/browser"
+            },
+            "time": "2024-06-05T15:31:11+00:00"
+        },
+        {
+            "name": "johnpbloch/wordpress-core",
+            "version": "6.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress-core.git",
+                "reference": "3ca1d2c88cc4b4d06e860424b38ff9ac9a6e200c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/3ca1d2c88cc4b4d06e860424b38ff9ac9a6e200c",
+                "reference": "3ca1d2c88cc4b4d06e860424b38ff9ac9a6e200c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.0.0"
+            },
+            "provide": {
+                "wordpress/core-implementation": "6.5.4"
+            },
+            "type": "wordpress-core",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "https://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
+            "homepage": "https://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "support": {
+                "forum": "https://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "https://core.trac.wordpress.org/",
+                "source": "https://core.trac.wordpress.org/browser",
+                "wiki": "https://codex.wordpress.org/"
+            },
+            "time": "2024-06-05T15:31:06+00:00"
+        },
+        {
+            "name": "roots/wordpress",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -395,6 +492,7 @@
                 "roots/wordpress-core-installer": "^1.0.0",
                 "roots/wordpress-no-content": "self.version"
             },
+            "default-branch": true,
             "type": "metapackage",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -493,22 +591,21 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.5.4",
+            "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.5.4"
+                "url": "https://github.com/roots/wordpress-no-content.git",
+                "reference": "4bf40fef5c55a87d965603c9eb4acef6b71651a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.5.4-no-content.zip",
-                "shasum": "bb4d48b2f6f47f4c06061460c83f8453e9809af5"
+                "url": "https://wordpress.org/nightly-builds/wordpress-latest.zip"
             },
             "require": {
                 "php": ">= 7.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "6.5.4"
+                "wordpress/core-implementation": "dev-nightly"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -526,6 +623,7 @@
                 "ext-xml": "Used for XML parsing, such as from a third-party site.",
                 "ext-zip": "Used for decompressing Plugins, Themes, and WordPress update packages."
             },
+            "default-branch": true,
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -559,7 +657,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-06-06T12:30:39+00:00"
+            "time": "2023-08-01T11:43:32+00:00"
         },
         {
             "name": "symfony/dotenv",
@@ -1775,7 +1873,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "roots/wordpress": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

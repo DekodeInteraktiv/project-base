@@ -11,7 +11,7 @@
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
-		"roots/wordpress": "~6.5.3",
+		"roots/wordpress": "dev-main",
 		"symfony/dotenv": "~7.1.0",
 		"t2/t2": "~7.12.0",
 		"wpackagist-plugin/imagify": "~2.2.0",
