@@ -1,6 +1,7 @@
 <?php
 /**
  * Custom block rendering.
+ * Use this file for block render overrides.
  *
  * @package BlockTheme
  */

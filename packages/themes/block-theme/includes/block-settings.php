@@ -1,6 +1,7 @@
 <?php
 /**
  * Custom block settings.
+ * Use this file to e.g. override block type args, add styles and limit available block types.
  *
  * @package BlockTheme
  */
@@ -23,9 +24,8 @@ defined( 'ABSPATH' ) || exit;
  * @return array
  */
 function do_override_block_type_args( array $args, string $name ): array {
-	// Override block type args here. See example below where the Media+Text block is changed to wide by default.
 
-	// Set Media+Text as wide by default.
+	// Example: Set Media+Text as wide by default.
 	if ( 'core/media-text' === $name ) {
 		$args['attributes']['align'] = [
 			'type'    => 'string',
