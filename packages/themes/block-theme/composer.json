@@ -1,7 +1,7 @@
 {
 	"$schema": "https://getcomposer.org/schema.json",
 	"name": "dekode/block-theme",
-	"description": "Dekode Block Theme",
+	"description": "Block Theme",
 	"type": "wordpress-theme",
 	"license": "GPL-3.0-or-later",
 	"version": "1.0.0",
@@ -11,7 +11,7 @@
 	"scripts": {
 		"make-pot": [
 			"npm run build",
-			"wp i18n make-pot . languages/base-theme.pot --domain=base-theme --exclude=node_modules,src,vendor,theme.json,t2.json"
+			"wp i18n make-pot . languages/block-theme.pot --domain=block-theme --exclude=node_modules,src,vendor,theme.json,t2.json"
 		],
 		"make-json": [
 			"npm run build",
