@@ -4,7 +4,7 @@
 	align-items: center;
 	border: unset;
 	display: flex;
-	gap: var(--wp--preset--spacing--xs);
+	gap: var(--wp--preset--spacing--20);
 	justify-content: space-between;
 
 	/* Disabled */
