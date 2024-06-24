@@ -22,17 +22,17 @@ namespace Dekode\Assets;
 function do_enqueue_assets(): void {
 
 	// Enqueue styles.
-	$style_file_path = \get_template_directory() . '/build/style.css';
-	$style_file_uri  = \get_template_directory_uri() . '/build/style.css';
+	$style_file_path = \get_template_directory() . '/build/view.css';
+	$style_file_uri  = \get_template_directory_uri() . '/build/view.css';
 
 	if ( \file_exists( $style_file_path ) ) {
 		\wp_enqueue_style( 'dekode-theme', $style_file_uri, [], \filemtime( $style_file_path ) );
 	}
 
 	// Enqueue scripts.
-	$script_file_path      = \get_template_directory() . '/build/index.js';
-	$script_file_uri       = \get_template_directory_uri() . '/build/index.js';
-	$script_deps_file_path = \get_template_directory() . '/build/index.asset.php';
+	$script_file_path      = \get_template_directory() . '/build/view.js';
+	$script_file_uri       = \get_template_directory_uri() . '/build/view.js';
+	$script_deps_file_path = \get_template_directory() . '/build/view.asset.php';
 
 	if ( \file_exists( $script_file_path ) && \file_exists( $script_deps_file_path ) ) {
 		$dependencies = require $script_deps_file_path;

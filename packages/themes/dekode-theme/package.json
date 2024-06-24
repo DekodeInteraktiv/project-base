@@ -1,0 +1,25 @@
+{
+	"name": "@dekode/dekode-theme",
+	"private": true,
+	"version": "1.0.0",
+	"devDependencies": {
+		"@wordpress/dom-ready": "^3.50.0",
+		"@wordpress/scripts": "^26.18.0",
+		"autoprefixer": "^10.4.19",
+		"cssnano": "^7.0.3",
+		"postcss": "^8.4.38",
+		"postcss-custom-media": "^10.0.6",
+		"postcss-discard-comments": "^7.0.1",
+		"postcss-flexbugs-fixes": "^5.0.2",
+		"postcss-import": "^16.1.0",
+		"postcss-media-minmax": "^5.0.0",
+		"postcss-mixins": "^10.0.1",
+		"postcss-nesting": "^12.1.5",
+		"postcss-url": "^10.1.3"
+	},
+	"scripts": {
+		"build": "wp-scripts build --webpack-copy-php",
+		"dev": "wp-scripts start",
+		"clean": "rm -rf node_modules build dist .turbo"
+	}
+}
