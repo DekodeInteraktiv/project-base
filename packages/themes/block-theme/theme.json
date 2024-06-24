@@ -145,6 +145,7 @@
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--body)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
 			"lineHeight": "var(--wp--custom--line-height--15)"
 		},
 		"spacing": {
@@ -200,7 +201,7 @@
 					"text": "unset"
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--sm)",
+					"fontSize": "var(--wp--preset--font-size--small)",
 					"lineHeight": "unset"
 				}
 			}

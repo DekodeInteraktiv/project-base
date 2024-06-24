@@ -10,13 +10,11 @@
 	display: block;
 }
 
-/* Undo default styling for all a from WP core */
-.wp-block-post-featured-image a {
-	display: unset;
-	height: unset;
-}
-
-/* Redo styling for direct children only to exclude links in figcaption */
-.wp-block-post-featured-image > a {
-	display: block;
+/* Reset styling for figcaption */
+.wp-block-image figcaption {
+	color: unset;
+	font-size: var(--wp--preset--font-size--small);
+	line-height: unset;
+	margin: unset;
+	text-align: unset;
 }
