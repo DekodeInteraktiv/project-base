@@ -15,7 +15,6 @@ use function T2\Icons\get_icon;
 
 // Hooks.
 \add_filter( 'render_block_core/search', __NAMESPACE__ . '\\do_replace_search_block_button_icon' );
-\add_filter( 'render_block_core/html', __NAMESPACE__ . '\\do_wrap_html_block' );
 \add_filter( 'render_block_core/site-logo', __NAMESPACE__ . '\\do_append_site_title_to_logo' );
 
 /**
@@ -35,16 +34,6 @@ function do_replace_search_block_button_icon( string $block_content ): string {
 		get_icon( 'search' ),
 		$block_content,
 	);
-}
-
-/**
- * Wrap Custom HTML block content in div wrapper to enclose trailing script tag.
- *
- * @param string $block_content Original Gravity Forms block content.
- * @return string
- */
-function do_wrap_html_block( string $block_content ): string {
-	return sprintf( '<div class="wp-block-html">%s</div>', $block_content );
 }
 
 /**
