@@ -48,13 +48,16 @@ function do_enqueue_assets(): void {
 		// Set global styles as dependency to ensure correct loading order.
 		$deps = [ 'global-styles' ];
 
+		/* phpcs:disable
 		// Optionally set all WooCommerce styling as dependency.
-		/* if ( \class_exists( 'WooCommerce' ) ) {
+		if ( \class_exists( 'WooCommerce' ) ) {
 			// Optionally incluce Woo styling if plugin is active.
 			$deps[] = 'woocommerce-blocktheme';
 			$deps[] = 'woocommerce-general';
 			$deps[] = 'woocommerce-layout';
-		} */
+		}
+		phpcs:enable
+		*/
 
 		\wp_enqueue_style( 'block-theme', \get_template_directory_uri() . '/build/view.css', $deps, $assets_version );
 	}
