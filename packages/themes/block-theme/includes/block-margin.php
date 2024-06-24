@@ -80,48 +80,30 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 			],
 		],
 		'20' => [
-			'size' => [
-				'min' => 4,
-				'max' => 4,
-			],
+			'size' => '0.44rem',
 			'selectors' => [],
 		],
 		'30' => [
-			'size' => [
-				'min' => 8,
-				'max' => 8,
-			],
+			'size' => '0.67rem',
 			'selectors' => [],
 		],
 		'40' => [
-			'size' => [
-				'min' => 12,
-				'max' => 12,
-			],
+			'size' => '1rem',
 			'selectors' => [],
 		],
 		'50' => [
-			'size' => [
-				'min' => 16,
-				'max' => 16,
-			],
+			'size' => '1.5rem',
 			'selectors' => [],
 		],
 		'60' => [
-			'size' => [
-				'min' => 24,
-				'max' => 24,
-			],
+			'size' => '2.25rem',
 			'selectors' => [
 				// Default small gap for related blocks, e.g. paragraph + paragraph.
 				':is(p, ul, ol, .wp-block-heading, .wp-block-post-title) + :is(p, ul, ol)',
 			],
 		],
 		'70' => [
-			'size' => [
-				'min' => 32,
-				'max' => 32,
-			],
+			'size' => '3.38rem',
 			'selectors' => [
 				':is(p, .wp-block-heading, .wp-block-post-title) + :is(.wp-block-cover, .wp-block-image)',
 				':is(.wp-block-heading, .wp-block-post-title) + :is(.t2-accordion, .t2-factbox)',
@@ -129,10 +111,7 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 		],
 		// Default.
 		'80' => [
-			'size' => [
-				'min' => 48,
-				'max' => 48,
-			],
+			'size' => '5.06rem',
 		],
 	];
 
