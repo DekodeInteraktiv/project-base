@@ -51,7 +51,8 @@
 					"60": "var(--wp--preset--spacing--60)",
 					"70": "var(--wp--preset--spacing--70)",
 					"80": "var(--wp--preset--spacing--80)",
-					"default": "var(--wp--preset--spacing--80)"
+					"default": "var(--wp--preset--spacing--80)",
+					"last": "var(--wp--preset--spacing--80)"
 				}
 			},
 			"t2/featured-content-layout": {
@@ -133,8 +134,7 @@
 		"spacing": {
 			"customSpacingSize": false,
 			"margin": false,
-			"padding": false,
-			"blockGap": true
+			"padding": false
 		},
 		"blocks": {}
 	},

@@ -72,7 +72,9 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 				'.wp-block-group.alignfull + .wp-block-group.alignfull',
 				'.wp-block-cover.alignfull + .wp-block-cover.alignfull',
 
-				// Spacer block.
+				// Spacer blocks.
+				'.wp-block-spacer',
+				'.wp-block-spacer + *',
 				'.wp-block-t2-spacer',
 				'.wp-block-t2-spacer + *',
 			],
@@ -112,39 +114,7 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 			],
 			'selectors' => [
 				// Default small gap for related blocks, e.g. paragraph + paragraph.
-				':is(
-					h1,
-					h2, h3, h4, h5, h6
-					p,
-					.wp-block-columns,
-					.wp-block-buttons,
-					.wp-block-image,
-					.wp-block-list,
-					.wp-block-post-excerpt,
-					.wp-block-post-featured-image,
-					.wp-block-pullquote,
-					.wp-block-quote,
-					.wp-block-t2-ingress,
-				) + :is(
-					p,
-					.t2-featured-content-layout,
-					.wp-block-buttons,
-					.wp-block-image,
-					.wp-block-list,
-					.wp-block-post-excerpt,
-					.wp-block-post-featured-image,
-					.wp-block-pullquote,
-					.wp-block-quote,
-					.wp-block-t2-ingress,
-				)',
-				// Content directly following sub headings.
-				':is(h1, h2, h3, h4, h5, h6) + :is(p, .wp-block-list, .wp-block-video, .wp-block-embed, .wp-block-html, .wp-block-post-excerpt, .wp-block-buttons)',
-				':is(h2, h3, h4, h5, h6) + :is(.wp-block-group, .wp-block-query, .wc-block-grid, .t2-accordion, .t2-link-list, .t2-featured-content-layout, .wp-block-t2-factbox, .products, .wp-block-fundraising-donation-form)',
-				// Trailing sub headings.
-				':is(h2) + :is(h3, h4, h5, h6)',
-				':is(h3) + :is(h4, h5, h6)',
-				':is(h4) + :is(h5, h6)',
-				':is(h5) + :is(h6)',
+				':is(p, ul, ol, .wp-block-heading, .wp-block-post-title) + :is(p, ul, ol)',
 			],
 		],
 		'70' => [
@@ -152,7 +122,10 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 				'min' => 32,
 				'max' => 32,
 			],
-			'selectors' => [],
+			'selectors' => [
+				':is(p, .wp-block-heading, .wp-block-post-title) + :is(.wp-block-cover, .wp-block-image)',
+				':is(.wp-block-heading, .wp-block-post-title) + :is(.t2-accordion, .t2-factbox)',
+			],
 		],
 		// Default.
 		'80' => [
