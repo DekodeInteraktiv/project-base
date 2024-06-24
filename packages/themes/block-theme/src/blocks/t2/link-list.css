@@ -1,53 +1,24 @@
 body {
+	--t2-link-list-typography-text-font-size: var(--wp--preset--font-size--medium);
+	--t2-accordion-typography-heading-font-weight: var(--wp--custom--font-weight--bold);
 
-	/* Link list title will look like a H3 */
-	--t2-link-list-typography-text-font-size: var(--wp--preset--font-size--yl);
-	--t2-link-list-typography-text-font-weight: var(--wp--custom--font-weight--semibold);
-
-	--t2-link-list-typography-description-font-size: var(--wp--preset--font-size--sm);
-}
-
-.t2-link-list {
-	gap: var(--wp--preset--spacing--md);
-}
-
-.t2-link-list-item {
-	border-bottom: currentcolor 2px solid;
+	--t2-link-list-typography-description-font-size: var(--wp--preset--font-size--medium);
+	--t2-link-list-spacing-item-gap: var(--wp--preset--spacing--50) var(--wp--preset--spacing--40);
+	--t2-link-list-description-color: var(--wp--preset--color--foreground);
 }
 
 .t2-link-list-item .t2-link-list-item__link {
-	align-items: baseline;
-	gap: var(--wp--preset--spacing--sm);
-
-	&:hover,
-	&:active {
-
-		& .t2-link-list-item__icon {
-			transform: translateX(-32px);
-		}
-	}
+	align-items: flex-start;
+	gap: var(--wp--preset--spacing--40);
 }
 
+.t2-link-list-item__icon,
 .t2-link-list__icon--right .t2-link-list-item__icon {
 	margin: unset;
-	transition: all 0.5s;
-}
-
-.t2-link-list__icon--right .t2-link-list-item__icon svg {
-	display: block;
-	height: var(--wp--preset--font-size--lg);
-	width: var(--wp--preset--font-size--lg);
 }
 
 .t2-link-list-item__content {
 	display: flex;
 	flex-direction: column;
-	gap: var(--wp--preset--spacing--xxs);
-	margin-bottom: var(--wp--preset--spacing--md);
-}
-
-/* Link item heading */
-.t2-link-list-item__text {
-	font-family: var(--wp--preset--font-family--heading);
-	line-height: var(--wp--custom--line-height--12);
+	gap: var(--wp--preset--spacing--20);
 }
