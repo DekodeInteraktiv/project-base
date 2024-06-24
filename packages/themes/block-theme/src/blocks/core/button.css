@@ -1,6 +1,5 @@
 .wp-element-button,
 .wp-block-button__link {
-
 	/* Show button content as flex to support alignment of icon */
 	align-items: center;
 	border: unset;
@@ -10,10 +9,7 @@
 
 	/* Disabled */
 	&:disabled {
-		background-color: var(--wp--preset--color--neutral-20);
-		color: var(--wp--preset--color--neutral-50);
 		cursor: not-allowed;
-		opacity: unset;
 	}
 
 	/* Default to text align left */
@@ -30,52 +26,7 @@
 	}
 }
 
-/* Secondary style */
-.wp-block-button.is-style-secondary .wp-block-button__link {
-	font-weight: var(--wp--custom--font-weight--semibold);
-
-	/* No background color as default */
-	&:not(.has-background) {
-		background: unset;
-		padding-left: unset;
-		padding-right: unset;
-	}
-
-	/* Link color as default */
-	&:not(.has-text-color) {
-		color: inherit;
-	}
-}
-
-/* Text style */
-.wp-block-button.is-style-text .wp-block-button__link,
-.dkf_button--step_backward {
-	background-color: unset;
-	color: inherit;
-	font-weight: unset;
-	gap: var(--wp--preset--spacing--xxxs);
-	padding: unset;
-
-	&:hover {
-		background-color: unset;
-		text-decoration: underline;
-	}
-}
-
 /* Avoid click event fired on button child elements, e.g. svg */
 body:not(.wp-admin) .wp-block-button__link * {
 	pointer-events: none;
-}
-
-/* Rightmost search button in desktop menu */
-.site-header-group .wp-block-button__link[data-toggle-state="header-search-open"][aria-expanded="false"] {
-	margin-left: var(--wp--preset--spacing--lg);
-}
-
-/* Search button in expanded mode: Stretch height to match search block */
-.site-header-group .wp-block-button.is-style-text .wp-block-button__link[data-toggle-state="header-search-open"][aria-expanded="true"] {
-	box-sizing: content-box;
-	gap: unset;
-	min-height: calc(1em * var(--wp--custom--line-height--17));
-	padding: var(--wp--preset--spacing--xxs) 0;
 }
