@@ -40,7 +40,7 @@
 	"scripts": {
 		"create-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block",
 		"create-innerblock-block": "cd packages/plugins && npx dekodeinteraktiv/create-project-base-block --template innerblocks",
-		"prepare": "husky install",
+		"prepare": "husky",
 		"build": "npm run build --workspaces --if-present",
 		"start": "npm run start --workspaces --if-present",
 		"clean": "npm run clean --workspaces --if-present && rm -rf node_modules",
