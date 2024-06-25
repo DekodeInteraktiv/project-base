@@ -1,5 +1,6 @@
 module.exports = {
 	extends: ['@wordpress/stylelint-config/scss'],
+	plugins: ['stylelint-order'],
 	rules: {
 		'at-rule-empty-line-before': null,
 		'at-rule-no-unknown': null,

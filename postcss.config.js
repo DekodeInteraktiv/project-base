@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-
+/* const postcssGlobalData = require('@csstools/postcss-global-data'); */
 const postcssImport = require('postcss-import');
 const postcssUrl = require('postcss-url');
 const postcssCustomMedia = require('postcss-custom-media');
@@ -13,6 +13,9 @@ const cssnano = require('cssnano');
 
 module.exports = {
 	plugins: [
+		/* postcssGlobalData({
+			files: [require.resolve('@teft/viewport/src/media.css')],
+		}), */
 		postcssImport,
 		postcssUrl,
 		postcssCustomMedia,
