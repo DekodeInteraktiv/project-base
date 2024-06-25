@@ -27,7 +27,6 @@
 		"postcss": "^8.4.38",
 		"postcss-custom-media": "^10.0.6",
 		"postcss-discard-comments": "^7.0.1",
-		"postcss-flexbugs-fixes": "^5.0.2",
 		"postcss-import": "^16.1.0",
 		"postcss-media-minmax": "^5.0.0",
 		"postcss-mixins": "^10.0.1",

@@ -5,7 +5,6 @@
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
 const postcssUrl = require('postcss-url');
-const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const postcssCustomMedia = require('postcss-custom-media');
 const postcssMediaMinMax = require('postcss-media-minmax');
 const postcssNesting = require('postcss-nesting');
@@ -22,7 +21,6 @@ module.exports = (ctx) => {
 			postcssImport,
 			postcssMixins,
 			postcssUrl,
-			postcssFlexbugsFixes,
 			postcssCustomMedia,
 			postcssMediaMinMax,
 			postcssNesting({
