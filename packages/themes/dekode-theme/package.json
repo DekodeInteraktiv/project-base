@@ -20,11 +20,5 @@
 	"css-clamp": {
 		"minWidth": 512,
 		"maxWidth": 2112
-	},
-	"theme-json": {
-		"src": "theme-json",
-		"dest": "theme.json",
-		"pretty": true,
-		"version": 2
 	}
 }
