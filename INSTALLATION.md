@@ -92,7 +92,7 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 ## Adding a new package (ex. plugin/mu-plugin/theme)
 1. Add a folder to the relevant category in `./packages`. (create one if none exists). So for a plugin, create a folder in the `./packages/plugins` folder.
 
-2. If your package should be installed using composer (for themes, plugins, mu-plugins and php deps) Add a composer.json, it needs a minimum of the following data:
+2. If your package should be installed using composer (for themes, plugins, mu-plugins and php deps) Add a `composer.json`, it needs a minimum of the following data:
 ```json
 {
 	"name": "project/package-name",
@@ -105,7 +105,7 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
 
 *Note: A version should _always_ be supplied. This ensures that package versions do not change between branches, leading to unneccesary merge conflicts.*
 
-3. If your package should be installed using npm (for frontend deps, like custom react components) Add a package.json, it needs a minimum of the following data:
+3. If your package should be installed using npm (for frontend deps, like custom react components) or contains front end assets that you want to build from project root, add a `package.json`, it needs a minimum of the following data:
 
 ```json
 {
@@ -116,19 +116,17 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
   "author": "Dekode",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"build": "echo \"Error: no build specified\" && exit 1",
+	"start":"echo \"Error: no start specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"clean": "rm -rf node_modules build dist"
   }
 }
 ```
 
-4. If your package has front end assets such as scripts or css add a `entry-files.json` with the following structure naming the src files that should be build. (the src files should be located in a folder called `src`)
-```json
-[ "index.js", "style.css", "editor.css" ]
-```
+4. Go back to the project root and update the composer.json or package.json depending on package type. For composer add a entry under "require" like such `"project/package-name": "@dev"`. For package.json add an entry under "devDependencies" like such `"package-name": "file:packages/folder/package-name"`.
 
-5. Go back to the project root and update the composer.json or package.json depending on package type. For composer add a entry under "require" like such `"project/package-name": "@dev"`. For package.json add an entry under "devDependencies" like such `"package-name": "file:packages/folder/package-name"`.
-
-6. Install the package using `composer update` or `npm install` depending on type. you might need to re-run `npm run build` or `npm run start` if you have installed a new package containing files that need building.
+5. Install the package using `composer update` or `npm install` depending on type. you might need to re-run `npm run build` or `npm run start` if you have installed a new package containing files that need building.
 
 ## Documentation
 * PostCSS [https://github.com/postcss/postcss/tree/main/docs](https://github.com/postcss/postcss/tree/main/docs)
