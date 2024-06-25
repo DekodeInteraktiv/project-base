@@ -15,7 +15,7 @@
 		"start": "concurrently npm:start:*",
 		"start:wp-scripts": "wp-scripts start",
 		"_start:theme-json": "theme-json watch",
-		"clean": "rm -rf node_modules build dist .turbo"
+		"clean": "rm -rf node_modules build dist"
 	},
 	"css-clamp": {
 		"minWidth": 512,
