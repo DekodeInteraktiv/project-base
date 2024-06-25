@@ -131,11 +131,11 @@ npm ci && npm run build
 
 ## Extending Builds
 
-Project-base uses wp-scripts for front-end asset builds. Customize builds by editing `postcss.config.js` and `webpack.config.js`.
+Project-base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts) for front-end asset builds. Customize builds by editing `postcss.config.js` and `webpack.config.js`.
 
-## Adding a New Package (Plugin/Mu-plugin/Theme)
+## Adding a new package (plugin, mu-plugin or theme)
 
-1. **Create a Folder**: Add a folder in `./packages` (e.g., `./packages/plugins`).
+1. **Create a folder**: Add a folder in `./packages` (e.g., `./packages/plugins`).
 
 2. **Add a `composer.json` File** (for themes, plugins, mu-plugins, and PHP dependencies):
    ```json
