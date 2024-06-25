@@ -208,6 +208,11 @@
 			}
 		},
 		"blocks": {
+			"core/buttons": {
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--30)"
+				}
+			},
 			"core/columns": {
 				"spacing": {
 					"blockGap": "var(--wp--preset--spacing--60)"
