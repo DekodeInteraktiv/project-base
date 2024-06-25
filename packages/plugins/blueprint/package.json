@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"devDependencies": {
 		"@wordpress/dom-ready": "^4.1.0",
-		"@wordpress/scripts": "^26.18.0"
+		"@wordpress/scripts": "^28.1.0"
 	},
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php",
