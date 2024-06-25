@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php",
-		"dev": "wp-scripts start --webpack-copy-php",
+		"start": "wp-scripts start --webpack-copy-php",
 		"clean": "rm -rf node_modules build dist .turbo"
 	}
 }
