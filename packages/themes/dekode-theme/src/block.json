@@ -1,0 +1,5 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"viewScript": "file:view.js"
+}

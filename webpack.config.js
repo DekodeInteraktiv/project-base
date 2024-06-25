@@ -3,7 +3,6 @@
 /**
  * External dependencies
  */
-const { sync: globSync } = require('fast-glob');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-v3-webpack-plugin');
@@ -16,6 +15,7 @@ require('dotenv').config();
  */
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
+const { getWebpackEntryPoints } = require('@wordpress/scripts/utils/config');
 
 /**
  * Patches config to use resolve-url-loader for relative paths in SCSS files
@@ -49,135 +49,67 @@ for (const rule of defaultConfig.module.rules) {
 	}
 }
 
-/**
- * Collect information about all packages
- * and their entry files using entry-files.json files.
- *
- * @return {Object[]} Array of items with information
- */
-function getEntryFiles() {
-	const entries = [];
+const config = {
+	...defaultConfig,
+	entry: getWebpackEntryPoints(),
+	optimization: {
+		...defaultConfig.optimization,
+		removeEmptyChunks: true,
 
-	// Only include directories that contains a entry-files.json file.
-	const files = globSync(
-		'./packages/(mu-plugins|plugins|themes)/**/entry-files.json',
-		{ onlyFiles: true },
-	);
-
-	files.forEach((file) => {
-		const entryFiles = require(file); // eslint-disable-line
-
-		entries.push({
-			dir: path.dirname(file),
-			files: entryFiles.map((entryFile) => `src/${entryFile}`),
-		});
-	});
-
-	return entries;
-}
-
-/**
- * Prepares Config for defined package and entry files,
- *
- * Future: We can differ configuration between packages or use their own configuration
- * or implement importing webpack.config.js from their folders.
- *
- * @param {string} dir   Package full path.
- * @param {Array}  files Relative paths of enries.
- * @return {webpack.Configuration} Return single webpack configuration.
- */
-const prepareConfig = (dir, files) => {
-	const entries = {};
-
-	files.forEach((file) => {
-		const filePath = path.resolve(__dirname, dir, file);
-		const fileName = path.parse(file).name;
-
-		if (typeof entries[fileName] === 'undefined') {
-			entries[fileName] = [];
-		}
-
-		entries[fileName].push(filePath);
-	});
-
-	const config = {
-		...defaultConfig,
-
-		name: dir,
-		entry: entries,
-
-		output: {
-			path: path.resolve(__dirname, dir, 'build'),
-			filename: '[name].js',
-		},
-		optimization: {
-			...defaultConfig.optimization,
-			removeEmptyChunks: true,
-
-			splitChunks: {
-				cacheGroups: {
-					internalStyle: {
-						type: 'css/mini-extract',
-						test: /[\\/]+?\.(sc|sa|c)ss$/,
-						chunks: 'all',
-						enforce: true,
-					},
-					default: false,
+		splitChunks: {
+			cacheGroups: {
+				internalStyle: {
+					type: 'css/mini-extract',
+					test: /[\\/]+?\.(sc|sa|c)ss$/,
+					chunks: 'all',
+					enforce: true,
 				},
+				default: false,
 			},
 		},
-
-		resolve: {
-			...defaultConfig.resolve,
-			alias: {
-				...defaultConfig.resolve.alias,
-				components: path.resolve(__dirname, 'packages', 'components'),
-			},
+	},
+	resolve: {
+		...defaultConfig.resolve,
+		alias: {
+			...defaultConfig.resolve.alias,
+			components: path.resolve(__dirname, 'packages', 'components'),
 		},
+	},
 
-		// Hides rarely used information for more compact appearance of console.
-		stats: {
-			children: false,
-			all: false,
-			entrypoints: true,
-			warnings: true,
-			errors: true,
-			hash: false,
-			timings: true,
-			errorDetails: true,
-			builtAt: true,
-		},
+	// Hides rarely used information for more compact appearance of console.
+	stats: {
+		children: false,
+		all: false,
+		entrypoints: true,
+		warnings: true,
+		errors: true,
+		hash: false,
+		timings: true,
+		errorDetails: true,
+		builtAt: true,
+	},
 
-		plugins: [
-			new MiniCSSExtractPlugin({ filename: '[name].css' }),
+	plugins: [
+		new MiniCSSExtractPlugin({ filename: '[name].css' }),
 
-			/**
-			 * It removes empty JS files, when we use CSS/SCSS as main entrypoint of asset.
-			 *
-			 * It's possible to remove also `.asset.php` by writing custom version
-			 */
-			new RemoveEmptyScriptsPlugin(),
+		/**
+		 * It removes empty JS files, when we use CSS/SCSS as main entrypoint of asset.
+		 *
+		 * It's possible to remove also `.asset.php` by writing custom version
+		 */
+		new RemoveEmptyScriptsPlugin(),
 
-			new DependencyExtractionWebpackPlugin({ injectPolyfill: true }),
+		new DependencyExtractionWebpackPlugin({ injectPolyfill: true }),
 
-			(process.argv || []).includes('--progress') &&
-				new webpack.ProgressPlugin(),
-		].filter(Boolean),
-	};
-
-	return config;
+		(process.argv || []).includes('--progress') &&
+			new webpack.ProgressPlugin(),
+	].filter(Boolean),
 };
-
-const files = getEntryFiles();
-
-const configs = files.map((item) => prepareConfig(item.dir, item.files));
 
 if ('true' === process.env.BROWSER_SYNC_ENABLE) {
 	const browserSyncConfig = {
 		...defaultConfig,
-
 		name: 'BrowserSync',
-
 		plugins: [
 			new BrowserSyncPlugin(
 				{
@@ -194,7 +126,7 @@ if ('true' === process.env.BROWSER_SYNC_ENABLE) {
 		].filter(Boolean),
 	};
 
-	configs.push(browserSyncConfig);
+	config.push(browserSyncConfig);
 }
 
 /**
@@ -202,4 +134,4 @@ if ('true' === process.env.BROWSER_SYNC_ENABLE) {
  *
  * https://webpack.js.org/configuration/configuration-types/#exporting-multiple-configurations
  */
-module.exports = configs;
+module.exports = config;
