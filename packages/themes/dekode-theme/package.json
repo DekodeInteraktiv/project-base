@@ -3,11 +3,22 @@
 	"private": true,
 	"version": "1.0.0",
 	"devDependencies": {
-		"@wordpress/scripts": "^26.18.0"
+		"@theme-json/create": "^0.0.4",
+		"@wordpress/scripts": "^26.18.0",
+		"concurrently": "^8.2.2",
+		"css-clamp": "^1.1.0"
 	},
 	"scripts": {
-		"build": "wp-scripts build --webpack-copy-php",
-		"dev": "wp-scripts start",
+		"build": "concurrently npm:build:*",
+		"build:wp-scripts": "wp-scripts build --webpack-copy-php",
+		"build:theme-json": "theme-json build",
+		"start": "concurrently npm:start:*",
+		"start:wp-scripts": "wp-scripts start",
+		"start:theme-json": "theme-json watch",
 		"clean": "rm -rf node_modules build dist .turbo"
+	},
+	"css-clamp": {
+		"minWidth": 512,
+		"maxWidth": 2112
 	}
 }

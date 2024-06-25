@@ -13,14 +13,12 @@
 	],
 	"devDependencies": {
 		"@csstools/postcss-global-data": "^2.1.1",
-		"@theme-json/create": "^0.0.4",
 		"@wordpress/eslint-plugin": "^19.1.0",
 		"@wordpress/scripts": "^27.9.0",
 		"@wordpress/stylelint-config": "^22.1.0",
 		"autoprefixer": "^10.4.19",
 		"browser-sync": "^3.0.2",
 		"browser-sync-v3-webpack-plugin": "^0.1.0",
-		"css-clamp": "^1.1.0",
 		"cssnano": "^7.0.3",
 		"dotenv": "^16.4.5",
 		"eslint-plugin-prettier": "^5.1.3",
@@ -48,6 +46,7 @@
 		"dev": "npm run dev --workspaces --if-present",
 		"clean": "npm run clean --workspaces --if-present && rm -rf node_modules",
 		"format": "prettier --write .",
+		"check-engines": "wp-scripts check-engines",
 		"lint": "npm run lint:js && npm run lint:css && npm run lint:format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
@@ -62,9 +61,5 @@
 			"prettier --write .",
 			"wp-scripts lint-js"
 		]
-	},
-	"css-clamp": {
-		"minWidth": 512,
-		"maxWidth": 2112
 	}
 }
