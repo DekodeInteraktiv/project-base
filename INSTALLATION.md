@@ -132,10 +132,10 @@ npm ci && npm run build
 
 ## Extending Builds
 
-Project Base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts) out of the box for building front-end and editor assets. wp-script will scan all your `block.json` files in the `src/` folder to find available entries. This means that if you have a `src` folder with a `view.js` and a `editor.js`, there also needs to be a `block.json` file at the same location. Have a look in the `dekode-theme` theme or `blueprint` plugin for examples or read up on [wp-script auto discovery for Webpack entry points](https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/utils/config.js#L198). For a more advanced setup, you can always customize builds by adding your own `webpack.config.js`.
+Project Base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts) out of the box for building front-end/view and editor assets. wp-script will scan all `block.json` files in the `src/` folder to find available entries. This means that if you have a `src` folder with a `view.js` and a `editor.js`, you also need to add a `block.json` file at the same location. Have a look in the `dekode-theme` theme or the `blueprint` plugin for examples or read up on [wp-script auto discovery for Webpack entry points](https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/utils/config.js#L198). For a more advanced setup, you can always customize builds by adding your own `webpack.config.js`.
 
-### A quick reference to wp-scripts auto discovery of entry points:
-1. Supply entry points manully to the CLI, e.g. `wp-scripts build src/view src/editor src/admin src/some-other-entry`
+### A quick overview of wp-scripts auto discovery:
+1. Supply entry points manully to the CLI, e.g. `wp-scripts build src/view src/editor src/admin src/some-other-entry`. This will bypass 2 and 3.
 2. Scan `src` folder for all `block.json` files. (Our default setup). This will support both theme/plugin assets (view/editor) and possible blocks inside the `src/` folder.
 3. Fallback to `src/index.*` file. This will only look for a `src/index.js` file.
 
