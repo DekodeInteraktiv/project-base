@@ -1,134 +1,197 @@
-# Dekode Project Base - Installation
+# Dekode Project Base - Installation Guide
 
 ## Requirements
 
-* PHP >= 8.2
-* Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-* Node = 18.0
+- **PHP**: Version 8.2 or higher
+- **Composer**: [Install Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+- **Node.js**: Version 18.0
 
-## TLDR - what's new?
-Themes, plugins, mu-plugins etc. is now structured under packages and built into the wordpress structure by composer. All build scripts are run from root and automatically looks through `./packages`. Packages need an `entry-files.json` file to define what files should be build when running npm build/start and a `composer.json` that defines what it is and gives the package a name. Codeship testing/build commands are now located in the repository under `./tools`. Any time a new package is added it needs to be referenced in the project-base root composer.json using @dev.
+## Project Structure
 
-## Structure
-* *Packages* - Contains all of the code developed for the project such as plugins, themes, mu-plugins and any custom libs etc. This gets built into public by composer using symlinks.
-* *Public* - The files used by WordPress. Contents are generated automatically from packages using composer. This folder shouldn't need to be touched at all.
-* *Tools* - Build and setup scripts used by Codeship and Local
-* *Config* - Environment variable setup
+- **Packages**: Contains all project-specific code such as plugins, themes, mu-plugins, and custom libraries. These are built into the `public` directory using symlinks via Composer.
+- **Public**: Contains files used by WordPress, automatically generated from packages by Composer. This folder should not be modified manually.
+- **Tools**: Contains build and setup scripts used by Codeship and Local.
+- **Config**: Contains environment variable setup files.
 
-## Local setup
-1. If setting up a new project, create a git repo using [Project base](https://github.com/DekodeInteraktiv/project-base) as the template. Otherwise skip this step.
-2. Create a new site in Local by Flywheel, make sure that you enable multisite (subdir) if relevant for the project.
-3. Follow one of the methods below (not both!)
+## Local Setup
 
-### Method 1 - Setup replicating server structure
-4. `cd app` go inside the app folder
-5. `rm -rf public` remove the default public folder
-6. `git clone git@github.com:DekodeInteraktiv/{YOUR_PROJECT} .` clone the project into the current folder (the . is important)
-7. `cp .env.example .env` copy the environment example file (do not rename it, as it will show as git differences)
-8. Update the environment variables in the .env file
+### Initial Setup
 
-    * `DB_NAME` - Database name
-    * `DB_USER` - Database user
-    * `DB_PASSWORD` - Database password
-    * `DB_HOST` - Database host
-    * `WP_ENVIRONMENT_TYPE` - Set to environment (`local`, `development`, `staging`, `production`)
-    * `WP_HOME` - Full URL to WordPress home (http://example.com)
-    * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://example.com/wp)
-    * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
+1. **Create a Git Repository**:
+   - If setting up a new project, create a git repository using [Project Base](https://github.com/DekodeInteraktiv/project-base) as the template.
 
-9. Automatically generate the security keys
+2. **Create a New Site in Local**:
+   - Enable multisite (subdirectory) if applicable to the project.
 
-    If you want to automatically generate the security keys (assuming you have wp-cli installed locally) you can use the very handy [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command):
+### Setup Methods
 
-    - wp package install aaemnnosttv/wp-cli-dotenv-command
-    - wp dotenv salts regenerate
+#### Method 1: Replicating Server Structure
 
-    Or, you can cut and paste from the [Roots WordPress Salt Generator](https://roots.io/salts.html).
+1. Navigate to the app folder:
+   ```bash
+   cd app
+   ```
 
-10. `composer install`
-11. `npm ci`
-12. Run the app/tools/local scripts (please note that these might work only if you setup the `MYSQLI_DEFAULT_SOCKET` environment variable, and only after you actually have the plugins and theme installed at step 10).
+2. Remove the default public folder:
+   ```bash
+   rm -rf public
+   ```
 
-	* `cd app/tools/local`
-    * `./setup-main-site.sh`
-    * `./activate-plugins.sh`
-    * `bash multisite.sh` (run this only if you are installing a multisite)
+3. Clone the project into the current folder:
+   ```bash
+   git clone git@github.com:DekodeInteraktiv/{YOUR_PROJECT} .
+   ```
 
-13. If you install a multisite, the URLs are not using https by default, and that can be fixed by running the command `wp search-replace --url=http://{PROJECT}.site 'http://{PROJECT}.site' 'https://{PROJECT}.site' --recurse-objects --network --skip-columns=guid`
+4. Copy the environment example file:
+   ```bash
+   cp .env.example .env
+   ```
 
-### Method 2 -Setup using Local structure (symlink method)
+5. Update environment variables in the `.env` file:
+   - `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`
+   - `WP_ENVIRONMENT_TYPE` (local, development, staging, production)
+   - `WP_HOME` (e.g., `http://example.com`)
+   - `WP_SITEURL` (e.g., `http://example.com/wp`)
+   - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
-4. `cd` to the site app folder and clone the existing project (or the one you setup on step 1) from github.
-5. `cd` into public and remove wp-content `rm -rf wp-content`
-6. create a symlink in public from `wp-content` to `../{project folder}/public/content`
-7. Run the scripts in `./tools/local/`
+6. Generate security keys (optional, requires wp-cli):
+   ```bash
+   wp package install aaemnnosttv/wp-cli-dotenv-command
+   wp dotenv salts regenerate
+   ```
+   Or use the [Roots WordPress Salt Generator](https://roots.io/salts.html).
 
-### wp-cli and Local by Flywheel
+7. Install Composer dependencies:
+   ```bash
+   composer install
+   ```
 
-To be able to use wp-cli, you can use [Local by Flywheel](https://localwp.com/) build-in in site shell.
+8. Install npm dependencies:
+   ```bash
+   npm ci
+   ```
 
-If you would like to access the wp-cli in the defauly system console there can be issues trying to use wp-cli commands when using a [Local by Flywheel](https://localwp.com/) development environment. You can usually fix this with the following steps:
+9. Run local setup scripts (ensure `MYSQLI_DEFAULT_SOCKET` is set if needed):
+   ```bash
+   cd app/tools/local
+   ./setup-main-site.sh
+   ./activate-plugins.sh
+   bash multisite.sh  # Only for multisite setup
+   ```
 
-1. Add a file named `wp-cli.local.yml` to the root (`app`) directory, with the following content:
+10. Update URLs for multisite to use HTTPS:
+    ```bash
+    wp search-replace --url=http://{PROJECT}.site 'http://{PROJECT}.site' 'https://{PROJECT}.site' --recurse-objects --network --skip-columns=guid
+    ```
 
+#### Method 2: Using Local Structure (Symlink Method)
+
+1. Navigate to the site app folder and clone the project:
+   ```bash
+   cd path/to/app
+   git clone git@github.com:DekodeInteraktiv/{YOUR_PROJECT} .
+   ```
+
+2. Remove the default `wp-content` folder:
+   ```bash
+   rm -rf public/wp-content
+   ```
+
+3. Create a symlink for `wp-content`:
+   ```bash
+   ln -s ../{project folder}/public/content public/wp-content
+   ```
+
+4. Run local setup scripts:
+   ```bash
+   cd tools/local
+   ./setup-main-site.sh
+   ./activate-plugins.sh
+   bash multisite.sh  # Only for multisite setup
+   ```
+
+## Using wp-cli with Local
+
+To use wp-cli with Local, you can use the built-in site shell. For default system console access, add a `wp-cli.local.yml` file to the root (`app`) directory:
 ```yml
 path: public/wp
 require:
   - wp-cli-local.php
 ```
 
-2. Set the `MYSQLI_DEFAULT_SOCKET` in the `.env` file.
+Set the `MYSQLI_DEFAULT_SOCKET` in the `.env` file using the path from the Local Database tab.
 
-To obtain `MYSQLI_DEFAULT_SOCKET` with the socket path from the corresponding project in Local, which can be found in the **Database** tab (local app) and usually looks something like the following (on Mac OS):
+## Installation and Build
 
-`/Users/<username>/Library/Application Support/Local/run/<unique string>/mysql/mysqld.sock`
-
-## Installation and build
-Run `composer install` and `npm ci && npm run build` in root to build the project.
-
-### Extending the builds
-Project-base uses wp-scripts to build front end assets using the `npm run build` or `npm run start` commands. wp-scripts in turn uses webpack and postcss. You can extend those by editing the postcss.config.js and webpack.config.js files.
-
-## Adding a new package (ex. plugin/mu-plugin/theme)
-1. Add a folder to the relevant category in `./packages`. (create one if none exists). So for a plugin, create a folder in the `./packages/plugins` folder.
-
-2. If your package should be installed using composer (for themes, plugins, mu-plugins and php deps) Add a `composer.json`, it needs a minimum of the following data:
-```json
-{
-	"name": "project/package-name",
-	"description": "Short description of the package.",
-	"type": "wordpress-plugin/wordpress-muplugin/wordpress-theme/other",
-	"version": "1.0.0"
-}
-```
-*Note: if your plugin is a gutenberg block, you can use [block-base](https://github.com/DekodeInteraktiv/block-base)*
-
-*Note: A version should _always_ be supplied. This ensures that package versions do not change between branches, leading to unneccesary merge conflicts.*
-
-3. If your package should be installed using npm (for frontend deps, like custom react components) or contains front end assets that you want to build from project root, add a `package.json`, it needs a minimum of the following data:
-
-```json
-{
-  "name": "package-name",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Package description",
-  "author": "Dekode",
-  "main": "index.js",
-  "scripts": {
-	"build": "echo \"Error: no build specified\" && exit 1",
-	"start":"echo \"Error: no start specified\" && exit 1",
-    "test": "echo \"Error: no test specified\" && exit 1",
-	"clean": "rm -rf node_modules build dist"
-  }
-}
+Run the following commands in the root directory to build the project:
+```bash
+composer install
+npm ci && npm run build
 ```
 
-4. Go back to the project root and update the composer.json or package.json depending on package type. For composer add a entry under "require" like such `"project/package-name": "@dev"`. For package.json add an entry under "devDependencies" like such `"package-name": "file:packages/folder/package-name"`.
+## Extending Builds
 
-5. Install the package using `composer update` or `npm install` depending on type. you might need to re-run `npm run build` or `npm run start` if you have installed a new package containing files that need building.
+Project-base uses wp-scripts for front-end asset builds. Customize builds by editing `postcss.config.js` and `webpack.config.js`.
 
-## Documentation
-* PostCSS [https://github.com/postcss/postcss/tree/main/docs](https://github.com/postcss/postcss/tree/main/docs)
-* WebPack [https://webpack.js.org/concepts/](https://webpack.js.org/concepts/)
-* WP Scripts [https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
+## Adding a New Package (Plugin/Mu-plugin/Theme)
+
+1. **Create a Folder**: Add a folder in `./packages` (e.g., `./packages/plugins`).
+
+2. **Add a `composer.json` File** (for themes, plugins, mu-plugins, and PHP dependencies):
+   ```json
+   {
+     "name": "project/package-name",
+     "description": "Short description of the package.",
+     "type": "wordpress-plugin/wordpress-muplugin/wordpress-theme/other",
+     "version": "1.0.0"
+   }
+   ```
+
+   *Note: Use [block-base](https://github.com/DekodeInteraktiv/block-base) for Gutenberg blocks.*
+
+   *Note: A version should always be supplied. This ensures that package versions do not change between branches, leading to unneccesary merge conflicts.*
+
+3. **Add a `package.json` File** (for frontend dependencies or custom React components):
+   ```json
+   {
+     "name": "package-name",
+     "private": true,
+     "version": "1.0.0",
+     "description": "Package description",
+     "author": "Dekode",
+     "main": "index.js",
+     "scripts": {
+       "build": "echo \"Error: no build specified\" && exit 1",
+       "start": "echo \"Error: no start specified\" && exit 1",
+       "test": "echo \"Error: no test specified\" && exit 1",
+       "clean": "rm -rf node_modules build dist"
+     }
+   }
+   ```
+
+4. **Update Root Configuration**:
+   - For Composer packages, add an entry under `"require"` in `composer.json`:
+     ```json
+     "project/package-name": "@dev"
+     ```
+   - For npm packages, add an entry under `"devDependencies"` in `package.json`:
+     ```json
+     "package-name": "file:packages/folder/package-name"
+     ```
+
+5. **Install the Package**:
+   - For Composer:
+     ```bash
+     composer update
+     ```
+   - For npm:
+     ```bash
+     npm install
+     ```
+   Re-run `npm run build` or `npm run start` if needed.
+
+## Additional Documentation
+
+- **PostCSS**: [PostCSS Documentation](https://github.com/postcss/postcss/tree/main/docs)
+- **WebPack**: [WebPack Concepts](https://webpack.js.org/concepts/)
+- **WP Scripts**: [WP Scripts Guide](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
