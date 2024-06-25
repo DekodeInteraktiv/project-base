@@ -123,6 +123,7 @@ Project-base uses wp-scripts to build front end assets using the `npm run build`
   }
 }
 ```
+(See `packages/themes/dekode-theme` or `packages/plugins/blueprint` for more details)
 
 4. Go back to the project root and update the composer.json or package.json depending on package type. For composer add a entry under "require" like such `"project/package-name": "@dev"`. For package.json add an entry under "devDependencies" like such `"package-name": "file:packages/folder/package-name"`.
 
