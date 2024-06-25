@@ -1,8 +1,5 @@
 .wp-block-column.has-background,
-.wp-block-columns.has-background {
-	padding: var(--wp--preset--spacing--40);
-}
-
+.wp-block-columns.has-background,
 .wp-block-columns.alignwide.has-background {
-	padding: var(--wp--preset--spacing--40);
+	padding: var(--wp--preset--spacing--50);
 }

@@ -91,7 +91,7 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 			'size' => '1rem',
 			'selectors' => [],
 		],
-		'50' => [
+		'50' => [ // Medium.
 			'size' => '1.5rem',
 			'selectors' => [],
 		],

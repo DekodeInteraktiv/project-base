@@ -73,7 +73,7 @@
 		},
 		"typography": {
 			"customFontSize": false,
-			"defaultFontSizes": false,
+			"defaultFontSizes": true,
 			"dropCap": false,
 			"fluid": false,
 			"fontStyle": false,
@@ -95,47 +95,15 @@
 					"fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
 				}
 			],
-			"fontSizes": [
-				{
-					"fluid": false,
-					"name": "Small",
-					"size": "0.875rem",
-					"slug": "small"
-				},
-				{
-					"fluid": {
-						"min": "1rem",
-						"max": "1.125rem"
-					},
-					"name": "Medium",
-					"size": "1rem",
-					"slug": "medium"
-				},
-				{
-					"fluid": {
-						"min": "1.5rem",
-						"max": "2.0rem"
-					},
-					"name": "Large",
-					"size": "2.0rem",
-					"slug": "large"
-				},
-				{
-					"fluid": {
-						"min": "2.5rem",
-						"max": "3.0rem"
-					},
-					"name": "Extra Large",
-					"size": "3rem",
-					"slug": "x-large"
-				}
-			]
+			"fontSizes": []
 		},
 		"spacing": {
+			"defaultSpacingSizes": true,
 			"customSpacingSize": false,
 			"margin": false,
 			"padding": false,
-			"blockGap": true
+			"blockGap": true,
+			"spacingSizes": []
 		}
 	},
 	"styles": {
@@ -192,8 +160,8 @@
 					"padding": {
 						"top": "var(--wp--preset--spacing--20)",
 						"bottom": "var(--wp--preset--spacing--20)",
-						"left": "var(--wp--preset--spacing--20)",
-						"right": "var(--wp--preset--spacing--20)"
+						"left": "var(--wp--preset--spacing--30)",
+						"right": "var(--wp--preset--spacing--30)"
 					}
 				}
 			},
@@ -210,17 +178,17 @@
 		"blocks": {
 			"core/buttons": {
 				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--30)"
+					"blockGap": "var(--wp--preset--spacing--50)"
 				}
 			},
 			"core/columns": {
 				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--60)"
+					"blockGap": "var(--wp--preset--spacing--50)"
 				}
 			},
 			"core/group": {
 				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--60)"
+					"blockGap": "var(--wp--preset--spacing--50)"
 				}
 			},
 			"core/button": {

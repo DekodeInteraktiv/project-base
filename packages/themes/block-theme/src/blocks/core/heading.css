@@ -2,13 +2,13 @@
 .wp-block-heading.has-background,
 .wp-block-post-title.has-background,
 .wp-block-query-title.has-background {
-	padding: var(--wp--preset--spacing--40);
+	padding: var(--wp--preset--spacing--50);
 }
 
 .wp-block-heading.has-background.alignwide,
 .wp-block-post-title.has-background.alignwide,
 .wp-block-query-title.has-background.alignwide {
-	padding: var(--wp--preset--spacing--40);
+	padding: var(--wp--preset--spacing--50);
 }
 
 .wp-block-heading.has-background.alignfull,
