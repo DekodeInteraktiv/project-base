@@ -42,6 +42,7 @@
 			},
 			"t2/custom-block-margin": {
 				"spacing": {
+					"00": "0",
 					"20": "var(--wp--preset--spacing--20)",
 					"30": "var(--wp--preset--spacing--30)",
 					"40": "var(--wp--preset--spacing--40)",
@@ -50,8 +51,7 @@
 					"70": "var(--wp--preset--spacing--70)",
 					"80": "var(--wp--preset--spacing--80)",
 					"default": "var(--wp--preset--spacing--80)",
-					"last": "var(--wp--preset--spacing--80)",
-					"none": "0"
+					"last": "var(--wp--preset--spacing--80)"
 				}
 			},
 			"t2/featured-content-layout": {

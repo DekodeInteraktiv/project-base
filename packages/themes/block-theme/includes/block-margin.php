@@ -62,8 +62,8 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 	)";
 
 	$config['gaps'] = [
-		'none' => [
-			'size' => '0',
+		'00' => [
+			'size'      => '0',
 			'selectors' => [
 				// First child in any container.
 				':first-child',
@@ -80,30 +80,30 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 			],
 		],
 		'20' => [
-			'size' => '0.44rem',
+			'size'      => '0.44rem',
 			'selectors' => [],
 		],
 		'30' => [
-			'size' => '0.67rem',
+			'size'      => '0.67rem',
 			'selectors' => [],
 		],
 		'40' => [
-			'size' => '1rem',
+			'size'      => '1rem',
 			'selectors' => [],
 		],
 		'50' => [ // Medium.
-			'size' => '1.5rem',
+			'size'      => '1.5rem',
 			'selectors' => [],
 		],
 		'60' => [
-			'size' => '2.25rem',
+			'size'      => '2.25rem',
 			'selectors' => [
 				// Default small gap for related blocks, e.g. paragraph + paragraph.
 				':is(p, ul, ol, .wp-block-heading, .wp-block-post-title) + :is(p, ul, ol)',
 			],
 		],
 		'70' => [
-			'size' => '3.38rem',
+			'size'      => '3.38rem',
 			'selectors' => [
 				':is(p, .wp-block-heading, .wp-block-post-title) + :is(.wp-block-cover, .wp-block-image)',
 				':is(.wp-block-heading, .wp-block-post-title) + :is(.t2-accordion, .t2-factbox)',
