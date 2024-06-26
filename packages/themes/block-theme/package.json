@@ -3,11 +3,11 @@
 	"private": true,
 	"version": "1.0.0",
 	"devDependencies": {
-		"@wordpress/scripts": "^26.18.0"
+		"@wordpress/scripts": "^28.1.0"
 	},
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php",
 		"start": "wp-scripts start --webpack-copy-php",
-		"clean": "rm -rf node_modules build dist .turbo"
+		"clean": "rm -rf node_modules build dist"
 	}
 }
