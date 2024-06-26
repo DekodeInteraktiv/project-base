@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup T2 Block Margin.
+ * Setup T2 Custom Block Margin v2.
  *
  * @package BlockTheme
  */
