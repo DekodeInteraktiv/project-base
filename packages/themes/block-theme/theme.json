@@ -50,7 +50,8 @@
 					"70": "var(--wp--preset--spacing--70)",
 					"80": "var(--wp--preset--spacing--80)",
 					"default": "var(--wp--preset--spacing--80)",
-					"last": "var(--wp--preset--spacing--80)"
+					"last": "var(--wp--preset--spacing--80)",
+					"none": "0"
 				}
 			},
 			"t2/featured-content-layout": {
