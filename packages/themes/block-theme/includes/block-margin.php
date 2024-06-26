@@ -57,6 +57,7 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 		{$root_selector} .wp-block-group:is(.is-layout-flow, .is-layout-constrained),
 		{$root_selector} .wp-block-column,
 		{$root_selector} .wp-block-media-text__content,
+		{$root_selector} .t2-simple-media-text__content-inner,
 		{$root_selector} .wp-block-query,
 		{$root_selector} [class*=\"__inner-container\"],
 	)";
@@ -93,21 +94,18 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 		],
 		'50' => [ // Medium.
 			'size'      => '1.5rem',
-			'selectors' => [],
+			'selectors' => [
+				// Small block spacing for related blocks, e.g. paragraph + paragraph or heading + paragraph.
+				':is(p, .wp-block-list, .wp-block-heading, .wp-block-post-title) + :is(p, .wp-block-list)',
+			],
 		],
 		'60' => [
 			'size'      => '2.25rem',
-			'selectors' => [
-				// Default small gap for related blocks, e.g. paragraph + paragraph.
-				':is(p, ul, ol, .wp-block-heading, .wp-block-post-title) + :is(p, ul, ol)',
-			],
+			'selectors' => [],
 		],
 		'70' => [
 			'size'      => '3.38rem',
-			'selectors' => [
-				':is(p, .wp-block-heading, .wp-block-post-title) + :is(.wp-block-cover, .wp-block-image)',
-				':is(.wp-block-heading, .wp-block-post-title) + :is(.t2-accordion, .t2-factbox)',
-			],
+			'selectors' => [],
 		],
 		// Default.
 		'80' => [
