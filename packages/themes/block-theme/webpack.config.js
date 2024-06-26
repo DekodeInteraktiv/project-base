@@ -10,12 +10,12 @@ const path = require('path');
  * WordPress dependencies
  */
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
-const defaultConfig = require('@wordpress/scripts/config/webpack.config');
+const scriptConfig = require('@wordpress/scripts/config/webpack.config');
 const { getWebpackEntryPoints } = require('@wordpress/scripts/utils/config');
 
 function getPackageEntryPoints() {
 	// Use default entry points from wp-scripts.
-	const entries = getWebpackEntryPoints();
+	const entries = getWebpackEntryPoints('script')();
 
 	// Append entry points for each block stylesheet.
 	globSync('./src/blocks/*/*.css', { onlyFiles: true }).forEach((file) => {
@@ -28,10 +28,10 @@ function getPackageEntryPoints() {
 }
 
 module.exports = {
-	...defaultConfig,
+	...scriptConfig,
 	entry: getPackageEntryPoints(),
 	plugins: [
-		...defaultConfig.plugins.filter(
+		...scriptConfig.plugins.filter(
 			(plugin) =>
 				plugin.constructor.name !== 'DependencyExtractionWebpackPlugin',
 		),
