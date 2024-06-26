@@ -44,8 +44,7 @@ function do_enqueue_assets(): void {
 	if ( \file_exists( \get_template_directory() . '/build/view.css' ) ) {
 		$assets_version = \filemtime( \get_template_directory() . '/build/view.css' );
 
-		// Set global styles as dependency to ensure correct loading order.
-		$deps = [ 'global-styles' ];
+		$deps = [];
 
 		/* phpcs:disable
 		// Optionally set all WooCommerce styling as dependency.
