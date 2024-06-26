@@ -34,8 +34,6 @@
 		"custom": {
 			"fontWeight": {
 				"regular": 400,
-				"medium": 500,
-				"semibold": 600,
 				"bold": 700
 			},
 			"lineHeight": {
@@ -57,8 +55,8 @@
 			},
 			"t2/featured-content-layout": {
 				"spacing": {
-					"rowGap": "var(--wp--preset--spacing--60)",
-					"columnGap": "var(--wp--preset--spacing--60)"
+					"rowGap": "var(--wp--preset--spacing--50)",
+					"columnGap": "var(--wp--preset--spacing--50)"
 				}
 			}
 		},
@@ -187,6 +185,11 @@
 				}
 			},
 			"core/group": {
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--50)"
+				}
+			},
+			"core/post-template": {
 				"spacing": {
 					"blockGap": "var(--wp--preset--spacing--50)"
 				}
