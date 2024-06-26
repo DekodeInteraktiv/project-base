@@ -3,7 +3,6 @@
 	"private": true,
 	"version": "1.0.0",
 	"devDependencies": {
-		"@wordpress/dom-ready": "^3.50.0",
 		"@wordpress/scripts": "^26.18.0"
 	},
 	"scripts": {
