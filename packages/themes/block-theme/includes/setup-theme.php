@@ -28,7 +28,6 @@ function do_after_setup_theme(): void {
 	\load_theme_textdomain( 'block-theme', \get_template_directory() . '/languages' );
 
 	// Add theme supports.
-	\add_theme_support( 'wp-block-styles' );
 	\add_theme_support( 'responsive-embeds' );
 	\add_theme_support( 'post-thumbnails' );
 	\add_theme_support( 'custom-logo' );
