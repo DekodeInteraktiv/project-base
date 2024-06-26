@@ -64,7 +64,6 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 
 	$config['gaps'] = [
 		'00' => [
-			'size'      => '0',
 			'selectors' => [
 				// First child in any container.
 				':first-child',
@@ -81,35 +80,28 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 			],
 		],
 		'20' => [
-			'size'      => '0.44rem',
 			'selectors' => [],
 		],
 		'30' => [
-			'size'      => '0.67rem',
 			'selectors' => [],
 		],
 		'40' => [
-			'size'      => '1rem',
 			'selectors' => [],
 		],
 		'50' => [ // Medium.
-			'size'      => '1.5rem',
 			'selectors' => [
 				// Small block spacing for related blocks, e.g. paragraph + paragraph or heading + paragraph.
 				':is(p, .wp-block-list, .wp-block-heading, .wp-block-post-title) + :is(p, .wp-block-list)',
 			],
 		],
 		'60' => [
-			'size'      => '2.25rem',
 			'selectors' => [],
 		],
 		'70' => [
-			'size'      => '3.38rem',
 			'selectors' => [],
 		],
-		// Default.
-		'80' => [
-			'size' => '5.06rem',
+		'80' => [ // Default.
+			'selectors' => [],
 		],
 	];
 
