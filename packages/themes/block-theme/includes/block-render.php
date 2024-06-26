@@ -15,7 +15,6 @@ use function T2\Icons\get_icon;
 
 // Hooks.
 \add_filter( 'render_block_core/search', __NAMESPACE__ . '\\do_replace_search_block_button_icon' );
-\add_filter( 'render_block_core/site-logo', __NAMESPACE__ . '\\do_append_site_title_to_logo' );
 
 /**
  * Replace the built in search icon with a T2 icon in the core/search block.
@@ -34,21 +33,4 @@ function do_replace_search_block_button_icon( string $block_content ): string {
 		get_icon( 'search' ),
 		$block_content,
 	);
-}
-
-/**
- * Append site title to site logo block.
- *
- * @param string $block_content Block content.
- * @return string
- */
-function do_append_site_title_to_logo( string $block_content ): string {
-	$processor = new \WP_HTML_Tag_Processor( $block_content );
-	$processor->next_tag( 'a' );
-
-	if ( 'home' === $processor->get_attribute( 'rel' ) ) {
-		$processor->set_attribute( 'title', \get_bloginfo( 'title' ) );
-	}
-
-	return $processor->get_updated_html();
 }
