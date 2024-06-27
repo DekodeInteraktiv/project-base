@@ -1,0 +1,17 @@
+body {
+	--t2-accordion-typography-heading-font-family: unset;
+	--t2-accordion-typography-heading-font-size: var(--wp--preset--font-size--medium);
+	--t2-accordion-typography-heading-font-weight: var(--wp--custom--font-weight--bold);
+	--t2-accordion-typography-heading-line-height: var(--wp--custom--line-height--12);
+	--t2-accordion-item-padding: var(--wp--preset--spacing--40);
+}
+
+.t2-accordion {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--50);
+}
+
+.t2-accordion-item {
+	margin: unset;
+}

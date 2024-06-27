@@ -1,0 +1,26 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:query {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-query">
+	<!-- wp:query-title {"type":"search","align":"wide"} /-->
+	<!-- wp:search /-->
+
+	<!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":3}} -->
+	<!-- wp:t2/featured-template-post /-->
+	<!-- /wp:post-template -->
+
+	<!-- wp:query-pagination -->
+	<!-- wp:query-pagination-previous /-->
+	<!-- wp:query-pagination-numbers /-->
+	<!-- wp:query-pagination-next /-->
+	<!-- /wp:query-pagination -->
+
+	<!-- wp:query-no-results -->
+	<!-- wp:paragraph -->
+	<p>No posts were found.</p>
+	<!-- /wp:paragraph -->
+	<!-- /wp:query-no-results -->
+</main>
+<!-- /wp:query -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

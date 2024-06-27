@@ -1,0 +1,32 @@
+.wp-element-button,
+.wp-block-button__link {
+	/* Show button content as flex to support alignment of icon */
+	align-items: center;
+	border: unset;
+	display: flex;
+	gap: var(--wp--preset--spacing--20);
+	justify-content: space-between;
+
+	/* Disabled */
+	&:disabled {
+		cursor: not-allowed;
+	}
+
+	/* Default to text align left */
+	&:not([class*="has-text-align-"]) {
+		text-align: left;
+	}
+
+	&.has-text-align-center {
+		justify-content: center;
+	}
+
+	&.has-text-align-right {
+		justify-content: flex-end;
+	}
+}
+
+/* Avoid click event fired on button child elements, e.g. svg */
+body:not(.wp-admin) .wp-block-button__link * {
+	pointer-events: none;
+}
