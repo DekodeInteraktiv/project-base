@@ -11,7 +11,7 @@
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
-		"roots/wordpress": "~6.5.3",
+		"johnpbloch/wordpress": "6.6.x-dev",
 		"symfony/dotenv": "~7.1.0",
 		"t2/t2": "~7.12.0",
 		"wpackagist-plugin/imagify": "~2.2.0",
@@ -69,7 +69,7 @@
 			"composer/installers": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"inpsyde/wp-translation-downloader": true,
-			"roots/wordpress-core-installer": true
+			"johnpbloch/wordpress-core-installer": true
 		},
 		"platform": {
 			"php": "8.2"
