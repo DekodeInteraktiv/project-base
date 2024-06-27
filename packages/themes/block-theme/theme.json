@@ -101,7 +101,6 @@
 			"customSpacingSize": false,
 			"margin": false,
 			"padding": false,
-			"blockGap": true,
 			"spacingSizes": []
 		}
 	},
@@ -119,8 +118,7 @@
 			"padding": {
 				"left": "1rem",
 				"right": "1rem"
-			},
-			"blockGap": "var(--wp--preset--spacing--80)"
+			}
 		},
 		"elements": {
 			"link": {
@@ -175,26 +173,6 @@
 			}
 		},
 		"blocks": {
-			"core/buttons": {
-				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--50)"
-				}
-			},
-			"core/columns": {
-				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--50)"
-				}
-			},
-			"core/group": {
-				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--50)"
-				}
-			},
-			"core/post-template": {
-				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--50)"
-				}
-			},
 			"core/button": {
 				"border": {
 					"radius": "unset"
