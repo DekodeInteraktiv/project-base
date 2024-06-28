@@ -101,7 +101,8 @@
 			"customSpacingSize": false,
 			"margin": false,
 			"padding": false,
-			"spacingSizes": []
+			"spacingSizes": [],
+			"blockGap": true
 		}
 	},
 	"styles": {
@@ -118,7 +119,8 @@
 			"padding": {
 				"left": "1rem",
 				"right": "1rem"
-			}
+			},
+			"blockGap": "var(--wp--preset--spacing--80)"
 		},
 		"elements": {
 			"link": {
@@ -178,8 +180,20 @@
 					"radius": "unset"
 				}
 			},
+			"core/columns": {
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--50)"
+				}
+			},
+			"core/group": {
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--50)"
+				}
+			},
 			"core/buttons": {
-				"css": "&.is-layout-flex { gap: var(--wp--preset--spacing--50); }"
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--50)"
+				}
 			},
 			"t2/ingress": {
 				"typography": {
@@ -188,7 +202,9 @@
 				}
 			},
 			"core/post-template": {
-				"css": "&.is-layout-grid { gap: var(--wp--preset--spacing--50); }"
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--50)"
+				}
 			}
 		}
 	},
