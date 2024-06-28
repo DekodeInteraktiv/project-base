@@ -50,6 +50,7 @@ function do_override_last_selectors(): array {
 function do_override_custom_block_margin_config( array $config, $root_selector ): array {
 
 	// Simplify selector to include all constrained containers and selected inner block containers.
+	/*
 	$config['selector'] = ":is(
 		{$root_selector} .wp-site-blocks,
 		{$root_selector} .entry-content.is-layout-constrained,
@@ -61,6 +62,27 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 		{$root_selector} .wp-block-query,
 		{$root_selector} [class*=\"__inner-container\"],
 	)";
+	*/
+	$config['selector'] = "{$root_selector} :is(
+		.wp-site-blocks,
+		.is-layout-constrained,
+		.is-layout-flow,
+		.is-layout-flex.is-vertical,
+	)";
+
+	/*
+	TODO:
+	To use core blockGap we need a way to extend it to custom containers, e.g.:
+	- wp-block-media-text__content
+	- t2-simple-media-text__content
+	- others?
+
+	Possible solution:
+	Override rendering for blocks and insert .is-layout-flow class:
+	- For core/media+text: Add .is-layout-flow to .wp-block-media-text__content
+	- For t2/simple-media-text: Add .is-layout-flow to .t2-simple-media-text__content-inner
+	- For gravityforms/form: Add .is-layout-flow to .gform_heading
+	*/
 
 	$config['gaps'] = [
 		'00' => [
