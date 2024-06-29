@@ -75,7 +75,7 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 	- Group, Columns, Column, Query, Post Content, Cover, Details, Buttons
 
 	Uncovered blocks:
-	- Media+Text, T2 Simple Media+Text, T2 Accordion, T2 Factbox, T2 Infobox
+	- Media+Text, T2 Simple Media+Text, T2 Accordion, T2 Factbox, T2 Infobox, T2 FAQ Item
 
 	TODO:
 	To use core blockGap we need a way to extend it to custom containers, e.g.:
@@ -84,10 +84,12 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 	- t2-accordion-item__inner-container
 	- t2-factbox__blocks / t2-factbox__inner-container (this should be deprecated)
 	- t2-infobox__content
+	- t2-faq-item__inner-container
 	- others?
 
 	Possible solution:
-	Override rendering for blocks and insert .is-layout-flow class:
+	1. Add layout support to available T2 blocks. (Maybe flex and grid is also interessting for some blocks?)
+	2. Override rendering for blocks and insert .is-layout-flow class:
 	- For core/media+text: Add .is-layout-flow to .wp-block-media-text__content
 	- For t2/simple-media-text: Add .is-layout-flow to .t2-simple-media-text__content-inner
 	- For gravityforms/form: Add .is-layout-flow to .gform_heading

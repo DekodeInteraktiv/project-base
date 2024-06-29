@@ -13,5 +13,5 @@
 .is-layout-flow,
 .is-layout-flex.is-vertical,
 .is-layout-constrained {
-	background-color: rgba(255, 0, 0, 0.1);
+	border: solid #f00;
 }
