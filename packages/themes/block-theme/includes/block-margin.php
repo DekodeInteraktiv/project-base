@@ -65,16 +65,25 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 	*/
 	$config['selector'] = "{$root_selector} :is(
 		.wp-site-blocks,
-		.is-layout-constrained,
 		.is-layout-flow,
 		.is-layout-flex.is-vertical,
+		.is-layout-constrained,
 	)";
 
 	/*
+	Block already covered by any of the layout classes above:
+	- Group, Columns, Column, Query, Post Content, Cover, Details, Buttons
+
+	Uncovered blocks:
+	- Media+Text, T2 Simple Media+Text, T2 Accordion, T2 Factbox, T2 Infobox
+
 	TODO:
 	To use core blockGap we need a way to extend it to custom containers, e.g.:
 	- wp-block-media-text__content
 	- t2-simple-media-text__content
+	- t2-accordion-item__inner-container
+	- t2-factbox__blocks / t2-factbox__inner-container (this should be deprecated)
+	- t2-infobox__content
 	- others?
 
 	Possible solution:
@@ -113,7 +122,7 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 		'50' => [ // Medium.
 			'selectors' => [
 				// Small block spacing for related blocks, e.g. paragraph + paragraph or heading + paragraph.
-				':is(p, .wp-block-list, .wp-block-heading, .wp-block-post-title) + :is(p, .wp-block-list)',
+				':is(p, .wp-block-list, .wp-block-heading, .wp-block-post-title, summary) + :is(p, .wp-block-list)',
 			],
 		],
 		'60' => [
