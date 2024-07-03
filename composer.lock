@@ -447,12 +447,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "fb2c46f5c72b7341b542f3223255e92359f2d493"
+                "reference": "f3df2a794a42e7236a6078491a68dbb8870490f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/fb2c46f5c72b7341b542f3223255e92359f2d493",
-                "reference": "fb2c46f5c72b7341b542f3223255e92359f2d493",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/f3df2a794a42e7236a6078491a68dbb8870490f8",
+                "reference": "f3df2a794a42e7236a6078491a68dbb8870490f8",
                 "shasum": ""
             },
             "require": {
@@ -487,7 +487,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2024-06-25T17:46:03+00:00"
+            "time": "2024-07-02T17:26:07+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
