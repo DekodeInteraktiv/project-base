@@ -9,9 +9,3 @@
 :where([hidden]) {
 	display: none !important;
 }
-
-.is-layout-flow,
-.is-layout-flex.is-vertical,
-.is-layout-constrained {
-	border: solid #f00;
-}
