@@ -70,7 +70,7 @@
 			"composer/installers": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"inpsyde/wp-translation-downloader": true,
-			"johnpbloch/wordpress-core-installer": true
+			"roots/wordpress-core-installer": true
 		},
 		"platform": {
 			"php": "8.2"
