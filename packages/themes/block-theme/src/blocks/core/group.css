@@ -1,7 +1,3 @@
-.wp-block-group.is-layout-flex {
-	gap: var(--wp--preset--spacing--50);
-}
-
 .wp-block-group.has-background,
 .wp-block-group.has-background.alignwide {
 	padding: var(--wp--preset--spacing--50);

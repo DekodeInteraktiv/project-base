@@ -16,6 +16,7 @@ defined( 'ABSPATH' ) || exit;
 \add_filter( 't2/custom_block_margin/config', __NAMESPACE__ . '\\do_override_custom_block_margin_config', 10, 2 );
 \add_filter( 't2/custom_block_margin/default/size_key', fn() => '80' );
 \add_filter( 't2/custom_block_margin/last/size_key', fn() => '80' );
+\add_filter( 'render_block', __NAMESPACE__ . '\\do_add_block_spacing_support_to_additional_containers' );
 
 /**
  * Change the root selector to all contrained containers.
@@ -48,18 +49,12 @@ function do_override_last_selectors(): array {
  * @return array
  */
 function do_override_custom_block_margin_config( array $config, $root_selector ): array {
-
-	// Simplify selector to include all constrained containers and selected inner block containers.
-	$config['selector'] = ":is(
-		{$root_selector} .wp-site-blocks,
-		{$root_selector} .entry-content.is-layout-constrained,
-		{$root_selector} .wp-block-post-content.is-layout-constrained,
-		{$root_selector} .wp-block-group:is(.is-layout-flow, .is-layout-constrained),
-		{$root_selector} .wp-block-column,
-		{$root_selector} .wp-block-media-text__content,
-		{$root_selector} .t2-simple-media-text__content-inner,
-		{$root_selector} .wp-block-query,
-		{$root_selector} [class*=\"__inner-container\"],
+	// Simplify root selector to include only containers supported by Block Spacing API.
+	$config['selector'] = "{$root_selector} :is(
+		.wp-site-blocks,
+		.is-layout-flow,
+		.is-layout-flex.is-vertical,
+		.is-layout-constrained,
 	)";
 
 	$config['gaps'] = [
@@ -91,7 +86,7 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 		'50' => [ // Medium.
 			'selectors' => [
 				// Small block spacing for related blocks, e.g. paragraph + paragraph or heading + paragraph.
-				':is(p, .wp-block-list, .wp-block-heading, .wp-block-post-title) + :is(p, .wp-block-list)',
+				':is(p, .wp-block-list, .wp-block-heading, .wp-block-post-title, summary) + :is(p, .wp-block-list)',
 			],
 		],
 		'60' => [
@@ -106,4 +101,33 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 	];
 
 	return $config;
+}
+
+/**
+ * Override block rendering and add .is-layout-flow to selected containers to support Block Spacing API.
+ *
+ * @param string $block_content Block content.
+ * @return string
+ */
+function do_add_block_spacing_support_to_additional_containers( string $block_content ): string {
+	$containers = [
+		'wp-block-media-text__content',
+		't2-simple-media-text__content-inner',
+		't2-accordion-item__inner-container',
+		't2-factbox__inner-container',
+		't2-infobox__content',
+		't2-faq-item__inner-container',
+	];
+
+	foreach ( $containers as $container ) {
+		if ( \str_contains( $block_content, $container ) ) {
+			$processor = new \WP_HTML_Tag_Processor( $block_content );
+			$processor->next_tag( [ 'class_name' => $container ] );
+			$processor->add_class( 'is-layout-flow' );
+
+			$block_content = $processor->get_updated_html();
+		}
+	}
+
+	return $block_content;
 }
