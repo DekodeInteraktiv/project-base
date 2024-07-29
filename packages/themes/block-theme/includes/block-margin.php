@@ -16,6 +16,7 @@ defined( 'ABSPATH' ) || exit;
 \add_filter( 't2/custom_block_margin/config', __NAMESPACE__ . '\\do_override_custom_block_margin_config', 10, 2 );
 \add_filter( 't2/custom_block_margin/default/size_key', fn() => '80' );
 \add_filter( 't2/custom_block_margin/last/size_key', fn() => '80' );
+\add_filter( 'render_block', __NAMESPACE__ . '\\do_add_block_spacing_support_to_additional_containers' );
 
 /**
  * Change the root selector to all contrained containers.
@@ -48,52 +49,13 @@ function do_override_last_selectors(): array {
  * @return array
  */
 function do_override_custom_block_margin_config( array $config, $root_selector ): array {
-
-	// Simplify selector to include all constrained containers and selected inner block containers.
-	/*
-	$config['selector'] = ":is(
-		{$root_selector} .wp-site-blocks,
-		{$root_selector} .entry-content.is-layout-constrained,
-		{$root_selector} .wp-block-post-content.is-layout-constrained,
-		{$root_selector} .wp-block-group:is(.is-layout-flow, .is-layout-constrained),
-		{$root_selector} .wp-block-column,
-		{$root_selector} .wp-block-media-text__content,
-		{$root_selector} .t2-simple-media-text__content-inner,
-		{$root_selector} .wp-block-query,
-		{$root_selector} [class*=\"__inner-container\"],
-	)";
-	*/
+	// Simplify root selector to include only containers supported by Block Spacing API.
 	$config['selector'] = "{$root_selector} :is(
 		.wp-site-blocks,
 		.is-layout-flow,
 		.is-layout-flex.is-vertical,
 		.is-layout-constrained,
 	)";
-
-	/*
-	Block already covered by any of the layout classes above:
-	- Group, Columns, Column, Query, Post Content, Cover, Details, Buttons
-
-	Uncovered blocks:
-	- Media+Text, T2 Simple Media+Text, T2 Accordion, T2 Factbox, T2 Infobox, T2 FAQ Item
-
-	TODO:
-	To use core blockGap we need a way to extend it to custom containers, e.g.:
-	- wp-block-media-text__content
-	- t2-simple-media-text__content
-	- t2-accordion-item__inner-container
-	- t2-factbox__blocks / t2-factbox__inner-container (this should be deprecated)
-	- t2-infobox__content
-	- t2-faq-item__inner-container
-	- others?
-
-	Possible solution:
-	1. Add layout support to available T2 blocks. (Maybe flex and grid is also interessting for some blocks?)
-	2. Override rendering for blocks and insert .is-layout-flow class:
-	- For core/media+text: Add .is-layout-flow to .wp-block-media-text__content
-	- For t2/simple-media-text: Add .is-layout-flow to .t2-simple-media-text__content-inner
-	- For gravityforms/form: Add .is-layout-flow to .gform_heading
-	*/
 
 	$config['gaps'] = [
 		'00' => [
@@ -139,4 +101,33 @@ function do_override_custom_block_margin_config( array $config, $root_selector )
 	];
 
 	return $config;
+}
+
+/**
+ * Override block rendering and add .is-layout-flow to selected containers to support Block Spacing API.
+ *
+ * @param string $block_content Block content.
+ * @return string
+ */
+function do_add_block_spacing_support_to_additional_containers( string $block_content ): string {
+	$containers = [
+		'wp-block-media-text__content',
+		't2-simple-media-text__content-inner',
+		't2-accordion-item__inner-container',
+		't2-factbox__inner-container',
+		't2-infobox__content',
+		't2-faq-item__inner-container',
+	];
+
+	foreach ( $containers as $container ) {
+		if ( \str_contains( $block_content, $container ) ) {
+			$processor = new \WP_HTML_Tag_Processor( $block_content );
+			$processor->next_tag( [ 'class_name' => $container ] );
+			$processor->add_class( 'is-layout-flow' );
+
+			$block_content = $processor->get_updated_html();
+		}
+	}
+
+	return $block_content;
 }
