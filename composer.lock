@@ -220,6 +220,37 @@
             "time": "2022-08-20T06:45:11+00:00"
         },
         {
+            "name": "dekode/block-theme",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/themes/block-theme",
+                "reference": "9c080dff707a1a95fde5ba61733bc7a3f72db55f"
+            },
+            "require-dev": {
+                "wp-cli/i18n-command": "~2.4.3"
+            },
+            "type": "wordpress-theme",
+            "scripts": {
+                "make-pot": [
+                    "npm run build",
+                    "wp i18n make-pot . languages/block-theme.pot --domain=block-theme --exclude=node_modules,src,vendor,theme.json,t2.json"
+                ],
+                "make-json": [
+                    "npm run build",
+                    "wp i18n make-json languages/base-theme-nb_NO.po --no-purge"
+                ]
+            },
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Block Theme",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "dekode/blueprint",
             "version": "1.0.0",
             "dist": {
@@ -1615,16 +1646,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.10.1",
+            "version": "3.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "8f90f7a53ce271935282967f53d0894f8f1ff877"
+                "reference": "86e5f5dd9a840c46810ebe5ff1885581c42a3017"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/8f90f7a53ce271935282967f53d0894f8f1ff877",
-                "reference": "8f90f7a53ce271935282967f53d0894f8f1ff877",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/86e5f5dd9a840c46810ebe5ff1885581c42a3017",
+                "reference": "86e5f5dd9a840c46810ebe5ff1885581c42a3017",
                 "shasum": ""
             },
             "require": {
@@ -1691,7 +1722,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-05-22T21:24:41+00:00"
+            "time": "2024-07-21T23:26:44+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
