@@ -171,6 +171,12 @@
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",
 					"lineHeight": "unset"
+				},
+				"spacing": {
+					"margin": {
+						"top": "0",
+						"bottom": "0"
+					}
 				}
 			}
 		},

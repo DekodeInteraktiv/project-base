@@ -9,12 +9,3 @@
 .wp-block-post-featured-image img {
 	display: block;
 }
-
-/* Reset styling for figcaption (Image block overrides caption styling from theme.json) */
-.wp-block-image figcaption {
-	color: unset;
-	font-size: var(--wp--preset--font-size--small);
-	line-height: unset;
-	margin: unset;
-	text-align: unset;
-}
