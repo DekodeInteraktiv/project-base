@@ -15,7 +15,7 @@
 		],
 		"make-json": [
 			"npm run build",
-			"wp i18n make-json languages/base-theme-nb_NO.po --no-purge"
+			"wp i18n make-json languages/block-theme-nb_NO.po --no-purge"
 		]
 	}
 }
