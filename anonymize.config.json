@@ -1,4 +1,5 @@
 {
+	"__RemoveAfterSetup__": "This line exists to ensure anonymization configs are checked when a new project is set up, and should be removed once the contents of the config file have been validated against the contents expected on a site.",
 	"patterns": [
 		{
 			"tableName": ".*_registration_log",
