@@ -34,8 +34,5 @@ jobs:
             - name: Install Dependencies
               run: npm ci
 
-            - name: Lint CSS
-              run: npm run lint:css
-
-            - name: Lint JS
-              run: npm run lint:js
+            - name: Run linters
+              run: npm run lint
