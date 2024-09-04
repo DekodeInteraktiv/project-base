@@ -2,9 +2,8 @@
 	"name": "@dekode/project-base",
 	"private": true,
 	"engines": {
-		"node": "18",
-		"npm": ">=8",
-		"yarn": "Please use npm"
+		"node": "20",
+		"npm": ">=10"
 	},
 	"packageManager": "npm@10.7.0",
 	"workspaces": [
