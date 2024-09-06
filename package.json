@@ -14,7 +14,7 @@
 	"devDependencies": {
 		"@csstools/postcss-global-data": "^2.1.1",
 		"@wordpress/eslint-plugin": "^19.1.0",
-		"@wordpress/scripts": "^28.1.0",
+		"@wordpress/scripts": "^29.0.0",
 		"@wordpress/stylelint-config": "^22.1.0",
 		"autoprefixer": "^10.4.19",
 		"browser-sync": "^3.0.2",
