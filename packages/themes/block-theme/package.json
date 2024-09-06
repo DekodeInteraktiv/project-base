@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "1.0.0",
 	"devDependencies": {
-		"@wordpress/scripts": "^28.1.0"
+		"@wordpress/scripts": "^29.0.0"
 	},
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php",
