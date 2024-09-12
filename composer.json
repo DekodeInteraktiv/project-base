@@ -8,7 +8,6 @@
 		"composer/installers": "~2.2.0",
 		"dekode/block-theme": "~1.0.0",
 		"dekode/blueprint": "~1.0.0",
-		"dekode/dekode-theme": "~1.0.0",
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
