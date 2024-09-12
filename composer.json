@@ -5,17 +5,17 @@
 	"require": {
 		"php": ">=8.2",
 		"boxuk/wp-muplugin-loader": "~2.2.0",
-		"composer/installers": "~2.2.0",
+		"composer/installers": "~2.3.0",
 		"dekode/block-theme": "~1.0.0",
 		"dekode/blueprint": "~1.0.0",
 		"dekode/imagify-helper": "1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
-		"roots/wordpress": "~6.6.1",
+		"roots/wordpress": "~6.6.2",
 		"symfony/dotenv": "~7.1.0",
-		"t2/t2": "~7.13.2",
+		"t2/t2": "~7.15.0",
 		"wpackagist-plugin/imagify": "~2.2.0",
-		"wpackagist-plugin/spinupwp": "~1.6.0",
+		"wpackagist-plugin/spinupwp": "~1.7.1",
 		"wpackagist-plugin/two-factor": "~0.9.1"
 	},
 	"require-dev": {
