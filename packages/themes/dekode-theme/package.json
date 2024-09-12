@@ -4,8 +4,8 @@
 	"version": "1.0.0",
 	"devDependencies": {
 		"@theme-json/create": "^0.0.4",
-		"@wordpress/scripts": "^28.1.0",
-		"concurrently": "^8.2.2",
+		"@wordpress/scripts": "^29.0.0",
+		"concurrently": "^9.0.1",
 		"css-clamp": "^1.1.0"
 	},
 	"scripts": {

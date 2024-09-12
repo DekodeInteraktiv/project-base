@@ -2,8 +2,8 @@
 	"name": "@dekode/blueprint",
 	"version": "1.0.0",
 	"devDependencies": {
-		"@wordpress/dom-ready": "^4.1.0",
-		"@wordpress/scripts": "^28.1.0"
+		"@wordpress/dom-ready": "^4.7.0",
+		"@wordpress/scripts": "^29.0.0"
 	},
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php",
