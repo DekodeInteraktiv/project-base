@@ -128,11 +128,11 @@ Run the following commands in the root directory to build the project:
 composer install
 npm ci && npm run build
 ```
-(See `packages/themes/dekode-theme` or `packages/plugins/blueprint` for more details)
+(See `packages/themes/block-theme` or `packages/plugins/blueprint` for more details)
 
 ## Extending Builds
 
-Project Base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts) out of the box for building front-end/view and editor assets. wp-script will scan all `block.json` files in the `src/` folder to find available entries. This means that if you have a `src` folder with a `view.js` and a `editor.js`, you also need to add a `block.json` file at the same location. Have a look in the `dekode-theme` theme or the `blueprint` plugin for examples or read up on [wp-script auto discovery for Webpack entry points](https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/utils/config.js#L198). For a more advanced setup, you can always customize builds by adding your own `webpack.config.js`.
+Project Base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts) out of the box for building front-end/view and editor assets. wp-script will scan all `block.json` files in the `src/` folder to find available entries. This means that if you have a `src` folder with a `view.js` and a `editor.js`, you also need to add a `block.json` file at the same location. Have a look in the `block-theme` theme or the `blueprint` plugin for examples or read up on [wp-script auto discovery for Webpack entry points](https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/utils/config.js#L198). For a more advanced setup, you can always customize builds by adding your own `webpack.config.js`.
 
 ### A quick overview of wp-scripts auto discovery:
 1. Supply entry points manully to the CLI, e.g. `wp-scripts build src/view src/editor src/admin src/some-other-entry`. This will bypass 2 and 3.

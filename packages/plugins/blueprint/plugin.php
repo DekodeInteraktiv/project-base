@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
  * @return void
  */
 function do_enqueue_assets(): void {
-	do_enqueue_plugin_assets( 'view', [ 'dekode-theme' ], [ 'dekode-theme' ] );
+	do_enqueue_plugin_assets( 'view', [ 'block-theme' ], [ 'block-theme' ] );
 }
 
 /**
@@ -42,7 +42,7 @@ function do_enqueue_assets(): void {
  * @return void
  */
 function do_enqueue_block_editor_assets(): void {
-	do_enqueue_plugin_assets( 'editor', [ 'dekode-theme' ] );
+	do_enqueue_plugin_assets( 'editor', [ 'block-theme' ] );
 }
 
 /**

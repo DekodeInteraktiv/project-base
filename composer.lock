@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7309e9f21492dcd268b5ea95666eb1a7",
+    "content-hash": "5dceb5acf68a28771ee3e6ee0f7839ad",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -264,24 +264,6 @@
                 "GPL-3.0-or-later"
             ],
             "description": "Blueprint plugin with assets and blocks.",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
-            "name": "dekode/dekode-theme",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/themes/dekode-theme",
-                "reference": "a044207ef50b1ea82fa634aae41b12006a6c110d"
-            },
-            "type": "wordpress-theme",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "description": "Dekode boiler plate theme",
             "transport-options": {
                 "symlink": true,
                 "relative": true
