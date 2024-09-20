@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5dceb5acf68a28771ee3e6ee0f7839ad",
+    "content-hash": "91cd35de47b4e4aac8de14a065980b7e",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -1234,30 +1234,6 @@
             "time": "2023-08-29T05:36:30+00:00"
         },
         {
-            "name": "dekode/logging",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/mu-plugins/logging",
-                "reference": "2c177e4f5055e69fd12f684587f94372e5a1bf5b"
-            },
-            "type": "wordpress-muplugin",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Dekode Interaktiv",
-                    "homepage": "https://dekode.no"
-                }
-            ],
-            "description": "Utility function for logging arbitrary variables to the error log.",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
             "name": "phpcompatibility/php-compatibility",
             "version": "9.3.5",
             "source": {
@@ -1629,16 +1605,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.10.2",
+            "version": "3.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "86e5f5dd9a840c46810ebe5ff1885581c42a3017"
+                "reference": "62d32998e820bddc40f99f8251958aed187a5c9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/86e5f5dd9a840c46810ebe5ff1885581c42a3017",
-                "reference": "86e5f5dd9a840c46810ebe5ff1885581c42a3017",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/62d32998e820bddc40f99f8251958aed187a5c9c",
+                "reference": "62d32998e820bddc40f99f8251958aed187a5c9c",
                 "shasum": ""
             },
             "require": {
@@ -1705,7 +1681,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-07-21T23:26:44+00:00"
+            "time": "2024-09-18T10:38:58+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
