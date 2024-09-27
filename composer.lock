@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6a9673b3d1301e12192eb6c53989a12",
+    "content-hash": "d2a8e107db5c9b693c1781634ccb23c3",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -264,30 +264,6 @@
                 "GPL-3.0-or-later"
             ],
             "description": "Blueprint plugin with assets and blocks.",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
-            "name": "dekode/imagify-helper",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/mu-plugins/imagify-helper",
-                "reference": "c2bb4e7f1b437eaafdb716638147924cb7f02eed"
-            },
-            "type": "wordpress-muplugin",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Dekode Interaktiv",
-                    "homepage": "https://dekode.no"
-                }
-            ],
-            "description": "Provide the correct upload root paths in a multisite environment using Dekodes custom path definitions.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

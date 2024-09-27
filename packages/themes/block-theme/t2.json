@@ -29,6 +29,7 @@
 		"t2/disable-xmlrpc",
 		"t2/enqueue-theme-block-styles",
 		"t2/image-credit",
+		"t2/imagify-helper",
 		"t2/list-block-classname",
 		"t2/post-content-tag-name",
 		"t2/remove-core-block-styles",
