@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2a8e107db5c9b693c1781634ccb23c3",
+    "content-hash": "eed0a18312f8f8a00987656ca598fbf5",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -1209,30 +1209,6 @@
                 "source": "https://github.com/DekodeInteraktiv/coding-standards/tree/6.0.0"
             },
             "time": "2023-08-29T05:36:30+00:00"
-        },
-        {
-            "name": "dekode/logging",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/mu-plugins/logging",
-                "reference": "2c177e4f5055e69fd12f684587f94372e5a1bf5b"
-            },
-            "type": "wordpress-muplugin",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Dekode Interaktiv",
-                    "homepage": "https://dekode.no"
-                }
-            ],
-            "description": "Utility function for logging arbitrary variables to the error log.",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
         },
         {
             "name": "phpcompatibility/php-compatibility",
