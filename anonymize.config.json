@@ -1,4 +1,5 @@
 {
+	"__RemoveAfterSetup__": "This line exists to ensure anonymization configs are checked when a new project is set up, and should be removed once the contents of the config file have been validated against the contents expected on a site.",
 	"patterns": [
 		{
 			"tableName": ".*_registration_log",
@@ -18,7 +19,13 @@
 					"field": "admin_email",
 					"position": 4,
 					"type": "email",
-					"constraints": null
+					"constraints": [
+						{
+							"field": "meta_value",
+							"position": 2,
+							"value": "admin_email"
+						}
+					]
 				}
 			]
 		},
@@ -29,6 +36,35 @@
 					"field": "admin_email",
 					"position": 3,
 					"type": "email",
+					"constraints": [
+						{
+							"field": "option_name",
+							"position": 2,
+							"value": "admin_email"
+						}
+					]
+				}
+			]
+		},
+		{
+			"tableName": ".*_signups",
+			"fields": [
+				{
+					"field": "user_login",
+					"position": 5,
+					"type": "username",
+					"constraints": null
+				},
+				{
+					"field": "user_email",
+					"position": 6,
+					"type": "email",
+					"constraints": null
+				},
+				{
+					"field": "activation_key",
+					"position": 10,
+					"type": "shortString",
 					"constraints": null
 				}
 			]

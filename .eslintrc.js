@@ -11,6 +11,7 @@ module.exports = {
 		'@wordpress/no-global-event-listener': 'off',
 		'@wordpress/dependency-group': 'error',
 		'@wordpress/no-unsafe-wp-apis': 'error',
+		'react-hooks/rules-of-hooks': 'off',
 	},
 	parser: '@babel/eslint-parser',
 	parserOptions: {

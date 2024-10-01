@@ -1,0 +1,11 @@
+.wp-block-image,
+.wp-block-post-featured-image {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--20);
+}
+
+.wp-block-image img,
+.wp-block-post-featured-image img {
+	display: block;
+}
