@@ -57,6 +57,10 @@
 		"dekode-composer": {
 			"type": "composer",
 			"url": "https://composer.dekodes.no"
+		},
+		"dekode-library": {
+			"type": "composer",
+			"url": "https://library.dekodes.no/satispress/"
 		}
 	},
 	"minimum-stability": "dev",
