@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 /**
  * External dependencies
  */
@@ -9,9 +7,12 @@ const path = require('path');
 /**
  * WordPress dependencies
  */
-const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
-const scriptConfig = require('@wordpress/scripts/config/webpack.config');
 const { getWebpackEntryPoints } = require('@wordpress/scripts/utils/config');
+
+/**
+ * Internal dependencies
+ */
+const rootConfig = require('../../../webpack.config');
 
 function getPackageEntryPoints() {
 	// Use default entry points from wp-scripts.
@@ -28,29 +29,6 @@ function getPackageEntryPoints() {
 }
 
 module.exports = {
-	...scriptConfig,
+	...rootConfig,
 	entry: getPackageEntryPoints(),
-	plugins: [
-		...scriptConfig.plugins.filter(
-			(plugin) =>
-				plugin.constructor.name !== 'DependencyExtractionWebpackPlugin',
-		),
-		new DependencyExtractionWebpackPlugin({
-			injectPolyfill: true,
-			requestToHandle(request) {
-				if (request.startsWith('@t2/')) {
-					return `t2-${request.substring(4)}`;
-				}
-
-				return undefined;
-			},
-			requestToExternal(request) {
-				if (request.startsWith('@t2/')) {
-					return ['t2', request.substring(4)];
-				}
-
-				return undefined;
-			},
-		}),
-	],
 };
