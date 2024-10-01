@@ -40,8 +40,10 @@ const config = {
 if ('true' === process.env.BROWSER_SYNC_ENABLE) {
 	const browserSyncConfig = {
 		...scriptConfig,
-		name: 'BrowserSync',
 		plugins: [
+			...scriptConfig.plugins.filter(
+				(plugin) => plugin.constructor.name !== 'BrowserSyncPlugin',
+			),
 			new BrowserSyncPlugin(
 				{
 					files: ['packages/**/*.css', 'packages/**/*.js'],
@@ -57,7 +59,7 @@ if ('true' === process.env.BROWSER_SYNC_ENABLE) {
 		].filter(Boolean),
 	};
 
-	config.push(browserSyncConfig);
+	module.exports = browserSyncConfig;
 }
 
 module.exports = config;
