@@ -1,16 +1,10 @@
 /**
- * External dependencies
- */
-const BrowserSyncPlugin = require('browser-sync-v3-webpack-plugin');
-require('dotenv').config();
-
-/**
  * WordPress dependencies
  */
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 const scriptConfig = require('@wordpress/scripts/config/webpack.config');
 
-const config = {
+module.exports = {
 	...scriptConfig,
 	plugins: [
 		...scriptConfig.plugins.filter(
@@ -36,30 +30,3 @@ const config = {
 		}),
 	],
 };
-
-if ('true' === process.env.BROWSER_SYNC_ENABLE) {
-	const browserSyncConfig = {
-		...scriptConfig,
-		plugins: [
-			...scriptConfig.plugins.filter(
-				(plugin) => plugin.constructor.name !== 'BrowserSyncPlugin',
-			),
-			new BrowserSyncPlugin(
-				{
-					files: ['packages/**/*.css', 'packages/**/*.js'],
-					proxy:
-						process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
-					port: process.env.BROWSER_SYNC_PORT ?? 3002,
-					https: 'true' === process.env.BROWSER_SYNC_HTTPS,
-				},
-				{
-					reload: false,
-				},
-			),
-		].filter(Boolean),
-	};
-
-	module.exports = browserSyncConfig;
-}
-
-module.exports = config;
