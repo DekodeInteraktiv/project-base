@@ -1,4 +1,9 @@
 /**
+ * External dependencies
+ */
+const BrowserSyncPlugin = require('browser-sync-v3-webpack-plugin');
+
+/**
  * WordPress dependencies
  */
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
@@ -9,7 +14,10 @@ module.exports = {
 	plugins: [
 		...scriptConfig.plugins.filter(
 			(plugin) =>
-				plugin.constructor.name !== 'DependencyExtractionWebpackPlugin',
+				![
+					'DependencyExtractionWebpackPlugin',
+					'BrowserSyncPlugin',
+				].includes(plugin.constructor.name),
 		),
 		new DependencyExtractionWebpackPlugin({
 			injectPolyfill: true,
@@ -28,5 +36,16 @@ module.exports = {
 				return undefined;
 			},
 		}),
+		new BrowserSyncPlugin(
+			{
+				files: ['packages/**/*.css', 'packages/**/*.js'],
+				proxy: process.env.BROWSER_SYNC_PROXY ?? process.env.WP_HOME,
+				port: process.env.BROWSER_SYNC_PORT ?? 3002,
+				https: 'true' === process.env.BROWSER_SYNC_HTTPS,
+			},
+			{
+				reload: false,
+			},
+		),
 	],
 };
