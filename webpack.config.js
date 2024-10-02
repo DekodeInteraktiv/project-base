@@ -2,6 +2,7 @@
  * External dependencies
  */
 const BrowserSyncPlugin = require('browser-sync-v3-webpack-plugin');
+require('dotenv').config();
 
 /**
  * WordPress dependencies

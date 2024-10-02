@@ -20,6 +20,7 @@
 		"browser-sync": "^3.0.3",
 		"browser-sync-v3-webpack-plugin": "^0.1.0",
 		"cssnano": "^7.0.6",
+		"dotenv": "^16.4.5",
 		"eslint-plugin-prettier": "^5.2.1",
 		"husky": "^9.1.6",
 		"lint-staged": "^15.2.10",
