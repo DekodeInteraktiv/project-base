@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd32bb5ec7abf2c723bc9c20d093f133",
+    "content-hash": "5eadeba949a9068f35ca7ce1432dda32",
     "packages": [
         {
             "name": "boxuk/wp-muplugin-loader",
@@ -246,24 +246,6 @@
                 "GPL-3.0-or-later"
             ],
             "description": "Block Theme",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
-            "name": "dekode/blueprint",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/plugins/blueprint",
-                "reference": "b3b2b31922a1bdc5c651e5dcb8586616f3652cc0"
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "description": "Blueprint plugin with assets and blocks.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -1729,13 +1711,13 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.2"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.2"
     },

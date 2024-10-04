@@ -1,7 +1,0 @@
-{
-	"name": "dekode/blueprint",
-	"description": "Blueprint plugin with assets and blocks.",
-	"type": "wordpress-plugin",
-	"license": "GPL-3.0-or-later",
-	"version": "1.0.0"
-}
