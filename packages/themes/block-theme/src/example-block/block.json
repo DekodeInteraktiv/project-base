@@ -7,7 +7,7 @@
 	"icon": "menu",
 	"description": "Example block",
 	"attributes": {},
-	"textdomain": "blueprint",
+	"textdomain": "block-theme",
 	"supports": {
 		"html": false,
 		"align": ["wide"]

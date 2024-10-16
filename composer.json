@@ -7,7 +7,6 @@
 		"boxuk/wp-muplugin-loader": "~2.2.0",
 		"composer/installers": "~2.3.0",
 		"dekode/block-theme": "~1.0.0",
-		"dekode/blueprint": "~1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
 		"roots/wordpress": "~6.6.2",
