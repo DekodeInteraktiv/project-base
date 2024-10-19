@@ -3,16 +3,21 @@
  */
 const { sync: globSync } = require('fast-glob');
 const path = require('path');
+const fs = require('fs');
 
 /**
  * WordPress dependencies
  */
 const { getWebpackEntryPoints } = require('@wordpress/scripts/utils/config');
+let scriptConfig = require('@wordpress/scripts/config/webpack.config');
 
 /**
  * Internal dependencies
  */
-const rootConfig = require('../../../webpack.config');
+if (fs.existsSync('../../../webpack.config.js')) {
+	// Extend project root config if exists.
+	scriptConfig = require('../../../webpack.config');
+}
 
 function getPackageEntryPoints() {
 	// Use default entry points from wp-scripts.
@@ -29,6 +34,6 @@ function getPackageEntryPoints() {
 }
 
 module.exports = {
-	...rootConfig,
+	...scriptConfig,
 	entry: getPackageEntryPoints(),
 };
