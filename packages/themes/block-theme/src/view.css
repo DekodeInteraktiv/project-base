@@ -9,3 +9,5 @@
 :where([hidden]) {
 	display: none !important;
 }
+
+:root :where(.wp-site-blocks, .is-layout-constrained, .is-layout-flow, .is-layout-flex.is-vertical, .wp-block-media-text__content, .t2-accordion-item__inner-container, .t2-factbox__inner-container, .t2-faq-item__inner-container, .t2-infobox__content, .t2-simple-media-text__content-inner, .t2-tab-inner-content) { border: dashed thin #f00; }
