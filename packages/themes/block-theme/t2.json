@@ -4,6 +4,7 @@
 	"admin": true,
 	"blocks": true,
 	"extensions": true,
+	"library": true,
 	"mu-blocks": [
 		"t2/accordion",
 		"t2/featured-content-layout",
