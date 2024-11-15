@@ -12,7 +12,8 @@
 			"cache": false
 		},
 		"i18n:make-pot": {
-			"dependsOn": ["^i18n:make-pot"]
+			"dependsOn": ["^i18n:make-pot"],
+			"cache": false
 		}
 	}
 }
