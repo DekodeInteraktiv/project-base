@@ -11,7 +11,7 @@
 	"scripts": {
 		"make-pot": [
 			"npm run build",
-			"wp i18n make-pot . languages/block-theme.pot --domain=block-theme --exclude=node_modules,src,vendor,theme.json,t2.json"
+			"wp i18n make-pot . languages/block-theme.pot --exclude=.turbo,node_modules,src,vendor,theme.json,t2.json"
 		],
 		"make-json": [
 			"npm run build",
