@@ -40,20 +40,6 @@
 				"12": 1.2,
 				"15": 1.5
 			},
-			"t2/custom-block-margin": {
-				"spacing": {
-					"00": "0",
-					"20": "var(--wp--preset--spacing--20)",
-					"30": "var(--wp--preset--spacing--30)",
-					"40": "var(--wp--preset--spacing--40)",
-					"50": "var(--wp--preset--spacing--50)",
-					"60": "var(--wp--preset--spacing--60)",
-					"70": "var(--wp--preset--spacing--70)",
-					"80": "var(--wp--preset--spacing--80)",
-					"default": "var(--wp--preset--spacing--80)",
-					"last": "var(--wp--preset--spacing--80)"
-				}
-			},
 			"t2/featured-content-layout": {
 				"spacing": {
 					"rowGap": "var(--wp--preset--spacing--50)",
