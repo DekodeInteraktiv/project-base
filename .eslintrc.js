@@ -6,6 +6,9 @@ module.exports = {
 	env: {
 		browser: true,
 	},
+	settings: {
+		'import/core-modules': ['@t2/editor'],
+	},
 	rules: {
 		'jsdoc/require-param': 'off',
 		'@wordpress/no-global-event-listener': 'off',
