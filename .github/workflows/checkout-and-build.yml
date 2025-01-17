@@ -93,7 +93,7 @@ jobs:
                   tar -czf compressed-code-artifact.tar.gz --exclude=compressed-code-artifact.tar.gz --exclude=.git .
 
             - name: Upload artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: compressed-code-artifact
                   path: compressed-code-artifact.tar.gz

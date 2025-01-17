@@ -48,7 +48,7 @@ jobs:
 
         steps:
             # Delete artifacts after use.
-            - uses: geekyeggo/delete-artifact@v2
+            - uses: geekyeggo/delete-artifact@v5
               with:
                   failOnError: false
                   name: 'compressed-code-artifact'
