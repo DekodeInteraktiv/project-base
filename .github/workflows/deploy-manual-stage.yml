@@ -34,4 +34,3 @@ jobs:
             DEPLOYMENT_PATH: ${{ secrets.STAGE_DEPLOYMENT_PATH }}
             SERVER_PRIVATE_KEY: ${{ secrets.ACTIONS_DEPLOYMENT_KEY_ED25519_BASE64 }}
             SERVER_HOSTKEY: ${{ secrets.STAGE_DEPLOYMENT_HOSTKEY }}
-
