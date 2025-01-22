@@ -6,17 +6,8 @@ on:
             - 'stage'
 
 jobs:
-    code-checkout:
-        uses: ./.github/workflows/checkout-and-build.yml
-        with:
-            PHP_VERSION: '8.2'
-            BUILD_FOR_DEPLOY: false
-            ARTIFACT_NAME: 'compressed-code-artifact'
-        secrets: inherit
-
     deploy:
-        uses: 'dekodeinteraktiv/github-actions/.github/workflows/deploy-to-server.yml@main'
-        needs: [code-checkout]
+        uses: 'dekodeinteraktiv/public-github-actions/.github/workflows/deploy-artifact.yml@main'
         with:
             ARTIFACT_NAME: 'compressed-code-artifact'
             RSYNC_FILTER_FILE: './tools/github/rsync-file-filter.rules'
@@ -26,15 +17,3 @@ jobs:
             DEPLOYMENT_PATH: ${{ secrets.STAGE_DEPLOYMENT_PATH }}
             SERVER_PRIVATE_KEY: ${{ secrets.ACTIONS_DEPLOYMENT_KEY_ED25519_BASE64 }}
             SERVER_HOSTKEY: ${{ secrets.STAGE_DEPLOYMENT_HOSTKEY }}
-
-    cleanup:
-        runs-on: ubuntu-latest
-        needs: [deploy]
-
-        steps:
-            # Delete artifacts after use.
-            - uses: geekyeggo/delete-artifact@v5
-              with:
-                  failOnError: false
-                  name: 'compressed-code-artifact'
-                  useGlob: false
