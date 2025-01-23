@@ -12,7 +12,6 @@ on:
                 description: 'The PHP version to use'
                 required: false
                 type: string
-                default: '8.2'
             BUILD_FOR_DEPLOY:
                 description: 'Whether to build for deployment immediately or to keep developer tools'
                 required: false
@@ -20,19 +19,12 @@ on:
                 default: false
 
 jobs:
-    code-checkout:
-        uses: ./.github/workflows/checkout-and-build.yml
+    deploy:
+        uses: 'dekodeinteraktiv/public-github-actions/.github/workflows/deploy-artifact.yml@main'
         with:
-            tag: ${{ inputs.TAG }}
+            TAG: ${{ inputs.TAG }}
             PHP_VERSION: ${{ inputs.PHP_VERSION }}
             BUILD_FOR_DEPLOY: ${{ inputs.BUILD_FOR_DEPLOY }}
-            ARTIFACT_NAME: 'compressed-code-artifact'
-        secrets: inherit
-
-    deploy:
-        uses: 'dekodeinteraktiv/github-actions/.github/workflows/deploy-to-server.yml@main'
-        needs: [code-checkout]
-        with:
             ARTIFACT_NAME: 'compressed-code-artifact'
             RSYNC_FILTER_FILE: './tools/github/rsync-file-filter.rules'
         secrets:
@@ -41,15 +33,3 @@ jobs:
             DEPLOYMENT_PATH: ${{ secrets.PROD_DEPLOYMENT_PATH }}
             SERVER_PRIVATE_KEY: ${{ secrets.ACTIONS_DEPLOYMENT_KEY_ED25519_BASE64 }}
             SERVER_HOSTKEY: ${{ secrets.PROD_DEPLOYMENT_HOSTKEY }}
-
-    cleanup:
-        runs-on: ubuntu-latest
-        needs: [deploy]
-
-        steps:
-            # Delete artifacts after use.
-            - uses: geekyeggo/delete-artifact@v2
-              with:
-                  failOnError: false
-                  name: 'compressed-code-artifact'
-                  useGlob: false
