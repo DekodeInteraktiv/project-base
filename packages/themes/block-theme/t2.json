@@ -36,6 +36,6 @@
 		"t2/wrap-custom-html-block"
 	],
 	"t2/custom-block-margin": {
-		"version": "experimental_v3"
+		"version": 3
 	}
 }
