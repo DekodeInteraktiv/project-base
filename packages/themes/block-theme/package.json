@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"devDependencies": {
 		"@wordpress/scripts": "^30.0.2",
-		"fast-glob": "^3.3.2"
+		"fast-glob": "^3.3.3"
 	},
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php",
