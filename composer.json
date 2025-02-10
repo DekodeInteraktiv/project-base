@@ -4,17 +4,17 @@
 	"license": "GPL-3.0-or-later",
 	"require": {
 		"php": ">=8.2",
-		"boxuk/wp-muplugin-loader": "~2.2.0",
 		"composer/installers": "~2.3.0",
 		"dekode/block-theme": "~1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
-		"roots/wordpress": "~6.7.0",
-		"symfony/dotenv": "~7.1.5",
-		"t2/t2": "~8.0.0",
+		"roots/wordpress": "~6.7.1",
+		"roots/bedrock-autoloader": "~1.0.4",
+		"symfony/dotenv": "~7.2.0",
+		"t2/t2": "~8.1.0",
 		"wpackagist-plugin/imagify": "~2.2.0",
 		"wpackagist-plugin/spinupwp": "~1.7.1",
-		"wpackagist-plugin/two-factor": "~0.9.1"
+		"wpackagist-plugin/two-factor": "~0.11.0"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "6.1.0"
@@ -66,7 +66,6 @@
 	"prefer-stable": true,
 	"config": {
 		"allow-plugins": {
-			"boxuk/wp-muplugin-loader": true,
 			"composer/installers": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"inpsyde/wp-translation-downloader": true,
@@ -101,6 +100,7 @@
 	"scripts": {
 		"post-install-cmd": [
 			"cp public/content/plugins/spinupwp/drop-ins/object-cache.php public/content/object-cache.php",
+			"cp tools/autoloader/bedrock-autoloader.php public/content/mu-plugins/bedrock-autoloader.php",
 			"mkdir -p public/content/languages && cp -r packages/translations/* public/content/languages/",
 			"rm -rf public/wp/wp-content"
 		],
