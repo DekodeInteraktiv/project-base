@@ -8,7 +8,7 @@
 		"dekode/block-theme": "~1.0.0",
 		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
-		"roots/wordpress": "~6.7.1",
+		"roots/wordpress": "~6.7.2",
 		"roots/bedrock-autoloader": "~1.0.4",
 		"symfony/dotenv": "~7.2.0",
 		"t2/t2": "~8.1.0",
