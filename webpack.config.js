@@ -14,11 +14,7 @@ module.exports = {
 	...scriptConfig,
 	plugins: [
 		...scriptConfig.plugins.filter(
-			(plugin) =>
-				![
-					'DependencyExtractionWebpackPlugin',
-					'BrowserSyncPlugin',
-				].includes(plugin.constructor.name),
+			(plugin) => !['DependencyExtractionWebpackPlugin', 'BrowserSyncPlugin'].includes(plugin.constructor.name)
 		),
 		new DependencyExtractionWebpackPlugin({
 			injectPolyfill: true,
@@ -46,7 +42,7 @@ module.exports = {
 			},
 			{
 				reload: false,
-			},
+			}
 		),
 	],
 };
