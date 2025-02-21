@@ -5,13 +5,3 @@ body {
 	--t2-accordion-typography-heading-line-height: var(--wp--custom--line-height--12);
 	--t2-accordion-item-padding: var(--wp--preset--spacing--40);
 }
-
-.t2-accordion {
-	display: flex;
-	flex-direction: column;
-	gap: var(--wp--preset--spacing--50);
-}
-
-.t2-accordion-item {
-	margin: unset;
-}

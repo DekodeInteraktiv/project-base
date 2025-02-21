@@ -2,7 +2,7 @@
 .wp-block-post-featured-image {
 	display: flex;
 	flex-direction: column;
-	gap: var(--wp--preset--spacing--20);
+	gap: var(--wp--custom--t-2--caption--gap, var(--wp--preset--spacing--30));
 }
 
 .wp-block-image img,
