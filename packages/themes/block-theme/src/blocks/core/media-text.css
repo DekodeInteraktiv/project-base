@@ -4,14 +4,6 @@
 	grid-template-columns: 1fr 1fr;
 }
 
-/* Figcaption gap (Frontend only) */
-.wp-block-media-text__media:has(.wp-element-caption) {
-	max-width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: var(--t2-media-text-caption-gap, var(--wp--custom--t-2-media-text--caption--gap, var(--wp--custom--t-2--caption--gap, var(--wp--preset--spacing--30))));
-}
-
 .wp-block-media-text .wp-block-media-text__content {
 	padding: unset;
 }
