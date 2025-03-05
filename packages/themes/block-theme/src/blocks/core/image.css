@@ -1,11 +1,9 @@
-.wp-block-image,
-.wp-block-post-featured-image {
+.wp-block-image {
 	display: flex;
 	flex-direction: column;
 	gap: var(--wp--custom--t-2--caption--gap, var(--wp--preset--spacing--30));
 }
 
-.wp-block-image img,
-.wp-block-post-featured-image img {
+.wp-block-image img {
 	display: block;
 }
