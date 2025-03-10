@@ -26,6 +26,7 @@
 		"t2/disable-feeds",
 		"t2/disable-xmlrpc",
 		"t2/enqueue-theme-block-styles",
+		"t2/environment-label",
 		"t2/image-credit",
 		"t2/imagify-helper",
 		"t2/media-text-caption",
