@@ -187,12 +187,6 @@
 					"blockGap": "var(--wp--preset--spacing--50)"
 				}
 			},
-			"t2/ingress": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)",
-					"fontWeight": "var(--wp--custom--font-weight--bold)"
-				}
-			},
 			"core/post-template": {
 				"spacing": {
 					"blockGap": "var(--wp--preset--spacing--50)"
