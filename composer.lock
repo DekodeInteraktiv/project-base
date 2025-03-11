@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04fd5eb4a659d928bbb75fc56e989e0c",
+    "content-hash": "ea9a09bedfa78fc1a15a02981d2e3642",
     "packages": [
         {
             "name": "composer/installers",
@@ -1095,25 +1095,25 @@
         },
         {
             "name": "dekode/coding-standards",
-            "version": "6.1.0",
+            "version": "6.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DekodeInteraktiv/coding-standards.git",
-                "reference": "5f454d3b381274e1821d47057128d688c9125203"
+                "reference": "97506dca3233276334428885d932612b329edc14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DekodeInteraktiv/coding-standards/zipball/5f454d3b381274e1821d47057128d688c9125203",
-                "reference": "5f454d3b381274e1821d47057128d688c9125203",
+                "url": "https://api.github.com/repos/DekodeInteraktiv/coding-standards/zipball/97506dca3233276334428885d932612b329edc14",
+                "reference": "97506dca3233276334428885d932612b329edc14",
                 "shasum": ""
             },
             "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/phpcompatibility-wp": "2.1.5",
-                "wp-coding-standards/wpcs": "3.1.0"
+                "dealerdirect/phpcodesniffer-composer-installer": "~1.0.0",
+                "phpcompatibility/phpcompatibility-wp": "~2.1.6",
+                "wp-coding-standards/wpcs": "~3.1.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.29"
+                "ergebnis/composer-normalize": "~2.45.0"
             },
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
@@ -1136,9 +1136,9 @@
             ],
             "support": {
                 "issues": "https://github.com/DekodeInteraktiv/coding-standards/issues",
-                "source": "https://github.com/DekodeInteraktiv/coding-standards/tree/6.1.0"
+                "source": "https://github.com/DekodeInteraktiv/coding-standards/tree/6.2.0"
             },
-            "time": "2024-10-03T06:08:46+00:00"
+            "time": "2025-03-11T16:18:55+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
@@ -1276,16 +1276,16 @@
         },
         {
             "name": "phpcompatibility/phpcompatibility-wp",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibilityWP.git",
-                "reference": "01c1ff2704a58e46f0cb1ca9d06aee07b3589082"
+                "reference": "80ccb1a7640995edf1b87a4409fa584cd5869469"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/01c1ff2704a58e46f0cb1ca9d06aee07b3589082",
-                "reference": "01c1ff2704a58e46f0cb1ca9d06aee07b3589082",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/80ccb1a7640995edf1b87a4409fa584cd5869469",
+                "reference": "80ccb1a7640995edf1b87a4409fa584cd5869469",
                 "shasum": ""
             },
             "require": {
@@ -1342,7 +1342,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-04-24T21:37:59+00:00"
+            "time": "2025-01-16T22:34:19+00:00"
         },
         {
             "name": "phpcsstandards/phpcsextra",

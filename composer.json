@@ -16,7 +16,7 @@
 		"wpackagist-plugin/two-factor": "~0.12.0"
 	},
 	"require-dev": {
-		"dekode/coding-standards": "6.1.0"
+		"dekode/coding-standards": "~6.2.0"
 	},
 	"repositories": {
 		"mu-plugins": {
