@@ -151,12 +151,8 @@
 				}
 			},
 			"caption": {
-				"color": {
-					"text": "unset"
-				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)",
-					"lineHeight": "unset"
+					"fontSize": "var(--wp--preset--font-size--small)"
 				},
 				"spacing": {
 					"margin": {
