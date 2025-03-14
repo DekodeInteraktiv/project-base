@@ -6,7 +6,6 @@
 		"php": ">=8.2",
 		"composer/installers": "~2.3.0",
 		"dekode/block-theme": "~1.0.0",
-		"dekodeinteraktiv/dekode-label-environment": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
 		"roots/bedrock-autoloader": "~1.0.4",
 		"roots/wordpress": "~6.7.2",
@@ -17,7 +16,7 @@
 		"wpackagist-plugin/two-factor": "~0.12.0"
 	},
 	"require-dev": {
-		"dekode/coding-standards": "6.1.0"
+		"dekode/coding-standards": "~6.2.0"
 	},
 	"repositories": {
 		"mu-plugins": {

@@ -16,10 +16,9 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Append custom icons.
  *
+ * @param array $icons Icons.
  * @return array
  */
-function register_icons(): array {
-	return [
-		// Add custom icons here.
-	];
+function register_icons( array $icons ): array {
+	return $icons;
 }
