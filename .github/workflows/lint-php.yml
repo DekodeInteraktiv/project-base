@@ -56,7 +56,7 @@ jobs:
               env:
                   COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
               run: |
-                  composer install --prefer-dist --no-suggest --no-progress --no-ansi --no-interaction
+                  composer install --prefer-dist --no-progress --no-ansi --no-interaction
                   echo "vendor/bin" >> $GITHUB_PATH
 
             - name: Log PHPCS debug information
