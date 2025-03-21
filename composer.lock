@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a87a9598e553c1991df934d68b215727",
+    "content-hash": "dd87ee8b10be69a0857d2675c974866c",
     "packages": [
         {
             "name": "composer/installers",
@@ -182,35 +182,6 @@
                 "symlink": true,
                 "relative": true
             }
-        },
-        {
-            "name": "dekodeinteraktiv/dekode-label-environment",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DekodeInteraktiv/dekode-label-environment.git",
-                "reference": "d67e4996adede91032bb2625013f37ca7c8c0195"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DekodeInteraktiv/dekode-label-environment/zipball/d67e4996adede91032bb2625013f37ca7c8c0195",
-                "reference": "d67e4996adede91032bb2625013f37ca7c8c0195",
-                "shasum": ""
-            },
-            "require-dev": {
-                "dekode/coding-standards": "4.0.0"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "description": "Adds a banner to the frontend and an item to the admin bar informing about the server environment",
-            "support": {
-                "issues": "https://github.com/DekodeInteraktiv/dekode-label-environment/issues",
-                "source": "https://github.com/DekodeInteraktiv/dekode-label-environment/tree/1.0.2"
-            },
-            "time": "2022-12-02T11:32:09+00:00"
         },
         {
             "name": "inpsyde/wp-translation-downloader",
@@ -602,15 +573,15 @@
         },
         {
             "name": "t2/admin",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-admin-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-admin-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "8.5.0",
-                "t2/icons": "8.5.0"
+                "t2/config": "8.6.0",
+                "t2/icons": "8.6.0"
             },
             "type": "package",
             "autoload": {
@@ -631,10 +602,10 @@
         },
         {
             "name": "t2/assets",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-assets-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-assets-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -658,17 +629,17 @@
         },
         {
             "name": "t2/block-library",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-block-library-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-block-library-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/blocks": "8.5.0",
-                "t2/config": "8.5.0",
-                "t2/icons": "8.5.0",
-                "t2/utils": "8.5.0"
+                "t2/blocks": "8.6.0",
+                "t2/config": "8.6.0",
+                "t2/icons": "8.6.0",
+                "t2/utils": "8.6.0"
             },
             "type": "package",
             "autoload": {
@@ -689,16 +660,16 @@
         },
         {
             "name": "t2/blocks",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-blocks-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-blocks-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "8.5.0",
-                "t2/registry": "8.5.0",
-                "t2/utils": "8.5.0"
+                "t2/config": "8.6.0",
+                "t2/registry": "8.6.0",
+                "t2/utils": "8.6.0"
             },
             "type": "package",
             "autoload": {
@@ -719,38 +690,11 @@
             "description": "T2 Blocks"
         },
         {
-            "name": "t2/components",
-            "version": "8.5.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-components-8.5.0.zip"
-            },
-            "require": {
-                "php": ">=7.2"
-            },
-            "type": "package",
-            "autoload": {
-                "files": [
-                    "src/components.php"
-                ]
-            },
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Dekode Interaktiv",
-                    "email": "hei@dekode.no"
-                }
-            ],
-            "description": "WordPress Components for T2"
-        },
-        {
             "name": "t2/config",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-config-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-config-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -774,16 +718,16 @@
         },
         {
             "name": "t2/editor",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-editor-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-editor-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "8.5.0",
-                "t2/icons": "8.5.0",
-                "t2/utils": "8.5.0"
+                "t2/config": "8.6.0",
+                "t2/icons": "8.6.0",
+                "t2/utils": "8.6.0"
             },
             "type": "package",
             "autoload": {
@@ -804,17 +748,17 @@
         },
         {
             "name": "t2/extension-library",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-extension-library-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-extension-library-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "8.5.0",
-                "t2/extensions": "8.5.0",
-                "t2/icons": "8.5.0",
-                "t2/utils": "8.5.0"
+                "t2/config": "8.6.0",
+                "t2/extensions": "8.6.0",
+                "t2/icons": "8.6.0",
+                "t2/utils": "8.6.0"
             },
             "type": "package",
             "autoload": {
@@ -835,16 +779,16 @@
         },
         {
             "name": "t2/extensions",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-extensions-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-extensions-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/config": "8.5.0",
-                "t2/registry": "8.5.0",
-                "t2/utils": "8.5.0"
+                "t2/config": "8.6.0",
+                "t2/registry": "8.6.0",
+                "t2/utils": "8.6.0"
             },
             "type": "package",
             "autoload": {
@@ -865,14 +809,14 @@
         },
         {
             "name": "t2/icons",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-icons-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-icons-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/utils": "8.5.0"
+                "t2/utils": "8.6.0"
             },
             "type": "package",
             "autoload": {
@@ -893,10 +837,10 @@
         },
         {
             "name": "t2/registry",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-registry-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-registry-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2"
@@ -921,24 +865,23 @@
         },
         {
             "name": "t2/t2",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-t2-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-t2-8.6.0.zip"
             },
             "require": {
-                "t2/admin": "8.5.0",
-                "t2/assets": "8.5.0",
-                "t2/block-library": "8.5.0",
-                "t2/blocks": "8.5.0",
-                "t2/components": "8.5.0",
-                "t2/config": "8.5.0",
-                "t2/editor": "8.5.0",
-                "t2/extension-library": "8.5.0",
-                "t2/extensions": "8.5.0",
-                "t2/icons": "8.5.0",
-                "t2/registry": "8.5.0",
-                "t2/utils": "8.5.0"
+                "t2/admin": "8.6.0",
+                "t2/assets": "8.6.0",
+                "t2/block-library": "8.6.0",
+                "t2/blocks": "8.6.0",
+                "t2/config": "8.6.0",
+                "t2/editor": "8.6.0",
+                "t2/extension-library": "8.6.0",
+                "t2/extensions": "8.6.0",
+                "t2/icons": "8.6.0",
+                "t2/registry": "8.6.0",
+                "t2/utils": "8.6.0"
             },
             "type": "wordpress-plugin",
             "license": [
@@ -954,14 +897,14 @@
         },
         {
             "name": "t2/utils",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://t2-packages.teft.io/build/t2-utils-8.5.0.zip"
+                "url": "https://t2-packages.teft.io/build/t2-utils-8.6.0.zip"
             },
             "require": {
                 "php": ">=7.2",
-                "t2/registry": "8.5.0"
+                "t2/registry": "8.6.0"
             },
             "type": "package",
             "autoload": {
@@ -1124,25 +1067,25 @@
         },
         {
             "name": "dekode/coding-standards",
-            "version": "6.1.0",
+            "version": "6.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DekodeInteraktiv/coding-standards.git",
-                "reference": "5f454d3b381274e1821d47057128d688c9125203"
+                "reference": "97506dca3233276334428885d932612b329edc14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DekodeInteraktiv/coding-standards/zipball/5f454d3b381274e1821d47057128d688c9125203",
-                "reference": "5f454d3b381274e1821d47057128d688c9125203",
+                "url": "https://api.github.com/repos/DekodeInteraktiv/coding-standards/zipball/97506dca3233276334428885d932612b329edc14",
+                "reference": "97506dca3233276334428885d932612b329edc14",
                 "shasum": ""
             },
             "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/phpcompatibility-wp": "2.1.5",
-                "wp-coding-standards/wpcs": "3.1.0"
+                "dealerdirect/phpcodesniffer-composer-installer": "~1.0.0",
+                "phpcompatibility/phpcompatibility-wp": "~2.1.6",
+                "wp-coding-standards/wpcs": "~3.1.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.29"
+                "ergebnis/composer-normalize": "~2.45.0"
             },
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
@@ -1165,9 +1108,9 @@
             ],
             "support": {
                 "issues": "https://github.com/DekodeInteraktiv/coding-standards/issues",
-                "source": "https://github.com/DekodeInteraktiv/coding-standards/tree/6.1.0"
+                "source": "https://github.com/DekodeInteraktiv/coding-standards/tree/6.2.0"
             },
-            "time": "2024-10-03T06:08:46+00:00"
+            "time": "2025-03-11T16:18:55+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
@@ -1305,16 +1248,16 @@
         },
         {
             "name": "phpcompatibility/phpcompatibility-wp",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibilityWP.git",
-                "reference": "01c1ff2704a58e46f0cb1ca9d06aee07b3589082"
+                "reference": "80ccb1a7640995edf1b87a4409fa584cd5869469"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/01c1ff2704a58e46f0cb1ca9d06aee07b3589082",
-                "reference": "01c1ff2704a58e46f0cb1ca9d06aee07b3589082",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/80ccb1a7640995edf1b87a4409fa584cd5869469",
+                "reference": "80ccb1a7640995edf1b87a4409fa584cd5869469",
                 "shasum": ""
             },
             "require": {
@@ -1371,7 +1314,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-04-24T21:37:59+00:00"
+            "time": "2025-01-16T22:34:19+00:00"
         },
         {
             "name": "phpcsstandards/phpcsextra",
