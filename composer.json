@@ -10,7 +10,7 @@
 		"roots/bedrock-autoloader": "~1.0.4",
 		"roots/wordpress": "~6.7.2",
 		"symfony/dotenv": "~7.2.0",
-		"t2/t2": "~8.5.0",
+		"t2/t2": "~8.6.0",
 		"wpackagist-plugin/imagify": "~2.2.0",
 		"wpackagist-plugin/spinupwp": "~1.7.1",
 		"wpackagist-plugin/two-factor": "~0.12.0"
