@@ -34,6 +34,7 @@
 		"t2/remove-core-block-styles",
 		"t2/remove-core-patterns",
 		"t2/reset-admin-dashboard",
+		"t2/search-block-button-icon",
 		"t2/site-health-qa",
 		"t2/wrap-custom-html-block"
 	],
