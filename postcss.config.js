@@ -1,6 +1,7 @@
 /**
  * External dependencies
  */
+const path = require('path');
 const postcssGlobalData = require('@csstools/postcss-global-data');
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
@@ -16,7 +17,7 @@ module.exports = (ctx) => {
 	const config = {
 		plugins: [
 			postcssGlobalData({
-				files: ['../../../public/content/plugins/t2/packages/viewport/src/media.css'],
+				files: [path.resolve(`${__dirname}/public/content/plugins/t2/packages/viewport/src/media.css`)],
 			}),
 			postcssImport,
 			postcssMixins,
