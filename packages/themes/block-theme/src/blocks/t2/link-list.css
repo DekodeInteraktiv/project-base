@@ -1,7 +1,7 @@
 body {
-	--t2-accordion-typography-heading-font-weight: var(--wp--custom--font-weight--bold);
+	--t2-link-list-typography-text-font-weight: var(--wp--custom--font-weight--bold);
+	--t2-link-list-typography-description-color: var(--wp--preset--color--foreground);
 	--t2-link-list-spacing-item-gap: var(--wp--preset--spacing--50) var(--wp--preset--spacing--40);
-	--t2-link-list-description-color: var(--wp--preset--color--foreground);
 }
 
 .t2-link-list-item .t2-link-list-item__link {
