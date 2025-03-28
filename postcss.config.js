@@ -1,6 +1,7 @@
 /**
  * External dependencies
  */
+/* const postcssGlobalData = require('@csstools/postcss-global-data'); */
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
 const postcssUrl = require('postcss-url');
