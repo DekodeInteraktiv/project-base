@@ -1,8 +1,6 @@
 /**
  * External dependencies
  */
-const path = require('path');
-const postcssGlobalData = require('@csstools/postcss-global-data');
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
 const postcssUrl = require('postcss-url');
@@ -16,9 +14,9 @@ const cssnano = require('cssnano');
 module.exports = (ctx) => {
 	const config = {
 		plugins: [
-			postcssGlobalData({
-				files: [path.resolve(`${__dirname}/public/content/plugins/t2/packages/viewport/src/media.css`)],
-			}),
+			/* postcssGlobalData({
+				files: [require.resolve('@teft/viewport/src/media.css')],
+			}), */
 			postcssImport,
 			postcssMixins,
 			postcssUrl,
