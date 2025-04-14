@@ -45,7 +45,7 @@
 		"clean": "turbo run clean && rm -rf node_modules",
 		"format": "prettier --write .",
 		"i18n:make-pot": "turbo run i18n:make-pot",
-		"lint": "npm-run-all --parallel lint:js lint:css lint:format",
+		"lint": "npm-run-all --parallel lint:*",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"lint:format": "prettier --check .",
