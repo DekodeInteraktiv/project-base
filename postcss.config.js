@@ -17,7 +17,7 @@ module.exports = (ctx) => {
 	const config = {
 		plugins: [
 			postcssGlobalData({
-				files: [path.resolve(`${__dirname}/vendor/t2/viewport/src/media.css`)],
+				files: [path.resolve(`${__dirname}/vendor/t2/utils/src/custom-media.css`)],
 			}),
 			postcssImport,
 			postcssMixins,
