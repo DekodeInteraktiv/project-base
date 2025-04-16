@@ -8,18 +8,18 @@
 		"dekode/block-theme": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
 		"roots/bedrock-autoloader": "~1.0.4",
-		"roots/wordpress": "~6.7.2",
+		"roots/wordpress": "~6.8.0",
 		"symfony/dotenv": "~7.2.0",
 		"t2/t2": "~8.8.2",
 		"wpackagist-plugin/imagify": "~2.2.0",
 		"wpackagist-plugin/spinupwp": "~1.7.1",
-		"wpackagist-plugin/two-factor": "~0.12.0"
+		"wpackagist-plugin/two-factor": "~0.13.0"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "~6.2.0",
 		"phpstan/extension-installer": "^1.2",
-		"phpstan/phpstan": "^1.9",
-		"szepeviktor/phpstan-wordpress": "^1.1"
+		"phpstan/phpstan": "~2.1.1",
+		"szepeviktor/phpstan-wordpress": "~2.0.1"
 	},
 	"repositories": {
 		"mu-plugins": {
@@ -122,7 +122,7 @@
 			"./vendor/bin/phpcs ."
 		],
 		"phpstan": [
-			"./vendor/bin/phpstan analyse packages --level=8"
+			"./vendor/bin/phpstan analyse packages --level=8 --memory-limit 512M"
 		]
 	}
 }
