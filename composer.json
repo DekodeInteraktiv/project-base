@@ -8,7 +8,7 @@
 		"dekode/block-theme": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.5.0",
 		"roots/bedrock-autoloader": "~1.0.4",
-		"roots/wordpress": "~6.7.2",
+		"roots/wordpress": "~6.8.0",
 		"symfony/dotenv": "~7.2.0",
 		"t2/t2": "~8.8.2",
 		"wpackagist-plugin/imagify": "~2.2.0",
