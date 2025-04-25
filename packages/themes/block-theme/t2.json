@@ -16,6 +16,7 @@
 		"t2/link-list"
 	],
 	"mu-extensions": [
+		"t2/accessibility-improvements",
 		"t2/allow-svg-uploads",
 		"t2/button-icon",
 		"t2/custom-block-margin",
@@ -36,8 +37,7 @@
 		"t2/reset-admin-dashboard",
 		"t2/search-block-button-icon",
 		"t2/site-health-qa",
-		"t2/wrap-custom-html-block",
-		"t2/yoast-accessibility"
+		"t2/wrap-custom-html-block"
 	],
 	"t2/custom-block-margin": {
 		"version": 3
