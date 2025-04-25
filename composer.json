@@ -13,7 +13,7 @@
 		"t2/t2": "~8.8.2",
 		"wpackagist-plugin/imagify": "~2.2.0",
 		"wpackagist-plugin/spinupwp": "~1.7.1",
-		"wpackagist-plugin/two-factor": "~0.12.0"
+		"wpackagist-plugin/two-factor": "~0.13.0"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "~6.2.0"
