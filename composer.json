@@ -89,6 +89,11 @@
 		},
 		"wordpress-install-dir": "public/wp",
 		"wp-translation-downloader": {
+			"api": {
+				"names": {
+					"t2/t2": "https://translate.teft.io/api/translations/t2"
+				}
+			},
 			"auto-run": false,
 			"directory": "public/content/languages",
 			"languages": [
