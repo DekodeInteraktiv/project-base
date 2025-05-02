@@ -3,6 +3,128 @@
 	"version": 3,
 	"settings": {
 		"appearanceTools": false,
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": false
+				},
+				"color": {
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/buttons": {
+				"color": {
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/list": {
+				"color": {
+					"palette": []
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/list-item": {
+				"color": {
+					"palette": []
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/media-text": {
+				"color": {
+					"palette": []
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/paragraph": {
+				"color": {
+					"palette": []
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/post-template": {
+				"color": {
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/pullquote": {
+				"border": {
+					"color": false,
+					"radius": false,
+					"style": false,
+					"width": false
+				},
+				"color": {
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/quote": {
+				"color": {
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"t2/ingress": {
+				"color": {
+					"palette": []
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			}
+		},
+		"border": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
+		},
 		"color": {
 			"custom": false,
 			"customDuotone": false,
