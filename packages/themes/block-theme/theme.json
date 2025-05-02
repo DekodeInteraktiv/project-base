@@ -67,18 +67,6 @@
 					"fontSizes": []
 				}
 			},
-			"core/post-template": {
-				"color": {
-					"palette": []
-				},
-				"spacing": {
-					"blockGap": false
-				},
-				"typography": {
-					"fontFamilies": [],
-					"fontSizes": []
-				}
-			},
 			"core/pullquote": {
 				"border": {
 					"color": false,
