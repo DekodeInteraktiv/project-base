@@ -204,6 +204,8 @@
 			"fontWeight": false,
 			"letterSpacing": false,
 			"lineHeight": false,
+			"textAlign": false,
+			"textColumns": false,
 			"textDecoration": false,
 			"textTransform": false,
 			"writingMode": false
