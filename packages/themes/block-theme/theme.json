@@ -15,6 +15,7 @@
 					"blockGap": false
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
@@ -27,6 +28,7 @@
 					"blockGap": false
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
@@ -36,6 +38,7 @@
 					"palette": []
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
@@ -45,6 +48,7 @@
 					"palette": []
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
@@ -54,6 +58,7 @@
 					"palette": []
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
@@ -63,6 +68,7 @@
 					"palette": []
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
@@ -81,6 +87,7 @@
 					"blockGap": false
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
@@ -93,6 +100,7 @@
 					"blockGap": false
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
@@ -102,6 +110,7 @@
 					"palette": []
 				},
 				"typography": {
+					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
 				}
