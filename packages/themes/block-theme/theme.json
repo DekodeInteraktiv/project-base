@@ -9,6 +9,7 @@
 					"radius": false
 				},
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"spacing": {
@@ -22,6 +23,7 @@
 			},
 			"core/buttons": {
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"spacing": {
@@ -35,6 +37,7 @@
 			},
 			"core/list": {
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"typography": {
@@ -45,6 +48,7 @@
 			},
 			"core/list-item": {
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"typography": {
@@ -55,6 +59,7 @@
 			},
 			"core/media-text": {
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"typography": {
@@ -65,6 +70,7 @@
 			},
 			"core/paragraph": {
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"typography": {
@@ -81,6 +87,7 @@
 					"width": false
 				},
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"spacing": {
@@ -94,6 +101,7 @@
 			},
 			"core/quote": {
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"spacing": {
@@ -107,6 +115,7 @@
 			},
 			"t2/ingress": {
 				"color": {
+					"gradients": [],
 					"palette": []
 				},
 				"typography": {
