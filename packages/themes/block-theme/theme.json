@@ -35,6 +35,20 @@
 					"fontSizes": []
 				}
 			},
+			"core/heading": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
 			"core/list": {
 				"color": {
 					"gradients": [],
@@ -79,6 +93,20 @@
 					"fontSizes": []
 				}
 			},
+			"core/post-title": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
 			"core/pullquote": {
 				"border": {
 					"color": false,
@@ -113,6 +141,29 @@
 					"fontSizes": []
 				}
 			},
+			"core/table": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"t2/factbox": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				}
+			},
+			"t2/infobox": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				}
+			},
 			"t2/ingress": {
 				"color": {
 					"gradients": [],
@@ -122,6 +173,18 @@
 					"defaultFontSizes": false,
 					"fontFamilies": [],
 					"fontSizes": []
+				}
+			},
+			"t2/statistic-item": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				}
+			},
+			"t2/statistics": {
+				"color": {
+					"gradients": [],
+					"palette": []
 				}
 			}
 		},
