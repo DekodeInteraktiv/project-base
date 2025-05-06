@@ -3,6 +3,197 @@
 	"version": 3,
 	"settings": {
 		"appearanceTools": false,
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": false
+				},
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/buttons": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/heading": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/list": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/list-item": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/media-text": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/paragraph": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/post-title": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/pullquote": {
+				"border": {
+					"color": false,
+					"radius": false,
+					"style": false,
+					"width": false
+				},
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/quote": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"blockGap": false
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"core/table": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"t2/factbox": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				}
+			},
+			"t2/infobox": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				}
+			},
+			"t2/ingress": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				},
+				"typography": {
+					"defaultFontSizes": false,
+					"fontFamilies": [],
+					"fontSizes": []
+				}
+			},
+			"t2/statistic-item": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				}
+			},
+			"t2/statistics": {
+				"color": {
+					"gradients": [],
+					"palette": []
+				}
+			}
+		},
+		"border": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
+		},
 		"color": {
 			"custom": false,
 			"customDuotone": false,
@@ -85,6 +276,8 @@
 			"fontWeight": false,
 			"letterSpacing": false,
 			"lineHeight": false,
+			"textAlign": false,
+			"textColumns": false,
 			"textDecoration": false,
 			"textTransform": false,
 			"writingMode": false
