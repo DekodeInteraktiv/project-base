@@ -387,7 +387,8 @@
 			"fontFamily": "var(--wp--preset--font-family--body)",
 			"fontSize": "var(--wp--preset--font-size--medium)",
 			"lineHeight": "var(--wp--custom--line-height--15)"
-		}
+		},
+		"css": ":root { text-underline-position: under; }"
 	},
 	"templateParts": [
 		{
