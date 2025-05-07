@@ -9,3 +9,7 @@
 :where([hidden]) {
 	display: none !important;
 }
+
+:root {
+	text-underline-position: under;
+}
