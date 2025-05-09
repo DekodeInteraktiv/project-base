@@ -22,19 +22,18 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
+            - name: Checkout repository
+              uses: actions/checkout@v3
 
-            - name: Use Node.js 16.x
-              uses: actions/setup-node@v2
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v4
               with:
-                  node-version: 16.x
+                  node-version-file: 'package.json'
+                  check-latest: true
                   cache: npm
 
             - name: Install Dependencies
               run: npm ci
 
-            - name: Lint CSS
-              run: npm run lint:css
-
-            - name: Lint JS
-              run: npm run lint:js
+            - name: Run linters
+              run: npm run lint

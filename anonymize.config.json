@@ -1,7 +1,76 @@
 {
+	"__RemoveAfterSetup__": "This line exists to ensure anonymization configs are checked when a new project is set up, and should be removed once the contents of the config file have been validated against the contents expected on a site.",
 	"patterns": [
 		{
-			"tableName": "wp_users",
+			"tableName": ".*_registration_log",
+			"fields": [
+				{
+					"field": "email",
+					"position": 2,
+					"type": "email",
+					"constraints": null
+				}
+			]
+		},
+		{
+			"tableName": ".*_sitemeta",
+			"fields": [
+				{
+					"field": "admin_email",
+					"position": 4,
+					"type": "email",
+					"constraints": [
+						{
+							"field": "meta_value",
+							"position": 2,
+							"value": "admin_email"
+						}
+					]
+				}
+			]
+		},
+		{
+			"tableName": ".*_options",
+			"fields": [
+				{
+					"field": "admin_email",
+					"position": 3,
+					"type": "email",
+					"constraints": [
+						{
+							"field": "option_name",
+							"position": 2,
+							"value": "admin_email"
+						}
+					]
+				}
+			]
+		},
+		{
+			"tableName": ".*_signups",
+			"fields": [
+				{
+					"field": "user_login",
+					"position": 5,
+					"type": "username",
+					"constraints": null
+				},
+				{
+					"field": "user_email",
+					"position": 6,
+					"type": "email",
+					"constraints": null
+				},
+				{
+					"field": "activation_key",
+					"position": 10,
+					"type": "shortString",
+					"constraints": null
+				}
+			]
+		},
+		{
+			"tableName": ".*_users",
 			"fields": [
 				{
 					"field": "user_login",
@@ -42,7 +111,7 @@
 			]
 		},
 		{
-			"tableName": "wp_usermeta",
+			"tableName": ".*_usermeta",
 			"fields": [
 				{
 					"field": "meta_value",
@@ -95,8 +164,7 @@
 			]
 		},
 		{
-			"tableName": "wp_comments",
-			"tableNameRegex": ".*_comments",
+			"tableName": ".*_comments",
 			"fields": [
 				{
 					"field": "comment_author",

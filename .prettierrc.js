@@ -1,11 +1,4 @@
-module.exports = {
-	useTabs: true,
-	tabWidth: 4,
-	printWidth: 80,
-	singleQuote: true,
-	trailingComma: 'all',
-	bracketSpacing: true,
-	bracketSameLine: false,
-	semi: true,
-	arrowParens: 'always',
-};
+// Import the default config file and expose it in the project root.
+// Useful for editor integrations.
+module.exports = require('@wordpress/prettier-config');
+module.exports.printWidth = 120;

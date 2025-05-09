@@ -1,0 +1,19 @@
+.wp-block-group.has-background,
+.wp-block-group.has-background.alignwide {
+	padding: var(--wp--preset--spacing--50);
+}
+
+.wp-block-group.has-background.alignfull {
+	padding-block: var(--wp--preset--spacing--80);
+	padding-inline-start: var(--wp--style--root--padding-left);
+	padding-inline-end: var(--wp--style--root--padding-right);
+}
+
+/* No start/end padding for groups starting/ending with spacer block */
+.wp-block-group.has-background:has(.t2-spacer:first-child, .wp-block-spacer:first-child) {
+	padding-block-start: unset;
+}
+
+.wp-block-group.has-background:has(.t2-spacer:last-child, .wp-block-spacer:last-child) {
+	padding-block-end: unset;
+}

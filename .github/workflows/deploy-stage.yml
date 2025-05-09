@@ -1,0 +1,20 @@
+name: Deploy code to stage
+
+on:
+    push:
+        branches:
+            - 'stage'
+
+jobs:
+    deploy:
+        uses: 'dekodeinteraktiv/public-github-actions/.github/workflows/deploy-artifact.yml@main'
+        with:
+            ARTIFACT_NAME: 'compressed-code-artifact'
+            RSYNC_FILTER_FILE: './tools/github/rsync-file-filter.rules'
+        secrets:
+            SERVER_USERNAME: ${{ secrets.STAGE_DEPLOYMENT_USERNAME }}
+            SERVER_HOSTNAME: ${{ secrets.STAGE_DEPLOYMENT_HOSTNAME }}
+            DEPLOYMENT_PATH: ${{ secrets.STAGE_DEPLOYMENT_PATH }}
+            SERVER_PRIVATE_KEY: ${{ secrets.ACTIONS_DEPLOYMENT_KEY_ED25519_BASE64 }}
+            SERVER_HOSTKEY: ${{ secrets.STAGE_DEPLOYMENT_HOSTKEY }}
+            COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}

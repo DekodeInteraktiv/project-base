@@ -1,24 +1,33 @@
 /**
  * External dependencies
  */
-const atImport = require('postcss-import');
+const path = require('path');
+const postcssGlobalData = require('@csstools/postcss-global-data');
+const postcssImport = require('postcss-import');
+const postcssMixins = require('postcss-mixins');
+const postcssUrl = require('postcss-url');
+const postcssCustomMedia = require('postcss-custom-media');
+const postcssMediaMinMax = require('postcss-media-minmax');
+const postcssNesting = require('postcss-nesting');
+const postcssDiscardComments = require('postcss-discard-comments');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const customMedia = require('postcss-custom-media');
-const minmax = require('postcss-media-minmax');
-const mixins = require('postcss-mixins');
-const nested = require('postcss-nested');
-const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 
 module.exports = (ctx) => {
 	const config = {
 		plugins: [
-			atImport(),
-			mixins,
-			postcssFlexbugsFixes,
-			nested,
-			customMedia(),
-			minmax(),
+			postcssGlobalData({
+				files: [path.resolve(`${__dirname}/vendor/t2/utils/src/custom-media.css`)],
+			}),
+			postcssImport,
+			postcssMixins,
+			postcssUrl,
+			postcssCustomMedia,
+			postcssMediaMinMax,
+			postcssNesting({
+				noIsPseudoSelector: true,
+			}),
+			postcssDiscardComments,
 			autoprefixer,
 		],
 	};

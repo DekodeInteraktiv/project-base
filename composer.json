@@ -2,18 +2,22 @@
 	"name": "dekode/project-base",
 	"description": "Dekode WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
 	"license": "GPL-3.0-or-later",
-	"config": {
-		"sort-packages": true,
-		"allow-plugins": {
-			"composer/installers": true,
-			"boxuk/wp-muplugin-loader": true,
-			"inpsyde/wp-translation-downloader": true,
-			"johnpbloch/wordpress-core-installer": true,
-			"dealerdirect/phpcodesniffer-composer-installer": true
-		}
+	"require": {
+		"php": ">=8.2",
+		"composer/installers": "~2.3.0",
+		"dekode/block-theme": "~1.0.0",
+		"inpsyde/wp-translation-downloader": "~2.5.0",
+		"roots/bedrock-autoloader": "~1.0.4",
+		"roots/wordpress": "~6.8.0",
+		"symfony/dotenv": "~7.2.0",
+		"t2/t2": "~8.10.0",
+		"wpackagist-plugin/imagify": "~2.2.0",
+		"wpackagist-plugin/spinupwp": "~1.7.1",
+		"wpackagist-plugin/two-factor": "~0.13.0"
 	},
-	"prefer-stable": true,
-	"minimum-stability": "dev",
+	"require-dev": {
+		"dekode/coding-standards": "~6.2.0"
+	},
 	"repositories": {
 		"mu-plugins": {
 			"type": "path",
@@ -47,28 +51,31 @@
 		"t2-packages": {
 			"type": "composer",
 			"url": "https://t2-packages.teft.io"
+		},
+		"dekode-composer": {
+			"type": "composer",
+			"url": "https://composer.dekodes.no"
+		},
+		"dekode-library": {
+			"type": "composer",
+			"url": "https://library.dekodes.no/satispress/"
 		}
 	},
-	"require": {
-		"php": ">=7.4",
-		"boxuk/wp-muplugin-loader": "~1.6.1",
-		"composer/installers": "~1.12.0",
-		"dekode/dekode-theme": "~1.0.0",
-		"inpsyde/wp-translation-downloader": "~2.0.2",
-		"johnpbloch/wordpress": "~5.9.2",
-		"symfony/dotenv": "~5.4.2",
-		"t2/t2": "~0.26.4",
-		"wpackagist-plugin/imagify": "~1.10.0",
-		"wpackagist-plugin/spinupwp": "~1.4.0",
-		"wpackagist-plugin/two-factor": "~0.7.1"
-	},
-	"require-dev": {
-		"dekode/coding-standards": "4.0.0",
-		"wp-cli/i18n-command": "2.2.13",
-		"dekode/logging": "@dev"
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"inpsyde/wp-translation-downloader": true,
+			"roots/wordpress-core-installer": true
+		},
+		"platform": {
+			"php": "8.2"
+		},
+		"sort-packages": true
 	},
 	"extra": {
-		"wordpress-install-dir": "public/wp",
 		"installer-paths": {
 			"public/content/mu-plugins/{$name}/": [
 				"type:wordpress-muplugin"
@@ -80,33 +87,40 @@
 				"type:wordpress-theme"
 			]
 		},
+		"wordpress-install-dir": "public/wp",
 		"wp-translation-downloader": {
+			"api": {
+				"names": {
+					"t2/t2": "https://translate.teft.io/api/translations/t2"
+				}
+			},
 			"auto-run": false,
+			"directory": "public/content/languages",
 			"languages": [
 				"nb_NO"
-			],
-			"directory": "public/content/languages"
+			]
 		}
 	},
 	"scripts": {
 		"post-install-cmd": [
 			"cp public/content/plugins/spinupwp/drop-ins/object-cache.php public/content/object-cache.php",
-			"cp -r packages/translations/* public/content/languages/"
-		],
-		"lint": [
-			"./vendor/bin/phpcs ."
+			"mkdir -p public/content/mu-plugins",
+			"cp tools/autoloader/bedrock-autoloader.php public/content/mu-plugins/bedrock-autoloader.php",
+			"mkdir -p public/content/languages && cp -r packages/translations/* public/content/languages/",
+			"rm -rf public/wp/wp-content"
 		],
 		"build": [
 			"@composer install"
 		],
+		"build-for-deploy": [
+			"@composer install --no-dev && composer build-translations"
+		],
 		"build-translations": [
+			"rm -f wp-translation-downloader.lock",
 			"@composer wp-translation-downloader:download"
 		],
-		"build-for-deploy": [
-			"@composer install --no-dev && composer wp-translation-downloader:download"
-		],
-		"make-pot": [
-			"./vendor/bin/wp i18n make-pot . languages/project-base.pot --exclude=\".github,plugins,public/content/plugins,vendor,public/wp,node_modules,tests\" --slug=project-base"
+		"lint": [
+			"./vendor/bin/phpcs ."
 		]
 	}
 }

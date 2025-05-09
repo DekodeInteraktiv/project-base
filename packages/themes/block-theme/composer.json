@@ -1,0 +1,21 @@
+{
+	"$schema": "https://getcomposer.org/schema.json",
+	"name": "dekode/block-theme",
+	"description": "Block Theme",
+	"type": "wordpress-theme",
+	"license": "GPL-3.0-or-later",
+	"version": "1.0.0",
+	"require-dev": {
+		"wp-cli/i18n-command": "~2.4.3"
+	},
+	"scripts": {
+		"make-pot": [
+			"npm run build",
+			"wp i18n make-pot . --exclude=.turbo,node_modules,src,vendor,theme.json,t2.json"
+		],
+		"make-json": [
+			"npm run build",
+			"wp i18n make-json languages/block-theme-nb_NO.po --no-purge"
+		]
+	}
+}

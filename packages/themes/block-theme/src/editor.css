@@ -1,0 +1,25 @@
+/*
+Less prominent editor post title for clean singular template.
+Remove this if you're using a singular.html template with hard coded title block.
+*/
+.post-type-page .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper,
+.post-type-post .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper,
+.post-type-page.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper,
+.post-type-post.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
+	background-color: transparent;
+	border-bottom: 1px solid #e0e0e0;
+	color: inherit;
+	margin: 0 0 1rem !important;
+	padding: 0.5rem;
+	text-align: left;
+
+	& h1 {
+		font-family: unset;
+		font-size: 1rem;
+		font-weight: unset;
+		line-height: 1;
+		margin: unset;
+		max-width: none;
+		text-transform: unset;
+	}
+}
