@@ -6,7 +6,7 @@ The pre-requisite for this is that you need Docker installed and running.
 
 ## Good to know
 
-The `becrock-wp-env` setup functions much like a drop-in replacement for [`wp-env`](https://github.com/WordPress/gutenberg/tree/trunk/packages/env) created by the WordPress project, but with support for Bedrock-style project structures.
+The `bedrock-wp-env` setup functions much like a drop-in replacement for [`wp-env`](https://github.com/WordPress/gutenberg/tree/trunk/packages/env) created by the WordPress project, but with support for Bedrock-style project structures.
 
 All commands that `wp-env` supports, should also be available here, and are found under `npm run env`.
 
