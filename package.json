@@ -51,7 +51,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"lint:format": "prettier --check .",
 		"lint-staged": "lint-staged",
-		"env": "wp-env start"
+		"wp-env": "wp-env"
 	},
 	"lint-staged": {
 		"*.css": [

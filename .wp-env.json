@@ -4,7 +4,6 @@
 	"mappings": {
 		"wp-content": "./public/content",
 		"wp-content/themes": "./packages/themes",
-		"wp-content/plugins/t2": "~/project/t2",
 		"composer.json": "./composer.json",
 		"composer.lock": "./composer.lock"
 	}
