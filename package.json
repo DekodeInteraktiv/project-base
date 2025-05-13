@@ -13,6 +13,7 @@
 	],
 	"devDependencies": {
 		"@csstools/postcss-global-data": "^3.0.0",
+		"@wordpress/env": "^10.23.0",
 		"@wordpress/eslint-plugin": "^22.8.0",
 		"@wordpress/scripts": "^30.15.0",
 		"@wordpress/stylelint-config": "^23.14.0",
@@ -49,7 +50,8 @@
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"lint:format": "prettier --check .",
-		"lint-staged": "lint-staged"
+		"lint-staged": "lint-staged",
+		"env": "wp-env start"
 	},
 	"lint-staged": {
 		"*.css": [
