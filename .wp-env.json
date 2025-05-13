@@ -12,6 +12,6 @@
 		"wp-content/themes": "./packages/themes"
 	},
 	"lifecycleScripts": {
-		"afterStart": "npm run wp-env -- run cli ./tools/local/setup-main-site.sh "
+		"afterStart": "npm run wp-env -- run cli ./tools/local/setup-main-site.sh"
 	}
 }
