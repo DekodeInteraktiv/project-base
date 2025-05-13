@@ -1,6 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/wp-env.json",
 	"core": "./public/wp",
+	"phpVersion": "8.2",
+	"plugins": [],
+	"themes": ["block-base"],
 	"mappings": {
 		"wp-content": "./public/content",
 		"wp-content/themes": "./packages/themes",
