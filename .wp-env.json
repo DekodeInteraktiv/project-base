@@ -3,11 +3,15 @@
 	"core": "./public/wp",
 	"phpVersion": "8.2",
 	"plugins": [],
-	"themes": ["block-base"],
+	"themes": [],
 	"mappings": {
-		"wp-content": "./public/content",
-		"wp-content/themes": "./packages/themes",
 		"composer.json": "./composer.json",
-		"composer.lock": "./composer.lock"
+		"composer.lock": "./composer.lock",
+		"tools": "./tools",
+		"wp-content": "./public/content",
+		"wp-content/themes": "./packages/themes"
+	},
+	"lifecycleScripts": {
+		"afterStart": "sh tools/local/setup-main-site.sh"
 	}
 }
