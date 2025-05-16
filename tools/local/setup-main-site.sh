@@ -9,8 +9,8 @@ wp option update time_format "H:i"
 wp language core install nb_NO
 wp site switch-language nb_NO
 
+wp theme enable block-theme --network
 wp theme activate block-theme
-#wp theme enable block-theme --activate
 
 wp plugin activate t2
 
