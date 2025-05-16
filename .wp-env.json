@@ -5,8 +5,8 @@
 	"plugins": [],
 	"themes": [],
 	"mappings": {
-		"composer.json": "./composer.json",
-		"composer.lock": "./composer.lock",
+		"../packages": "./packages",
+		"../vendor": "./vendor",
 		"tools": "./tools",
 		"wp-content": "./public/content",
 		"wp-content/themes": "./packages/themes"
