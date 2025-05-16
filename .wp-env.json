@@ -4,12 +4,14 @@
 	"phpVersion": "8.2",
 	"plugins": [],
 	"themes": [],
+	"config": {
+		"AUTOMATIC_UPDATER_DISABLED": true
+	},
 	"mappings": {
 		"../packages": "./packages",
 		"../vendor": "./vendor",
 		"tools": "./tools",
-		"wp-content": "./public/content",
-		"wp-content/themes": "./packages/themes"
+		"wp-content": "./public/content"
 	},
 	"lifecycleScripts": {
 		"afterStart": "rm ./wp-content/object-cache.php & npm run wp-env -- run cli ./tools/local/setup-main-site.sh"
