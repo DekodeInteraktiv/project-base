@@ -13,4 +13,6 @@ wp theme activate block-theme
 wp language core install nb_NO
 wp site switch-language nb_NO
 
+wp plugin activate t2
+
 wp rewrite flush
