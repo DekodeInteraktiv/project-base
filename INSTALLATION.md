@@ -170,6 +170,39 @@ npm ci && npm run build
 ```
 (See `packages/themes/block-theme` for more details)
 
+## BrowserSync for Live Reloading
+
+BrowserSync is included in this project to enable live reloading and synchronized browser testing during development.
+
+### Configuration
+
+BrowserSync is configured via `browsersync.config.js` and uses environment variables from your `.env` file:
+
+- `BROWSER_SYNC_HTTPS`: Set to `true` to enable HTTPS (default: `false`).
+- `BROWSER_SYNC_PORT`: Port for BrowserSync to run on (default: `3002`).
+- `BROWSER_SYNC_PROXY`: The local domain to proxy (defaults to `WP_HOME` from `.env`).
+
+Example `.env` settings:
+```env
+BROWSER_SYNC_HTTPS=true
+BROWSER_SYNC_PORT=3002
+BROWSER_SYNC_PROXY=your-local-site.test
+```
+
+### Usage
+
+To start BrowserSync, run:
+```bash
+npm run browsersync
+```
+This will watch for changes in CSS, JS, and `theme.json` files inside `packages/`, and automatically reload your browser.
+
+**Note:** Make sure your local site is running and accessible at the proxy URL.
+
+### Customization
+
+You can modify `browsersync.config.js` to change watched files or other BrowserSync options as needed.
+
 ## Extending Builds
 
 Project Base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts) out of the box for building front-end/view and editor assets. wp-script will scan all `block.json` files in the `src/` folder to find available entries. This means that if you have a `src` folder with a `view.js` and a `editor.js`, you also need to add a `block.json` file at the same location. Have a look in the `block-theme` theme for example or read up on [wp-script auto discovery for Webpack entry points](https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/utils/config.js#L198). For a more advanced setup, you can always customize builds by adding your own `webpack.config.js`.
