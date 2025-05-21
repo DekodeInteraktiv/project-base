@@ -15,5 +15,6 @@
 			"dependsOn": ["^i18n:make-pot"],
 			"cache": false
 		}
-	}
+	},
+	"concurrency": "100%"
 }
