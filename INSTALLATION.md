@@ -193,7 +193,7 @@ BROWSER_SYNC_PROXY=your-local-site.test
 
 To start BrowserSync, run:
 ```bash
-npm run browsersync
+npm run start-sync
 ```
 This will watch for changes in CSS, JS, and `theme.json` files inside `packages/`, and automatically reload your browser.
 
