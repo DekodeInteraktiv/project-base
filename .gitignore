@@ -39,3 +39,4 @@ sql/
 debug.log
 wp-debug.log
 .turbo
+.wp-env.override.json

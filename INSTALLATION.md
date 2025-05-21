@@ -121,6 +121,46 @@ require:
 
 Set the `MYSQLI_DEFAULT_SOCKET` in the `.env` file using the path from the Local Database tab.
 
+#### Method 3: Setup with wp-env
+
+1. Start the Environment
+
+```bash
+npm wp-env start
+```
+
+This command will spin up a local WordPress environment using Docker.
+
+2. Scripts
+
+- **start**: ```bash npm run wp-env start ``` Starts the wp-env environment.
+- **stop**: ```bash npm run wp-env stop ``` Stops the wp-env environment.
+- **clean**: ```bash npm run wp-env clean ``` Removes all WordPress data and resets the environment.
+- **destroy**: ```bash npm run wp-env destroy ``` Destroys the wp-env environment.
+- **logs**: ```bash npm run wp-env logs ``` Displays logs from the wp-env environment.
+- **shell**: ```bash npm run wp-env run cli bash ``` Opens a shell in the wp-env environment.
+- **cli**: ```bash npm run wp-env run cli <command> ``` Runs a command in the wp-env environment.
+
+3. Overriding `.wp-env.json` with a Local Setup
+
+To customize your local environment without changing the main `.wp-env.json`, create a `.wp-env.override.json` file in your project root. For example:
+
+```json
+{
+	"core": "WordPress/WordPress#6.5",
+	"plugins": [ "./my-custom-plugin" ],
+	"mappings": {
+		"wp-content/uploads": "./uploads"
+	}
+}
+```
+
+This file will override or extend the default configuration.
+
+4. Dependencies
+
+- **Docker**: Required to run the environment containers.
+
 ## Installation and Build
 
 Run the following commands in the root directory to build the project:
