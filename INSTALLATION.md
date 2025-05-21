@@ -1,5 +1,24 @@
 # Dekode Project Base - Installation Guide
 
+## Table of Contents
+
+- [Requirements](#requirements)
+- [Project Structure](#project-structure)
+- [Local Setup](#local-setup)
+  - [Initial Setup](#initial-setup)
+  - [Setup Methods](#setup-methods)
+    - [Replicating Server Structure](#method-1-replicating-server-structure)
+    - [Using Local Structure (Symlink Method)](#method-2-using-local-structure-symlink-method)
+    - [Setup with wp-env](#method-3-setup-with-wp-env)
+- [Installation and Build](#installation-and-build)
+- [BrowserSync for Live Reloading](#browsersync-for-live-reloading)
+  - [Configuration](#configuration)
+  - [Usage](#usage)
+  - [Customization](#customization)
+- [Extending Builds](#extending-builds)
+- [Adding a New Package](#adding-a-new-package-plugin-mu-plugin-or-theme)
+- [Additional Documentation](#additional-documentation)
+
 ## Requirements
 
 - **PHP**: Version 8.2 or higher
@@ -110,7 +129,7 @@
    bash multisite.sh  # Only for multisite setup
    ```
 
-## Using wp-cli with Local
+##### Using wp-cli with Local
 
 To use wp-cli with Local, you can use the built-in site shell. For default system console access, add a `wp-cli.local.yml` file to the root (`app`) directory:
 ```yml
@@ -193,7 +212,7 @@ BROWSER_SYNC_PROXY=your-local-site.test
 
 To start BrowserSync, run:
 ```bash
-npm run browsersync
+npm run start-sync
 ```
 This will watch for changes in CSS, JS, and `theme.json` files inside `packages/`, and automatically reload your browser.
 
