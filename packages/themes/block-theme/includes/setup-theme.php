@@ -24,9 +24,6 @@ defined( 'ABSPATH' ) || exit;
  */
 function do_after_setup_theme(): void {
 
-	// Theme text domain (NOTE: Consider removing the next line if running WordPress 6.8+).
-	\load_theme_textdomain( 'block-theme', \get_template_directory() . '/languages' );
-
 	// Add theme supports.
 	\add_theme_support( 'responsive-embeds' );
 	\add_theme_support( 'post-thumbnails' );
