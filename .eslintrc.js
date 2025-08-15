@@ -16,11 +16,4 @@ module.exports = {
 		'@wordpress/no-unsafe-wp-apis': 'error',
 		'react-hooks/rules-of-hooks': 'off',
 	},
-	parser: '@babel/eslint-parser',
-	parserOptions: {
-		babelOptions: {
-			presets: ['@wordpress/babel-preset-default'],
-		},
-		requireConfigFile: false,
-	},
 };
