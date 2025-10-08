@@ -10,10 +10,10 @@
 		"t2/featured-query-post",
 		"t2/featured-single-post",
 		"t2/featured-template-post",
-		"t2/footer",
 		"t2/header-horizontal",
 		"t2/ingress",
-		"t2/link-list"
+		"t2/link-list",
+		"t2/nav-menu"
 	],
 	"mu-extensions": [
 		"t2/accessibility-improvements",
