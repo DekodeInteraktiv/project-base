@@ -51,7 +51,7 @@
 		"lint-staged": "lint-staged",
 		"browsersync:start": "node browsersync.config.js",
 		"wp-env": "wp-env",
-		"update-dependencies": "npx syncpack update --source 'package.json' --source 'packages/*/*/package.json' && npm run format"
+		"update-dependencies": "npx syncpack update && npm run format"
 	},
 	"lint-staged": {
 		"*.css": [
