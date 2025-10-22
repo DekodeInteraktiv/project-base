@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "1.0.0",
 	"devDependencies": {
-		"@wordpress/scripts": "^30.25.0",
+		"@wordpress/scripts": "^30.26.0",
 		"fast-glob": "^3.3.3"
 	},
 	"scripts": {
