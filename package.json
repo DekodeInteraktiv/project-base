@@ -32,7 +32,6 @@
 		"postcss-nesting": "^13.0.2",
 		"postcss-url": "^10.1.3",
 		"prettier": "^3.6.2",
-		"syncpack": "^14.0.0-alpha.23",
 		"turbo": "^2.5.8"
 	},
 	"scripts": {
@@ -52,7 +51,7 @@
 		"lint-staged": "lint-staged",
 		"browsersync:start": "node browsersync.config.js",
 		"wp-env": "wp-env",
-		"update-dependencies": "npx syncpack update --source 'package.json' --source 'packages/*/*/package.json' && npm run format"
+		"update-dependencies": "npx syncpack@alpha update --source 'package.json' --source 'packages/*/*/package.json' && npm run format"
 	},
 	"lint-staged": {
 		"*.css": [
