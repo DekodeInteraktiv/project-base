@@ -63,5 +63,15 @@
 			"prettier --write .",
 			"wp-scripts lint-js"
 		]
+	},
+	"syncpack": {
+		"semverGroups": [
+			{
+				"packages": [
+					"@dekode/*"
+				],
+				"range": "^"
+			}
+		]
 	}
 }
