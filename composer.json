@@ -3,7 +3,7 @@
 	"description": "Dekode WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
 	"license": "GPL-3.0-or-later",
 	"require": {
-		"php": ">=8.2",
+		"php": ">=8.4",
 		"composer/installers": "~2.3.0",
 		"dekode/block-theme": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.6.0",
@@ -71,7 +71,7 @@
 			"roots/wordpress-core-installer": true
 		},
 		"platform": {
-			"php": "8.2"
+			"php": "8.4"
 		},
 		"sort-packages": true
 	},

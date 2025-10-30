@@ -2,6 +2,6 @@
 <ruleset>
 	<file>.</file>
 	<arg name="extensions" value="php" />
-	<config name="testVersion" value="8.2-" />
+	<config name="testVersion" value="8.4-" />
 	<rule ref="Dekode" />
 </ruleset>
