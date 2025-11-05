@@ -35,7 +35,7 @@ done
 
 if [ ${#php_ini_paths[@]} -eq 0 ]; then
 	printf "${YELLOW}No php.ini.hbs files found. Nothing to update.${NC}\n"
-	exit
+	exit 0
 fi
 
 echo "Updating Local Lightning PHP config to use the bundled WordPress CA certificate..."
