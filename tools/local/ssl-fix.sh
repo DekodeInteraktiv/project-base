@@ -17,7 +17,7 @@ WP_CA_BUNDLE="$SITE_ROOT/public/wp/wp-includes/certificates/ca-bundle.crt"
 # Check that we are running this script from the correct folder
 if [ ! -d "$CONF_ROOT" ]; then
 	printf "${YELLOW}You are probably not using Local Lightning. If you are, then please check that you are running this script from the correct location which should be something like this: \"./tools/local\"${NC}\n"
-	exit
+	exit 1
 fi
 
 declare -a php_ini_paths=()
