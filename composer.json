@@ -121,6 +121,9 @@
 		],
 		"lint": [
 			"./vendor/bin/phpcs ."
+		],
+		"lint-fix": [
+			"./vendor/bin/phpcbf ."
 		]
 	}
 }
