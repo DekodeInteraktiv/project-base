@@ -5,9 +5,15 @@ module.exports = {
 	},
 	env: {
 		browser: true,
+		node: true,
 	},
 	settings: {
 		'import/core-modules': ['@t2/editor'],
+		'import/resolver': {
+			node: {
+				extensions: ['.js', '.jsx', '.ts', '.tsx'],
+			},
+		},
 	},
 	rules: {
 		'jsdoc/require-param': 'off',
