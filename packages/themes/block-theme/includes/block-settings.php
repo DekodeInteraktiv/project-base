@@ -87,8 +87,6 @@ function do_override_allowed_block_types_all(): array|bool {
 		'core/template-part',
 		'core/video',
 		'gravityforms/form',
-		't2/accordion-item',
-		't2/accordion',
 		't2/factbox',
 		't2/featured-content-layout',
 		't2/featured-query-post',

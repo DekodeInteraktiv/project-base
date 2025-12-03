@@ -1,6 +1,0 @@
-body {
-	--t2-accordion-typography-heading-font-family: unset;
-	--t2-accordion-typography-heading-font-weight: var(--wp--custom--font-weight--bold);
-	--t2-accordion-typography-heading-line-height: var(--wp--custom--line-height--12);
-	--t2-accordion-item-padding: var(--wp--preset--spacing--40);
-}
