@@ -18,7 +18,6 @@
 		"t2/accessibility-improvements",
 		"t2/allow-svg-uploads",
 		"t2/button-icon",
-		"t2/custom-block-margin",
 		"t2/disable-block-directory",
 		"t2/disable-comments",
 		"t2/disable-custom-css",
@@ -37,8 +36,5 @@
 		"t2/search-block-button-icon",
 		"t2/site-health-qa",
 		"t2/wrap-custom-html-block"
-	],
-	"t2/custom-block-margin": {
-		"version": 3
-	}
+	]
 }
