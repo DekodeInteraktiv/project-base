@@ -22,6 +22,7 @@ jobs:
     deploy:
         uses: 'dekodeinteraktiv/public-github-actions/.github/workflows/deploy-artifact.yml@main'
         with:
+            TIMEOUT: 10
             TAG: ${{ inputs.TAG }}
             PHP_VERSION: ${{ inputs.PHP_VERSION }}
             BUILD_FOR_DEPLOY: ${{ inputs.BUILD_FOR_DEPLOY }}
