@@ -8,6 +8,7 @@ on:
 jobs:
     deploy:
         uses: 'dekodeinteraktiv/public-github-actions/.github/workflows/deploy-artifact.yml@main'
+        timeout-minutes: 10
         with:
             ARTIFACT_NAME: 'compressed-code-artifact'
             RSYNC_FILTER_FILE: './tools/github/rsync-file-filter.rules'
