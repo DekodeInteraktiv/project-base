@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    // "sessionStart": [...],
+    // "sessionEnd": [...],
+    // "userPromptSubmitted": [...],
+    // "preToolUse": [...],
+    // "postToolUse": [...],
+    // "errorOccurred": [...]
+  }
+}
