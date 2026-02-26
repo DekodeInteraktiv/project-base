@@ -150,7 +150,7 @@ if ( env( 'WP_PROXY_BYPASS_HOSTS' ) ) {
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', $app_root . 'public/wp/' );
+	define( 'ABSPATH', $app_root . '/public/wp/' );
 }
 
 /** Sets up WordPress vars and included files. */
