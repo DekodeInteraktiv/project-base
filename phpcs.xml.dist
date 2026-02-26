@@ -3,5 +3,6 @@
 	<file>.</file>
 	<arg name="extensions" value="php" />
 	<config name="testVersion" value="8.4-" />
+	<exclude-pattern>languages/*.php</exclude-pattern>
 	<rule ref="Dekode" />
 </ruleset>
