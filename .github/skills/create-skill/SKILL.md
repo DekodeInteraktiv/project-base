@@ -5,11 +5,21 @@ description: Create a new Copilot skill file for a reusable task in this project
 
 # Skill: Create Skill
 
-Create a new Copilot skill file for a reusable task in this project. If the user has not already provided a skill name and description, ask follow-up questions to get the necessary details before creating the file.
+Create a new Copilot skill file for a reusable task in this project.
+
+## Inputs
+
+The following inputs are required. If any are missing from the request, ask for them before writing any code.
+
+| Input | Required | Notes |
+|---|---|---|
+| **Skill name** | Yes | kebab-case, e.g. `create-block`. Name after the action, not the output. |
+| **Description** | Yes | One sentence describing what the skill does and when to use it |
+| **Inputs** | Yes | What must the user provide before the skill starts? List each one. |
 
 ## What is a skill?
 
-A skill is a reusable prompt file at `.github/skills/<skill-name>/SKILL.md`. When attached to a Copilot Chat conversation (via `#` file reference or drag-and-drop), it provides Copilot with focused instructions for a specific, repeatable task — such as scaffolding a block, creating a plugin, or writing a test.
+A skill is a reusable prompt file at `.github/skills/<skill-name>/SKILL.md`. Skills are auto-discovered by the Copilot CLI and can be invoked by name in any conversation. They provide Copilot with focused instructions for a specific, repeatable task - such as scaffolding a block, creating a plugin, or writing a test.
 
 Skills are task-specific and opinionated. They encode the project's conventions so Copilot produces correct output without needing to re-explain the stack each time.
 
@@ -30,10 +40,13 @@ Every skill file must follow this structure:
 
 ## Inputs
 
-List what the user must provide before Copilot starts:
-- **Name**: e.g. the block name, plugin slug, etc.
-- **Location**: which package or directory to work in
-- Any other required context
+The following inputs are required. If any are missing from the request, ask for them before writing any code.
+
+| Input | Required | Notes |
+|---|---|---|
+| **Name** | Yes | e.g. the block name, plugin slug |
+| **Location** | Yes | Which package or directory to work in |
+| **Optional thing** | No | Description and default value |
 
 ## Steps
 
