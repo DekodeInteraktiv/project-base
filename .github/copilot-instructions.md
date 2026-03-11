@@ -173,7 +173,8 @@ requestToExternal: ( request ) => request.startsWith( '@t2/' ) ? [ 't2', request
 
 ## Internationalization
 
-- Primary language: **Norwegian Bokmål** (`nb_NO`)
+- **Write all strings in English** — wrap them in the appropriate i18n function and leave translation to the `.pot`/`.po` workflow; never write Norwegian (or any other language) directly in source code
+- The primary translation target is **Norwegian Bokmål** (`nb_NO`)
 - Use `__()`, `_e()`, `_n()`, `_x()` etc. for all user-facing strings in PHP
 - Use `@wordpress/i18n` (`__`, `_n`, `_x`, `sprintf`) in JavaScript
 - Run `npm run i18n:make-pot` to extract translation strings
