@@ -27,53 +27,8 @@ New plugins go in `packages/plugins/<plugin-name>/`, themes in `packages/themes/
 - **Node.js**: 20 via `.nvmrc`
 - **Package manager**: npm 10+ (not yarn or pnpm)
 - **Monorepo orchestration**: Turbo (`turbo.json` at root)
-
-## PHP Conventions
-
-- Follow the **Dekode coding standard** (`dekode/coding-standards`), which extends WordPress Coding Standards
-- Run `composer lint` to check and `composer lint-fix` to auto-fix
-- Use tabs for indentation (per `.editorconfig`)
-- PHP files belong inside the relevant package under `packages/`; never modify files under `public/wp/` (WordPress core) or `vendor/`
-- Every PHP file must begin with `declare( strict_types=1 );`
-- Theme PHP files must include an ABSPATH guard after the opening tag: `defined( 'ABSPATH' ) || exit;`
-- Use proper namespace declarations consistent with the package being edited (see Namespace Conventions below)
-- Always prefix global function calls with a backslash (`\`) to avoid namespace issues, e.g., `\is_wp_error()`, `\get_transient()`, `\wp_remote_post()`
-
-**Environment variables** - always read via the `\env()` helper (defined in `public/wp-config.php`; loads from `.env` via Symfony DotEnv), never `$_ENV`, `getenv()`, or `$_SERVER` directly:
-```php
-$api_key = \env( 'MY_API_KEY' );
-```
-
-**External HTTP calls** - always use `wp_remote_request()` (or `wp_remote_get()` / `wp_remote_post()`), never `curl` or `file_get_contents()`. Always check for errors and validate the response code:
-```php
-$response = \wp_remote_post( $url, [ 'body' => \wp_json_encode( $data ) ] );
-
-if ( \is_wp_error( $response ) ) {
-    return [ 'success' => false, 'error' => $response->get_error_message() ];
-}
-
-$code = \wp_remote_retrieve_response_code( $response );
-if ( ! \in_array( $code, [ 200, 201 ], true ) ) {
-    return [ 'success' => false, 'error' => __( 'Unexpected response.', 'text-domain' ) ];
-}
-```
-
-**Transient caching** - use for expensive or external data. Always check with `false !==`:
-```php
-$cached = \get_transient( 'my_cache_key' );
-if ( false !== $cached ) {
-    return $cached;
-}
-// generate $value ...
-\set_transient( 'my_cache_key', $value, HOUR_IN_SECONDS );
-return $value;
-```
-
-**REST API responses** - always return a structured array with a `success` boolean:
-```php
-return new \WP_REST_Response( [ 'success' => true, 'data' => $result ], 200 );
-return new \WP_REST_Response( [ 'success' => false, 'error' => __( 'Something went wrong.', 'text-domain' ) ], 500 );
-```
+- **PHP coding standard**: `dekode/coding-standards` (extends WordPress Coding Standards) — run `composer lint` to check, `composer lint-fix` to auto-fix
+- **JS/CSS linting**: ESLint extends `@wordpress/eslint-plugin/recommended`; StyleLint extends `@wordpress/stylelint-config/scss`; Prettier extends `@wordpress/prettier-config` with `printWidth: 120`
 
 ## Namespace Conventions
 
@@ -87,26 +42,8 @@ Namespaces follow a consistent feature-based hierarchy across all packages:
 | Theme | `{Project}\Theme\{Feature}` | `ProjectBase\Theme\PostTypes\Event` |
 | MU-plugin | `{Project}\{PluginName}` | `ProjectBase\WinOrg` |
 
-- Always use `declare( strict_types=1 );` before the namespace declaration
 - Sub-namespaces reflect feature/domain grouping, not file structure
 - Helper functions live in the same namespace as their feature
-
-## JavaScript / TypeScript Conventions
-
-- **ESLint**: extends `@wordpress/eslint-plugin/recommended`. Key rules:
-  - `@wordpress/dependency-group` is an error - keep `import` statements grouped and ordered
-  - `@wordpress/no-unsafe-wp-apis` is an error - do not use `__experimental` or `__unstable` APIs
-  - `wp` global is disabled - import from `@wordpress/*` packages instead
-  - `@t2/editor` is a valid module alias (configured in ESLint import resolver)
-- **Prettier**: extends `@wordpress/prettier-config` with `printWidth: 120`
-- Run `npm run lint:js` and `npm run lint:css` to check; `npm run format` to auto-format
-
-## CSS / Styling Conventions
-
-- **StyleLint**: extends `@wordpress/stylelint-config/scss`
-- CSS is processed by **PostCSS** with: global-data, imports, mixins, postcss-url, custom-media, media-minmax, nesting, discard-comments, autoprefixer, and cssnano (production only)
-- Use PostCSS nesting syntax (CSS native nesting) - not SCSS `&:` parent selector style unless using mixins
-- Block-specific CSS lives alongside each block in `src/blocks/<namespace>/<block-name>.css`
 
 ## Block Theme Structure
 
@@ -173,10 +110,8 @@ requestToExternal: ( request ) => request.startsWith( '@t2/' ) ? [ 't2', request
 
 ## Internationalization
 
-- **Write all strings in English** — wrap them in the appropriate i18n function and leave translation to the `.pot`/`.po` workflow; never write Norwegian (or any other language) directly in source code
+- **Write all strings in English** — never write Norwegian (or any other language) directly in source code; leave translation to the `.pot`/`.po` workflow
 - The primary translation target is **Norwegian Bokmål** (`nb_NO`)
-- Use `__()`, `_e()`, `_n()`, `_x()` etc. for all user-facing strings in PHP
-- Use `@wordpress/i18n` (`__`, `_n`, `_x`, `sprintf`) in JavaScript
 - Run `npm run i18n:make-pot` to extract translation strings
 
 ## Testing
@@ -214,4 +149,3 @@ This applies to both Composer and npm. It allows `composer update` / `npm update
 - Do not modify anything inside `vendor/` (Composer managed)
 - Do not commit `.env` - use `.env.example` as the template
 - All packages must be registered in their local `composer.json` and/or `package.json` before use
-- Prefer `@wordpress/*` packages over raw DOM manipulation or jQuery
