@@ -12,7 +12,7 @@ auth.json
 # WordPress config (may contain DB credentials)
 public/wp-config.php
 
-# Vendor and generated — too large and not useful as context
+# Vendor and generated - too large and not useful as context
 vendor/
 node_modules/
 public/wp/
