@@ -1,0 +1,22 @@
+# Files Copilot should never read or use as context.
+# Syntax follows .gitignore rules.
+
+# Environment / secrets
+.env
+.env.*
+
+# Composer/npm auth tokens
+auth.json
+.npmrc
+
+# WordPress config (may contain DB credentials)
+public/wp-config.php
+
+# Vendor and generated — too large and not useful as context
+vendor/
+node_modules/
+public/wp/
+**/build/
+public/content/plugins/
+public/content/themes/
+public/content/mu-plugins/
