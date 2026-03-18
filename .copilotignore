@@ -4,6 +4,7 @@
 # Environment / secrets
 .env
 .env.*
+!.env.example
 
 # Composer/npm auth tokens
 auth.json
