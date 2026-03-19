@@ -1,10 +1,11 @@
 # GitHub Copilot Instructions
 
-This is a Dekode WordPress agency project using a Bedrock-inspired monorepo structure. Follow these conventions when generating code.
+This is a WordPress agency project using a Bedrock-inspired monorepo structure. Follow these conventions when generating code.
 
 ## Project Structure
 
 ```
+documentation/   # Documentation of custom functionality
 packages/
   plugins/       # WordPress plugins (npm workspace)
   themes/        # WordPress themes (npm workspace)
@@ -17,7 +18,7 @@ public/
 tools/           # Local development utilities
 ```
 
-New plugins go in `packages/plugins/<plugin-name>/`, themes in `packages/themes/<theme-name>/`, and mu-plugins in `packages/mu-plugins/<plugin-name>/`. Composer symlinks these into `public/content/` automatically.
+New plugins go in `packages/plugins/<plugin-name>/`, themes in `packages/themes/<theme-name>/`, and mu-plugins in `packages/mu-plugins/<plugin-name>/`. They must be required by Composer which symlinks these into `public/content/` automatically.
 
 ## Tech Stack
 
@@ -110,9 +111,9 @@ requestToExternal: ( request ) => request.startsWith( '@t2/' ) ? [ 't2', request
 
 ## Internationalization
 
-- **Write all strings in English** — never write Norwegian (or any other language) directly in source code; leave translation to the `.pot`/`.po` workflow
-- The primary translation target is **Norwegian Bokmål** (`nb_NO`)
-- Run `npm run i18n:make-pot` to extract translation strings
+- **Write all strings in English** — never write Norwegian (or any other language) directly in source code; leave translation to the `.pot`/`.po` workflow.
+- The primary translation target is **Norwegian Bokmål** (`nb_NO`).
+- Run `npm run i18n:make-pot` to extract translation strings.
 
 ## Testing
 
@@ -145,7 +146,7 @@ This applies to both Composer and npm. It allows `composer update` / `npm update
 
 ## Important Constraints
 
-- Do not modify anything inside `public/wp/` (WordPress core managed by Composer)
-- Do not modify anything inside `vendor/` (Composer managed)
-- Do not commit `.env` - use `.env.example` as the template
-- All packages must be registered in their local `composer.json` and/or `package.json` before use
+- Do not modify anything inside `public/wp/` (WordPress core managed by Composer).
+- Do not modify anything inside `vendor/` (Composer managed).
+- Do not commit `.env` - use `.env.example` as the template.
+- All packages must be registered in their local `composer.json` and/or `package.json` before use.
