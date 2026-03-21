@@ -3,6 +3,15 @@
 .idea
 .vscode
 
+# Non-Copilot Agent Files
+.claude/
+.codex/
+.gemini/
+.opencode/
+AGENTS.md
+CLAUDE.md
+.mcp.json
+
 # Javascript
 node_modules
 dist
