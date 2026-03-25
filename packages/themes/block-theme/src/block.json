@@ -4,6 +4,5 @@
 	"name": "project-base/block-theme",
 	"editorScript": "file:./editor.js",
 	"editorStyle": "file:./editor.css",
-	"style": "file:./view.css",
 	"viewScript": "file:./view.js"
 }
