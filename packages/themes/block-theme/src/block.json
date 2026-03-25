@@ -1,6 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"editorScript": "file:editor.js",
-	"viewScript": "file:view.js"
+	"name": "project-base/block-theme",
+	"editorScript": "file:./editor.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./view.css",
+	"viewScript": "file:./view.js"
 }
