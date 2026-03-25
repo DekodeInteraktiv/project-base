@@ -100,7 +100,7 @@
 
 10. Update URLs for multisite to use HTTPS:
     ```bash
-    wp search-replace --url=http://{PROJECT}.site 'http://{PROJECT}.site' 'https://{PROJECT}.site' --recurse-objects --network
+    wp search-replace --url=http://{PROJECT}.site 'http://{PROJECT}.site' 'https://{PROJECT}.site' --recurse-objects --network --skip-columns=guid
     ```
 
 #### Method 2: Using Local Structure (Symlink Method)
