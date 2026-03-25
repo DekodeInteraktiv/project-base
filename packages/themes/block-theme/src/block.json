@@ -3,6 +3,5 @@
 	"apiVersion": 3,
 	"name": "project-base/block-theme",
 	"editorScript": "file:./editor.js",
-	"editorStyle": "file:./editor.css",
 	"viewScript": "file:./view.js"
 }
