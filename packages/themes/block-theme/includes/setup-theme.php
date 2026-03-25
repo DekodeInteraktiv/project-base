@@ -13,9 +13,10 @@ defined( 'ABSPATH' ) || exit;
 
 // Hooks.
 \add_action( 'after_setup_theme', __NAMESPACE__ . '\\do_after_setup_theme' );
-\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\do_enqueue_assets' );
+
+// Enqueue the theme assets.
+\add_action( 'enqueue_block_assets', __NAMESPACE__ . '\\do_enqueue_block_assets' );
 \add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\do_enqueue_block_editor_assets' );
-\add_filter( 't2/extension/enqueue_theme_block_styles/deps', __NAMESPACE__ . '\\do_override_t2_enqueue_theme_block_styles_deps', 65 );
 
 /**
  * Setup navigation menus and theme supports.
@@ -31,78 +32,89 @@ function do_after_setup_theme(): void {
 }
 
 /**
- * Enqueue frontend scripts and styles.
+ * Enqueue the theme assets.
  *
+ * @param  bool $for_editor Aim to load the editor assets or not.
  * @return void
  */
-function do_enqueue_assets(): void {
+function load_theme_assets( bool $for_editor = false ): void {
 
-	// Bundled stylesheet.
-	if ( \file_exists( \get_template_directory() . '/build/view.css' ) ) {
-		$assets_version = \filemtime( \get_template_directory() . '/build/view.css' );
+	// Aim to make things more readable and predictable below in the code.
+	$dir = \trailingslashit( \get_template_directory() ) . 'build/';
+	$url = \trailingslashit( \get_template_directory_uri() ) . 'build/';
 
-		$deps = [];
+	if ( empty( $for_editor ) ) {
+		$handle = 'block-theme';
+		$assets = \file_exists( $dir . 'view.asset.php' ) ? require $dir . 'view.asset.php' : [];
 
-		/* phpcs:disable
-		// Optionally set all WooCommerce styling as dependency.
-		if ( \class_exists( 'WooCommerce' ) ) {
-			// Optionally incluce Woo styling if plugin is active.
-			$deps[] = 'woocommerce-blocktheme';
-			$deps[] = 'woocommerce-general';
-			$deps[] = 'woocommerce-layout';
+		// Bundled stylesheet.
+		if ( \file_exists( $dir . 'view.css' ) && ! \wp_style_is( $handle ) ) {
+			$ver = $assets['version'] ?? \filemtime( $dir . 'view.css' );
+			\wp_enqueue_style( $handle, $url . 'view.css', [], $ver );
 		}
-		phpcs:enable
-		*/
 
-		\wp_enqueue_style( 'block-theme', \get_template_directory_uri() . '/build/view.css', $deps, $assets_version );
-	}
+		// Bundled scripts.
+		$build_file = $dir . 'view.js';
+		if ( \file_exists( $build_file ) && ! \wp_script_is( $handle ) ) {
+			$dep = $assets['dependencies'] ?? [];
+			$ver = $assets['version'] ?? \filemtime( $dir . 'view.js' );
+			\wp_enqueue_script( $handle, $url . 'view.js', $dep, $ver, true );
+		}
+	} else {
+		$handle = 'block-theme-editor';
+		$assets = \file_exists( $dir . 'editor.asset.php' ) ? require $dir . 'editor.asset.php' : [];
 
-	// Bundled scripts.
-	$build_file  = \get_template_directory() . '/build/view.js';
-	$assets_file = \get_template_directory() . '/build/view.asset.php';
+		// Bundled stylesheet.
+		if ( \file_exists( $dir . 'editor.css' ) && ! \wp_style_is( $handle ) ) {
+			$ver = $assets['version'] ?? \filemtime( $dir . 'editor.css' );
+			\wp_enqueue_style( $handle, $url . 'editor.css', [ 'global-styles-css-custom-properties' ], $ver );
+		}
 
-	if ( \file_exists( $build_file ) && \file_exists( $assets_file ) ) {
-		$assets = require $assets_file;
-		\wp_enqueue_script( 'block-theme', \get_template_directory_uri() . '/build/view.js', $assets['dependencies'], $assets['version'], true );
+		// Bundled scripts.
+		$build_file = $dir . 'editor.js';
+		if ( \file_exists( $build_file ) && ! \wp_script_is( $handle ) ) {
+			$dep = $assets['dependencies'] ?? [];
+			$ver = $assets['version'] ?? \filemtime( $dir . 'editor.js' );
+			\wp_enqueue_script( $handle, $url . 'editor.js', $dep, $ver, true );
+			\wp_set_script_translations( $handle, 'block-theme', \get_template_directory() . '/languages' );
+		}
 	}
 }
 
 /**
- * Enqueue editor style for the WordPress editor.
+ * Enqueue the theme scripts and styles in the WordPress editor and iframe.
+ * Both view and editor assets should be passed.
+ *
+ * @return void
+ */
+function do_enqueue_block_assets(): void {
+	load_theme_assets();
+
+	// Avoid running on normal front-end requests; only load in editor or editor iframe.
+	if ( ! \is_admin() && ( ! \function_exists( '\is_block_editor' ) || ! \is_block_editor() ) ) {
+		// No need to continue.
+		return;
+	}
+
+	load_theme_assets( true );
+}
+
+/**
+ * Enqueue the theme scripts and styles in the WordPress editor.
+ * This is primarily a compatibility hook for editor contexts where
+ * apiVersion 3 is not enabled for all components or the editor is not
+ * rendered in an iframe. View assets are enqueued via
+ * {@see do_enqueue_block_assets()}, while this function ensures the
+ * corresponding editor assets are available.
  *
  * @return void
  */
 function do_enqueue_block_editor_assets(): void {
-	if ( ! is_admin() ) {
+	// Avoid running on normal front-end requests; only load in editor or editor iframe.
+	if ( ! \is_admin() && ( ! \function_exists( '\is_block_editor' ) || ! \is_block_editor() ) ) {
+		// No need to continue.
 		return;
 	}
 
-	// Bundled stylesheet.
-	if ( \file_exists( \get_template_directory() . '/build/editor.css' ) ) {
-		$assets_version = \filemtime( \get_template_directory() . '/build/editor.css' );
-		\wp_enqueue_style( 'block-theme', \get_template_directory_uri() . '/build/editor.css', [ 'global-styles-css-custom-properties' ], $assets_version );
-	}
-
-	// Bundled scripts.
-	$build_file  = \get_template_directory() . '/build/editor.js';
-	$assets_file = \get_template_directory() . '/build/editor.asset.php';
-
-	if ( \file_exists( $build_file ) && \file_exists( $assets_file ) ) {
-		$assets = require $assets_file;
-		\wp_enqueue_script( 'block-theme', \get_template_directory_uri() . '/build/editor.js', $assets['dependencies'], $assets['version'], true );
-
-		\wp_set_script_translations( 'block-theme', 'block-theme', \get_template_directory() . '/languages' );
-		\wp_enqueue_script( 'block-theme' );
-	}
-}
-
-/**
- * Set theme style as depenency for all block styles to ensure correct loading order.
- *
- * @param array $deps Dependencies.
- * @return array
- */
-function do_override_t2_enqueue_theme_block_styles_deps( array $deps ): array {
-	$deps[] = 'block-theme';
-	return $deps;
+	load_theme_assets( true );
 }
