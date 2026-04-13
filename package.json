@@ -4,7 +4,7 @@
 	"devDependencies": {
 		"@csstools/postcss-global-data": "^4.0.0",
 		"@wordpress/dependency-extraction-webpack-plugin": "^6.42.0",
-		"@wordpress/scripts": "^31.5.0",
+		"@wordpress/scripts": "^31.8.0",
 		"autoprefixer": "^10.4.27",
 		"browser-sync": "^3.0.4",
 		"cssnano": "^7.1.3",
