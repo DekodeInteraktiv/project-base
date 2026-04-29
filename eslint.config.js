@@ -35,7 +35,7 @@ module.exports = [
 	},
 	// Root config files use transitive deps — disable import rules for them
 	{
-		files: ['*.config.js', '.prettierrc.js'],
+		files: ['*.config.js', '.prettierrc.js', '.stylelintrc.js'],
 		rules: {
 			'import/no-extraneous-dependencies': 'off',
 			'@wordpress/dependency-group': 'off',
