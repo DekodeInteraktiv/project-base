@@ -14,7 +14,7 @@ module.exports = [
 	{
 		languageOptions: {
 			globals: {
-				wp: false,
+				wp: 'off',
 			},
 		},
 		settings: {
