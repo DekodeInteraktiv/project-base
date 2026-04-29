@@ -24,7 +24,7 @@
 		"turbo": "^2.9.6"
 	},
 	"engines": {
-		"node": "20",
+		"node": ">=20.19.0",
 		"npm": ">=10"
 	},
 	"lint-staged": {
