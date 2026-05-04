@@ -50,5 +50,5 @@ wp-debug.log
 .turbo
 .wp-env.override.json
 
-# Git worktrees (parallel Copilot agents — see WORKTREES.md)
+# Git worktrees
 /worktrees/
