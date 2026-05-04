@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Creates a sibling worktree, copies .env, installs dependencies.
+# Creates a worktree under ./worktrees/, copies .env, installs dependencies.
+# The worktrees/ directory is gitignored.
 # Usage: tools/local/new-worktree.sh <branch-name> [base-branch]
 
 BRANCH="${1:-}"
@@ -13,9 +14,8 @@ if [ -z "$BRANCH" ]; then
 fi
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-REPO_NAME="$(basename "$REPO_ROOT")"
 SLUG="$(printf '%s' "$BRANCH" | tr '/' '-' | tr '[:upper:]' '[:lower:]')"
-WORKTREES_DIR="$(dirname "$REPO_ROOT")/${REPO_NAME}.worktrees"
+WORKTREES_DIR="${REPO_ROOT}/worktrees"
 TARGET="${WORKTREES_DIR}/${SLUG}"
 
 if [ -e "$TARGET" ]; then
