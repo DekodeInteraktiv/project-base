@@ -10,7 +10,7 @@ The various deployment steps rely on various secrets by default (these can be mo
 
 ## Production
 
-Code is built, and pushed to production whenever a new release is published. By tieing the deployment to a release, we can ensure that the code is tested in a stage or development environment first, and that no code is accidentally put live by a commit or merge to the wrong branch.
+Code is built, and pushed to production whenever a new release is published. By tying the deployment to a release, we can ensure that the code is tested in a stage or development environment first, and that no code is accidentally put live by a commit or merge to the wrong branch.
 
 It is also possible to run the workflow named `Manually deploy to production` to push a self-determined release tag, commit reference, or branch to production. For example if a hotfix is needed, or a rapid rollback.
 
@@ -29,7 +29,7 @@ The production deployment relies on the following secrets existing:
 
 Code is built, and pushed to stage servers when new code is pushed to the `stage` branch.
 
-Code pushed ot the `stage` branch should be tested as part of the Pull Request routine, as the code will be deployed to the stage servers as soon as it is merged.
+Code pushed to the `stage` branch should be tested as part of the Pull Request routine, as the code will be deployed to the stage servers as soon as it is merged.
 
 It is also possible to run the workflow named `Manually deploy to stage` to push a self-determined release tag, commit reference, or branch to production. This is useful for testing a brand new feature quickly, where the feature branch can be deployed, but should be agreed upon with other team members to avoid new merges overwriting your deployment during such testing.
 

@@ -227,7 +227,7 @@ You can modify `browsersync.config.js` to change watched files or other BrowserS
 Project Base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts) out of the box for building front-end/view and editor assets. wp-script will scan all `block.json` files in the `src/` folder to find available entries. This means that if you have a `src` folder with a `view.js` and a `editor.js`, you also need to add a `block.json` file at the same location. Have a look in the `block-theme` theme for example or read up on [wp-script auto discovery for Webpack entry points](https://github.com/WordPress/gutenberg/blob/trunk/packages/scripts/utils/config.js#L198). For a more advanced setup, you can always customize builds by adding your own `webpack.config.js`.
 
 ### A quick overview of wp-scripts auto discovery:
-1. Supply entry points manully to the CLI, e.g. `wp-scripts build src/view src/editor src/admin src/some-other-entry`. This will bypass 2 and 3.
+1. Supply entry points manually to the CLI, e.g. `wp-scripts build src/view src/editor src/admin src/some-other-entry`. This will bypass 2 and 3.
 2. Scan `src` folder for all `block.json` files. (Our default setup). This will support both theme/plugin assets (view/editor) and possible blocks inside the `src/` folder.
 3. Fallback to `src/index.*` file. This will only look for a `src/index.js` file.
 
@@ -247,7 +247,7 @@ Project Base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk
 
    *Note: Use [block-base](https://github.com/DekodeInteraktiv/block-base) for Gutenberg blocks.*
 
-   *Note: A version should always be supplied. This ensures that package versions do not change between branches, leading to unneccesary merge conflicts.*
+   *Note: A version should always be supplied. This ensures that package versions do not change between branches, leading to unnecessary merge conflicts.*
 
 3. **Add a `package.json` File** (for frontend dependencies or custom React components):
    ```json

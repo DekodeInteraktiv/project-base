@@ -37,7 +37,7 @@ Add a link to any relevant documentation, and specify which version of an API we
 Add some words about how the third-party server authenticates incoming requests and add any API-keys necessary.
 
 **Any terminal commands that could be useful**
-Any custom made wp-cli commands which communicate with the third party, should be documented here. Also a link to any commands included in plugins which comunicate with the third-party, should be included.
+Any custom made wp-cli commands which communicate with the third party, should be documented here. Also a link to any commands included in plugins which communicate with the third-party, should be included.
 
 ## Cronjobs
 List all non-standard cronjobs on the site and say a few words about the purpose of each of them.
