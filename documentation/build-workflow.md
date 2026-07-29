@@ -20,7 +20,7 @@ The Project Base `package.json` root configuration is already prepared to build 
 ```
 Note: This will be part of the scaffolding when using any of the [create block routines](create-block.md).
 
-For project development, run `npm run start` from the project root, as before. This task goes through all the packages that have the start script and run them in paralel.
+For project development, run `npm run start` from the project root, as before. This task goes through all the packages that have the start script and run them in parallel.
 
 ## Different build architectures
 The official `@wordpress/scripts` package supports several entry points configuration to build the packages' assets:
@@ -54,4 +54,3 @@ To learn more about how to extend the default configuration, please refer to the
 ## Browsersync
 
 To learn more about how to enable browsersync, please refer to the [browsersync documentation](browsersync.md).
-
