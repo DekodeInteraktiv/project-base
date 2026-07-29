@@ -8,10 +8,10 @@
 		"dekode/block-theme": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.6.0",
 		"roots/bedrock-autoloader": "~1.1.0",
-		"roots/wordpress": "~6.9.0",
+		"roots/wordpress": "~7.0.2",
 		"symfony/dotenv": "~8.0.8",
 		"t2/t2": "~8.30.0",
-		"wpackagist-plugin/imagify": "~2.2.0",
+		"wpackagist-plugin/imagify": "~2.3.1",
 		"wpackagist-plugin/spinupwp": "~1.9.1",
 		"wpackagist-plugin/two-factor": "~0.16.0"
 	},
