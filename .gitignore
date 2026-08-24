@@ -27,6 +27,10 @@ wp-translation-downloader.lock
 # Composer
 vendor
 
+# Benchmarks
+.phpbench/
+*.bench.json
+
 # Composer Plugins
 plugins/*/wp-content
 plugins/*/composer.lock

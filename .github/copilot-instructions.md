@@ -102,6 +102,8 @@ requestToExternal: ( request ) => request.startsWith( '@t2/' ) ? [ 't2', request
 | `npm run create-block` | Scaffold a new Gutenberg block plugin |
 | `composer lint` | PHP CodeSniffer check |
 | `composer lint-fix` | PHP CodeSniffer auto-fix |
+| `composer bench` | Run PHP benchmarks (PHPBench) |
+| `npm run bench` | Run JS/TS benchmarks (Vitest) |
 | `composer build` | Install PHP dependencies |
 | `npm run wp-env start` | Start local WordPress environment (Docker) |
 
@@ -111,9 +113,11 @@ requestToExternal: ( request ) => request.startsWith( '@t2/' ) ? [ 't2', request
 - Primary translation target: **Norwegian Bokmål** (`nb_NO`).
 - Run `npm run i18n:make-pot` to extract translation strings.
 
-## Testing
+## Testing & Benchmarking
 
-No test infrastructure exists. Do not scaffold tests.
+No unit test infrastructure exists. Do not scaffold tests.
+
+Benchmarks exist: PHP in `packages/<type>/<name>/benchmarks/class-*-bench.php` (PHPBench, `composer bench`), JS/TS in `*.bench.js` / `*.bench.ts` files (Vitest, `npm run bench`). WordPress is not loaded while benchmarking; `tools/bench/wp-stubs.php` provides the no-op hook stubs the included files need. Examples: `packages/themes/block-theme/benchmarks/`. `vitest` is a root dev dependency only; `*.bench.*` files are linted against the root `package.json`, so do not add it to package manifests.
 
 ## Agent Workflow
 

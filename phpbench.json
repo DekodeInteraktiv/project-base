@@ -1,0 +1,11 @@
+{
+	"$schema": "./vendor/phpbench/phpbench/phpbench.schema.json",
+	"runner.bootstrap": "tools/bench/bootstrap.php",
+	"runner.path": "packages",
+	"runner.file_pattern": "class-*-bench.php",
+	"runner.php_config": {
+		"opcache.enable_cli": 1
+	},
+	"runner.iterations": 5,
+	"runner.revs": 5000
+}
