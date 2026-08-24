@@ -22,7 +22,8 @@
 		"postcss-mixins": "^12.1.2",
 		"postcss-nesting": "^14.0.1",
 		"prettier": "^3.9.6",
-		"turbo": "^2.10.9"
+		"turbo": "^2.10.9",
+		"vitest": "^4.1.11"
 	},
 	"engines": {
 		"node": ">=22.22.2 <23",
@@ -59,7 +60,8 @@
 		"start": "turbo run start",
 		"start-sync": "npm-run-all --parallel start browsersync:start",
 		"update-dependencies": "npx syncpack update",
-		"wp-env": "wp-env"
+		"wp-env": "wp-env",
+		"bench": "vitest bench --run"
 	},
 	"syncpack": {
 		"indent": "\t",

@@ -18,6 +18,37 @@ List any steps necessary to get this project up and running on a local machine. 
 - Composer quirks
 - Symlinking
 
+## Benchmarking
+
+PHP benchmarks use [PHPBench](https://phpbench.readthedocs.io/), JS/TS benchmarks use [Vitest](https://vitest.dev/guide/features.html#benchmarking). Examples live in `packages/themes/block-theme/benchmarks/`.
+
+```bash
+composer bench   # PHP: every class-*-bench.php in packages/**/benchmarks/
+npm run bench    # JS:  every *.bench.js / *.bench.ts file
+```
+
+Run a subset:
+
+```bash
+composer bench -- --filter=Block_Settings
+npm run bench -- block-theme
+```
+
+Compare against a baseline:
+
+```bash
+composer bench -- --tag=baseline      # store a run (in .phpbench/, git-ignored)
+composer bench -- --ref=baseline      # compare against it
+
+npm run bench -- --outputJson baseline.bench.json   # git-ignored
+npm run bench -- --compare baseline.bench.json
+```
+
+Adding benchmarks:
+
+- **PHP**: `packages/<type>/<package>/benchmarks/class-<name>-bench.php`, a `<Name>_Bench` class with `bench_*` methods. WordPress is not loaded, so hook registrations in the included files are no-ops provided by `tools/bench/wp-stubs.php`; add stubs there when a benchmark needs more WordPress functions.
+- **JS/TS**: any `*.bench.js` / `*.bench.ts` file using `bench()` and `describe()` from `vitest`, preferably in the package's `benchmarks/` folder. `vitest` is a root dev dependency and benchmark files are linted against the root `package.json`, so packages do not list it themselves.
+
 ## Custom wp-cli commands
 List and document any custom-made wp-cli commands on this site.
 

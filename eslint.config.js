@@ -30,4 +30,10 @@ module.exports = [
 			'react-hooks/rules-of-hooks': 'off',
 		},
 	},
+	{
+		files: ['**/*.bench.{js,ts}'],
+		rules: {
+			'import/no-extraneous-dependencies': ['error', { packageDir: __dirname, peerDependencies: true }],
+		},
+	},
 ];

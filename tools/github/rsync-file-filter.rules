@@ -19,6 +19,11 @@
 - package.json
 - package-lock.json
 - phpcs.xml.dist
+- phpbench.json
+- vitest.config.js
+- benchmarks/
+- *.bench.js
+- *.bench.ts
 - postcss.config.js
 - webpack.config.js
 - documentation/***
