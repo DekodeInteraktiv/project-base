@@ -25,8 +25,8 @@ New plugins go in `packages/plugins/<plugin-name>/`, themes in `packages/themes/
 - **PHP**: 8.4+ - use modern PHP features (typed properties, enums, readonly, match expressions, named arguments, fibers where appropriate)
 - **WordPress**: 6.9 with Full Site Editing (FSE/block themes)
 - **T2 framework**: `t2/t2` - WordPress framework for blocks, utilities, and editor tooling
-- **Node.js**: 20 via `.nvmrc`
-- **Package manager**: npm 10+ (not yarn or pnpm)
+- **Node.js**: 24+ via `.nvmrc`
+- **Package manager**: npm 11+ (not yarn or pnpm)
 - **Monorepo orchestration**: Turbo (`turbo.json` at root)
 - **PHP coding standard**: `dekode/coding-standards` (extends WordPress Coding Standards)
 - **JS/CSS linting**: ESLint extends `@wordpress/eslint-plugin/recommended`; StyleLint extends `@wordpress/stylelint-config/scss`; Prettier extends `@wordpress/prettier-config` with `printWidth: 120`

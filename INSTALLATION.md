@@ -23,7 +23,7 @@
 
 - **PHP**: Version 8.4 or higher
 - **Composer**: [Install Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-- **Node.js**: Version 22.22.2 (Active LTS)
+- **Node.js**: Version 24.18.0 (Active LTS)
 
 ## Project Structure
 
