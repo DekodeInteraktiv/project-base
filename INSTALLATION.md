@@ -29,8 +29,7 @@
 
 - **Packages**: Contains all project-specific code such as plugins, themes, mu-plugins, and custom libraries. These are built into the `public` directory using symlinks via Composer.
 - **Public**: Contains files used by WordPress, automatically generated from packages by Composer. This folder should not be modified manually.
-- **Tools**: Contains build and setup scripts used by Codeship and Local.
-- **Config**: Contains environment variable setup files.
+- **Tools**: Contains the deploy filter used by GitHub Actions and the setup scripts used by Local.
 
 ## Local Setup
 
@@ -70,7 +69,6 @@
    - `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`
    - `WP_ENVIRONMENT_TYPE` (local, development, staging, production)
    - `WP_HOME` (e.g., `http://example.com`)
-   - `WP_SITEURL` (e.g., `http://example.com/wp`)
    - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
 6. Generate security keys (optional, requires wp-cli):
