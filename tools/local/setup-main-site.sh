@@ -9,7 +9,10 @@ wp option update time_format "H:i"
 wp language core install nb_NO
 wp site switch-language nb_NO
 
-wp theme enable block-theme --network
+# Only on a multisite install: "wp theme enable --network" fails on a single site.
+if wp core is-installed --network 2>/dev/null; then
+	wp theme enable block-theme --network
+fi
 wp theme activate block-theme
 
 wp plugin activate t2
