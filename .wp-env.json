@@ -14,6 +14,6 @@
 		"wp-content": "./public/content"
 	},
 	"lifecycleScripts": {
-		"afterStart": "rm ./wp-content/object-cache.php & npm run wp-env -- run cli ./tools/local/setup-main-site.sh"
+		"afterStart": "rm -f ./public/content/object-cache.php && npm run wp-env -- run cli ./tools/local/setup-main-site.sh"
 	}
 }
