@@ -37,7 +37,7 @@
 			"wp-scripts lint-js"
 		]
 	},
-	"packageManager": "npm@10.7.0",
+	"packageManager": "npm@11.16.0",
 	"private": true,
 	"scripts": {
 		"browsersync:start": "node browsersync.config.js",
