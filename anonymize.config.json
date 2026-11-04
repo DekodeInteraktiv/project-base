@@ -191,6 +191,11 @@
 					"constraints": null
 				}
 			]
+		},
+		{
+			"tableName": ".*_patchstack_event_log$",
+			"purge": true,
+			"fields": []
 		}
 	]
 }

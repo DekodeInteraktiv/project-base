@@ -1,5 +1,6 @@
 {
 	"$schema": "https://turbo.build/schema.json",
+	"globalDependencies": ["webpack.config.js", "postcss.config.js", "composer.lock"],
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build"],
