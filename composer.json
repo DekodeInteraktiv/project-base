@@ -8,12 +8,12 @@
 		"dekode/block-theme": "~1.0.0",
 		"inpsyde/wp-translation-downloader": "~2.6.0",
 		"roots/bedrock-autoloader": "~1.1.0",
-		"roots/wordpress": "~7.1.0",
-		"symfony/dotenv": "~8.0.15",
-		"t2/t2": "~8.31.0",
+		"roots/wordpress": "~7.1.4",
+		"symfony/dotenv": "~8.1.6",
+		"t2/t2": "~8.36.0",
 		"wpackagist-plugin/imagify": "~2.3.1",
 		"wpackagist-plugin/spinupwp": "~1.9.1",
-		"wpackagist-plugin/two-factor": "~0.16.0"
+		"wpackagist-plugin/two-factor": "~0.17.0"
 	},
 	"require-dev": {
 		"dekode/coding-standards": "~6.6.0"
