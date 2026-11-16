@@ -1,6 +1,8 @@
-# GitHub Copilot Instructions
+# Agent Instructions
 
 Bedrock-inspired WordPress monorepo. Follow these conventions when generating code.
+
+This file is the single source of project instructions for every AI coding agent. See `documentation/ai-agents.md` for where skills, rules and settings live.
 
 ## Project Structure
 
@@ -23,7 +25,7 @@ New plugins go in `packages/plugins/<plugin-name>/`, themes in `packages/themes/
 ## Tech Stack
 
 - **PHP**: 8.5+ - use modern PHP features (typed properties, enums, readonly, match expressions, named arguments, fibers where appropriate)
-- **WordPress**: 6.9 with Full Site Editing (FSE/block themes)
+- **WordPress**: 7.1 with Full Site Editing (FSE/block themes)
 - **T2 framework**: `t2/t2` - WordPress framework for blocks, utilities, and editor tooling
 - **Node.js**: 24+ via `.nvmrc`
 - **Package manager**: npm 11+ (not yarn or pnpm)

@@ -6,7 +6,8 @@
 - .well-known
 - .env
 - .env.example
-- .copilotignore
+- .claude
+- .mcp.json
 - .editorconfig
 - .eslintignore
 - .eslintrc.js

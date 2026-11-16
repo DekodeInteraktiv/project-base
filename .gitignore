@@ -3,13 +3,13 @@
 .idea
 .vscode
 
-# Non-Copilot Agent Files
-.claude/
+# Personal Agent Files (shared config lives in AGENTS.md, CLAUDE.md and .claude/)
+.claude/settings.local.json
+.claude/worktrees/
+CLAUDE.local.md
 .codex/
 .gemini/
 .opencode/
-AGENTS.md
-CLAUDE.md
 .mcp.json
 
 # Javascript
