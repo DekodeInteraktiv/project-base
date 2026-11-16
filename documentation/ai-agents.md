@@ -7,12 +7,12 @@ The project keeps one set of agent configuration that Claude Code and GitHub Cop
 |---|---|
 | `AGENTS.md` | The project instructions: structure, stack, conventions and commands. Every agent reads it. |
 | `CLAUDE.md` | One line, `@AGENTS.md`, which makes Claude Code load `AGENTS.md`. Do not add anything else to it. |
-| `.claude/settings.json` | Shared Claude Code settings: pre-approved lint and build commands, blocked secret files, no AI attribution on commits and pull requests. |
 | `.claude/skills/<name>/SKILL.md` | Project skills: step-by-step guides for tasks specific to this project. |
 | `.claude/rules/<topic>.md` | Rules that only apply to some files. |
 | `.claude/agents/<name>.md` | Project subagents. |
+| `.claude/settings.json` | Claude Code settings the whole team should share, such as hooks or permission rules. |
 
-Only the first three exist in a new project. Create the others when the project needs them.
+Only the first two exist in a new project. Create the others when the project needs them.
 
 Organisation-wide standards, skills, agents and MCP servers are not in this repository. Each developer installs them once with:
 
@@ -71,7 +71,7 @@ Copilot's cloud agent and Copilot code review are the exception: they read rules
 Do not add `.github/copilot-instructions.md`. Copilot merges it with `AGENTS.md`, so the agent would receive the instructions twice.
 
 ## Secrets
-`.claude/settings.json` stops Claude Code from reading the dotenv files (except `.env.example`) and `auth.json`. This covers Claude's file tools and common shell commands such as `cat`; it is not a sandbox, so a script the agent runs can still open those files.
+The project adds no secret-file rules of its own. The organisation setup stops Claude Code from reading the dotenv files (except `.env.example`) on each developer's machine, and turns off AI attribution on commits and pull requests. A project that needs to block more files for everyone can add `Read(...)` deny rules to `.claude/settings.json`.
 
 For Copilot, the equivalent is content exclusion in the GitHub repository or organisation settings. A `.copilotignore` file has no effect.
 
