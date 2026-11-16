@@ -50,4 +50,4 @@ This anonymization is performed using the [anonymize-mysqldump project](https://
 The default configuration file provides support for a vanilla WordPress installation, with just data relating to comments and usermeta accounted for.
 
 ## AI agents
-Agent instructions live in `AGENTS.md`, and shared skills, rules and settings in `.claude/`. See [documentation/ai-agents.md](./documentation/ai-agents.md) for how to add to them.
+Agent instructions live in `AGENTS.md`, and shared skills, rules and settings in `.claude/`.

@@ -288,7 +288,6 @@ Project Base uses [wp-scripts](https://github.com/WordPress/gutenberg/tree/trunk
 
 ## Additional Documentation
 
-- **AI agents**: [Agent instructions, skills and settings](documentation/ai-agents.md)
 - **PostCSS**: [PostCSS Documentation](https://github.com/postcss/postcss/tree/main/docs)
 - **WebPack**: [WebPack Concepts](https://webpack.js.org/concepts/)
 - **WP Scripts**: [WP Scripts Guide](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)

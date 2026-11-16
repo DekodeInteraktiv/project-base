@@ -2,8 +2,6 @@
 
 Bedrock-inspired WordPress monorepo. Follow these conventions when generating code.
 
-This file is the single source of project instructions for every AI coding agent. See `documentation/ai-agents.md` for where skills, rules and settings live.
-
 ## Project Structure
 
 ```
