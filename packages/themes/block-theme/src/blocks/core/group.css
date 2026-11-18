@@ -10,10 +10,10 @@
 }
 
 /* No start/end padding for groups starting/ending with spacer block */
-.wp-block-group.has-background:has(.t2-spacer:first-child, .wp-block-spacer:first-child) {
+.wp-block-group.has-background:has(.wp-block-spacer:first-child) {
 	padding-block-start: unset;
 }
 
-.wp-block-group.has-background:has(.t2-spacer:last-child, .wp-block-spacer:last-child) {
+.wp-block-group.has-background:has(.wp-block-spacer:last-child) {
 	padding-block-end: unset;
 }

@@ -5,7 +5,13 @@
 	<!-- wp:query-title {"type":"archive","showPrefix":false,"align":"wide"} /-->
 
 	<!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":3}} -->
-	<!-- wp:t2/featured-template-post /-->
+	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group">
+		<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
+		<!-- wp:post-title {"isLink":true,"level":2,"fontSize":"large"} /-->
+		<!-- wp:post-excerpt {"excerptLength":25} /-->
+	</div>
+	<!-- /wp:group -->
 	<!-- /wp:post-template -->
 
 	<!-- wp:query-pagination -->
