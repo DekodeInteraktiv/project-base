@@ -67,7 +67,9 @@ function load_theme_assets( bool $for_editor = false ): void {
 		// Bundled stylesheet.
 		if ( \file_exists( $dir . 'editor.css' ) && ! \wp_style_is( $handle ) ) {
 			$ver = $assets['version'] ?? \filemtime( $dir . 'editor.css' );
-			\wp_enqueue_style( $handle, $url . 'editor.css', [ 'global-styles-css-custom-properties' ], $ver );
+			// Only depend on the global styles handle when it is registered, otherwise WP prints a notice into the editor assets.
+			$deps = \wp_style_is( 'global-styles-css-custom-properties', 'registered' ) ? [ 'global-styles-css-custom-properties' ] : [];
+			\wp_enqueue_style( $handle, $url . 'editor.css', $deps, $ver );
 		}
 
 		// Bundled scripts.
