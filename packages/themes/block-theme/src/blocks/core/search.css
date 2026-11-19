@@ -1,0 +1,25 @@
+/* Button-only search: plain icon button, bordered input (matches the design). */
+.wp-block-search__inside-wrapper {
+	gap: 0.5rem;
+}
+
+.wp-block-search__button-only .wp-block-search__button {
+	padding: 0.5rem;
+	border-radius: 100px;
+	background: transparent;
+	color: var(--wp--preset--color--foreground);
+
+	&:hover {
+		background: transparent;
+		color: var(--wp--preset--color--foreground);
+		text-decoration: underline;
+	}
+}
+
+.wp-block-search__input {
+	padding: 0.75rem 1rem;
+	border: 1px solid #cec4b2;
+	border-radius: 0.5rem;
+	background: #fff;
+	color: var(--wp--preset--color--foreground);
+}
