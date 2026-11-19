@@ -1,0 +1,12 @@
+/* Fall back to the site title only when no site logo is set. */
+.wp-block-site-logo ~ .wp-block-site-title {
+	display: none;
+}
+
+.wp-block-site-title {
+	font-weight: var(--wp--custom--font-weight--regular);
+}
+
+.wp-block-site-title a:where(:not(:hover, :focus)) {
+	text-decoration: none;
+}

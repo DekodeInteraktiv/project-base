@@ -24,7 +24,7 @@ New plugins go in `packages/plugins/<plugin-name>/`, themes in `packages/themes/
 
 - **PHP**: 8.5+ - use modern PHP features (typed properties, enums, readonly, match expressions, named arguments, fibers where appropriate)
 - **WordPress**: 6.9 with Full Site Editing (FSE/block themes)
-- **T2 framework**: `t2/t2` - WordPress framework for blocks, utilities, and editor tooling
+- **T2 framework**: `t2/t2` - WordPress framework (extensions, utilities, editor tooling; its blocks are not used - build with core blocks)
 - **Node.js**: 24+ via `.nvmrc`
 - **Package manager**: npm 11+ (not yarn or pnpm)
 - **Monorepo orchestration**: Turbo (`turbo.json` at root)
@@ -88,7 +88,7 @@ requestToExternal: ( request ) => request.startsWith( '@t2/' ) ? [ 't2', request
 
 - Always import from `@t2/editor` in JS — never reference `window.t2` directly
 - Do not add `@t2/*` to `package.json` dependencies — they are provided at runtime
-- `t2.json` in the theme controls which T2 blocks and extensions are active
+- `t2.json` in the theme controls which T2 extensions are active (T2 blocks are disabled)
 
 ## Build & Development Commands
 
