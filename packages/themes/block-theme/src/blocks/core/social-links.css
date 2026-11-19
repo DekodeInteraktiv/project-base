@@ -1,0 +1,4 @@
+/* Icon-only links: no extra padding so the row matches the design spacing. */
+.wp-block-social-links.is-style-logos-only .wp-social-link a {
+	padding: 0;
+}
