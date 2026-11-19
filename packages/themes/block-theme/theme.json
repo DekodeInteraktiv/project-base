@@ -194,6 +194,11 @@
 					"slug": "secondary"
 				},
 				{
+					"color": "#634e3b",
+					"name": "Accent",
+					"slug": "accent"
+				},
+				{
 					"color": "#241d17",
 					"name": "Foreground",
 					"slug": "foreground"
@@ -348,6 +353,15 @@
 				"typography": {
 					"fontSize": "unset",
 					"lineHeight": "unset"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--accent)",
+						"text": "var(--wp--preset--color--inverted)"
+					}
+				},
+				":focus-visible": {
+					"css": "box-shadow: 0 0 0 2px #cec4b2; outline: none;"
 				}
 			},
 			"caption": {
